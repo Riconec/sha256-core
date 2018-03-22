@@ -1,0 +1,34 @@
+---------------------------------------
+Resource Usage Report for sha256_spi 
+
+Mapping to part: ice5lp4ksg48
+Cell usage:
+GND             9 uses
+SB_CARRY        342 uses
+SB_DFFER        698 uses
+SB_DFFES        166 uses
+SB_DFFR         11 uses
+SB_DFFS         3 uses
+SB_GB           4 uses
+SB_RAM256x16    2 uses
+VCC             9 uses
+SB_LUT4         2775 uses
+
+I/O ports: 7
+I/O primitives: 7
+SB_GB_IO       1 use
+SB_IO          6 uses
+
+I/O Register bits:                  0
+Register bits not including I/Os:   878 (24%)
+
+RAM/ROM usage summary
+Block Rams : 2 of 20 (10%)
+
+
+@S |Mapping Summary:
+Total  LUTs: 2775 (78%)
+
+Distribution of All Consumed LUTs = LUT4 
+Distribution of All Consumed Luts 2775 = 2775 
+

@@ -1,0 +1,9 @@
+@W: CG289 :"C:\workspace\sha256-core\src\sha\sha256_core.v":23:24:23:29|Specified digits overflow the number's size
+@W: CG360 :"C:\workspace\sha256-core\src\sha\sha256_core.v":71:22:71:29|Removing wire o_data_w, as there is no assignment to it.
+@W: CG360 :"C:\workspace\sha256-core\src\top\sha256_spi.v":18:5:18:11|Removing wire we_edge, as there is no assignment to it.
+@W: CG133 :"C:\workspace\sha256-core\src\top\sha256_spi.v":19:10:19:18|Object r_we_edge is declared but not assigned. Either assign a value or remove the declaration.
+@W: CG133 :"C:\workspace\sha256-core\src\top\sha256_spi.v":20:4:20:13|Object r_we_delay is declared but not assigned. Either assign a value or remove the declaration.
+@W: CL169 :"C:\workspace\sha256-core\src\top\sha256_spi.v":24:0:24:5|Pruning unused register ss_sync[2:0]. Make sure that there are no unused intermediate registers.
+@W: CL169 :"C:\workspace\sha256-core\src\top\sha256_spi.v":24:0:24:5|Pruning unused register mosi_sync[2:0]. Make sure that there are no unused intermediate registers.
+@W: CL265 :"C:\workspace\sha256-core\src\top\sha256_spi.v":24:0:24:5|Removing unused bit 2 of sck_sync[2:0]. Either assign all bits or reduce the width of the signal.
+

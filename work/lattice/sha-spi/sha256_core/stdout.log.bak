@@ -1,0 +1,49 @@
+Running in Lattice mode
+
+
+Starting:    F:\lscc\iCEcube2.2017.01\synpbase\bin64\mbin\synbatch.exe
+Install:     F:\lscc\iCEcube2.2017.01\synpbase
+Hostname:    DESKTOP-T3ALA46
+Date:        Tue Feb 13 20:53:58 2018
+Version:     L-2016.09L+ice40
+
+Arguments:   -product synplify_pro -batch sha256_core_syn.prj
+ProductType: synplify_pro
+
+
+
+
+
+log file: "C:\workspace\sha256-core\work\lattice\sha-spi\sha256_core\sha256_core_Implmnt\sha256_core.srr"
+Running: sha256_core_Implmnt in foreground
+
+Running sha256_core_syn|sha256_core_Implmnt
+
+Running: compile (Compile) on sha256_core_syn|sha256_core_Implmnt
+# Tue Feb 13 20:53:58 2018
+
+Running: compile_flow (Compile Process) on sha256_core_syn|sha256_core_Implmnt
+# Tue Feb 13 20:53:58 2018
+
+Running: compiler (Compile Input) on sha256_core_syn|sha256_core_Implmnt
+# Tue Feb 13 20:53:58 2018
+Warning: The following files were not found:
+C:\workspace\sha256-core\src\top\sha256_spi.v
+Warning: File does not exist: C:\workspace\sha256-core\src\top\sha256_spi.v
+compiler exited with errors
+Job failed on: sha256_core_syn|sha256_core_Implmnt
+
+Job: "compiler" terminated with error status: 2
+See log file: "C:\workspace\sha256-core\work\lattice\sha-spi\sha256_core\sha256_core_Implmnt\synlog\sha256_core_compiler.srr"
+# Tue Feb 13 20:53:58 2018
+
+Return Code: 2
+Run Time:00h:00m:00s
+Complete: Compile Process on sha256_core_syn|sha256_core_Implmnt
+Complete: Compile on sha256_core_syn|sha256_core_Implmnt
+Complete: Logic Synthesis on sha256_core_syn|sha256_core_Implmnt
+
+exit status=2
+
+exit status=2
+

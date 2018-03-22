@@ -1,0 +1,36 @@
+* ******************************************************************************
+
+* iCEcube Router
+
+* Version:            2017.01.27914
+
+* Build Date:         Jan 12 2017 18:44:44
+
+* File Generated:     Feb 13 2018 22:06:25
+
+* Purpose:            Router runtime info
+
+* Copyright (C) 2006-2010 by Lattice Semiconductor Corp. All rights reserved.
+
+* ******************************************************************************
+
+Executing : F:\lscc\iCEcube2.2017.01\sbt_backend\bin\win32\opt\sbrouter.exe F:\lscc\iCEcube2.2017.01\sbt_backend\devices\ICE40T04.dev C:\workspace\sha256-core\work\lattice\sha-spi\sha256_core\sha256_core_Implmnt\sbt\netlist\oadb-sha256_spi F:\lscc\iCEcube2.2017.01\sbt_backend\devices\ice40TH4K.lib C:\workspace\sha256-core\work\lattice\sha-spi\sha256_core\sha256_core_Implmnt\sbt\outputs\packer\sha256_spi_pk.sdc --outdir C:\workspace\sha256-core\work\lattice\sha-spi\sha256_core\sha256_core_Implmnt\sbt\outputs\router --sdf_file C:/workspace/sha256-core/work/lattice/sha-spi/sha256_core/sha256_core_Implmnt\sbt\outputs\simulation_netlist\sha256_spi_sbt.sdf --pin_permutation 
+I1203: Reading Design sha256_spi
+I1202: Reading Architecture of device iCE5LP4K
+I1209: Started routing
+I1223: Total Nets : 3993 
+I1212: Iteration  1 :   681 unrouted : 25 seconds
+I1212: Iteration  2 :   109 unrouted : 11 seconds
+I1212: Iteration  3 :    53 unrouted : 2 seconds
+I1212: Iteration  4 :    27 unrouted : 1 seconds
+I1212: Iteration  5 :     4 unrouted : 0 seconds
+I1212: Iteration  6 :     2 unrouted : 1 seconds
+I1212: Iteration  7 :     2 unrouted : 0 seconds
+I1212: Iteration  8 :     2 unrouted : 0 seconds
+I1212: Iteration  9 :     0 unrouted : 0 seconds
+I1215: Routing is successful
+I1206: Completed routing
+I1204: Writing Design sha256_spi
+I1210: Writing routes
+I1218: Exiting the router
+I1224: Router run-time : 76 seconds

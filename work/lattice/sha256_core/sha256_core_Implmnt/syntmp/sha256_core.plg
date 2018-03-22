@@ -1,0 +1,13 @@
+@P:  Worst Slack : -15.544
+@P:  sha256_spi|i_clk - Estimated Frequency : 39.1 MHz
+@P:  sha256_spi|i_clk - Requested Frequency : 100.0 MHz
+@P:  sha256_spi|i_clk - Estimated Period : 25.544
+@P:  sha256_spi|i_clk - Requested Period : 10.000
+@P:  sha256_spi|i_clk - Slack : -15.544
+@P: sha256_spi Part : ice5lp4ksg48
+@P: sha256_spi I/O primitives : 7
+@P: sha256_spi I/O Register bits : 0
+@P: sha256_spi Register bits (Non I/O) : 878 (24%)
+@P: sha256_spi Block Rams : 2 of 20 (10%)
+@P: sha256_spi Total Luts : 2775 (78%)
+@P:  CPU Time : 0h:00m:22s

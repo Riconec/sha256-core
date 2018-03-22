@@ -1,0 +1,156 @@
+#### START OF AREA REPORT #####[
+
+Part:			ICE5LP4KSG48 (Lattice)
+
+--------------------------------------------------------------------------
+########   Utilization report for  Top level view:   sha256_spi   ########
+==========================================================================
+
+SEQUENTIAL ELEMENTS
+Name      Total elements     Utilization     Notes
+--------------------------------------------------
+FLOPS     888                100 %                
+==================================================
+Total SEQUENTIAL ELEMENTS in the block sha256_spi:	888 (20.34 % Utilization)
+
+
+COMBINATIONAL LOGIC
+Name       Total elements     Utilization     Notes
+---------------------------------------------------
+LUTS       3106               100 %                
+CARRYS     342                100 %                
+===================================================
+Total COMBINATIONAL LOGIC in the block sha256_spi:	3448 (78.99 % Utilization)
+
+
+IO PADS
+Name     Total elements     Utilization     Notes
+-------------------------------------------------
+PADS     11                 100 %                
+=================================================
+Total IO PADS in the block sha256_spi:	11 (0.25 % Utilization)
+
+-----------------------------------------------------------------
+########   Utilization report for  cell:   sha256_core   ########
+Instance path:   sha256_spi.sha256_core                          
+=================================================================
+
+SEQUENTIAL ELEMENTS
+Name      Total elements     Utilization     Notes
+--------------------------------------------------
+FLOPS     835                94 %                 
+==================================================
+Total SEQUENTIAL ELEMENTS in the block sha256_spi.sha256_core:	835 (19.13 % Utilization)
+
+
+COMBINATIONAL LOGIC
+Name       Total elements     Utilization     Notes
+---------------------------------------------------
+LUTS       3077               99.1 %               
+CARRYS     342                100 %                
+===================================================
+Total COMBINATIONAL LOGIC in the block sha256_spi.sha256_core:	3419 (78.33 % Utilization)
+
+
+IO PADS
+Name     Total elements     Utilization     Notes
+-------------------------------------------------
+PADS     3                  27.3 %               
+=================================================
+Total IO PADS in the block sha256_spi.sha256_core:	3 (0.07 % Utilization)
+
+--------------------------------------------------------
+########   Utilization report for  cell:   ch   ########
+Instance path:   sha256_core.ch                         
+========================================================
+
+COMBINATIONAL LOGIC
+Name     Total elements     Utilization     Notes
+-------------------------------------------------
+LUTS     130                4.19 %               
+=================================================
+Total COMBINATIONAL LOGIC in the block sha256_core.ch:	130 (2.98 % Utilization)
+
+------------------------------------------------------------------
+########   Utilization report for  cell:   sha256_coefs   ########
+Instance path:   sha256_core.sha256_coefs                         
+==================================================================
+
+COMBINATIONAL LOGIC
+Name     Total elements     Utilization     Notes
+-------------------------------------------------
+LUTS     323                10.4 %               
+=================================================
+Total COMBINATIONAL LOGIC in the block sha256_core.sha256_coefs:	323 (7.40 % Utilization)
+
+-----------------------------------------------------------
+########   Utilization report for  cell:   sigm0   ########
+Instance path:   sha256_core.sigm0                         
+===========================================================
+
+COMBINATIONAL LOGIC
+Name     Total elements     Utilization     Notes
+-------------------------------------------------
+LUTS     28                 0.9010 %             
+=================================================
+Total COMBINATIONAL LOGIC in the block sha256_core.sigm0:	28 (0.64 % Utilization)
+
+-----------------------------------------------------------
+########   Utilization report for  cell:   sigm1   ########
+Instance path:   sha256_core.sigm1                         
+===========================================================
+
+COMBINATIONAL LOGIC
+Name     Total elements     Utilization     Notes
+-------------------------------------------------
+LUTS     23                 0.7410 %             
+=================================================
+Total COMBINATIONAL LOGIC in the block sha256_core.sigm1:	23 (0.53 % Utilization)
+
+----------------------------------------------------------
+########   Utilization report for  cell:   sum0   ########
+Instance path:   sha256_core.sum0                         
+==========================================================
+
+COMBINATIONAL LOGIC
+Name     Total elements     Utilization     Notes
+-------------------------------------------------
+LUTS     31                 0.9980 %             
+=================================================
+Total COMBINATIONAL LOGIC in the block sha256_core.sum0:	31 (0.71 % Utilization)
+
+----------------------------------------------------------
+########   Utilization report for  cell:   sum1   ########
+Instance path:   sha256_core.sum1                         
+==========================================================
+
+COMBINATIONAL LOGIC
+Name     Total elements     Utilization     Notes
+-------------------------------------------------
+LUTS     34                 1.09 %               
+=================================================
+Total COMBINATIONAL LOGIC in the block sha256_core.sum1:	34 (0.78 % Utilization)
+
+---------------------------------------------------------------
+########   Utilization report for  cell:   spi_slave   ########
+Instance path:   sha256_spi.spi_slave                          
+===============================================================
+
+SEQUENTIAL ELEMENTS
+Name      Total elements     Utilization     Notes
+--------------------------------------------------
+FLOPS     51                 5.74 %               
+==================================================
+Total SEQUENTIAL ELEMENTS in the block sha256_spi.spi_slave:	51 (1.17 % Utilization)
+
+
+COMBINATIONAL LOGIC
+Name     Total elements     Utilization     Notes
+-------------------------------------------------
+LUTS     27                 0.8690 %             
+=================================================
+Total COMBINATIONAL LOGIC in the block sha256_spi.spi_slave:	27 (0.62 % Utilization)
+
+
+##### END OF AREA REPORT #####]
+

@@ -1,0 +1,50 @@
+@N: MF248 |Running in 64-bit mode.
+@N: MF666 |Clock conversion enabled. (Command "set_option -fix_gated_and_generated_clocks 1" in the project file.)
+@N: MO225 :"c:\workspace\sha256-core\src\sha\sha256_core.v":105:4:105:9|There are no possible illegal states for state machine r_state[3:0] (in view: work.sha256_core(verilog)); safe FSM implementation is not required.
+@N: MO231 :"c:\workspace\sha256-core\src\sha\sha256_core.v":105:4:105:9|Found counter in view:work.sha256_core(verilog) instance r_round[5:0] 
+@N: BN362 :"c:\workspace\sha256-core\src\spi\spi_slave.v":22:0:22:5|Removing sequential instance r_rx[15] (in view: work.spi_slave(verilog)) because it does not drive other instances.
+@N: FX271 :"c:\workspace\sha256-core\src\sha\sha256_core.v":168:1:168:6|Replicating instance sha256_core_inst.r_words[482] (in view: work.sha256_spi(verilog)) with 11 loads 2 times to improve timing.
+@N: FX271 :"c:\workspace\sha256-core\src\sha\sha256_core.v":168:1:168:6|Replicating instance sha256_core_inst.r_variables[1] (in view: work.sha256_spi(verilog)) with 10 loads 1 time to improve timing.
+@N: FX271 :"c:\workspace\sha256-core\src\sha\sha256_core.v":168:1:168:6|Replicating instance sha256_core_inst.r_words[481] (in view: work.sha256_spi(verilog)) with 11 loads 1 time to improve timing.
+@N: FX271 :"c:\workspace\sha256-core\src\sha\sha256_core.v":168:1:168:6|Replicating instance sha256_core_inst.r_variables[2] (in view: work.sha256_spi(verilog)) with 9 loads 1 time to improve timing.
+@N: FX271 :"c:\workspace\sha256-core\src\sha\sha256_core.v":168:1:168:6|Replicating instance sha256_core_inst.r_variables[103] (in view: work.sha256_spi(verilog)) with 8 loads 1 time to improve timing.
+@N: FX271 :"c:\workspace\sha256-core\src\sha\sha256_core.v":168:1:168:6|Replicating instance sha256_core_inst.r_words[480] (in view: work.sha256_spi(verilog)) with 10 loads 1 time to improve timing.
+@N: FX271 :"c:\workspace\sha256-core\src\sha\sha256_core.v":168:1:168:6|Replicating instance sha256_core_inst.r_variables[0] (in view: work.sha256_spi(verilog)) with 8 loads 1 time to improve timing.
+@N: FX271 :"c:\workspace\sha256-core\src\sha\sha256_core.v":168:1:168:6|Replicating instance sha256_core_inst.r_variables[228] (in view: work.sha256_spi(verilog)) with 10 loads 1 time to improve timing.
+@N: FX271 :"c:\workspace\sha256-core\src\sha\sha256_core.v":168:1:168:6|Replicating instance sha256_core_inst.r_variables[227] (in view: work.sha256_spi(verilog)) with 9 loads 1 time to improve timing.
+@N: FX271 :"c:\workspace\sha256-core\src\sha\sha256_core.v":168:1:168:6|Replicating instance sha256_core_inst.r_variables[238] (in view: work.sha256_spi(verilog)) with 8 loads 1 time to improve timing.
+@N: FX271 :"c:\workspace\sha256-core\src\sha\sha256_core.v":168:1:168:6|Replicating instance sha256_core_inst.r_variables[108] (in view: work.sha256_spi(verilog)) with 9 loads 1 time to improve timing.
+@N: FX271 :"c:\workspace\sha256-core\src\sha\sha256_core.v":168:1:168:6|Replicating instance sha256_core_inst.r_variables[107] (in view: work.sha256_spi(verilog)) with 8 loads 1 time to improve timing.
+@N: FX271 :"c:\workspace\sha256-core\src\sha\sha256_core.v":168:1:168:6|Replicating instance sha256_core_inst.r_variables[102] (in view: work.sha256_spi(verilog)) with 9 loads 1 time to improve timing.
+@N: FX271 :"c:\workspace\sha256-core\src\sha\sha256_core.v":168:1:168:6|Replicating instance sha256_core_inst.r_variables[225] (in view: work.sha256_spi(verilog)) with 8 loads 1 time to improve timing.
+@N: FX271 :"c:\workspace\sha256-core\src\sha\sha256_core.v":168:1:168:6|Replicating instance sha256_core_inst.r_variables[109] (in view: work.sha256_spi(verilog)) with 13 loads 1 time to improve timing.
+@N: FX271 :"c:\workspace\sha256-core\src\sha\sha256_core.v":168:1:168:6|Replicating instance sha256_core_inst.r_variables[110] (in view: work.sha256_spi(verilog)) with 8 loads 1 time to improve timing.
+@N: FX271 :"c:\workspace\sha256-core\src\sha\sha256_core.v":168:1:168:6|Replicating instance sha256_core_inst.r_variables[97] (in view: work.sha256_spi(verilog)) with 9 loads 1 time to improve timing.
+@N: FX271 :"c:\workspace\sha256-core\src\sha\sha256_core.v":168:1:168:6|Replicating instance sha256_core_inst.r_variables[104] (in view: work.sha256_spi(verilog)) with 8 loads 1 time to improve timing.
+@N: FX271 :"c:\workspace\sha256-core\src\sha\sha256_core.v":168:1:168:6|Replicating instance sha256_core_inst.r_variables[239] (in view: work.sha256_spi(verilog)) with 8 loads 1 time to improve timing.
+@N: FX271 :"c:\workspace\sha256-core\src\sha\sha256_core.v":168:1:168:6|Replicating instance sha256_core_inst.r_variables[98] (in view: work.sha256_spi(verilog)) with 8 loads 1 time to improve timing.
+@N: FX271 :"c:\workspace\sha256-core\src\sha\sha256_core.v":168:1:168:6|Replicating instance sha256_core_inst.r_variables[237] (in view: work.sha256_spi(verilog)) with 8 loads 1 time to improve timing.
+@N: FX271 :"c:\workspace\sha256-core\src\sha\sha256_core.v":168:1:168:6|Replicating instance sha256_core_inst.r_variables[224] (in view: work.sha256_spi(verilog)) with 8 loads 1 time to improve timing.
+@N: FX271 :"c:\workspace\sha256-core\src\sha\sha256_core.v":168:1:168:6|Replicating instance sha256_core_inst.r_variables[105] (in view: work.sha256_spi(verilog)) with 10 loads 1 time to improve timing.
+@N: FX271 :"c:\workspace\sha256-core\src\sha\sha256_core.v":168:1:168:6|Replicating instance sha256_core_inst.r_words[483] (in view: work.sha256_spi(verilog)) with 9 loads 1 time to improve timing.
+@N: FX271 :"c:\workspace\sha256-core\src\sha\sha256_core.v":168:1:168:6|Replicating instance sha256_core_inst.r_variables[99] (in view: work.sha256_spi(verilog)) with 10 loads 1 time to improve timing.
+@N: FX271 :"c:\workspace\sha256-core\src\sha\sha256_core.v":168:1:168:6|Replicating instance sha256_core_inst.r_variables[100] (in view: work.sha256_spi(verilog)) with 8 loads 1 time to improve timing.
+@N: FX271 :"c:\workspace\sha256-core\src\sha\sha256_core.v":168:1:168:6|Replicating instance sha256_core_inst.r_words[484] (in view: work.sha256_spi(verilog)) with 8 loads 1 time to improve timing.
+@N: FX271 :"c:\workspace\sha256-core\src\sha\sha256_core.v":168:1:168:6|Replicating instance sha256_core_inst.r_variables[231] (in view: work.sha256_spi(verilog)) with 11 loads 1 time to improve timing.
+@N: FX271 :"c:\workspace\sha256-core\src\sha\sha256_core.v":168:1:168:6|Replicating instance sha256_core_inst.r_variables[112] (in view: work.sha256_spi(verilog)) with 8 loads 1 time to improve timing.
+@N: FX271 :"c:\workspace\sha256-core\src\spi\spi_slave.v":22:0:22:5|Replicating instance spi_ints.o_data[8] (in view: work.sha256_spi(verilog)) with 117 loads 3 times to improve timing.
+@N: FX271 :"c:\workspace\sha256-core\src\spi\spi_slave.v":22:0:22:5|Replicating instance spi_ints.o_data[9] (in view: work.sha256_spi(verilog)) with 118 loads 3 times to improve timing.
+@N: FX271 :"c:\workspace\sha256-core\src\spi\spi_slave.v":22:0:22:5|Replicating instance spi_ints.o_data[10] (in view: work.sha256_spi(verilog)) with 26 loads 2 times to improve timing.
+@N: FX271 :"c:\workspace\sha256-core\src\spi\spi_slave.v":22:0:22:5|Replicating instance spi_ints.o_data[11] (in view: work.sha256_spi(verilog)) with 33 loads 2 times to improve timing.
+@N: FX271 :"c:\workspace\sha256-core\src\spi\spi_slave.v":22:0:22:5|Replicating instance spi_ints.o_data_fast[8] (in view: work.sha256_spi(verilog)) with 21 loads 2 times to improve timing.
+@N: FX271 :"c:\workspace\sha256-core\src\spi\spi_slave.v":22:0:22:5|Replicating instance spi_ints.o_data_fast[9] (in view: work.sha256_spi(verilog)) with 20 loads 2 times to improve timing.
+@N: FX1016 :"c:\workspace\sha256-core\src\top\sha256_spi.v":6:7:6:11|SB_GB_IO inserted on the port i_clk.
+@N: FX1017 :|SB_GB inserted on the net i_rst_n_c_i.
+@N: FX1017 :|SB_GB inserted on the net sha256_core_inst.un1_r_words1367_0.
+@N: FX1017 :|SB_GB inserted on the net sha256_core_inst.un1_r_variables_0_sqmuxa_0_i.
+@N: FX1017 :|SB_GB inserted on the net N_2031.
+@N: BW103 |The default time unit for the Synopsys Constraint File (SDC or FDC) is 1ns.
+@N: BW107 |Synopsys Constraint File capacitance units using default value of 1pF 
+@N: FX1056 |Writing EDF file: C:\workspace\sha256-core\work\lattice\sha256_core\sha256_core_Implmnt\sha256_core.edf
+@N: MT320 |This timing report is an estimate of place and route data. For final timing results, use the FPGA vendor place and route report.
+@N: MT322 |Clock constraints include only register-to-register paths associated with each individual clock.

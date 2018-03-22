@@ -1,0 +1,7 @@
+OUTPUT o_spi_miso 	 location (16, 21, 1) 	 31 	 
+OUTPUT o_irq_done 	 location (17, 21, 0) 	 28 	 
+INPUT  i_ss_n 	 location (9, 21, 0) 	 43 	 
+INPUT  i_spi_mosi 	 location (18, 21, 0) 	 26 	 
+INPUT  i_clk 	 location (12, 21, 1) 	 35 	 
+INPUT  i_sck 	 location (8, 21, 0) 	 42 	 
+INPUT  i_rst_n 	 location (24, 0, 1) 	 16 	 

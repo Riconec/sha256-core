@@ -1,0 +1,2 @@
+@E: Can't open file C:\workspace\sha256-core\src\top\sha256_spi.v
+

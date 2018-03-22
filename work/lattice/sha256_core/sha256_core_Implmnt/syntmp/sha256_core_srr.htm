@@ -1,0 +1,1205 @@
+<html><body><samp><pre>
+<!@TC:1518555153>
+#Build: Synplify Pro L-2016.09L+ice40, Build 077R, Dec  2 2016
+#install: F:\lscc\iCEcube2.2017.01\synpbase
+#OS: Windows 8 6.2
+#Hostname: DESKTOP-T3ALA46
+
+# Tue Feb 13 22:52:33 2018
+
+#Implementation: sha256_core_Implmnt
+
+<a name=compilerReport62></a>Synopsys HDL Compiler, version comp2016q3p1, Build 141R, built Dec  5 2016</a>
+@N: : <!@TM:1518555182> | Running in 64-bit mode 
+Copyright (C) 1994-2016 Synopsys, Inc. All rights reserved. This Synopsys software and all associated documentation are proprietary to Synopsys, Inc. and may only be used pursuant to the terms and conditions of a written license agreement with Synopsys, Inc. All other use, reproduction, modification, or distribution of the Synopsys software or the associated documentation is strictly prohibited.
+
+<a name=compilerReport63></a>Synopsys Verilog Compiler, version comp2016q3p1, Build 141R, built Dec  5 2016</a>
+@N: : <!@TM:1518555182> | Running in 64-bit mode 
+Copyright (C) 1994-2016 Synopsys, Inc. All rights reserved. This Synopsys software and all associated documentation are proprietary to Synopsys, Inc. and may only be used pursuant to the terms and conditions of a written license agreement with Synopsys, Inc. All other use, reproduction, modification, or distribution of the Synopsys software or the associated documentation is strictly prohibited.
+
+@I::"F:\lscc\iCEcube2.2017.01\synpbase\lib\generic\sb_ice40.v" (library work)
+@I::"F:\lscc\iCEcube2.2017.01\synpbase\lib\vlog\hypermods.v" (library __hyper__lib__)
+@I::"F:\lscc\iCEcube2.2017.01\synpbase\lib\vlog\umr_capim.v" (library snps_haps)
+@I::"F:\lscc\iCEcube2.2017.01\synpbase\lib\vlog\scemi_objects.v" (library snps_haps)
+@I::"F:\lscc\iCEcube2.2017.01\synpbase\lib\vlog\scemi_pipes.svh" (library snps_haps)
+@I::"C:\workspace\sha256-core\src\sha\sha256_coefs.v" (library work)
+@I::"C:\workspace\sha256-core\src\sha\sha256_core.v" (library work)
+<font color=#A52A2A>@W:<a href="@W:CG289:@XP_HELP">CG289</a> : <a href="C:\workspace\sha256-core\src\sha\sha256_core.v:25:24:25:30:@W:CG289:@XP_MSG">sha256_core.v(25)</a><!@TM:1518555182> | Specified digits overflow the number's size</font>
+@I::"C:\workspace\sha256-core\src\sha\sha256_math.v" (library work)
+@I::"C:\workspace\sha256-core\src\spi\spi_slave.v" (library work)
+@I::"C:\workspace\sha256-core\src\top\sha256_spi.v" (library work)
+Verilog syntax check successful!
+Options changed - recompiling
+Selecting top level module sha256_spi
+@N:<a href="@N:CG364:@XP_HELP">CG364</a> : <a href="C:\workspace\sha256-core\src\sha\sha256_math.v:3:7:3:11:@N:CG364:@XP_MSG">sha256_math.v(3)</a><!@TM:1518555182> | Synthesizing module sum0 in library work.
+
+@N:<a href="@N:CG364:@XP_HELP">CG364</a> : <a href="C:\workspace\sha256-core\src\sha\sha256_math.v:13:7:13:11:@N:CG364:@XP_MSG">sha256_math.v(13)</a><!@TM:1518555182> | Synthesizing module sum1 in library work.
+
+@N:<a href="@N:CG364:@XP_HELP">CG364</a> : <a href="C:\workspace\sha256-core\src\sha\sha256_math.v:43:7:43:12:@N:CG364:@XP_MSG">sha256_math.v(43)</a><!@TM:1518555182> | Synthesizing module sigm0 in library work.
+
+@N:<a href="@N:CG364:@XP_HELP">CG364</a> : <a href="C:\workspace\sha256-core\src\sha\sha256_math.v:54:7:54:12:@N:CG364:@XP_MSG">sha256_math.v(54)</a><!@TM:1518555182> | Synthesizing module sigm1 in library work.
+
+@N:<a href="@N:CG364:@XP_HELP">CG364</a> : <a href="C:\workspace\sha256-core\src\sha\sha256_math.v:23:7:23:9:@N:CG364:@XP_MSG">sha256_math.v(23)</a><!@TM:1518555182> | Synthesizing module ch in library work.
+
+@N:<a href="@N:CG364:@XP_HELP">CG364</a> : <a href="C:\workspace\sha256-core\src\sha\sha256_math.v:33:7:33:10:@N:CG364:@XP_MSG">sha256_math.v(33)</a><!@TM:1518555182> | Synthesizing module maj in library work.
+
+@N:<a href="@N:CG364:@XP_HELP">CG364</a> : <a href="F:\lscc\iCEcube2.2017.01\synpbase\lib\generic\sb_ice40.v:993:7:993:19:@N:CG364:@XP_MSG">sb_ice40.v(993)</a><!@TM:1518555182> | Synthesizing module SB_RAM256x16 in library work.
+
+@N:<a href="@N:CG364:@XP_HELP">CG364</a> : <a href="C:\workspace\sha256-core\src\sha\sha256_coefs.v:1:7:1:19:@N:CG364:@XP_MSG">sha256_coefs.v(1)</a><!@TM:1518555182> | Synthesizing module sha256_coefs in library work.
+
+<font color=#A52A2A>@W:<a href="@W:CS263:@XP_HELP">CS263</a> : <a href="C:\workspace\sha256-core\src\sha\sha256_coefs.v:13:10:13:27:@W:CS263:@XP_MSG">sha256_coefs.v(13)</a><!@TM:1518555182> | Port-width mismatch for port RADDR. The port definition is 8 bits, but the actual port connection bit width is 9. Adjust either the definition or the instantiation of this port.</font>
+<font color=#A52A2A>@W:<a href="@W:CS263:@XP_HELP">CS263</a> : <a href="C:\workspace\sha256-core\src\sha\sha256_coefs.v:44:10:44:27:@W:CS263:@XP_MSG">sha256_coefs.v(44)</a><!@TM:1518555182> | Port-width mismatch for port RADDR. The port definition is 8 bits, but the actual port connection bit width is 9. Adjust either the definition or the instantiation of this port.</font>
+@N:<a href="@N:CG364:@XP_HELP">CG364</a> : <a href="C:\workspace\sha256-core\src\sha\sha256_core.v:5:7:5:18:@N:CG364:@XP_MSG">sha256_core.v(5)</a><!@TM:1518555182> | Synthesizing module sha256_core in library work.
+
+<font color=#A52A2A>@W:<a href="@W:CG360:@XP_HELP">CG360</a> : <a href="C:\workspace\sha256-core\src\sha\sha256_core.v:78:22:78:30:@W:CG360:@XP_MSG">sha256_core.v(78)</a><!@TM:1518555182> | Removing wire o_data_w, as there is no assignment to it.</font>
+@N:<a href="@N:CG364:@XP_HELP">CG364</a> : <a href="C:\workspace\sha256-core\src\spi\spi_slave.v:5:7:5:16:@N:CG364:@XP_MSG">spi_slave.v(5)</a><!@TM:1518555182> | Synthesizing module spi_slave in library work.
+
+@N:<a href="@N:CG364:@XP_HELP">CG364</a> : <a href="C:\workspace\sha256-core\src\top\sha256_spi.v:5:7:5:17:@N:CG364:@XP_MSG">sha256_spi.v(5)</a><!@TM:1518555182> | Synthesizing module sha256_spi in library work.
+
+<font color=#A52A2A>@W:<a href="@W:CG360:@XP_HELP">CG360</a> : <a href="C:\workspace\sha256-core\src\top\sha256_spi.v:20:5:20:12:@W:CG360:@XP_MSG">sha256_spi.v(20)</a><!@TM:1518555182> | Removing wire we_edge, as there is no assignment to it.</font>
+<font color=#A52A2A>@W:<a href="@W:CL169:@XP_HELP">CL169</a> : <a href="C:\workspace\sha256-core\src\top\sha256_spi.v:26:0:26:6:@W:CL169:@XP_MSG">sha256_spi.v(26)</a><!@TM:1518555182> | Pruning unused register ss_sync[2:0]. Make sure that there are no unused intermediate registers.</font>
+<font color=#A52A2A>@W:<a href="@W:CL169:@XP_HELP">CL169</a> : <a href="C:\workspace\sha256-core\src\top\sha256_spi.v:26:0:26:6:@W:CL169:@XP_MSG">sha256_spi.v(26)</a><!@TM:1518555182> | Pruning unused register mosi_sync[2:0]. Make sure that there are no unused intermediate registers.</font>
+<font color=#A52A2A>@W:<a href="@W:CL265:@XP_HELP">CL265</a> : <a href="C:\workspace\sha256-core\src\top\sha256_spi.v:26:0:26:6:@W:CL265:@XP_MSG">sha256_spi.v(26)</a><!@TM:1518555182> | Removing unused bit 2 of sck_sync[2:0]. Either assign all bits or reduce the width of the signal.</font>
+@N:<a href="@N:CL201:@XP_HELP">CL201</a> : <a href="C:\workspace\sha256-core\src\sha\sha256_core.v:105:4:105:10:@N:CL201:@XP_MSG">sha256_core.v(105)</a><!@TM:1518555182> | Trying to extract state machine for register r_status.
+Extracted state machine for register r_status
+State machine has 5 reachable states with original encodings of:
+   00000000
+   00000001
+   00000010
+   00000100
+   00001010
+@N:<a href="@N:CL201:@XP_HELP">CL201</a> : <a href="C:\workspace\sha256-core\src\sha\sha256_core.v:105:4:105:10:@N:CL201:@XP_MSG">sha256_core.v(105)</a><!@TM:1518555182> | Trying to extract state machine for register r_state.
+Extracted state machine for register r_state
+State machine has 4 reachable states with original encodings of:
+   00
+   01
+   10
+   11
+
+At c_ver Exit (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 81MB peak: 101MB)
+
+Process took 0h:00m:01s realtime, 0h:00m:01s cputime
+
+Process completed successfully.
+# Tue Feb 13 22:52:35 2018
+
+###########################################################]
+<a name=compilerReport64></a>Synopsys Netlist Linker, version comp2016q3p1, Build 141R, built Dec  5 2016</a>
+@N: : <!@TM:1518555182> | Running in 64-bit mode 
+
+At syn_nfilter Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 69MB peak: 70MB)
+
+Process took 0h:00m:01s realtime, 0h:00m:01s cputime
+
+Process completed successfully.
+# Tue Feb 13 22:52:35 2018
+
+###########################################################]
+@END
+
+At c_hdl Exit (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 3MB peak: 4MB)
+
+Process took 0h:00m:01s realtime, 0h:00m:01s cputime
+
+Process completed successfully.
+# Tue Feb 13 22:52:35 2018
+
+###########################################################]
+<a name=compilerReport65></a>Synopsys Netlist Linker, version comp2016q3p1, Build 141R, built Dec  5 2016</a>
+@N: : <!@TM:1518555182> | Running in 64-bit mode 
+Options changed - recompiling
+
+At syn_nfilter Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 69MB peak: 70MB)
+
+Process took 0h:00m:01s realtime, 0h:00m:01s cputime
+
+Process completed successfully.
+# Tue Feb 13 22:52:37 2018
+
+###########################################################]
+Pre-mapping Report
+
+# Tue Feb 13 22:52:37 2018
+
+<a name=mapperReport66></a>Synopsys Lattice Technology Pre-mapping, Version maplat, Build 1612R, Built Dec  5 2016 10:31:39</a>
+Copyright (C) 1994-2016 Synopsys, Inc. All rights reserved. This Synopsys software and all associated documentation are proprietary to Synopsys, Inc. and may only be used pursuant to the terms and conditions of a written license agreement with Synopsys, Inc. All other use, reproduction, modification, or distribution of the Synopsys software or the associated documentation is strictly prohibited.
+Product Version L-2016.09L+ice40
+
+Mapper Startup Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 99MB peak: 99MB)
+
+@A:<a href="@A:MF827:@XP_HELP">MF827</a> : <!@TM:1518555182> | No constraint file specified. 
+Linked File: <a href="C:\workspace\sha256-core\work\lattice\sha256_core\sha256_core_Implmnt\sha256_core_scck.rpt:@XP_FILE">sha256_core_scck.rpt</a>
+Printing clock  summary report in "C:\workspace\sha256-core\work\lattice\sha256_core\sha256_core_Implmnt\sha256_core_scck.rpt" file 
+@N:<a href="@N:MF248:@XP_HELP">MF248</a> : <!@TM:1518555182> | Running in 64-bit mode. 
+@N:<a href="@N:MF666:@XP_HELP">MF666</a> : <!@TM:1518555182> | Clock conversion enabled. (Command "set_option -fix_gated_and_generated_clocks 1" in the project file.) 
+
+Design Input Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 103MB peak: 106MB)
+
+
+Mapper Initialization Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 103MB peak: 106MB)
+
+
+Start loading timing files (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 104MB peak: 106MB)
+
+
+Finished loading timing files (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 104MB peak: 106MB)
+
+@N:<a href="@N:BN362:@XP_HELP">BN362</a> : <a href="c:\workspace\sha256-core\src\spi\spi_slave.v:22:0:22:6:@N:BN362:@XP_MSG">spi_slave.v(22)</a><!@TM:1518555182> | Removing sequential instance o_done (in view: work.spi_slave(verilog)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+ICG Latch Removal Summary:
+Number of ICG latches removed:	0
+Number of ICG latches not removed:	0
+syn_allowed_resources : blockrams=20  set on top level netlist sha256_spi
+
+Finished netlist restructuring (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 134MB peak: 136MB)
+
+
+
+<a name=mapperReport67></a>Clock Summary</a>
+*****************
+
+Start                Requested     Requested     Clock        Clock                   Clock
+Clock                Frequency     Period        Type         Group                   Load 
+-------------------------------------------------------------------------------------------
+sha256_spi|i_clk     100.0 MHz     10.000        inferred     Inferred_clkgroup_0     839  
+===========================================================================================
+
+<font color=#A52A2A>@W:<a href="@W:MT529:@XP_HELP">MT529</a> : <a href="c:\workspace\sha256-core\src\sha\sha256_coefs.v:42:13:42:29:@W:MT529:@XP_MSG">sha256_coefs.v(42)</a><!@TM:1518555182> | Found inferred clock sha256_spi|i_clk which controls 839 sequential elements including sha256_core_inst.inst_coef.ram256x16_hipart. This clock has no specified timing constraint which may prevent conversion of gated or generated clocks and may adversely impact design performance. </font>
+
+Finished Pre Mapping Phase.
+@N:<a href="@N:BN225:@XP_HELP">BN225</a> : <!@TM:1518555182> | Writing default property annotation file C:\workspace\sha256-core\work\lattice\sha256_core\sha256_core_Implmnt\sha256_core.sap. 
+
+Starting constraint checker (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:00s; Memory used current: 134MB peak: 136MB)
+
+Encoding state machine r_status[4:0] (in view: work.sha256_core(verilog))
+original code -> new code
+   00000000 -> 00001
+   00000001 -> 00010
+   00000010 -> 00100
+   00000100 -> 01000
+   00001010 -> 10000
+Encoding state machine r_state[3:0] (in view: work.sha256_core(verilog))
+original code -> new code
+   00 -> 00
+   01 -> 01
+   10 -> 10
+   11 -> 11
+@N:<a href="@N:MO225:@XP_HELP">MO225</a> : <a href="c:\workspace\sha256-core\src\sha\sha256_core.v:105:4:105:10:@N:MO225:@XP_MSG">sha256_core.v(105)</a><!@TM:1518555182> | There are no possible illegal states for state machine r_state[3:0] (in view: work.sha256_core(verilog)); safe FSM implementation is not required.
+@N:<a href="@N:BN362:@XP_HELP">BN362</a> : <a href="c:\workspace\sha256-core\src\spi\spi_slave.v:22:0:22:6:@N:BN362:@XP_MSG">spi_slave.v(22)</a><!@TM:1518555182> | Removing sequential instance r_rx[15] (in view: work.spi_slave(verilog)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
+None
+None
+
+Finished constraint checker (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 136MB peak: 137MB)
+
+Pre-mapping successful!
+
+At Mapper Exit (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 51MB peak: 137MB)
+
+Process took 0h:00m:01s realtime, 0h:00m:01s cputime
+# Tue Feb 13 22:52:38 2018
+
+###########################################################]
+Map & Optimize Report
+
+# Tue Feb 13 22:52:38 2018
+
+<a name=mapperReport68></a>Synopsys Lattice Technology Mapper, Version maplat, Build 1612R, Built Dec  5 2016 10:31:39</a>
+Copyright (C) 1994-2016 Synopsys, Inc. All rights reserved. This Synopsys software and all associated documentation are proprietary to Synopsys, Inc. and may only be used pursuant to the terms and conditions of a written license agreement with Synopsys, Inc. All other use, reproduction, modification, or distribution of the Synopsys software or the associated documentation is strictly prohibited.
+Product Version L-2016.09L+ice40
+
+Mapper Startup Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 99MB peak: 99MB)
+
+@N:<a href="@N:MF248:@XP_HELP">MF248</a> : <!@TM:1518555182> | Running in 64-bit mode. 
+@N:<a href="@N:MF666:@XP_HELP">MF666</a> : <!@TM:1518555182> | Clock conversion enabled. (Command "set_option -fix_gated_and_generated_clocks 1" in the project file.) 
+
+Design Input Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 98MB peak: 100MB)
+
+
+Mapper Initialization Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 98MB peak: 100MB)
+
+
+Start loading timing files (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 100MB peak: 100MB)
+
+
+Finished loading timing files (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 100MB peak: 102MB)
+
+
+
+Starting Optimization and Mapping (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 132MB peak: 135MB)
+
+
+Available hyper_sources - for debug and ip models
+	None Found
+
+
+Finished RTL optimizations (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 134MB peak: 137MB)
+
+Encoding state machine r_status[4:0] (in view: work.sha256_core(verilog))
+original code -> new code
+   00000000 -> 00001
+   00000001 -> 00010
+   00000010 -> 00100
+   00000100 -> 01000
+   00001010 -> 10000
+Encoding state machine r_state[3:0] (in view: work.sha256_core(verilog))
+original code -> new code
+   00 -> 00
+   01 -> 01
+   10 -> 10
+   11 -> 11
+@N:<a href="@N:MO225:@XP_HELP">MO225</a> : <a href="c:\workspace\sha256-core\src\sha\sha256_core.v:105:4:105:10:@N:MO225:@XP_MSG">sha256_core.v(105)</a><!@TM:1518555182> | There are no possible illegal states for state machine r_state[3:0] (in view: work.sha256_core(verilog)); safe FSM implementation is not required.
+@N:<a href="@N:MO231:@XP_HELP">MO231</a> : <a href="c:\workspace\sha256-core\src\sha\sha256_core.v:105:4:105:10:@N:MO231:@XP_MSG">sha256_core.v(105)</a><!@TM:1518555182> | Found counter in view:work.sha256_core(verilog) instance r_round[5:0] 
+@N:<a href="@N:BN362:@XP_HELP">BN362</a> : <a href="c:\workspace\sha256-core\src\spi\spi_slave.v:22:0:22:6:@N:BN362:@XP_MSG">spi_slave.v(22)</a><!@TM:1518555182> | Removing sequential instance r_rx[15] (in view: work.spi_slave(verilog)) because it does not drive other instances.
+@A:<a href="@A:BN291:@XP_HELP">BN291</a> : <a href="c:\workspace\sha256-core\src\spi\spi_slave.v:22:0:22:6:@A:BN291:@XP_MSG">spi_slave.v(22)</a><!@TM:1518555182> | Boundary register r_rx[15] (in view: work.spi_slave(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+
+Starting factoring (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 138MB peak: 140MB)
+
+
+Finished factoring (Real Time elapsed 0h:00m:06s; CPU Time elapsed 0h:00m:06s; Memory used current: 169MB peak: 170MB)
+
+
+Finished gated-clock and generated-clock conversion (Real Time elapsed 0h:00m:07s; CPU Time elapsed 0h:00m:07s; Memory used current: 151MB peak: 170MB)
+
+
+Finished generic timing optimizations - Pass 1 (Real Time elapsed 0h:00m:07s; CPU Time elapsed 0h:00m:07s; Memory used current: 149MB peak: 170MB)
+
+
+Starting Early Timing Optimization (Real Time elapsed 0h:00m:08s; CPU Time elapsed 0h:00m:08s; Memory used current: 151MB peak: 170MB)
+
+
+Finished Early Timing Optimization (Real Time elapsed 0h:00m:10s; CPU Time elapsed 0h:00m:10s; Memory used current: 151MB peak: 170MB)
+
+
+Finished generic timing optimizations - Pass 2 (Real Time elapsed 0h:00m:10s; CPU Time elapsed 0h:00m:10s; Memory used current: 150MB peak: 170MB)
+
+
+Finished preparing to map (Real Time elapsed 0h:00m:11s; CPU Time elapsed 0h:00m:11s; Memory used current: 151MB peak: 170MB)
+
+
+Finished technology mapping (Real Time elapsed 0h:00m:16s; CPU Time elapsed 0h:00m:16s; Memory used current: 187MB peak: 228MB)
+
+Pass		 CPU time		Worst Slack		Luts / Registers
+------------------------------------------------------------
+   1		0h:00m:16s		    -3.01ns		2881 /       834
+   2		0h:00m:16s		    -3.01ns		2823 /       834
+   3		0h:00m:17s		    -2.52ns		2822 /       834
+   4		0h:00m:17s		    -2.52ns		2821 /       834
+@N:<a href="@N:FX271:@XP_HELP">FX271</a> : <a href="c:\workspace\sha256-core\src\sha\sha256_core.v:168:1:168:7:@N:FX271:@XP_MSG">sha256_core.v(168)</a><!@TM:1518555182> | Replicating instance sha256_core_inst.r_words[482] (in view: work.sha256_spi(verilog)) with 11 loads 2 times to improve timing.
+@N:<a href="@N:FX271:@XP_HELP">FX271</a> : <a href="c:\workspace\sha256-core\src\sha\sha256_core.v:168:1:168:7:@N:FX271:@XP_MSG">sha256_core.v(168)</a><!@TM:1518555182> | Replicating instance sha256_core_inst.r_variables[1] (in view: work.sha256_spi(verilog)) with 10 loads 1 time to improve timing.
+@N:<a href="@N:FX271:@XP_HELP">FX271</a> : <a href="c:\workspace\sha256-core\src\sha\sha256_core.v:168:1:168:7:@N:FX271:@XP_MSG">sha256_core.v(168)</a><!@TM:1518555182> | Replicating instance sha256_core_inst.r_words[481] (in view: work.sha256_spi(verilog)) with 11 loads 1 time to improve timing.
+@N:<a href="@N:FX271:@XP_HELP">FX271</a> : <a href="c:\workspace\sha256-core\src\sha\sha256_core.v:168:1:168:7:@N:FX271:@XP_MSG">sha256_core.v(168)</a><!@TM:1518555182> | Replicating instance sha256_core_inst.r_variables[2] (in view: work.sha256_spi(verilog)) with 9 loads 1 time to improve timing.
+@N:<a href="@N:FX271:@XP_HELP">FX271</a> : <a href="c:\workspace\sha256-core\src\sha\sha256_core.v:168:1:168:7:@N:FX271:@XP_MSG">sha256_core.v(168)</a><!@TM:1518555182> | Replicating instance sha256_core_inst.r_variables[103] (in view: work.sha256_spi(verilog)) with 8 loads 1 time to improve timing.
+@N:<a href="@N:FX271:@XP_HELP">FX271</a> : <a href="c:\workspace\sha256-core\src\sha\sha256_core.v:168:1:168:7:@N:FX271:@XP_MSG">sha256_core.v(168)</a><!@TM:1518555182> | Replicating instance sha256_core_inst.r_words[480] (in view: work.sha256_spi(verilog)) with 10 loads 1 time to improve timing.
+@N:<a href="@N:FX271:@XP_HELP">FX271</a> : <a href="c:\workspace\sha256-core\src\sha\sha256_core.v:168:1:168:7:@N:FX271:@XP_MSG">sha256_core.v(168)</a><!@TM:1518555182> | Replicating instance sha256_core_inst.r_variables[0] (in view: work.sha256_spi(verilog)) with 8 loads 1 time to improve timing.
+@N:<a href="@N:FX271:@XP_HELP">FX271</a> : <a href="c:\workspace\sha256-core\src\sha\sha256_core.v:168:1:168:7:@N:FX271:@XP_MSG">sha256_core.v(168)</a><!@TM:1518555182> | Replicating instance sha256_core_inst.r_variables[228] (in view: work.sha256_spi(verilog)) with 10 loads 1 time to improve timing.
+@N:<a href="@N:FX271:@XP_HELP">FX271</a> : <a href="c:\workspace\sha256-core\src\sha\sha256_core.v:168:1:168:7:@N:FX271:@XP_MSG">sha256_core.v(168)</a><!@TM:1518555182> | Replicating instance sha256_core_inst.r_variables[227] (in view: work.sha256_spi(verilog)) with 9 loads 1 time to improve timing.
+@N:<a href="@N:FX271:@XP_HELP">FX271</a> : <a href="c:\workspace\sha256-core\src\sha\sha256_core.v:168:1:168:7:@N:FX271:@XP_MSG">sha256_core.v(168)</a><!@TM:1518555182> | Replicating instance sha256_core_inst.r_variables[238] (in view: work.sha256_spi(verilog)) with 8 loads 1 time to improve timing.
+@N:<a href="@N:FX271:@XP_HELP">FX271</a> : <a href="c:\workspace\sha256-core\src\sha\sha256_core.v:168:1:168:7:@N:FX271:@XP_MSG">sha256_core.v(168)</a><!@TM:1518555182> | Replicating instance sha256_core_inst.r_variables[108] (in view: work.sha256_spi(verilog)) with 9 loads 1 time to improve timing.
+@N:<a href="@N:FX271:@XP_HELP">FX271</a> : <a href="c:\workspace\sha256-core\src\sha\sha256_core.v:168:1:168:7:@N:FX271:@XP_MSG">sha256_core.v(168)</a><!@TM:1518555182> | Replicating instance sha256_core_inst.r_variables[107] (in view: work.sha256_spi(verilog)) with 8 loads 1 time to improve timing.
+@N:<a href="@N:FX271:@XP_HELP">FX271</a> : <a href="c:\workspace\sha256-core\src\sha\sha256_core.v:168:1:168:7:@N:FX271:@XP_MSG">sha256_core.v(168)</a><!@TM:1518555182> | Replicating instance sha256_core_inst.r_variables[102] (in view: work.sha256_spi(verilog)) with 9 loads 1 time to improve timing.
+@N:<a href="@N:FX271:@XP_HELP">FX271</a> : <a href="c:\workspace\sha256-core\src\sha\sha256_core.v:168:1:168:7:@N:FX271:@XP_MSG">sha256_core.v(168)</a><!@TM:1518555182> | Replicating instance sha256_core_inst.r_variables[225] (in view: work.sha256_spi(verilog)) with 8 loads 1 time to improve timing.
+@N:<a href="@N:FX271:@XP_HELP">FX271</a> : <a href="c:\workspace\sha256-core\src\sha\sha256_core.v:168:1:168:7:@N:FX271:@XP_MSG">sha256_core.v(168)</a><!@TM:1518555182> | Replicating instance sha256_core_inst.r_variables[109] (in view: work.sha256_spi(verilog)) with 13 loads 1 time to improve timing.
+@N:<a href="@N:FX271:@XP_HELP">FX271</a> : <a href="c:\workspace\sha256-core\src\sha\sha256_core.v:168:1:168:7:@N:FX271:@XP_MSG">sha256_core.v(168)</a><!@TM:1518555182> | Replicating instance sha256_core_inst.r_variables[110] (in view: work.sha256_spi(verilog)) with 8 loads 1 time to improve timing.
+@N:<a href="@N:FX271:@XP_HELP">FX271</a> : <a href="c:\workspace\sha256-core\src\sha\sha256_core.v:168:1:168:7:@N:FX271:@XP_MSG">sha256_core.v(168)</a><!@TM:1518555182> | Replicating instance sha256_core_inst.r_variables[97] (in view: work.sha256_spi(verilog)) with 9 loads 1 time to improve timing.
+@N:<a href="@N:FX271:@XP_HELP">FX271</a> : <a href="c:\workspace\sha256-core\src\sha\sha256_core.v:168:1:168:7:@N:FX271:@XP_MSG">sha256_core.v(168)</a><!@TM:1518555182> | Replicating instance sha256_core_inst.r_variables[104] (in view: work.sha256_spi(verilog)) with 8 loads 1 time to improve timing.
+@N:<a href="@N:FX271:@XP_HELP">FX271</a> : <a href="c:\workspace\sha256-core\src\sha\sha256_core.v:168:1:168:7:@N:FX271:@XP_MSG">sha256_core.v(168)</a><!@TM:1518555182> | Replicating instance sha256_core_inst.r_variables[239] (in view: work.sha256_spi(verilog)) with 8 loads 1 time to improve timing.
+@N:<a href="@N:FX271:@XP_HELP">FX271</a> : <a href="c:\workspace\sha256-core\src\sha\sha256_core.v:168:1:168:7:@N:FX271:@XP_MSG">sha256_core.v(168)</a><!@TM:1518555182> | Replicating instance sha256_core_inst.r_variables[98] (in view: work.sha256_spi(verilog)) with 8 loads 1 time to improve timing.
+@N:<a href="@N:FX271:@XP_HELP">FX271</a> : <a href="c:\workspace\sha256-core\src\sha\sha256_core.v:168:1:168:7:@N:FX271:@XP_MSG">sha256_core.v(168)</a><!@TM:1518555182> | Replicating instance sha256_core_inst.r_variables[237] (in view: work.sha256_spi(verilog)) with 8 loads 1 time to improve timing.
+@N:<a href="@N:FX271:@XP_HELP">FX271</a> : <a href="c:\workspace\sha256-core\src\sha\sha256_core.v:168:1:168:7:@N:FX271:@XP_MSG">sha256_core.v(168)</a><!@TM:1518555182> | Replicating instance sha256_core_inst.r_variables[224] (in view: work.sha256_spi(verilog)) with 8 loads 1 time to improve timing.
+@N:<a href="@N:FX271:@XP_HELP">FX271</a> : <a href="c:\workspace\sha256-core\src\sha\sha256_core.v:168:1:168:7:@N:FX271:@XP_MSG">sha256_core.v(168)</a><!@TM:1518555182> | Replicating instance sha256_core_inst.r_variables[105] (in view: work.sha256_spi(verilog)) with 10 loads 1 time to improve timing.
+@N:<a href="@N:FX271:@XP_HELP">FX271</a> : <a href="c:\workspace\sha256-core\src\sha\sha256_core.v:168:1:168:7:@N:FX271:@XP_MSG">sha256_core.v(168)</a><!@TM:1518555182> | Replicating instance sha256_core_inst.r_words[483] (in view: work.sha256_spi(verilog)) with 9 loads 1 time to improve timing.
+@N:<a href="@N:FX271:@XP_HELP">FX271</a> : <a href="c:\workspace\sha256-core\src\sha\sha256_core.v:168:1:168:7:@N:FX271:@XP_MSG">sha256_core.v(168)</a><!@TM:1518555182> | Replicating instance sha256_core_inst.r_variables[99] (in view: work.sha256_spi(verilog)) with 10 loads 1 time to improve timing.
+@N:<a href="@N:FX271:@XP_HELP">FX271</a> : <a href="c:\workspace\sha256-core\src\sha\sha256_core.v:168:1:168:7:@N:FX271:@XP_MSG">sha256_core.v(168)</a><!@TM:1518555182> | Replicating instance sha256_core_inst.r_variables[100] (in view: work.sha256_spi(verilog)) with 8 loads 1 time to improve timing.
+@N:<a href="@N:FX271:@XP_HELP">FX271</a> : <a href="c:\workspace\sha256-core\src\sha\sha256_core.v:168:1:168:7:@N:FX271:@XP_MSG">sha256_core.v(168)</a><!@TM:1518555182> | Replicating instance sha256_core_inst.r_words[484] (in view: work.sha256_spi(verilog)) with 8 loads 1 time to improve timing.
+@N:<a href="@N:FX271:@XP_HELP">FX271</a> : <a href="c:\workspace\sha256-core\src\sha\sha256_core.v:168:1:168:7:@N:FX271:@XP_MSG">sha256_core.v(168)</a><!@TM:1518555182> | Replicating instance sha256_core_inst.r_variables[231] (in view: work.sha256_spi(verilog)) with 11 loads 1 time to improve timing.
+@N:<a href="@N:FX271:@XP_HELP">FX271</a> : <a href="c:\workspace\sha256-core\src\sha\sha256_core.v:168:1:168:7:@N:FX271:@XP_MSG">sha256_core.v(168)</a><!@TM:1518555182> | Replicating instance sha256_core_inst.r_variables[112] (in view: work.sha256_spi(verilog)) with 8 loads 1 time to improve timing.
+@N:<a href="@N:FX271:@XP_HELP">FX271</a> : <a href="c:\workspace\sha256-core\src\spi\spi_slave.v:22:0:22:6:@N:FX271:@XP_MSG">spi_slave.v(22)</a><!@TM:1518555182> | Replicating instance spi_ints.o_data[8] (in view: work.sha256_spi(verilog)) with 117 loads 3 times to improve timing.
+@N:<a href="@N:FX271:@XP_HELP">FX271</a> : <a href="c:\workspace\sha256-core\src\spi\spi_slave.v:22:0:22:6:@N:FX271:@XP_MSG">spi_slave.v(22)</a><!@TM:1518555182> | Replicating instance spi_ints.o_data[9] (in view: work.sha256_spi(verilog)) with 118 loads 3 times to improve timing.
+@N:<a href="@N:FX271:@XP_HELP">FX271</a> : <a href="c:\workspace\sha256-core\src\spi\spi_slave.v:22:0:22:6:@N:FX271:@XP_MSG">spi_slave.v(22)</a><!@TM:1518555182> | Replicating instance spi_ints.o_data[10] (in view: work.sha256_spi(verilog)) with 26 loads 2 times to improve timing.
+@N:<a href="@N:FX271:@XP_HELP">FX271</a> : <a href="c:\workspace\sha256-core\src\spi\spi_slave.v:22:0:22:6:@N:FX271:@XP_MSG">spi_slave.v(22)</a><!@TM:1518555182> | Replicating instance spi_ints.o_data[11] (in view: work.sha256_spi(verilog)) with 33 loads 2 times to improve timing.
+Timing driven replication report
+Added 40 Registers via timing driven replication
+Added 30 LUTs via timing driven replication
+
+   5		0h:00m:18s		    -2.28ns		2891 /       874
+@N:<a href="@N:FX271:@XP_HELP">FX271</a> : <a href="c:\workspace\sha256-core\src\spi\spi_slave.v:22:0:22:6:@N:FX271:@XP_MSG">spi_slave.v(22)</a><!@TM:1518555182> | Replicating instance spi_ints.o_data_fast[8] (in view: work.sha256_spi(verilog)) with 21 loads 2 times to improve timing.
+@N:<a href="@N:FX271:@XP_HELP">FX271</a> : <a href="c:\workspace\sha256-core\src\spi\spi_slave.v:22:0:22:6:@N:FX271:@XP_MSG">spi_slave.v(22)</a><!@TM:1518555182> | Replicating instance spi_ints.o_data_fast[9] (in view: work.sha256_spi(verilog)) with 20 loads 2 times to improve timing.
+Timing driven replication report
+Added 4 Registers via timing driven replication
+Added 0 LUTs via timing driven replication
+
+
+   6		0h:00m:19s		    -2.28ns		2906 /       878
+@N:<a href="@N:FX1016:@XP_HELP">FX1016</a> : <a href="c:\workspace\sha256-core\src\top\sha256_spi.v:6:7:6:12:@N:FX1016:@XP_MSG">sha256_spi.v(6)</a><!@TM:1518555182> | SB_GB_IO inserted on the port i_clk.
+@N:<a href="@N:FX1017:@XP_HELP">FX1017</a> : <!@TM:1518555182> | SB_GB inserted on the net i_rst_n_c_i. 
+@N:<a href="@N:FX1017:@XP_HELP">FX1017</a> : <!@TM:1518555182> | SB_GB inserted on the net sha256_core_inst.un1_r_words1367_0. 
+@N:<a href="@N:FX1017:@XP_HELP">FX1017</a> : <!@TM:1518555182> | SB_GB inserted on the net sha256_core_inst.un1_r_variables_0_sqmuxa_0_i. 
+@N:<a href="@N:FX1017:@XP_HELP">FX1017</a> : <!@TM:1518555182> | SB_GB inserted on the net N_2031. 
+
+Finished technology timing optimizations and critical path resynthesis (Real Time elapsed 0h:00m:19s; CPU Time elapsed 0h:00m:19s; Memory used current: 190MB peak: 228MB)
+
+
+Finished restoring hierarchy (Real Time elapsed 0h:00m:20s; CPU Time elapsed 0h:00m:19s; Memory used current: 191MB peak: 228MB)
+
+
+
+@S |Clock Optimization Summary
+
+
+<a name=clockReport69></a>#### START OF CLOCK OPTIMIZATION REPORT #####[</a>
+
+1 non-gated/non-generated clock tree(s) driving 880 clock pin(s) of sequential element(s)
+0 gated/generated clock tree(s) driving 0 clock pin(s) of sequential element(s)
+0 instances converted, 0 sequential instances remain driven by gated/generated clocks
+
+============================ Non-Gated/Non-Generated Clocks ============================
+Clock Tree ID     Driving Element      Drive Element Type     Fanout     Sample Instance
+----------------------------------------------------------------------------------------
+<a href="@|S:i_clk_ibuf_gb_io@|E:sck_sync[0]@|F:@syn_sample_clock_path==CKID0001@|M:ClockId0001  @XP_NAMES_BY_PROP">ClockId0001 </a>       i_clk_ibuf_gb_io     SB_GB_IO               880        sck_sync[0]    
+========================================================================================
+
+
+##### END OF CLOCK OPTIMIZATION REPORT ######]
+
+
+Start Writing Netlists (Real Time elapsed 0h:00m:20s; CPU Time elapsed 0h:00m:20s; Memory used current: 159MB peak: 228MB)
+
+Writing Analyst data base C:\workspace\sha256-core\work\lattice\sha256_core\sha256_core_Implmnt\synwork\sha256_core_m.srm
+
+Finished Writing Netlist Databases (Real Time elapsed 0h:00m:21s; CPU Time elapsed 0h:00m:21s; Memory used current: 190MB peak: 228MB)
+
+Writing EDIF Netlist and constraint files
+@N:<a href="@N:BW103:@XP_HELP">BW103</a> : <!@TM:1518555182> | The default time unit for the Synopsys Constraint File (SDC or FDC) is 1ns. 
+@N:<a href="@N:BW107:@XP_HELP">BW107</a> : <!@TM:1518555182> | Synopsys Constraint File capacitance units using default value of 1pF  
+@N:<a href="@N:FX1056:@XP_HELP">FX1056</a> : <!@TM:1518555182> | Writing EDF file: C:\workspace\sha256-core\work\lattice\sha256_core\sha256_core_Implmnt\sha256_core.edf 
+L-2016.09L+ice40
+
+Finished Writing EDIF Netlist and constraint files (Real Time elapsed 0h:00m:22s; CPU Time elapsed 0h:00m:22s; Memory used current: 191MB peak: 228MB)
+
+
+Start final timing analysis (Real Time elapsed 0h:00m:22s; CPU Time elapsed 0h:00m:22s; Memory used current: 189MB peak: 228MB)
+
+<font color=#A52A2A>@W:<a href="@W:MT420:@XP_HELP">MT420</a> : <!@TM:1518555182> | Found inferred clock sha256_spi|i_clk with period 10.00ns. Please declare a user-defined clock on object "p:i_clk"</font> 
+
+
+<a name=timingReport70></a>##### START OF TIMING REPORT #####[</a>
+# Timing Report written on Tue Feb 13 22:53:01 2018
+#
+
+
+Top view:               sha256_spi
+Requested Frequency:    100.0 MHz
+Wire load mode:         top
+Paths requested:        5
+Constraint File(s):    
+@N:<a href="@N:MT320:@XP_HELP">MT320</a> : <!@TM:1518555182> | This timing report is an estimate of place and route data. For final timing results, use the FPGA vendor place and route report. 
+
+@N:<a href="@N:MT322:@XP_HELP">MT322</a> : <!@TM:1518555182> | Clock constraints include only register-to-register paths associated with each individual clock. 
+
+
+
+<a name=performanceSummary71></a>Performance Summary</a>
+*******************
+
+
+Worst slack in design: -15.544
+
+                     Requested     Estimated     Requested     Estimated                 Clock        Clock              
+Starting Clock       Frequency     Frequency     Period        Period        Slack       Type         Group              
+-------------------------------------------------------------------------------------------------------------------------
+sha256_spi|i_clk     100.0 MHz     39.1 MHz      10.000        25.544        -15.544     inferred     Inferred_clkgroup_0
+=========================================================================================================================
+
+
+
+
+
+<a name=clockRelationships72></a>Clock Relationships</a>
+*******************
+
+Clocks                              |    rise  to  rise     |    fall  to  fall   |    rise  to  fall   |    fall  to  rise 
+----------------------------------------------------------------------------------------------------------------------------
+Starting          Ending            |  constraint  slack    |  constraint  slack  |  constraint  slack  |  constraint  slack
+----------------------------------------------------------------------------------------------------------------------------
+sha256_spi|i_clk  sha256_spi|i_clk  |  10.000      -15.544  |  No paths    -      |  No paths    -      |  No paths    -    
+============================================================================================================================
+ Note: 'No paths' indicates there are no paths in the design for that pair of clock edges.
+       'Diff grp' indicates that paths exist but the starting clock and ending clock are in different clock groups.
+
+
+
+<a name=interfaceInfo73></a>Interface Information </a>
+*********************
+
+No IO constraint found
+
+
+
+====================================
+<a name=clockReport74></a>Detailed Report for Clock: sha256_spi|i_clk</a>
+====================================
+
+
+
+<a name=startingSlack75></a>Starting Points with Worst Slack</a>
+********************************
+
+                                           Starting                                                            Arrival            
+Instance                                   Reference            Type         Pin     Net                       Time        Slack  
+                                           Clock                                                                                  
+----------------------------------------------------------------------------------------------------------------------------------
+sha256_core_inst.r_variables[162]          sha256_spi|i_clk     SB_DFFER     Q       r_variables[162]          0.796       -15.544
+sha256_core_inst.r_variables[194]          sha256_spi|i_clk     SB_DFFES     Q       r_variables[194]          0.796       -15.534
+sha256_core_inst.r_variables[226]          sha256_spi|i_clk     SB_DFFES     Q       r_variables[226]          0.796       -15.492
+sha256_core_inst.r_variables[164]          sha256_spi|i_clk     SB_DFFES     Q       r_variables[164]          0.796       -15.430
+sha256_core_inst.r_variables[34]           sha256_spi|i_clk     SB_DFFER     Q       r_variables[34]           0.796       -15.368
+sha256_core_inst.r_variables[229]          sha256_spi|i_clk     SB_DFFES     Q       r_variables[229]          0.796       -15.368
+sha256_core_inst.r_variables[196]          sha256_spi|i_clk     SB_DFFER     Q       r_variables[196]          0.796       -15.358
+sha256_core_inst.r_variables_fast[228]     sha256_spi|i_clk     SB_DFFER     Q       r_variables_fast[228]     0.796       -15.327
+sha256_core_inst.r_variables[66]           sha256_spi|i_clk     SB_DFFES     Q       r_variables[66]           0.796       -15.296
+sha256_core_inst.r_variables[240]          sha256_spi|i_clk     SB_DFFES     Q       r_variables[240]          0.796       -15.296
+==================================================================================================================================
+
+
+<a name=endingSlack76></a>Ending Points with Worst Slack</a>
+******************************
+
+                                      Starting                                                           Required            
+Instance                              Reference            Type         Pin     Net                      Time         Slack  
+                                      Clock                                                                                  
+-----------------------------------------------------------------------------------------------------------------------------
+sha256_core_inst.r_variables[254]     sha256_spi|i_clk     SB_DFFES     D       r_variables_RNO[254]     9.845        -15.544
+sha256_core_inst.r_variables[253]     sha256_spi|i_clk     SB_DFFES     D       r_variables_RNO[253]     9.845        -15.344
+sha256_core_inst.r_variables[252]     sha256_spi|i_clk     SB_DFFER     D       r_variables_RNO[252]     9.845        -15.144
+sha256_core_inst.r_variables[251]     sha256_spi|i_clk     SB_DFFES     D       r_variables_RNO[251]     9.845        -14.944
+sha256_core_inst.r_variables[250]     sha256_spi|i_clk     SB_DFFER     D       r_variables_RNO[250]     9.845        -14.744
+sha256_core_inst.r_variables[249]     sha256_spi|i_clk     SB_DFFES     D       r_variables_RNO[249]     9.845        -14.544
+sha256_core_inst.r_variables[248]     sha256_spi|i_clk     SB_DFFER     D       r_variables_RNO[248]     9.845        -14.344
+sha256_core_inst.r_variables[247]     sha256_spi|i_clk     SB_DFFER     D       r_variables_RNO[247]     9.845        -14.144
+sha256_core_inst.r_variables[246]     sha256_spi|i_clk     SB_DFFER     D       r_variables_RNO[246]     9.845        -13.944
+sha256_core_inst.r_variables[255]     sha256_spi|i_clk     SB_DFFER     D       r_variables_RNO[255]     9.845        -13.939
+=============================================================================================================================
+
+
+
+<a name=worstPaths77></a>Worst Path Information</a>
+<a href="C:\workspace\sha256-core\work\lattice\sha256_core\sha256_core_Implmnt\sha256_core.srr:srsfC:\workspace\sha256-core\work\lattice\sha256_core\sha256_core_Implmnt\sha256_core.srs:fp:33630:46914:@XP_NAMES_GATE">View Worst Path in Analyst</a>
+***********************
+
+
+Path information for path number 1: 
+      Requested Period:                      10.000
+    - Setup time:                            0.155
+    + Clock delay at ending point:           0.000 (ideal)
+    = Required time:                         9.845
+
+    - Propagation time:                      25.389
+    - Clock delay at starting point:         0.000 (ideal)
+    = Slack (critical) :                     -15.544
+
+    Number of logic level(s):                35
+    Starting point:                          sha256_core_inst.r_variables[162] / Q
+    Ending point:                            sha256_core_inst.r_variables[254] / D
+    The start point is clocked by            sha256_spi|i_clk [rising] on pin C
+    The end   point is clocked by            sha256_spi|i_clk [rising] on pin C
+
+Instance / Net                                                          Pin      Pin               Arrival     No. of    
+Name                                                       Type         Name     Dir     Delay     Time        Fan Out(s)
+-------------------------------------------------------------------------------------------------------------------------
+sha256_core_inst.r_variables[162]                          SB_DFFER     Q        Out     0.796     0.796       -         
+r_variables[162]                                           Net          -        -       1.599     -           5         
+sha256_core_inst.inst_maj.un1_r_variables_v[2]             SB_LUT4      I0       In      -         2.395       -         
+sha256_core_inst.inst_maj.un1_r_variables_v[2]             SB_LUT4      O        Out     0.569     2.963       -         
+maj_out_0[2]                                               Net          -        -       1.371     -           6         
+sha256_core_inst.r_variables_fast_RNIN1AA1_2[239]          SB_LUT4      I0       In      -         4.334       -         
+sha256_core_inst.r_variables_fast_RNIN1AA1_2[239]          SB_LUT4      O        Out     0.661     4.996       -         
+r_variables_fast_RNIN1AA1_2[239]                           Net          -        -       1.371     -           1         
+sha256_core_inst.r_variables_fast_RNIN7H33[239]            SB_LUT4      I1       In      -         6.367       -         
+sha256_core_inst.r_variables_fast_RNIN7H33[239]            SB_LUT4      O        Out     0.589     6.956       -         
+r_variables_fast_RNIN7H33[239]                             Net          -        -       1.371     -           2         
+sha256_core_inst.r_words_RNIGGIU9[481]                     SB_LUT4      I0       In      -         8.327       -         
+sha256_core_inst.r_words_RNIGGIU9[481]                     SB_LUT4      O        Out     0.661     8.989       -         
+r_words_RNIGGIU9[481]                                      Net          -        -       1.371     -           2         
+sha256_core_inst.r_words_RNI50IRK_0[481]                   SB_LUT4      I0       In      -         10.360      -         
+sha256_core_inst.r_words_RNI50IRK_0[481]                   SB_LUT4      O        Out     0.661     11.021      -         
+r_words_RNI50IRK_0[481]                                    Net          -        -       1.371     -           1         
+sha256_core_inst.inst_coef.ram256x16_lowpart_RNICG5D71     SB_LUT4      I3       In      -         12.392      -         
+sha256_core_inst.inst_coef.ram256x16_lowpart_RNICG5D71     SB_LUT4      O        Out     0.465     12.857      -         
+un1_r_variables_0_axb_4                                    Net          -        -       1.371     -           1         
+sha256_core_inst.r_variables_RNIGK1QR1[35]                 SB_LUT4      I1       In      -         14.228      -         
+sha256_core_inst.r_variables_RNIGK1QR1[35]                 SB_LUT4      O        Out     0.589     14.817      -         
+r_variables_RNIGK1QR1[35]                                  Net          -        -       0.905     -           2         
+sha256_core_inst.un1_r_variables_0_cry_4_c                 SB_CARRY     I0       In      -         15.722      -         
+sha256_core_inst.un1_r_variables_0_cry_4_c                 SB_CARRY     CO       Out     0.380     16.102      -         
+un1_r_variables_0_cry_4                                    Net          -        -       0.014     -           2         
+sha256_core_inst.un1_r_variables_0_cry_5_c                 SB_CARRY     CI       In      -         16.116      -         
+sha256_core_inst.un1_r_variables_0_cry_5_c                 SB_CARRY     CO       Out     0.186     16.302      -         
+un1_r_variables_0_cry_5                                    Net          -        -       0.014     -           2         
+sha256_core_inst.un1_r_variables_0_cry_6_c                 SB_CARRY     CI       In      -         16.316      -         
+sha256_core_inst.un1_r_variables_0_cry_6_c                 SB_CARRY     CO       Out     0.186     16.502      -         
+un1_r_variables_0_cry_6                                    Net          -        -       0.014     -           2         
+sha256_core_inst.un1_r_variables_0_cry_7_c                 SB_CARRY     CI       In      -         16.516      -         
+sha256_core_inst.un1_r_variables_0_cry_7_c                 SB_CARRY     CO       Out     0.186     16.702      -         
+un1_r_variables_0_cry_7                                    Net          -        -       0.014     -           2         
+sha256_core_inst.un1_r_variables_0_cry_8_c                 SB_CARRY     CI       In      -         16.716      -         
+sha256_core_inst.un1_r_variables_0_cry_8_c                 SB_CARRY     CO       Out     0.186     16.902      -         
+un1_r_variables_0_cry_8                                    Net          -        -       0.014     -           2         
+sha256_core_inst.un1_r_variables_0_cry_9_c                 SB_CARRY     CI       In      -         16.916      -         
+sha256_core_inst.un1_r_variables_0_cry_9_c                 SB_CARRY     CO       Out     0.186     17.102      -         
+un1_r_variables_0_cry_9                                    Net          -        -       0.014     -           2         
+sha256_core_inst.un1_r_variables_0_cry_10_c                SB_CARRY     CI       In      -         17.116      -         
+sha256_core_inst.un1_r_variables_0_cry_10_c                SB_CARRY     CO       Out     0.186     17.302      -         
+un1_r_variables_0_cry_10                                   Net          -        -       0.014     -           2         
+sha256_core_inst.un1_r_variables_0_cry_11_c                SB_CARRY     CI       In      -         17.316      -         
+sha256_core_inst.un1_r_variables_0_cry_11_c                SB_CARRY     CO       Out     0.186     17.502      -         
+un1_r_variables_0_cry_11                                   Net          -        -       0.014     -           2         
+sha256_core_inst.un1_r_variables_0_cry_12_c                SB_CARRY     CI       In      -         17.516      -         
+sha256_core_inst.un1_r_variables_0_cry_12_c                SB_CARRY     CO       Out     0.186     17.702      -         
+un1_r_variables_0_cry_12                                   Net          -        -       0.014     -           2         
+sha256_core_inst.un1_r_variables_0_cry_13_c                SB_CARRY     CI       In      -         17.716      -         
+sha256_core_inst.un1_r_variables_0_cry_13_c                SB_CARRY     CO       Out     0.186     17.902      -         
+un1_r_variables_0_cry_13                                   Net          -        -       0.014     -           2         
+sha256_core_inst.un1_r_variables_0_cry_14_c                SB_CARRY     CI       In      -         17.916      -         
+sha256_core_inst.un1_r_variables_0_cry_14_c                SB_CARRY     CO       Out     0.186     18.102      -         
+un1_r_variables_0_cry_14                                   Net          -        -       0.014     -           2         
+sha256_core_inst.un1_r_variables_0_cry_15_c                SB_CARRY     CI       In      -         18.116      -         
+sha256_core_inst.un1_r_variables_0_cry_15_c                SB_CARRY     CO       Out     0.186     18.302      -         
+un1_r_variables_0_cry_15                                   Net          -        -       0.014     -           2         
+sha256_core_inst.un1_r_variables_0_cry_16_c                SB_CARRY     CI       In      -         18.316      -         
+sha256_core_inst.un1_r_variables_0_cry_16_c                SB_CARRY     CO       Out     0.186     18.502      -         
+un1_r_variables_0_cry_16                                   Net          -        -       0.014     -           2         
+sha256_core_inst.un1_r_variables_0_cry_17_c                SB_CARRY     CI       In      -         18.516      -         
+sha256_core_inst.un1_r_variables_0_cry_17_c                SB_CARRY     CO       Out     0.186     18.702      -         
+un1_r_variables_0_cry_17                                   Net          -        -       0.014     -           2         
+sha256_core_inst.un1_r_variables_0_cry_18_c                SB_CARRY     CI       In      -         18.716      -         
+sha256_core_inst.un1_r_variables_0_cry_18_c                SB_CARRY     CO       Out     0.186     18.902      -         
+un1_r_variables_0_cry_18                                   Net          -        -       0.014     -           2         
+sha256_core_inst.un1_r_variables_0_cry_19_c                SB_CARRY     CI       In      -         18.916      -         
+sha256_core_inst.un1_r_variables_0_cry_19_c                SB_CARRY     CO       Out     0.186     19.102      -         
+un1_r_variables_0_cry_19                                   Net          -        -       0.014     -           2         
+sha256_core_inst.un1_r_variables_0_cry_20_c                SB_CARRY     CI       In      -         19.116      -         
+sha256_core_inst.un1_r_variables_0_cry_20_c                SB_CARRY     CO       Out     0.186     19.302      -         
+un1_r_variables_0_cry_20                                   Net          -        -       0.014     -           2         
+sha256_core_inst.un1_r_variables_0_cry_21_c                SB_CARRY     CI       In      -         19.316      -         
+sha256_core_inst.un1_r_variables_0_cry_21_c                SB_CARRY     CO       Out     0.186     19.502      -         
+un1_r_variables_0_cry_21                                   Net          -        -       0.014     -           2         
+sha256_core_inst.un1_r_variables_0_cry_22_c                SB_CARRY     CI       In      -         19.516      -         
+sha256_core_inst.un1_r_variables_0_cry_22_c                SB_CARRY     CO       Out     0.186     19.702      -         
+un1_r_variables_0_cry_22                                   Net          -        -       0.014     -           2         
+sha256_core_inst.un1_r_variables_0_cry_23_c                SB_CARRY     CI       In      -         19.716      -         
+sha256_core_inst.un1_r_variables_0_cry_23_c                SB_CARRY     CO       Out     0.186     19.902      -         
+un1_r_variables_0_cry_23                                   Net          -        -       0.014     -           2         
+sha256_core_inst.un1_r_variables_0_cry_24_c                SB_CARRY     CI       In      -         19.916      -         
+sha256_core_inst.un1_r_variables_0_cry_24_c                SB_CARRY     CO       Out     0.186     20.102      -         
+un1_r_variables_0_cry_24                                   Net          -        -       0.014     -           2         
+sha256_core_inst.un1_r_variables_0_cry_25_c                SB_CARRY     CI       In      -         20.116      -         
+sha256_core_inst.un1_r_variables_0_cry_25_c                SB_CARRY     CO       Out     0.186     20.302      -         
+un1_r_variables_0_cry_25                                   Net          -        -       0.014     -           2         
+sha256_core_inst.un1_r_variables_0_cry_26_c                SB_CARRY     CI       In      -         20.316      -         
+sha256_core_inst.un1_r_variables_0_cry_26_c                SB_CARRY     CO       Out     0.186     20.502      -         
+un1_r_variables_0_cry_26                                   Net          -        -       0.014     -           2         
+sha256_core_inst.un1_r_variables_0_cry_27_c                SB_CARRY     CI       In      -         20.516      -         
+sha256_core_inst.un1_r_variables_0_cry_27_c                SB_CARRY     CO       Out     0.186     20.702      -         
+un1_r_variables_0_cry_27                                   Net          -        -       0.014     -           2         
+sha256_core_inst.un1_r_variables_0_cry_28_c                SB_CARRY     CI       In      -         20.716      -         
+sha256_core_inst.un1_r_variables_0_cry_28_c                SB_CARRY     CO       Out     0.186     20.902      -         
+un1_r_variables_0_cry_28                                   Net          -        -       0.014     -           2         
+sha256_core_inst.un1_r_variables_0_cry_29_c                SB_CARRY     CI       In      -         20.916      -         
+sha256_core_inst.un1_r_variables_0_cry_29_c                SB_CARRY     CO       Out     0.186     21.102      -         
+un1_r_variables_0_cry_29                                   Net          -        -       0.386     -           2         
+sha256_core_inst.r_variables_RNO_0[254]                    SB_LUT4      I3       In      -         21.488      -         
+sha256_core_inst.r_variables_RNO_0[254]                    SB_LUT4      O        Out     0.465     21.953      -         
+r_variables_RNO_0[254]                                     Net          -        -       1.371     -           1         
+sha256_core_inst.r_variables_RNO[254]                      SB_LUT4      I2       In      -         23.324      -         
+sha256_core_inst.r_variables_RNO[254]                      SB_LUT4      O        Out     0.558     23.882      -         
+r_variables_RNO[254]                                       Net          -        -       1.507     -           1         
+sha256_core_inst.r_variables[254]                          SB_DFFES     D        In      -         25.389      -         
+=========================================================================================================================
+Total path delay (propagation time + setup) of 25.544 is 11.200(43.8%) logic and 14.344(56.2%) route.
+Path delay compensated for clock skew. Clock skew is added to clock-to-out value, and is subtracted from setup time value
+
+
+Path information for path number 2: 
+      Requested Period:                      10.000
+    - Setup time:                            0.155
+    + Clock delay at ending point:           0.000 (ideal)
+    = Required time:                         9.845
+
+    - Propagation time:                      25.379
+    - Clock delay at starting point:         0.000 (ideal)
+    = Slack (non-critical) :                 -15.534
+
+    Number of logic level(s):                35
+    Starting point:                          sha256_core_inst.r_variables[194] / Q
+    Ending point:                            sha256_core_inst.r_variables[254] / D
+    The start point is clocked by            sha256_spi|i_clk [rising] on pin C
+    The end   point is clocked by            sha256_spi|i_clk [rising] on pin C
+
+Instance / Net                                                          Pin      Pin               Arrival     No. of    
+Name                                                       Type         Name     Dir     Delay     Time        Fan Out(s)
+-------------------------------------------------------------------------------------------------------------------------
+sha256_core_inst.r_variables[194]                          SB_DFFES     Q        Out     0.796     0.796       -         
+r_variables[194]                                           Net          -        -       1.599     -           5         
+sha256_core_inst.inst_maj.un1_r_variables_v[2]             SB_LUT4      I1       In      -         2.395       -         
+sha256_core_inst.inst_maj.un1_r_variables_v[2]             SB_LUT4      O        Out     0.558     2.953       -         
+maj_out_0[2]                                               Net          -        -       1.371     -           6         
+sha256_core_inst.r_variables_fast_RNIN1AA1_2[239]          SB_LUT4      I0       In      -         4.324       -         
+sha256_core_inst.r_variables_fast_RNIN1AA1_2[239]          SB_LUT4      O        Out     0.661     4.986       -         
+r_variables_fast_RNIN1AA1_2[239]                           Net          -        -       1.371     -           1         
+sha256_core_inst.r_variables_fast_RNIN7H33[239]            SB_LUT4      I1       In      -         6.356       -         
+sha256_core_inst.r_variables_fast_RNIN7H33[239]            SB_LUT4      O        Out     0.589     6.946       -         
+r_variables_fast_RNIN7H33[239]                             Net          -        -       1.371     -           2         
+sha256_core_inst.r_words_RNIGGIU9[481]                     SB_LUT4      I0       In      -         8.317       -         
+sha256_core_inst.r_words_RNIGGIU9[481]                     SB_LUT4      O        Out     0.661     8.978       -         
+r_words_RNIGGIU9[481]                                      Net          -        -       1.371     -           2         
+sha256_core_inst.r_words_RNI50IRK_0[481]                   SB_LUT4      I0       In      -         10.349      -         
+sha256_core_inst.r_words_RNI50IRK_0[481]                   SB_LUT4      O        Out     0.661     11.011      -         
+r_words_RNI50IRK_0[481]                                    Net          -        -       1.371     -           1         
+sha256_core_inst.inst_coef.ram256x16_lowpart_RNICG5D71     SB_LUT4      I3       In      -         12.382      -         
+sha256_core_inst.inst_coef.ram256x16_lowpart_RNICG5D71     SB_LUT4      O        Out     0.465     12.847      -         
+un1_r_variables_0_axb_4                                    Net          -        -       1.371     -           1         
+sha256_core_inst.r_variables_RNIGK1QR1[35]                 SB_LUT4      I1       In      -         14.218      -         
+sha256_core_inst.r_variables_RNIGK1QR1[35]                 SB_LUT4      O        Out     0.589     14.807      -         
+r_variables_RNIGK1QR1[35]                                  Net          -        -       0.905     -           2         
+sha256_core_inst.un1_r_variables_0_cry_4_c                 SB_CARRY     I0       In      -         15.712      -         
+sha256_core_inst.un1_r_variables_0_cry_4_c                 SB_CARRY     CO       Out     0.380     16.092      -         
+un1_r_variables_0_cry_4                                    Net          -        -       0.014     -           2         
+sha256_core_inst.un1_r_variables_0_cry_5_c                 SB_CARRY     CI       In      -         16.105      -         
+sha256_core_inst.un1_r_variables_0_cry_5_c                 SB_CARRY     CO       Out     0.186     16.291      -         
+un1_r_variables_0_cry_5                                    Net          -        -       0.014     -           2         
+sha256_core_inst.un1_r_variables_0_cry_6_c                 SB_CARRY     CI       In      -         16.305      -         
+sha256_core_inst.un1_r_variables_0_cry_6_c                 SB_CARRY     CO       Out     0.186     16.491      -         
+un1_r_variables_0_cry_6                                    Net          -        -       0.014     -           2         
+sha256_core_inst.un1_r_variables_0_cry_7_c                 SB_CARRY     CI       In      -         16.506      -         
+sha256_core_inst.un1_r_variables_0_cry_7_c                 SB_CARRY     CO       Out     0.186     16.692      -         
+un1_r_variables_0_cry_7                                    Net          -        -       0.014     -           2         
+sha256_core_inst.un1_r_variables_0_cry_8_c                 SB_CARRY     CI       In      -         16.706      -         
+sha256_core_inst.un1_r_variables_0_cry_8_c                 SB_CARRY     CO       Out     0.186     16.892      -         
+un1_r_variables_0_cry_8                                    Net          -        -       0.014     -           2         
+sha256_core_inst.un1_r_variables_0_cry_9_c                 SB_CARRY     CI       In      -         16.906      -         
+sha256_core_inst.un1_r_variables_0_cry_9_c                 SB_CARRY     CO       Out     0.186     17.092      -         
+un1_r_variables_0_cry_9                                    Net          -        -       0.014     -           2         
+sha256_core_inst.un1_r_variables_0_cry_10_c                SB_CARRY     CI       In      -         17.105      -         
+sha256_core_inst.un1_r_variables_0_cry_10_c                SB_CARRY     CO       Out     0.186     17.291      -         
+un1_r_variables_0_cry_10                                   Net          -        -       0.014     -           2         
+sha256_core_inst.un1_r_variables_0_cry_11_c                SB_CARRY     CI       In      -         17.305      -         
+sha256_core_inst.un1_r_variables_0_cry_11_c                SB_CARRY     CO       Out     0.186     17.491      -         
+un1_r_variables_0_cry_11                                   Net          -        -       0.014     -           2         
+sha256_core_inst.un1_r_variables_0_cry_12_c                SB_CARRY     CI       In      -         17.506      -         
+sha256_core_inst.un1_r_variables_0_cry_12_c                SB_CARRY     CO       Out     0.186     17.692      -         
+un1_r_variables_0_cry_12                                   Net          -        -       0.014     -           2         
+sha256_core_inst.un1_r_variables_0_cry_13_c                SB_CARRY     CI       In      -         17.706      -         
+sha256_core_inst.un1_r_variables_0_cry_13_c                SB_CARRY     CO       Out     0.186     17.892      -         
+un1_r_variables_0_cry_13                                   Net          -        -       0.014     -           2         
+sha256_core_inst.un1_r_variables_0_cry_14_c                SB_CARRY     CI       In      -         17.906      -         
+sha256_core_inst.un1_r_variables_0_cry_14_c                SB_CARRY     CO       Out     0.186     18.092      -         
+un1_r_variables_0_cry_14                                   Net          -        -       0.014     -           2         
+sha256_core_inst.un1_r_variables_0_cry_15_c                SB_CARRY     CI       In      -         18.105      -         
+sha256_core_inst.un1_r_variables_0_cry_15_c                SB_CARRY     CO       Out     0.186     18.291      -         
+un1_r_variables_0_cry_15                                   Net          -        -       0.014     -           2         
+sha256_core_inst.un1_r_variables_0_cry_16_c                SB_CARRY     CI       In      -         18.305      -         
+sha256_core_inst.un1_r_variables_0_cry_16_c                SB_CARRY     CO       Out     0.186     18.491      -         
+un1_r_variables_0_cry_16                                   Net          -        -       0.014     -           2         
+sha256_core_inst.un1_r_variables_0_cry_17_c                SB_CARRY     CI       In      -         18.506      -         
+sha256_core_inst.un1_r_variables_0_cry_17_c                SB_CARRY     CO       Out     0.186     18.692      -         
+un1_r_variables_0_cry_17                                   Net          -        -       0.014     -           2         
+sha256_core_inst.un1_r_variables_0_cry_18_c                SB_CARRY     CI       In      -         18.706      -         
+sha256_core_inst.un1_r_variables_0_cry_18_c                SB_CARRY     CO       Out     0.186     18.892      -         
+un1_r_variables_0_cry_18                                   Net          -        -       0.014     -           2         
+sha256_core_inst.un1_r_variables_0_cry_19_c                SB_CARRY     CI       In      -         18.906      -         
+sha256_core_inst.un1_r_variables_0_cry_19_c                SB_CARRY     CO       Out     0.186     19.092      -         
+un1_r_variables_0_cry_19                                   Net          -        -       0.014     -           2         
+sha256_core_inst.un1_r_variables_0_cry_20_c                SB_CARRY     CI       In      -         19.105      -         
+sha256_core_inst.un1_r_variables_0_cry_20_c                SB_CARRY     CO       Out     0.186     19.291      -         
+un1_r_variables_0_cry_20                                   Net          -        -       0.014     -           2         
+sha256_core_inst.un1_r_variables_0_cry_21_c                SB_CARRY     CI       In      -         19.305      -         
+sha256_core_inst.un1_r_variables_0_cry_21_c                SB_CARRY     CO       Out     0.186     19.491      -         
+un1_r_variables_0_cry_21                                   Net          -        -       0.014     -           2         
+sha256_core_inst.un1_r_variables_0_cry_22_c                SB_CARRY     CI       In      -         19.506      -         
+sha256_core_inst.un1_r_variables_0_cry_22_c                SB_CARRY     CO       Out     0.186     19.692      -         
+un1_r_variables_0_cry_22                                   Net          -        -       0.014     -           2         
+sha256_core_inst.un1_r_variables_0_cry_23_c                SB_CARRY     CI       In      -         19.706      -         
+sha256_core_inst.un1_r_variables_0_cry_23_c                SB_CARRY     CO       Out     0.186     19.892      -         
+un1_r_variables_0_cry_23                                   Net          -        -       0.014     -           2         
+sha256_core_inst.un1_r_variables_0_cry_24_c                SB_CARRY     CI       In      -         19.906      -         
+sha256_core_inst.un1_r_variables_0_cry_24_c                SB_CARRY     CO       Out     0.186     20.092      -         
+un1_r_variables_0_cry_24                                   Net          -        -       0.014     -           2         
+sha256_core_inst.un1_r_variables_0_cry_25_c                SB_CARRY     CI       In      -         20.105      -         
+sha256_core_inst.un1_r_variables_0_cry_25_c                SB_CARRY     CO       Out     0.186     20.291      -         
+un1_r_variables_0_cry_25                                   Net          -        -       0.014     -           2         
+sha256_core_inst.un1_r_variables_0_cry_26_c                SB_CARRY     CI       In      -         20.305      -         
+sha256_core_inst.un1_r_variables_0_cry_26_c                SB_CARRY     CO       Out     0.186     20.491      -         
+un1_r_variables_0_cry_26                                   Net          -        -       0.014     -           2         
+sha256_core_inst.un1_r_variables_0_cry_27_c                SB_CARRY     CI       In      -         20.506      -         
+sha256_core_inst.un1_r_variables_0_cry_27_c                SB_CARRY     CO       Out     0.186     20.692      -         
+un1_r_variables_0_cry_27                                   Net          -        -       0.014     -           2         
+sha256_core_inst.un1_r_variables_0_cry_28_c                SB_CARRY     CI       In      -         20.706      -         
+sha256_core_inst.un1_r_variables_0_cry_28_c                SB_CARRY     CO       Out     0.186     20.892      -         
+un1_r_variables_0_cry_28                                   Net          -        -       0.014     -           2         
+sha256_core_inst.un1_r_variables_0_cry_29_c                SB_CARRY     CI       In      -         20.906      -         
+sha256_core_inst.un1_r_variables_0_cry_29_c                SB_CARRY     CO       Out     0.186     21.092      -         
+un1_r_variables_0_cry_29                                   Net          -        -       0.386     -           2         
+sha256_core_inst.r_variables_RNO_0[254]                    SB_LUT4      I3       In      -         21.477      -         
+sha256_core_inst.r_variables_RNO_0[254]                    SB_LUT4      O        Out     0.465     21.943      -         
+r_variables_RNO_0[254]                                     Net          -        -       1.371     -           1         
+sha256_core_inst.r_variables_RNO[254]                      SB_LUT4      I2       In      -         23.314      -         
+sha256_core_inst.r_variables_RNO[254]                      SB_LUT4      O        Out     0.558     23.872      -         
+r_variables_RNO[254]                                       Net          -        -       1.507     -           1         
+sha256_core_inst.r_variables[254]                          SB_DFFES     D        In      -         25.379      -         
+=========================================================================================================================
+Total path delay (propagation time + setup) of 25.534 is 11.190(43.8%) logic and 14.344(56.2%) route.
+Path delay compensated for clock skew. Clock skew is added to clock-to-out value, and is subtracted from setup time value
+
+
+Path information for path number 3: 
+      Requested Period:                      10.000
+    - Setup time:                            0.155
+    + Clock delay at ending point:           0.000 (ideal)
+    = Required time:                         9.845
+
+    - Propagation time:                      25.358
+    - Clock delay at starting point:         0.000 (ideal)
+    = Slack (non-critical) :                 -15.513
+
+    Number of logic level(s):                35
+    Starting point:                          sha256_core_inst.r_variables[162] / Q
+    Ending point:                            sha256_core_inst.r_variables[254] / D
+    The start point is clocked by            sha256_spi|i_clk [rising] on pin C
+    The end   point is clocked by            sha256_spi|i_clk [rising] on pin C
+
+Instance / Net                                                          Pin      Pin               Arrival     No. of    
+Name                                                       Type         Name     Dir     Delay     Time        Fan Out(s)
+-------------------------------------------------------------------------------------------------------------------------
+sha256_core_inst.r_variables[162]                          SB_DFFER     Q        Out     0.796     0.796       -         
+r_variables[162]                                           Net          -        -       1.599     -           5         
+sha256_core_inst.inst_maj.un1_r_variables_v[2]             SB_LUT4      I0       In      -         2.395       -         
+sha256_core_inst.inst_maj.un1_r_variables_v[2]             SB_LUT4      O        Out     0.569     2.963       -         
+maj_out_0[2]                                               Net          -        -       1.371     -           6         
+sha256_core_inst.r_variables_fast_RNIN1AA1[239]            SB_LUT4      I0       In      -         4.334       -         
+sha256_core_inst.r_variables_fast_RNIN1AA1[239]            SB_LUT4      O        Out     0.661     4.996       -         
+r_variables_fast_RNIN1AA1[239]                             Net          -        -       1.371     -           1         
+sha256_core_inst.r_variables_fast_RNIN7H33[239]            SB_LUT4      I2       In      -         6.367       -         
+sha256_core_inst.r_variables_fast_RNIN7H33[239]            SB_LUT4      O        Out     0.558     6.925       -         
+r_variables_fast_RNIN7H33[239]                             Net          -        -       1.371     -           2         
+sha256_core_inst.r_words_RNIGGIU9[481]                     SB_LUT4      I0       In      -         8.296       -         
+sha256_core_inst.r_words_RNIGGIU9[481]                     SB_LUT4      O        Out     0.661     8.957       -         
+r_words_RNIGGIU9[481]                                      Net          -        -       1.371     -           2         
+sha256_core_inst.r_words_RNI50IRK_0[481]                   SB_LUT4      I0       In      -         10.329      -         
+sha256_core_inst.r_words_RNI50IRK_0[481]                   SB_LUT4      O        Out     0.661     10.990      -         
+r_words_RNI50IRK_0[481]                                    Net          -        -       1.371     -           1         
+sha256_core_inst.inst_coef.ram256x16_lowpart_RNICG5D71     SB_LUT4      I3       In      -         12.361      -         
+sha256_core_inst.inst_coef.ram256x16_lowpart_RNICG5D71     SB_LUT4      O        Out     0.465     12.826      -         
+un1_r_variables_0_axb_4                                    Net          -        -       1.371     -           1         
+sha256_core_inst.r_variables_RNIGK1QR1[35]                 SB_LUT4      I1       In      -         14.197      -         
+sha256_core_inst.r_variables_RNIGK1QR1[35]                 SB_LUT4      O        Out     0.589     14.786      -         
+r_variables_RNIGK1QR1[35]                                  Net          -        -       0.905     -           2         
+sha256_core_inst.un1_r_variables_0_cry_4_c                 SB_CARRY     I0       In      -         15.691      -         
+sha256_core_inst.un1_r_variables_0_cry_4_c                 SB_CARRY     CO       Out     0.380     16.071      -         
+un1_r_variables_0_cry_4                                    Net          -        -       0.014     -           2         
+sha256_core_inst.un1_r_variables_0_cry_5_c                 SB_CARRY     CI       In      -         16.085      -         
+sha256_core_inst.un1_r_variables_0_cry_5_c                 SB_CARRY     CO       Out     0.186     16.271      -         
+un1_r_variables_0_cry_5                                    Net          -        -       0.014     -           2         
+sha256_core_inst.un1_r_variables_0_cry_6_c                 SB_CARRY     CI       In      -         16.285      -         
+sha256_core_inst.un1_r_variables_0_cry_6_c                 SB_CARRY     CO       Out     0.186     16.471      -         
+un1_r_variables_0_cry_6                                    Net          -        -       0.014     -           2         
+sha256_core_inst.un1_r_variables_0_cry_7_c                 SB_CARRY     CI       In      -         16.485      -         
+sha256_core_inst.un1_r_variables_0_cry_7_c                 SB_CARRY     CO       Out     0.186     16.671      -         
+un1_r_variables_0_cry_7                                    Net          -        -       0.014     -           2         
+sha256_core_inst.un1_r_variables_0_cry_8_c                 SB_CARRY     CI       In      -         16.685      -         
+sha256_core_inst.un1_r_variables_0_cry_8_c                 SB_CARRY     CO       Out     0.186     16.871      -         
+un1_r_variables_0_cry_8                                    Net          -        -       0.014     -           2         
+sha256_core_inst.un1_r_variables_0_cry_9_c                 SB_CARRY     CI       In      -         16.885      -         
+sha256_core_inst.un1_r_variables_0_cry_9_c                 SB_CARRY     CO       Out     0.186     17.071      -         
+un1_r_variables_0_cry_9                                    Net          -        -       0.014     -           2         
+sha256_core_inst.un1_r_variables_0_cry_10_c                SB_CARRY     CI       In      -         17.085      -         
+sha256_core_inst.un1_r_variables_0_cry_10_c                SB_CARRY     CO       Out     0.186     17.271      -         
+un1_r_variables_0_cry_10                                   Net          -        -       0.014     -           2         
+sha256_core_inst.un1_r_variables_0_cry_11_c                SB_CARRY     CI       In      -         17.285      -         
+sha256_core_inst.un1_r_variables_0_cry_11_c                SB_CARRY     CO       Out     0.186     17.471      -         
+un1_r_variables_0_cry_11                                   Net          -        -       0.014     -           2         
+sha256_core_inst.un1_r_variables_0_cry_12_c                SB_CARRY     CI       In      -         17.485      -         
+sha256_core_inst.un1_r_variables_0_cry_12_c                SB_CARRY     CO       Out     0.186     17.671      -         
+un1_r_variables_0_cry_12                                   Net          -        -       0.014     -           2         
+sha256_core_inst.un1_r_variables_0_cry_13_c                SB_CARRY     CI       In      -         17.685      -         
+sha256_core_inst.un1_r_variables_0_cry_13_c                SB_CARRY     CO       Out     0.186     17.871      -         
+un1_r_variables_0_cry_13                                   Net          -        -       0.014     -           2         
+sha256_core_inst.un1_r_variables_0_cry_14_c                SB_CARRY     CI       In      -         17.885      -         
+sha256_core_inst.un1_r_variables_0_cry_14_c                SB_CARRY     CO       Out     0.186     18.071      -         
+un1_r_variables_0_cry_14                                   Net          -        -       0.014     -           2         
+sha256_core_inst.un1_r_variables_0_cry_15_c                SB_CARRY     CI       In      -         18.085      -         
+sha256_core_inst.un1_r_variables_0_cry_15_c                SB_CARRY     CO       Out     0.186     18.271      -         
+un1_r_variables_0_cry_15                                   Net          -        -       0.014     -           2         
+sha256_core_inst.un1_r_variables_0_cry_16_c                SB_CARRY     CI       In      -         18.285      -         
+sha256_core_inst.un1_r_variables_0_cry_16_c                SB_CARRY     CO       Out     0.186     18.471      -         
+un1_r_variables_0_cry_16                                   Net          -        -       0.014     -           2         
+sha256_core_inst.un1_r_variables_0_cry_17_c                SB_CARRY     CI       In      -         18.485      -         
+sha256_core_inst.un1_r_variables_0_cry_17_c                SB_CARRY     CO       Out     0.186     18.671      -         
+un1_r_variables_0_cry_17                                   Net          -        -       0.014     -           2         
+sha256_core_inst.un1_r_variables_0_cry_18_c                SB_CARRY     CI       In      -         18.685      -         
+sha256_core_inst.un1_r_variables_0_cry_18_c                SB_CARRY     CO       Out     0.186     18.871      -         
+un1_r_variables_0_cry_18                                   Net          -        -       0.014     -           2         
+sha256_core_inst.un1_r_variables_0_cry_19_c                SB_CARRY     CI       In      -         18.885      -         
+sha256_core_inst.un1_r_variables_0_cry_19_c                SB_CARRY     CO       Out     0.186     19.071      -         
+un1_r_variables_0_cry_19                                   Net          -        -       0.014     -           2         
+sha256_core_inst.un1_r_variables_0_cry_20_c                SB_CARRY     CI       In      -         19.085      -         
+sha256_core_inst.un1_r_variables_0_cry_20_c                SB_CARRY     CO       Out     0.186     19.271      -         
+un1_r_variables_0_cry_20                                   Net          -        -       0.014     -           2         
+sha256_core_inst.un1_r_variables_0_cry_21_c                SB_CARRY     CI       In      -         19.285      -         
+sha256_core_inst.un1_r_variables_0_cry_21_c                SB_CARRY     CO       Out     0.186     19.471      -         
+un1_r_variables_0_cry_21                                   Net          -        -       0.014     -           2         
+sha256_core_inst.un1_r_variables_0_cry_22_c                SB_CARRY     CI       In      -         19.485      -         
+sha256_core_inst.un1_r_variables_0_cry_22_c                SB_CARRY     CO       Out     0.186     19.671      -         
+un1_r_variables_0_cry_22                                   Net          -        -       0.014     -           2         
+sha256_core_inst.un1_r_variables_0_cry_23_c                SB_CARRY     CI       In      -         19.685      -         
+sha256_core_inst.un1_r_variables_0_cry_23_c                SB_CARRY     CO       Out     0.186     19.871      -         
+un1_r_variables_0_cry_23                                   Net          -        -       0.014     -           2         
+sha256_core_inst.un1_r_variables_0_cry_24_c                SB_CARRY     CI       In      -         19.885      -         
+sha256_core_inst.un1_r_variables_0_cry_24_c                SB_CARRY     CO       Out     0.186     20.071      -         
+un1_r_variables_0_cry_24                                   Net          -        -       0.014     -           2         
+sha256_core_inst.un1_r_variables_0_cry_25_c                SB_CARRY     CI       In      -         20.085      -         
+sha256_core_inst.un1_r_variables_0_cry_25_c                SB_CARRY     CO       Out     0.186     20.271      -         
+un1_r_variables_0_cry_25                                   Net          -        -       0.014     -           2         
+sha256_core_inst.un1_r_variables_0_cry_26_c                SB_CARRY     CI       In      -         20.285      -         
+sha256_core_inst.un1_r_variables_0_cry_26_c                SB_CARRY     CO       Out     0.186     20.471      -         
+un1_r_variables_0_cry_26                                   Net          -        -       0.014     -           2         
+sha256_core_inst.un1_r_variables_0_cry_27_c                SB_CARRY     CI       In      -         20.485      -         
+sha256_core_inst.un1_r_variables_0_cry_27_c                SB_CARRY     CO       Out     0.186     20.671      -         
+un1_r_variables_0_cry_27                                   Net          -        -       0.014     -           2         
+sha256_core_inst.un1_r_variables_0_cry_28_c                SB_CARRY     CI       In      -         20.685      -         
+sha256_core_inst.un1_r_variables_0_cry_28_c                SB_CARRY     CO       Out     0.186     20.871      -         
+un1_r_variables_0_cry_28                                   Net          -        -       0.014     -           2         
+sha256_core_inst.un1_r_variables_0_cry_29_c                SB_CARRY     CI       In      -         20.885      -         
+sha256_core_inst.un1_r_variables_0_cry_29_c                SB_CARRY     CO       Out     0.186     21.071      -         
+un1_r_variables_0_cry_29                                   Net          -        -       0.386     -           2         
+sha256_core_inst.r_variables_RNO_0[254]                    SB_LUT4      I3       In      -         21.457      -         
+sha256_core_inst.r_variables_RNO_0[254]                    SB_LUT4      O        Out     0.465     21.922      -         
+r_variables_RNO_0[254]                                     Net          -        -       1.371     -           1         
+sha256_core_inst.r_variables_RNO[254]                      SB_LUT4      I2       In      -         23.293      -         
+sha256_core_inst.r_variables_RNO[254]                      SB_LUT4      O        Out     0.558     23.851      -         
+r_variables_RNO[254]                                       Net          -        -       1.507     -           1         
+sha256_core_inst.r_variables[254]                          SB_DFFES     D        In      -         25.358      -         
+=========================================================================================================================
+Total path delay (propagation time + setup) of 25.513 is 11.169(43.8%) logic and 14.344(56.2%) route.
+Path delay compensated for clock skew. Clock skew is added to clock-to-out value, and is subtracted from setup time value
+
+
+Path information for path number 4: 
+      Requested Period:                      10.000
+    - Setup time:                            0.155
+    + Clock delay at ending point:           0.000 (ideal)
+    = Required time:                         9.845
+
+    - Propagation time:                      25.348
+    - Clock delay at starting point:         0.000 (ideal)
+    = Slack (non-critical) :                 -15.503
+
+    Number of logic level(s):                35
+    Starting point:                          sha256_core_inst.r_variables[194] / Q
+    Ending point:                            sha256_core_inst.r_variables[254] / D
+    The start point is clocked by            sha256_spi|i_clk [rising] on pin C
+    The end   point is clocked by            sha256_spi|i_clk [rising] on pin C
+
+Instance / Net                                                          Pin      Pin               Arrival     No. of    
+Name                                                       Type         Name     Dir     Delay     Time        Fan Out(s)
+-------------------------------------------------------------------------------------------------------------------------
+sha256_core_inst.r_variables[194]                          SB_DFFES     Q        Out     0.796     0.796       -         
+r_variables[194]                                           Net          -        -       1.599     -           5         
+sha256_core_inst.inst_maj.un1_r_variables_v[2]             SB_LUT4      I1       In      -         2.395       -         
+sha256_core_inst.inst_maj.un1_r_variables_v[2]             SB_LUT4      O        Out     0.558     2.953       -         
+maj_out_0[2]                                               Net          -        -       1.371     -           6         
+sha256_core_inst.r_variables_fast_RNIN1AA1[239]            SB_LUT4      I0       In      -         4.324       -         
+sha256_core_inst.r_variables_fast_RNIN1AA1[239]            SB_LUT4      O        Out     0.661     4.986       -         
+r_variables_fast_RNIN1AA1[239]                             Net          -        -       1.371     -           1         
+sha256_core_inst.r_variables_fast_RNIN7H33[239]            SB_LUT4      I2       In      -         6.356       -         
+sha256_core_inst.r_variables_fast_RNIN7H33[239]            SB_LUT4      O        Out     0.558     6.915       -         
+r_variables_fast_RNIN7H33[239]                             Net          -        -       1.371     -           2         
+sha256_core_inst.r_words_RNIGGIU9[481]                     SB_LUT4      I0       In      -         8.286       -         
+sha256_core_inst.r_words_RNIGGIU9[481]                     SB_LUT4      O        Out     0.661     8.947       -         
+r_words_RNIGGIU9[481]                                      Net          -        -       1.371     -           2         
+sha256_core_inst.r_words_RNI50IRK_0[481]                   SB_LUT4      I0       In      -         10.318      -         
+sha256_core_inst.r_words_RNI50IRK_0[481]                   SB_LUT4      O        Out     0.661     10.980      -         
+r_words_RNI50IRK_0[481]                                    Net          -        -       1.371     -           1         
+sha256_core_inst.inst_coef.ram256x16_lowpart_RNICG5D71     SB_LUT4      I3       In      -         12.351      -         
+sha256_core_inst.inst_coef.ram256x16_lowpart_RNICG5D71     SB_LUT4      O        Out     0.465     12.816      -         
+un1_r_variables_0_axb_4                                    Net          -        -       1.371     -           1         
+sha256_core_inst.r_variables_RNIGK1QR1[35]                 SB_LUT4      I1       In      -         14.187      -         
+sha256_core_inst.r_variables_RNIGK1QR1[35]                 SB_LUT4      O        Out     0.589     14.776      -         
+r_variables_RNIGK1QR1[35]                                  Net          -        -       0.905     -           2         
+sha256_core_inst.un1_r_variables_0_cry_4_c                 SB_CARRY     I0       In      -         15.681      -         
+sha256_core_inst.un1_r_variables_0_cry_4_c                 SB_CARRY     CO       Out     0.380     16.060      -         
+un1_r_variables_0_cry_4                                    Net          -        -       0.014     -           2         
+sha256_core_inst.un1_r_variables_0_cry_5_c                 SB_CARRY     CI       In      -         16.074      -         
+sha256_core_inst.un1_r_variables_0_cry_5_c                 SB_CARRY     CO       Out     0.186     16.260      -         
+un1_r_variables_0_cry_5                                    Net          -        -       0.014     -           2         
+sha256_core_inst.un1_r_variables_0_cry_6_c                 SB_CARRY     CI       In      -         16.274      -         
+sha256_core_inst.un1_r_variables_0_cry_6_c                 SB_CARRY     CO       Out     0.186     16.460      -         
+un1_r_variables_0_cry_6                                    Net          -        -       0.014     -           2         
+sha256_core_inst.un1_r_variables_0_cry_7_c                 SB_CARRY     CI       In      -         16.474      -         
+sha256_core_inst.un1_r_variables_0_cry_7_c                 SB_CARRY     CO       Out     0.186     16.660      -         
+un1_r_variables_0_cry_7                                    Net          -        -       0.014     -           2         
+sha256_core_inst.un1_r_variables_0_cry_8_c                 SB_CARRY     CI       In      -         16.674      -         
+sha256_core_inst.un1_r_variables_0_cry_8_c                 SB_CARRY     CO       Out     0.186     16.860      -         
+un1_r_variables_0_cry_8                                    Net          -        -       0.014     -           2         
+sha256_core_inst.un1_r_variables_0_cry_9_c                 SB_CARRY     CI       In      -         16.874      -         
+sha256_core_inst.un1_r_variables_0_cry_9_c                 SB_CARRY     CO       Out     0.186     17.060      -         
+un1_r_variables_0_cry_9                                    Net          -        -       0.014     -           2         
+sha256_core_inst.un1_r_variables_0_cry_10_c                SB_CARRY     CI       In      -         17.074      -         
+sha256_core_inst.un1_r_variables_0_cry_10_c                SB_CARRY     CO       Out     0.186     17.260      -         
+un1_r_variables_0_cry_10                                   Net          -        -       0.014     -           2         
+sha256_core_inst.un1_r_variables_0_cry_11_c                SB_CARRY     CI       In      -         17.274      -         
+sha256_core_inst.un1_r_variables_0_cry_11_c                SB_CARRY     CO       Out     0.186     17.460      -         
+un1_r_variables_0_cry_11                                   Net          -        -       0.014     -           2         
+sha256_core_inst.un1_r_variables_0_cry_12_c                SB_CARRY     CI       In      -         17.474      -         
+sha256_core_inst.un1_r_variables_0_cry_12_c                SB_CARRY     CO       Out     0.186     17.660      -         
+un1_r_variables_0_cry_12                                   Net          -        -       0.014     -           2         
+sha256_core_inst.un1_r_variables_0_cry_13_c                SB_CARRY     CI       In      -         17.674      -         
+sha256_core_inst.un1_r_variables_0_cry_13_c                SB_CARRY     CO       Out     0.186     17.860      -         
+un1_r_variables_0_cry_13                                   Net          -        -       0.014     -           2         
+sha256_core_inst.un1_r_variables_0_cry_14_c                SB_CARRY     CI       In      -         17.874      -         
+sha256_core_inst.un1_r_variables_0_cry_14_c                SB_CARRY     CO       Out     0.186     18.060      -         
+un1_r_variables_0_cry_14                                   Net          -        -       0.014     -           2         
+sha256_core_inst.un1_r_variables_0_cry_15_c                SB_CARRY     CI       In      -         18.074      -         
+sha256_core_inst.un1_r_variables_0_cry_15_c                SB_CARRY     CO       Out     0.186     18.260      -         
+un1_r_variables_0_cry_15                                   Net          -        -       0.014     -           2         
+sha256_core_inst.un1_r_variables_0_cry_16_c                SB_CARRY     CI       In      -         18.274      -         
+sha256_core_inst.un1_r_variables_0_cry_16_c                SB_CARRY     CO       Out     0.186     18.460      -         
+un1_r_variables_0_cry_16                                   Net          -        -       0.014     -           2         
+sha256_core_inst.un1_r_variables_0_cry_17_c                SB_CARRY     CI       In      -         18.474      -         
+sha256_core_inst.un1_r_variables_0_cry_17_c                SB_CARRY     CO       Out     0.186     18.660      -         
+un1_r_variables_0_cry_17                                   Net          -        -       0.014     -           2         
+sha256_core_inst.un1_r_variables_0_cry_18_c                SB_CARRY     CI       In      -         18.674      -         
+sha256_core_inst.un1_r_variables_0_cry_18_c                SB_CARRY     CO       Out     0.186     18.860      -         
+un1_r_variables_0_cry_18                                   Net          -        -       0.014     -           2         
+sha256_core_inst.un1_r_variables_0_cry_19_c                SB_CARRY     CI       In      -         18.874      -         
+sha256_core_inst.un1_r_variables_0_cry_19_c                SB_CARRY     CO       Out     0.186     19.060      -         
+un1_r_variables_0_cry_19                                   Net          -        -       0.014     -           2         
+sha256_core_inst.un1_r_variables_0_cry_20_c                SB_CARRY     CI       In      -         19.074      -         
+sha256_core_inst.un1_r_variables_0_cry_20_c                SB_CARRY     CO       Out     0.186     19.260      -         
+un1_r_variables_0_cry_20                                   Net          -        -       0.014     -           2         
+sha256_core_inst.un1_r_variables_0_cry_21_c                SB_CARRY     CI       In      -         19.274      -         
+sha256_core_inst.un1_r_variables_0_cry_21_c                SB_CARRY     CO       Out     0.186     19.460      -         
+un1_r_variables_0_cry_21                                   Net          -        -       0.014     -           2         
+sha256_core_inst.un1_r_variables_0_cry_22_c                SB_CARRY     CI       In      -         19.474      -         
+sha256_core_inst.un1_r_variables_0_cry_22_c                SB_CARRY     CO       Out     0.186     19.660      -         
+un1_r_variables_0_cry_22                                   Net          -        -       0.014     -           2         
+sha256_core_inst.un1_r_variables_0_cry_23_c                SB_CARRY     CI       In      -         19.674      -         
+sha256_core_inst.un1_r_variables_0_cry_23_c                SB_CARRY     CO       Out     0.186     19.860      -         
+un1_r_variables_0_cry_23                                   Net          -        -       0.014     -           2         
+sha256_core_inst.un1_r_variables_0_cry_24_c                SB_CARRY     CI       In      -         19.874      -         
+sha256_core_inst.un1_r_variables_0_cry_24_c                SB_CARRY     CO       Out     0.186     20.060      -         
+un1_r_variables_0_cry_24                                   Net          -        -       0.014     -           2         
+sha256_core_inst.un1_r_variables_0_cry_25_c                SB_CARRY     CI       In      -         20.074      -         
+sha256_core_inst.un1_r_variables_0_cry_25_c                SB_CARRY     CO       Out     0.186     20.260      -         
+un1_r_variables_0_cry_25                                   Net          -        -       0.014     -           2         
+sha256_core_inst.un1_r_variables_0_cry_26_c                SB_CARRY     CI       In      -         20.274      -         
+sha256_core_inst.un1_r_variables_0_cry_26_c                SB_CARRY     CO       Out     0.186     20.460      -         
+un1_r_variables_0_cry_26                                   Net          -        -       0.014     -           2         
+sha256_core_inst.un1_r_variables_0_cry_27_c                SB_CARRY     CI       In      -         20.474      -         
+sha256_core_inst.un1_r_variables_0_cry_27_c                SB_CARRY     CO       Out     0.186     20.660      -         
+un1_r_variables_0_cry_27                                   Net          -        -       0.014     -           2         
+sha256_core_inst.un1_r_variables_0_cry_28_c                SB_CARRY     CI       In      -         20.674      -         
+sha256_core_inst.un1_r_variables_0_cry_28_c                SB_CARRY     CO       Out     0.186     20.860      -         
+un1_r_variables_0_cry_28                                   Net          -        -       0.014     -           2         
+sha256_core_inst.un1_r_variables_0_cry_29_c                SB_CARRY     CI       In      -         20.874      -         
+sha256_core_inst.un1_r_variables_0_cry_29_c                SB_CARRY     CO       Out     0.186     21.060      -         
+un1_r_variables_0_cry_29                                   Net          -        -       0.386     -           2         
+sha256_core_inst.r_variables_RNO_0[254]                    SB_LUT4      I3       In      -         21.446      -         
+sha256_core_inst.r_variables_RNO_0[254]                    SB_LUT4      O        Out     0.465     21.912      -         
+r_variables_RNO_0[254]                                     Net          -        -       1.371     -           1         
+sha256_core_inst.r_variables_RNO[254]                      SB_LUT4      I2       In      -         23.282      -         
+sha256_core_inst.r_variables_RNO[254]                      SB_LUT4      O        Out     0.558     23.841      -         
+r_variables_RNO[254]                                       Net          -        -       1.507     -           1         
+sha256_core_inst.r_variables[254]                          SB_DFFES     D        In      -         25.348      -         
+=========================================================================================================================
+Total path delay (propagation time + setup) of 25.503 is 11.159(43.8%) logic and 14.344(56.2%) route.
+Path delay compensated for clock skew. Clock skew is added to clock-to-out value, and is subtracted from setup time value
+
+
+Path information for path number 5: 
+      Requested Period:                      10.000
+    - Setup time:                            0.155
+    + Clock delay at ending point:           0.000 (ideal)
+    = Required time:                         9.845
+
+    - Propagation time:                      25.337
+    - Clock delay at starting point:         0.000 (ideal)
+    = Slack (non-critical) :                 -15.492
+
+    Number of logic level(s):                35
+    Starting point:                          sha256_core_inst.r_variables[226] / Q
+    Ending point:                            sha256_core_inst.r_variables[254] / D
+    The start point is clocked by            sha256_spi|i_clk [rising] on pin C
+    The end   point is clocked by            sha256_spi|i_clk [rising] on pin C
+
+Instance / Net                                                          Pin      Pin               Arrival     No. of    
+Name                                                       Type         Name     Dir     Delay     Time        Fan Out(s)
+-------------------------------------------------------------------------------------------------------------------------
+sha256_core_inst.r_variables[226]                          SB_DFFES     Q        Out     0.796     0.796       -         
+r_variables[226]                                           Net          -        -       1.599     -           10        
+sha256_core_inst.inst_maj.un1_r_variables_v[2]             SB_LUT4      I2       In      -         2.395       -         
+sha256_core_inst.inst_maj.un1_r_variables_v[2]             SB_LUT4      O        Out     0.517     2.912       -         
+maj_out_0[2]                                               Net          -        -       1.371     -           6         
+sha256_core_inst.r_variables_fast_RNIN1AA1_2[239]          SB_LUT4      I0       In      -         4.283       -         
+sha256_core_inst.r_variables_fast_RNIN1AA1_2[239]          SB_LUT4      O        Out     0.661     4.944       -         
+r_variables_fast_RNIN1AA1_2[239]                           Net          -        -       1.371     -           1         
+sha256_core_inst.r_variables_fast_RNIN7H33[239]            SB_LUT4      I1       In      -         6.315       -         
+sha256_core_inst.r_variables_fast_RNIN7H33[239]            SB_LUT4      O        Out     0.589     6.904       -         
+r_variables_fast_RNIN7H33[239]                             Net          -        -       1.371     -           2         
+sha256_core_inst.r_words_RNIGGIU9[481]                     SB_LUT4      I0       In      -         8.275       -         
+sha256_core_inst.r_words_RNIGGIU9[481]                     SB_LUT4      O        Out     0.661     8.937       -         
+r_words_RNIGGIU9[481]                                      Net          -        -       1.371     -           2         
+sha256_core_inst.r_words_RNI50IRK_0[481]                   SB_LUT4      I0       In      -         10.308      -         
+sha256_core_inst.r_words_RNI50IRK_0[481]                   SB_LUT4      O        Out     0.661     10.969      -         
+r_words_RNI50IRK_0[481]                                    Net          -        -       1.371     -           1         
+sha256_core_inst.inst_coef.ram256x16_lowpart_RNICG5D71     SB_LUT4      I3       In      -         12.340      -         
+sha256_core_inst.inst_coef.ram256x16_lowpart_RNICG5D71     SB_LUT4      O        Out     0.465     12.806      -         
+un1_r_variables_0_axb_4                                    Net          -        -       1.371     -           1         
+sha256_core_inst.r_variables_RNIGK1QR1[35]                 SB_LUT4      I1       In      -         14.177      -         
+sha256_core_inst.r_variables_RNIGK1QR1[35]                 SB_LUT4      O        Out     0.589     14.766      -         
+r_variables_RNIGK1QR1[35]                                  Net          -        -       0.905     -           2         
+sha256_core_inst.un1_r_variables_0_cry_4_c                 SB_CARRY     I0       In      -         15.671      -         
+sha256_core_inst.un1_r_variables_0_cry_4_c                 SB_CARRY     CO       Out     0.380     16.050      -         
+un1_r_variables_0_cry_4                                    Net          -        -       0.014     -           2         
+sha256_core_inst.un1_r_variables_0_cry_5_c                 SB_CARRY     CI       In      -         16.064      -         
+sha256_core_inst.un1_r_variables_0_cry_5_c                 SB_CARRY     CO       Out     0.186     16.250      -         
+un1_r_variables_0_cry_5                                    Net          -        -       0.014     -           2         
+sha256_core_inst.un1_r_variables_0_cry_6_c                 SB_CARRY     CI       In      -         16.264      -         
+sha256_core_inst.un1_r_variables_0_cry_6_c                 SB_CARRY     CO       Out     0.186     16.450      -         
+un1_r_variables_0_cry_6                                    Net          -        -       0.014     -           2         
+sha256_core_inst.un1_r_variables_0_cry_7_c                 SB_CARRY     CI       In      -         16.464      -         
+sha256_core_inst.un1_r_variables_0_cry_7_c                 SB_CARRY     CO       Out     0.186     16.650      -         
+un1_r_variables_0_cry_7                                    Net          -        -       0.014     -           2         
+sha256_core_inst.un1_r_variables_0_cry_8_c                 SB_CARRY     CI       In      -         16.664      -         
+sha256_core_inst.un1_r_variables_0_cry_8_c                 SB_CARRY     CO       Out     0.186     16.850      -         
+un1_r_variables_0_cry_8                                    Net          -        -       0.014     -           2         
+sha256_core_inst.un1_r_variables_0_cry_9_c                 SB_CARRY     CI       In      -         16.864      -         
+sha256_core_inst.un1_r_variables_0_cry_9_c                 SB_CARRY     CO       Out     0.186     17.050      -         
+un1_r_variables_0_cry_9                                    Net          -        -       0.014     -           2         
+sha256_core_inst.un1_r_variables_0_cry_10_c                SB_CARRY     CI       In      -         17.064      -         
+sha256_core_inst.un1_r_variables_0_cry_10_c                SB_CARRY     CO       Out     0.186     17.250      -         
+un1_r_variables_0_cry_10                                   Net          -        -       0.014     -           2         
+sha256_core_inst.un1_r_variables_0_cry_11_c                SB_CARRY     CI       In      -         17.264      -         
+sha256_core_inst.un1_r_variables_0_cry_11_c                SB_CARRY     CO       Out     0.186     17.450      -         
+un1_r_variables_0_cry_11                                   Net          -        -       0.014     -           2         
+sha256_core_inst.un1_r_variables_0_cry_12_c                SB_CARRY     CI       In      -         17.464      -         
+sha256_core_inst.un1_r_variables_0_cry_12_c                SB_CARRY     CO       Out     0.186     17.650      -         
+un1_r_variables_0_cry_12                                   Net          -        -       0.014     -           2         
+sha256_core_inst.un1_r_variables_0_cry_13_c                SB_CARRY     CI       In      -         17.664      -         
+sha256_core_inst.un1_r_variables_0_cry_13_c                SB_CARRY     CO       Out     0.186     17.850      -         
+un1_r_variables_0_cry_13                                   Net          -        -       0.014     -           2         
+sha256_core_inst.un1_r_variables_0_cry_14_c                SB_CARRY     CI       In      -         17.864      -         
+sha256_core_inst.un1_r_variables_0_cry_14_c                SB_CARRY     CO       Out     0.186     18.050      -         
+un1_r_variables_0_cry_14                                   Net          -        -       0.014     -           2         
+sha256_core_inst.un1_r_variables_0_cry_15_c                SB_CARRY     CI       In      -         18.064      -         
+sha256_core_inst.un1_r_variables_0_cry_15_c                SB_CARRY     CO       Out     0.186     18.250      -         
+un1_r_variables_0_cry_15                                   Net          -        -       0.014     -           2         
+sha256_core_inst.un1_r_variables_0_cry_16_c                SB_CARRY     CI       In      -         18.264      -         
+sha256_core_inst.un1_r_variables_0_cry_16_c                SB_CARRY     CO       Out     0.186     18.450      -         
+un1_r_variables_0_cry_16                                   Net          -        -       0.014     -           2         
+sha256_core_inst.un1_r_variables_0_cry_17_c                SB_CARRY     CI       In      -         18.464      -         
+sha256_core_inst.un1_r_variables_0_cry_17_c                SB_CARRY     CO       Out     0.186     18.650      -         
+un1_r_variables_0_cry_17                                   Net          -        -       0.014     -           2         
+sha256_core_inst.un1_r_variables_0_cry_18_c                SB_CARRY     CI       In      -         18.664      -         
+sha256_core_inst.un1_r_variables_0_cry_18_c                SB_CARRY     CO       Out     0.186     18.850      -         
+un1_r_variables_0_cry_18                                   Net          -        -       0.014     -           2         
+sha256_core_inst.un1_r_variables_0_cry_19_c                SB_CARRY     CI       In      -         18.864      -         
+sha256_core_inst.un1_r_variables_0_cry_19_c                SB_CARRY     CO       Out     0.186     19.050      -         
+un1_r_variables_0_cry_19                                   Net          -        -       0.014     -           2         
+sha256_core_inst.un1_r_variables_0_cry_20_c                SB_CARRY     CI       In      -         19.064      -         
+sha256_core_inst.un1_r_variables_0_cry_20_c                SB_CARRY     CO       Out     0.186     19.250      -         
+un1_r_variables_0_cry_20                                   Net          -        -       0.014     -           2         
+sha256_core_inst.un1_r_variables_0_cry_21_c                SB_CARRY     CI       In      -         19.264      -         
+sha256_core_inst.un1_r_variables_0_cry_21_c                SB_CARRY     CO       Out     0.186     19.450      -         
+un1_r_variables_0_cry_21                                   Net          -        -       0.014     -           2         
+sha256_core_inst.un1_r_variables_0_cry_22_c                SB_CARRY     CI       In      -         19.464      -         
+sha256_core_inst.un1_r_variables_0_cry_22_c                SB_CARRY     CO       Out     0.186     19.650      -         
+un1_r_variables_0_cry_22                                   Net          -        -       0.014     -           2         
+sha256_core_inst.un1_r_variables_0_cry_23_c                SB_CARRY     CI       In      -         19.664      -         
+sha256_core_inst.un1_r_variables_0_cry_23_c                SB_CARRY     CO       Out     0.186     19.850      -         
+un1_r_variables_0_cry_23                                   Net          -        -       0.014     -           2         
+sha256_core_inst.un1_r_variables_0_cry_24_c                SB_CARRY     CI       In      -         19.864      -         
+sha256_core_inst.un1_r_variables_0_cry_24_c                SB_CARRY     CO       Out     0.186     20.050      -         
+un1_r_variables_0_cry_24                                   Net          -        -       0.014     -           2         
+sha256_core_inst.un1_r_variables_0_cry_25_c                SB_CARRY     CI       In      -         20.064      -         
+sha256_core_inst.un1_r_variables_0_cry_25_c                SB_CARRY     CO       Out     0.186     20.250      -         
+un1_r_variables_0_cry_25                                   Net          -        -       0.014     -           2         
+sha256_core_inst.un1_r_variables_0_cry_26_c                SB_CARRY     CI       In      -         20.264      -         
+sha256_core_inst.un1_r_variables_0_cry_26_c                SB_CARRY     CO       Out     0.186     20.450      -         
+un1_r_variables_0_cry_26                                   Net          -        -       0.014     -           2         
+sha256_core_inst.un1_r_variables_0_cry_27_c                SB_CARRY     CI       In      -         20.464      -         
+sha256_core_inst.un1_r_variables_0_cry_27_c                SB_CARRY     CO       Out     0.186     20.650      -         
+un1_r_variables_0_cry_27                                   Net          -        -       0.014     -           2         
+sha256_core_inst.un1_r_variables_0_cry_28_c                SB_CARRY     CI       In      -         20.664      -         
+sha256_core_inst.un1_r_variables_0_cry_28_c                SB_CARRY     CO       Out     0.186     20.850      -         
+un1_r_variables_0_cry_28                                   Net          -        -       0.014     -           2         
+sha256_core_inst.un1_r_variables_0_cry_29_c                SB_CARRY     CI       In      -         20.864      -         
+sha256_core_inst.un1_r_variables_0_cry_29_c                SB_CARRY     CO       Out     0.186     21.050      -         
+un1_r_variables_0_cry_29                                   Net          -        -       0.386     -           2         
+sha256_core_inst.r_variables_RNO_0[254]                    SB_LUT4      I3       In      -         21.436      -         
+sha256_core_inst.r_variables_RNO_0[254]                    SB_LUT4      O        Out     0.465     21.901      -         
+r_variables_RNO_0[254]                                     Net          -        -       1.371     -           1         
+sha256_core_inst.r_variables_RNO[254]                      SB_LUT4      I2       In      -         23.272      -         
+sha256_core_inst.r_variables_RNO[254]                      SB_LUT4      O        Out     0.558     23.830      -         
+r_variables_RNO[254]                                       Net          -        -       1.507     -           1         
+sha256_core_inst.r_variables[254]                          SB_DFFES     D        In      -         25.337      -         
+=========================================================================================================================
+Total path delay (propagation time + setup) of 25.492 is 11.148(43.7%) logic and 14.344(56.3%) route.
+Path delay compensated for clock skew. Clock skew is added to clock-to-out value, and is subtracted from setup time value
+
+
+
+##### END OF TIMING REPORT #####]
+
+Timing exceptions that could not be applied
+None
+
+Finished final timing analysis (Real Time elapsed 0h:00m:22s; CPU Time elapsed 0h:00m:22s; Memory used current: 190MB peak: 228MB)
+
+
+Finished timing report (Real Time elapsed 0h:00m:22s; CPU Time elapsed 0h:00m:22s; Memory used current: 190MB peak: 228MB)
+
+---------------------------------------
+<a name=resourceUsage78></a>Resource Usage Report for sha256_spi </a>
+
+Mapping to part: ice5lp4ksg48
+Cell usage:
+GND             9 uses
+SB_CARRY        342 uses
+SB_DFFER        698 uses
+SB_DFFES        166 uses
+SB_DFFR         11 uses
+SB_DFFS         3 uses
+SB_GB           4 uses
+SB_RAM256x16    2 uses
+VCC             9 uses
+SB_LUT4         2775 uses
+
+I/O ports: 7
+I/O primitives: 7
+SB_GB_IO       1 use
+SB_IO          6 uses
+
+I/O Register bits:                  0
+Register bits not including I/Os:   878 (24%)
+
+RAM/ROM usage summary
+Block Rams : 2 of 20 (10%)
+
+Total load per clock:
+   sha256_spi|i_clk: 1
+
+@S |Mapping Summary:
+Total  LUTs: 2775 (78%)
+
+Distribution of All Consumed LUTs = LUT4 
+Distribution of All Consumed Luts 2775 = 2775 
+
+Mapper successful!
+
+At Mapper Exit (Real Time elapsed 0h:00m:23s; CPU Time elapsed 0h:00m:22s; Memory used current: 32MB peak: 228MB)
+
+Process took 0h:00m:23s realtime, 0h:00m:22s cputime
+# Tue Feb 13 22:53:01 2018
+
+###########################################################]
+
+</pre></samp></body></html>

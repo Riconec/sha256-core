@@ -1,0 +1,578 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dF:/shteudFPGA
+vadder_32b_param
+Z0 !s110 1521673080
+!i10b 1
+!s100 ;2mfAHn<0Mjd`cSkAaAXV3
+IbUYi=4@S[c8VYmCgB7FcB3
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+Z2 dC:/workspace/sha256-core/projects
+Z3 w1521673072
+Z4 8C:/workspace/sha256-core/src/sha/Modified/adders.v
+Z5 FC:/workspace/sha256-core/src/sha/Modified/adders.v
+L0 1
+Z6 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z7 !s108 1521673080.000000
+Z8 !s107 C:/workspace/sha256-core/src/sha/Modified/adders.v|
+Z9 !s90 -reportprogress|300|-work|modelsim|-stats=none|C:/workspace/sha256-core/src/sha/Modified/adders.v|
+!i113 1
+Z10 o-work modelsim
+Z11 tCvgOpt 0
+vadder_lpm_add
+Z12 !s110 1521672886
+!i10b 1
+!s100 g9e9GRE9H@0@R]m<m3^H[1
+I?M`lP91Vg3?ZAbWo@HM`42
+R1
+R2
+w1521671563
+8C:/workspace/sha256-core/projects/quartus/adder_lpm_add_bb.v
+FC:/workspace/sha256-core/projects/quartus/adder_lpm_add_bb.v
+Z13 L0 34
+R6
+r1
+!s85 0
+31
+Z14 !s108 1521672886.000000
+!s107 C:/workspace/sha256-core/projects/quartus/adder_lpm_add_bb.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/workspace/sha256-core/projects/quartus/adder_lpm_add_bb.v|
+!i113 1
+Z15 o-work work
+R11
+vcarry_select_adder_16bit
+R0
+!i10b 1
+!s100 2<S0L_M05;82HC31^iol:3
+I`6Vj1kQM6Pk=]J>CYRB130
+R1
+R2
+R3
+R4
+R5
+L0 204
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+vcarry_select_adder_4bit_slice
+R0
+!i10b 1
+!s100 2k[7WNFlQcoN@3<Uea?dj0
+I29EUJZEcoFTh]PB=7efmo0
+R1
+R2
+R3
+R4
+R5
+L0 111
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+vch
+R12
+!i10b 1
+!s100 CBX>P_aJhR[i:^6SaT0Jh1
+I]ad[]S57;=;XUPIXiM=IP0
+R1
+R2
+Z16 w1521489131
+Z17 8C:/workspace/sha256-core/src/sha/Vanilla/sha256_math.v
+Z18 FC:/workspace/sha256-core/src/sha/Vanilla/sha256_math.v
+L0 16
+R6
+r1
+!s85 0
+31
+R14
+Z19 !s107 C:/workspace/sha256-core/src/sha/Vanilla/sha256_math.v|
+Z20 !s90 -reportprogress|300|-work|modelsim|-stats=none|C:/workspace/sha256-core/src/sha/Vanilla/sha256_math.v|
+!i113 1
+R10
+R11
+vcla4
+!s110 1521498166
+!i10b 1
+!s100 TlJH87IGY65[Yj8dl?3F_1
+I@OPIKm>?m246?dHGTB3SJ1
+R1
+R2
+w1521497990
+R4
+R5
+L0 206
+R6
+r1
+!s85 0
+31
+!s108 1521498166.000000
+R8
+R9
+!i113 1
+R10
+R11
+vfull_adder
+R0
+!i10b 1
+!s100 ALW66c[USQ[MR]ajA5P[A2
+I<jOKWKZK<Yl5`adXb98fG1
+R1
+R2
+R3
+R4
+R5
+L0 243
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+vhalf_adder
+R0
+!i10b 1
+!s100 z`?DB_DUNBd]K?>8>?KS60
+Ife7WmHO?h32E^8hQ;5;;@2
+R1
+R2
+R3
+R4
+R5
+L0 254
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+vmaj
+R12
+!i10b 1
+!s100 lZbSgleE=MlmESWK^C3FO3
+IzVl2?BbRiNo8SJCF>JMn40
+R1
+R2
+R16
+R17
+R18
+L0 27
+R6
+r1
+!s85 0
+31
+R14
+R19
+R20
+!i113 1
+R10
+R11
+vmux2X1
+R0
+!i10b 1
+!s100 GMIWM5DmcJJ:5@D2fJeQj0
+I?X^PfhzMl4QWHO@3bhOGH1
+R1
+R2
+R3
+R4
+R5
+L0 156
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+nmux2@x1
+vpar_add
+R12
+!i10b 1
+!s100 4U0_NcUhKkXDiTFR]Pd6L3
+Izce7kn1RUBKO?G9463PHB0
+R1
+R2
+w1521670298
+8C:/workspace/sha256-core/projects/quartus/par_add_bb.v
+FC:/workspace/sha256-core/projects/quartus/par_add_bb.v
+R13
+R6
+r1
+!s85 0
+31
+R14
+!s107 C:/workspace/sha256-core/projects/quartus/par_add_bb.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/workspace/sha256-core/projects/quartus/par_add_bb.v|
+!i113 1
+R15
+R11
+vpar_add_4
+!s110 1521672887
+!i10b 1
+!s100 PCifd0io6KTF6EP6^6HzT2
+IRURT;K453:4SYkOzUJ2nY1
+R1
+R2
+w1521670888
+8C:/workspace/sha256-core/projects/quartus/par_add_4_bb.v
+FC:/workspace/sha256-core/projects/quartus/par_add_4_bb.v
+R13
+R6
+r1
+!s85 0
+31
+!s108 1521672887.000000
+!s107 C:/workspace/sha256-core/projects/quartus/par_add_4_bb.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/workspace/sha256-core/projects/quartus/par_add_4_bb.v|
+!i113 1
+R15
+R11
+vpar_add_6
+Z21 !s110 1521672888
+!i10b 1
+!s100 Hekc84LS[h7^2jZkh=OX]1
+I>XEDdBzg<@;C=nQNMZ]M<1
+R1
+R2
+w1521670433
+8C:/workspace/sha256-core/projects/quartus/par_add_6_bb.v
+FC:/workspace/sha256-core/projects/quartus/par_add_6_bb.v
+R13
+R6
+r1
+!s85 0
+31
+Z22 !s108 1521672888.000000
+!s107 C:/workspace/sha256-core/projects/quartus/par_add_6_bb.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/workspace/sha256-core/projects/quartus/par_add_6_bb.v|
+!i113 1
+R15
+R11
+vpar_add_7
+R21
+!i10b 1
+!s100 ?]B4fQJiPSZWOKEEK4LDK0
+I<^hdWEh3EAkj;73iCiRfQ1
+R1
+R2
+w1521670591
+8C:/workspace/sha256-core/projects/quartus/par_add_7_bb.v
+FC:/workspace/sha256-core/projects/quartus/par_add_7_bb.v
+R13
+R6
+r1
+!s85 0
+31
+R22
+!s107 C:/workspace/sha256-core/projects/quartus/par_add_7_bb.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/workspace/sha256-core/projects/quartus/par_add_7_bb.v|
+!i113 1
+R15
+R11
+vripple_carry_4_bit
+R0
+!i10b 1
+!s100 :ok3_MR[74][lQe2?nU5O3
+IW?D=mbYinB>dd6hZ3m^TD2
+R1
+R2
+R3
+R4
+R5
+L0 167
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+vsha256_coefs_clk
+Z23 !s110 1521672885
+!i10b 1
+!s100 RNad2n>ZZNAQ6a?W3^3j32
+IO`Wdig=K<8BS0AmR<UkzA2
+R1
+R2
+w1521494887
+8C:/workspace/sha256-core/src/sha/Modified/sha256_coefs_clk.v
+FC:/workspace/sha256-core/src/sha/Modified/sha256_coefs_clk.v
+L0 82
+R6
+r1
+!s85 0
+31
+Z24 !s108 1521672885.000000
+!s107 C:/workspace/sha256-core/src/sha/Modified/sha256_coefs_clk.v|
+!s90 -reportprogress|300|-work|modelsim|-stats=none|C:/workspace/sha256-core/src/sha/Modified/sha256_coefs_clk.v|
+!i113 1
+R10
+R11
+vsha256_core
+!s110 1521673242
+!i10b 1
+!s100 8YGbEG>DFRd:zGjcXngHb3
+IXRoSfP`5W79eXPnXGinBn0
+R1
+R2
+w1521673233
+Z25 8C:/workspace/sha256-core/src/sha/Modified/sha256_core_clk.v
+Z26 FC:/workspace/sha256-core/src/sha/Modified/sha256_core_clk.v
+L0 4
+R6
+r1
+!s85 0
+31
+!s108 1521673241.000000
+!s107 C:/workspace/sha256-core/src/sha/Modified/sha256_core_clk.v|
+Z27 !s90 -reportprogress|300|-work|modelsim|-stats=none|C:/workspace/sha256-core/src/sha/Modified/sha256_core_clk.v|
+!i113 1
+R10
+R11
+vsha256_core_clk
+!s110 1521492410
+!i10b 1
+!s100 g<TkX]oE?=57n46ViGJn63
+IC;5ZHe=j<WafQW1=oNK<J3
+R1
+R2
+w1521492405
+R25
+R26
+L0 4
+R6
+r1
+!s85 0
+31
+!s108 1521492410.000000
+!s107 C:/workspace/sha256-core/src/sha/Modified/sha256_core_clk.v|
+R27
+!i113 1
+R10
+R11
+vsha256_spi
+Z28 !s110 1521672884
+!i10b 1
+!s100 7k28<?2iCk32C^=V[QiFB2
+IfLCGUcjbT9V7eFWA^f3m@2
+R1
+R2
+w1521489176
+8C:/workspace/sha256-core/src/top/sha256_spi.v
+FC:/workspace/sha256-core/src/top/sha256_spi.v
+L0 5
+R6
+r1
+!s85 0
+31
+Z29 !s108 1521672884.000000
+!s107 C:/workspace/sha256-core/src/top/sha256_spi.v|
+!s90 -reportprogress|300|-work|modelsim|-stats=none|C:/workspace/sha256-core/src/top/sha256_spi.v|
+!i113 1
+R10
+R11
+vsha256_tb
+R23
+!i10b 1
+!s100 z[PB9k6cn]]QODk2lWJ<22
+IZDUfXXIk_c<K:9AVa_Nz@2
+R1
+R2
+w1496216457
+8C:/workspace/sha256-core/src/sha/sha256_lite_tb.v
+FC:/workspace/sha256-core/src/sha/sha256_lite_tb.v
+L0 3
+R6
+r1
+!s85 0
+31
+R24
+!s107 C:/workspace/sha256-core/src/sha/sha256_lite_tb.v|
+!s90 -reportprogress|300|-work|modelsim|-stats=none|C:/workspace/sha256-core/src/sha/sha256_lite_tb.v|
+!i113 1
+R10
+R11
+vsigm0
+R12
+!i10b 1
+!s100 <P;Rl_oa;DWFb_VA>A6J?3
+IMAA<zdEO7GJeg8JHH0S:l3
+R1
+R2
+R16
+R17
+R18
+L0 55
+R6
+r1
+!s85 0
+31
+R14
+R19
+R20
+!i113 1
+R10
+R11
+vsigm1
+R12
+!i10b 1
+!s100 >7RM:[40lg=N31mEMO8e_1
+IHen]1Wf2aO9Ocj<Z8X<TD2
+R1
+R2
+R16
+R17
+R18
+L0 65
+R6
+r1
+!s85 0
+31
+R14
+R19
+R20
+!i113 1
+R10
+R11
+vspi_slave
+R28
+!i10b 1
+!s100 Q<dhQ5od`Po_3=6AU>gg:1
+Ik>eA:T>4YnF9TR2FJPZjT0
+R1
+R2
+w1521491950
+8C:/workspace/sha256-core/src/spi/spi_slave.v
+FC:/workspace/sha256-core/src/spi/spi_slave.v
+L0 8
+R6
+r1
+!s85 0
+31
+R29
+!s107 C:/workspace/sha256-core/src/spi/spi_slave.v|
+!s90 -reportprogress|300|-work|modelsim|-stats=none|C:/workspace/sha256-core/src/spi/spi_slave.v|
+!i113 1
+R10
+R11
+vspi_slave_tb
+R28
+!i10b 1
+!s100 jjlb2OgYYY_MG:D^XhjYO2
+ID>NJMX48UN=Ua6d82:0fh3
+R1
+R2
+w1496170524
+8C:/workspace/sha256-core/src/spi/spi_slave_tb.v
+FC:/workspace/sha256-core/src/spi/spi_slave_tb.v
+L0 3
+R6
+r1
+!s85 0
+31
+R29
+!s107 C:/workspace/sha256-core/src/spi/spi_slave_tb.v|
+!s90 -reportprogress|300|-work|modelsim|-stats=none|C:/workspace/sha256-core/src/spi/spi_slave_tb.v|
+!i113 1
+R10
+R11
+vsum0
+R12
+!i10b 1
+!s100 AAMjHo[RH6n;@B`z?TcCl0
+IeolRn88FR;R0;7]KP`LoU3
+R1
+R2
+R16
+R17
+R18
+L0 36
+R6
+r1
+!s85 0
+31
+R14
+R19
+R20
+!i113 1
+R10
+R11
+vsum1
+R12
+!i10b 1
+!s100 =B5S[J>DSVW31`Z=h911P0
+I<4T]m;^EWdZ0UV>k59V6R3
+R1
+R2
+R16
+R17
+R18
+L0 46
+R6
+r1
+!s85 0
+31
+R14
+R19
+R20
+!i113 1
+R10
+R11
+vtop_tb
+R23
+!i10b 1
+!s100 9gdTU@Lc]`:Y=hW;m770Q2
+IMa28Y:bFTBVX=X]a[80V;2
+R1
+R2
+w1496291901
+8C:/workspace/sha256-core/src/top/top_tb.v
+FC:/workspace/sha256-core/src/top/top_tb.v
+L0 2
+R6
+r1
+!s85 0
+31
+R29
+!s107 C:/workspace/sha256-core/src/top/top_tb.v|
+!s90 -reportprogress|300|-work|modelsim|-stats=none|C:/workspace/sha256-core/src/top/top_tb.v|
+!i113 1
+R10
+R11

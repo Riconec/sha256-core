@@ -1,0 +1,121 @@
+* ******************************************************************************
+
+* iCEcube Report
+
+* Version:            2017.01.27914
+
+* Build Date:         Jan 12 2017 18:38:54
+
+* File Generated:     Feb 13 2018 22:06:25
+
+* Purpose:            General info of design implementation
+
+* Copyright (C) 2006-2010 by Lattice Semiconductor Corp. All rights reserved.
+
+* ******************************************************************************
+
+Synthesis/Placement Summary:
+----------------------------
+    Status:  Successful
+    Runtime: 6 seconds
+
+Device Info:
+------------
+    Device Family: iCE5LP
+    Device:        iCE5LP4K
+    Package:       SG48
+
+Design statistics:
+------------------
+    FFs:                  890
+    LUTs:                 3360
+    RAMs:                 0
+    IOBs:                 7
+    GBs:                  5
+    PLLs:                 0
+    Warm Boots:           0
+    SPIs:                 0
+    I2Cs:                 0
+    HFOSCs:               0
+    LFOSCs:               0
+    RGB_DRVs:             0
+    IR_DRVs:              0
+    LED_DRV_CURs:         0
+    LEDD_IPs:             0
+    DSPs:                 0
+
+Logic Resource Utilization:
+---------------------------
+    Total Logic Cells: 3376/3520
+        Combinational Logic Cells: 2486     out of   3520      70.625%
+        Sequential Logic Cells:    890      out of   3520      25.2841%
+        Logic Tiles:               432      out of   440       98.1818%
+    Registers: 
+        Logic Registers:           890      out of   3520      25.2841%
+        IO Registers:              0        out of   480       0
+    Block RAMs:                    0        out of   20        0%
+    Warm Boots:                    0        out of   1         0%
+    SPIs:                          0        out of   2         0%
+    I2Cs:                          0        out of   2         0%
+    HFOSCs:                        0        out of   1         0%
+    LFOSCs:                        0        out of   1         0%
+    RGB_DRVs:                      0        out of   1         0%
+    IR_DRVs:                       0        out of   1         0%
+    LED_DRV_CURs:                  0        out of   1         0%
+    LEDD_IPs:                      0        out of   1         0%
+    DSPs:                          0        out of   4         0%
+    Pins:
+        Input Pins:                5        out of   39        12.8205%
+        Output Pins:               2        out of   39        5.12821%
+        InOut Pins:                0        out of   39        0%
+    Global Buffers:                5        out of   8         62.5%
+    PLLs:                          0        out of   1         0%
+
+IO Bank Utilization:
+--------------------
+    Bank 3: 0        out of   0         0%
+    Bank 1: 0        out of   0         0%
+    Bank 0: 6        out of   17        35.2941%
+    Bank 2: 1        out of   22        4.54545%
+
+Detailed I/O Info:
+------------------
+    Input Pins: 
+    Pin Number  Direction  IO Standard  Pull Up  IO Bank  IO Function                   Signal Name 
+    ----------  ---------  -----------  -------  -------  -----------                   ----------- 
+    16          Input      SB_LVCMOS    No       2        Simple Input                  i_rst_n     
+    26          Input      SB_LVCMOS    No       0        Simple Input                  i_spi_mosi  
+    35          Input      SB_LVCMOS    No       0        Simple Input                  i_clk       
+    42          Input      SB_LVCMOS    No       0        Simple Input                  i_sck       
+    43          Input      SB_LVCMOS    No       0        Simple Input                  i_ss_n      
+
+    Output Pins: 
+    Pin Number  Direction  IO Standard  Pull Up  IO Bank  IO Function                   Signal Name 
+    ----------  ---------  -----------  -------  -------  -----------                   ----------- 
+    28          Output     SB_LVCMOS    No       0        Output Tristatable by Enable  o_irq_done  
+    31          Output     SB_LVCMOS    No       0        Output Tristatable by Enable  o_spi_miso  
+
+Detailed Global Buffer Info:
+----------------------------
+    Buffer Number  IO Bank  Driven By  Fanout  Signal Name                                      
+    -------------  -------  ---------  ------  -----------                                      
+    7              0        IO         888     i_clk_c_g                                        
+    5              2                   252     sha256_core_inst.un1_r_variables_0_sqmuxa_0_i_g  
+    4              0                   888     i_rst_n_c_i_g                                    
+    1              0                   512     sha256_core_inst.un1_r_words1367_0_g             
+    3              0                   65      sha256_core_inst.r_variables_0_g                 
+
+
+Router Summary:
+---------------
+    Status:  Successful
+    Runtime: 72 seconds
+
+Routing Resource Utilization:
+-----------------------------
+              Local line of tile    22916 out of  74681      30.6852%
+                          Span 4     6728 out of  15808      42.5607%
+                         Span 12      969 out of   3184      30.4334%
+                  Global network        5 out of      8      62.5%
+      Vertical Inter-LUT Connect      903 out of   3080      29.3182%
+

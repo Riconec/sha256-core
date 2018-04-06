@@ -1,0 +1,2 @@
+More agressive settings
+Based on:sha256_spi

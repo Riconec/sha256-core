@@ -1,4 +1,10 @@
+
 module adder_32b_param(i_a, i_b, i_carry, o_carry, o_summ);
+//`define LPM_ADD
+//`define RC_ADDER
+//`define CLA_ADDER
+`define CSLA_ADDER_16
+
   parameter WIDTH = 32;
   input [WIDTH-1:0] i_a, i_b;
   input i_carry;
@@ -8,11 +14,6 @@ module adder_32b_param(i_a, i_b, i_carry, o_carry, o_summ);
   wire [WIDTH-1:0] inv_b;
   wire b_inv, b_o_inv;
 	
-//`define MF_PAR_ADD
-`define LPM_ADD
-//`define RC_ADDER
-//`define CLA_ADDER
-//`define CSLA_ADDER_16
 
 `ifdef LPM_ADD
   adder_lpm_add	adder_lpm_add_inst (

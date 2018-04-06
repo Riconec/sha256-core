@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Thu Mar 29 23:31:37 2018
+Quartus Prime Version : 17.1.0 Build 590 10/25/2017 SJ Lite Edition
+Revision Name : sha256_spi
+Top-level Entity Name : sha256_spi
+Family : Cyclone IV E
+Total logic elements : 3,879
+    Total combinational functions : 3,848
+    Dedicated logic registers : 830
+Total registers : 830
+Total pins : 7
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

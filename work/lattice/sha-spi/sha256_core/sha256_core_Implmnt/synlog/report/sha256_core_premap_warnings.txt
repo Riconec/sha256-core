@@ -1,1 +1,0 @@
-@W: MT529 :"c:\workspace\sha256-core\src\sha\sha256_core.v":161:1:161:6|Found inferred clock sha256_spi|i_clk which controls 837 sequential elements including sha256_core_inst.r_variables[255:0]. This clock has no specified timing constraint which may prevent conversion of gated or generated clocks and may adversely impact design performance. 

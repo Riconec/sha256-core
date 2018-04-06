@@ -1,9 +1,0 @@
-@W: CG289 :"C:\workspace\sha256-core\src\sha\sha256_core.v":25:24:25:29|Specified digits overflow the number's size
-@W: CS263 :"C:\workspace\sha256-core\src\sha\sha256_coefs.v":13:10:13:26|Port-width mismatch for port RADDR. The port definition is 8 bits, but the actual port connection bit width is 9. Adjust either the definition or the instantiation of this port.
-@W: CS263 :"C:\workspace\sha256-core\src\sha\sha256_coefs.v":44:10:44:26|Port-width mismatch for port RADDR. The port definition is 8 bits, but the actual port connection bit width is 9. Adjust either the definition or the instantiation of this port.
-@W: CG360 :"C:\workspace\sha256-core\src\sha\sha256_core.v":78:22:78:29|Removing wire o_data_w, as there is no assignment to it.
-@W: CG360 :"C:\workspace\sha256-core\src\top\sha256_spi.v":20:5:20:11|Removing wire we_edge, as there is no assignment to it.
-@W: CL169 :"C:\workspace\sha256-core\src\top\sha256_spi.v":26:0:26:5|Pruning unused register ss_sync[2:0]. Make sure that there are no unused intermediate registers.
-@W: CL169 :"C:\workspace\sha256-core\src\top\sha256_spi.v":26:0:26:5|Pruning unused register mosi_sync[2:0]. Make sure that there are no unused intermediate registers.
-@W: CL265 :"C:\workspace\sha256-core\src\top\sha256_spi.v":26:0:26:5|Removing unused bit 2 of sck_sync[2:0]. Either assign all bits or reduce the width of the signal.
-

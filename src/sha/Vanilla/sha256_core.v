@@ -63,7 +63,7 @@ module sha256_core (
 	maj inst_maj(.x(var_a), .y(var_b), .z(var_c), .o(maj_out)); //OK
 	
 	//`ifdef LATTICE_BRAM
-		sha256_coefs inst_coef(.i_coef_num(r_round), .i_clk(i_clk), .o_coef_value(Kt_out)); //OK seems to be, check all coefs 8 and more
+		sha256_coefs inst_coef(.i_coef_num(r_round), .o_coef_value(Kt_out)); //OK seems to be, check all coefs 8 and more
 	//`else
 	//	sha256_coefs inst_coef(.i_coef_num(r_round), .o_coef_value(Kt_out)); //OK seems to be, check all coefs 8 and more
 	//`endif

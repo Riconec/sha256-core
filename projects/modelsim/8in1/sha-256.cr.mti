@@ -1,0 +1,131 @@
+C:/workspace/sha256-core/projects/quartus/par_add_6.v {1 {vlog -work work -stats=none C:/workspace/sha256-core/projects/quartus/par_add_6.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module par_add_6
+
+Top level modules:
+	par_add_6
+
+} {} {}} C:/workspace/sha256-core/src/spi/spi_slave_tb.v {1 {vlog -work work -stats=none C:/workspace/sha256-core/src/spi/spi_slave_tb.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module spi_slave_tb
+
+Top level modules:
+	spi_slave_tb
+
+} {} {}} C:/workspace/sha256-core/projects/quartus/adder_lpm_add.v {1 {vlog -work work -stats=none C:/workspace/sha256-core/projects/quartus/adder_lpm_add.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module adder_lpm_add
+
+Top level modules:
+	adder_lpm_add
+
+} {} {}} C:/workspace/sha256-core/projects/quartus/par_add_7.v {1 {vlog -work work -stats=none C:/workspace/sha256-core/projects/quartus/par_add_7.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module par_add_7
+
+Top level modules:
+	par_add_7
+
+} {} {}} {C:/workspace/sha256-core/src/altera/8 round/sha256_core_clk.v} {1 {vlog -work work -stats=none {C:/workspace/sha256-core/src/altera/8 round/sha256_core_clk.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module sha256_core
+-- Compiling module sha256_digester_comb
+
+Top level modules:
+	sha256_core
+
+} {} {}} C:/workspace/sha256-core/projects/quartus/par_add_7_bb.v {1 {vlog -work work -stats=none C:/workspace/sha256-core/projects/quartus/par_add_7_bb.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module par_add_7
+
+Top level modules:
+	par_add_7
+
+} {} {}} {C:/workspace/sha256-core/src/altera/8 round/adders.v} {1 {vlog -work work -stats=none {C:/workspace/sha256-core/src/altera/8 round/adders.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module adder_32b_param
+
+Top level modules:
+	adder_32b_param
+
+} {} {}} C:/workspace/sha256-core/src/sha/Vanilla/sha256_math.v {1 {vlog -work work -stats=none C:/workspace/sha256-core/src/sha/Vanilla/sha256_math.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module ch
+-- Compiling module maj
+-- Compiling module sum0
+-- Compiling module sum1
+-- Compiling module sigm0
+-- Compiling module sigm1
+
+Top level modules:
+	ch
+	maj
+	sum0
+	sum1
+	sigm0
+	sigm1
+
+} {} {}} C:/workspace/sha256-core/projects/quartus/par_add_bb.v {1 {vlog -work work -stats=none C:/workspace/sha256-core/projects/quartus/par_add_bb.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module par_add
+
+Top level modules:
+	par_add
+
+} {} {}} C:/workspace/sha256-core/src/top/sha256_spi.v {1 {vlog -work work -stats=none C:/workspace/sha256-core/src/top/sha256_spi.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module sha256_spi
+
+Top level modules:
+	sha256_spi
+
+} {} {}} C:/workspace/sha256-core/projects/quartus/par_add_4_bb.v {1 {vlog -work work -stats=none {C:\workspace\sha256-core\projects\quartus\par_add_4_bb.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module par_add_4
+
+Top level modules:
+	par_add_4
+
+} {} {}} {C:/workspace/sha256-core/src/altera/8 round/sha256_coefs_clk.v} {1 {vlog -work work -stats=none {C:/workspace/sha256-core/src/altera/8 round/sha256_coefs_clk.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module sha256_coefs_clk
+
+Top level modules:
+	sha256_coefs_clk
+
+} {} {}} C:/workspace/sha256-core/projects/quartus/par_add_6_bb.v {1 {vlog -work work -stats=none C:/workspace/sha256-core/projects/quartus/par_add_6_bb.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module par_add_6
+
+Top level modules:
+	par_add_6
+
+} {} {}} C:/workspace/sha256-core/src/spi/spi_slave.v {1 {vlog -work work -stats=none C:/workspace/sha256-core/src/spi/spi_slave.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module spi_slave
+
+Top level modules:
+	spi_slave
+
+} {} {}} C:/workspace/sha256-core/projects/quartus/adder_lpm_add_bb.v {1 {vlog -work work -stats=none C:/workspace/sha256-core/projects/quartus/adder_lpm_add_bb.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module adder_lpm_add
+
+Top level modules:
+	adder_lpm_add
+
+} {} {}} C:/workspace/sha256-core/src/top/top_tb.v {1 {vlog -work work -stats=none C:/workspace/sha256-core/src/top/top_tb.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module top_tb
+
+Top level modules:
+	top_tb
+
+} {} {}} C:/workspace/sha256-core/projects/quartus/par_add_4.v {1 {vlog -work work -stats=none C:/workspace/sha256-core/projects/quartus/par_add_4.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module par_add_4
+
+Top level modules:
+	par_add_4
+
+} {} {}}

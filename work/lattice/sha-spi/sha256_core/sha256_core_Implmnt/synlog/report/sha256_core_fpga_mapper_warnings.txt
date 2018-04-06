@@ -1,1 +1,0 @@
-@W: MT420 |Found inferred clock sha256_spi|i_clk with period 27.08ns. Please declare a user-defined clock on object "p:i_clk"

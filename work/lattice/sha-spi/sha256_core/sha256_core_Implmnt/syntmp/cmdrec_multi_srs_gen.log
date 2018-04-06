@@ -1,7 +1,0 @@
-F:\lscc\iCEcube2.2017.01\synpbase\bin64\syn_nfilter.exe  -link  -multisrs  C:\workspace\sha256-core\work\lattice\sha-spi\sha256_core\sha256_core_Implmnt\synwork\sha256_core_comp.srs  -osyn  C:\workspace\sha256-core\work\lattice\sha-spi\sha256_core\sha256_core_Implmnt\synwork\sha256_core_mult.srs  -log  C:\workspace\sha256-core\work\lattice\sha-spi\sha256_core\sha256_core_Implmnt\synlog\sha256_core_multi_srs_gen.srr 
-rc:0 success:1 runtime:1
-file:C:\workspace\sha256-core\work\lattice\sha-spi\sha256_core\sha256_core_Implmnt\synwork\sha256_core_comp.srs|io:i|time:1518548062|size:25140|exec:0
-file:C:\workspace\sha256-core\work\lattice\sha-spi\sha256_core\sha256_core_Implmnt\synwork\sha256_core_mult.srs|io:o|time:1518548064|size:3537|exec:0
-file:C:\workspace\sha256-core\work\lattice\sha-spi\sha256_core\sha256_core_Implmnt\synlog\sha256_core_multi_srs_gen.srr|io:o|time:1518548064|size:679|exec:0
-file:F:\lscc\iCEcube2.2017.01\synpbase\bin\syn_nfilter.exe|io:i|time:1499011080|size:3128320|exec:1
-file:F:\lscc\iCEcube2.2017.01\synpbase\bin64\syn_nfilter.exe|io:i|time:1499011086|size:3947520|exec:1

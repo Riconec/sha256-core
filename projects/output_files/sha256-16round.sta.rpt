@@ -1,0 +1,1188 @@
+TimeQuest Timing Analyzer report for sha256-16round
+Sun Apr 01 14:28:20 2018
+Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Slow 1200mV 85C Model Fmax Summary
+  6. Timing Closure Recommendations
+  7. Slow 1200mV 85C Model Setup Summary
+  8. Slow 1200mV 85C Model Hold Summary
+  9. Slow 1200mV 85C Model Recovery Summary
+ 10. Slow 1200mV 85C Model Removal Summary
+ 11. Slow 1200mV 85C Model Minimum Pulse Width Summary
+ 12. Slow 1200mV 85C Model Setup: 'i_clk'
+ 13. Slow 1200mV 85C Model Hold: 'i_clk'
+ 14. Slow 1200mV 85C Model Metastability Summary
+ 15. Slow 1200mV 0C Model Fmax Summary
+ 16. Slow 1200mV 0C Model Setup Summary
+ 17. Slow 1200mV 0C Model Hold Summary
+ 18. Slow 1200mV 0C Model Recovery Summary
+ 19. Slow 1200mV 0C Model Removal Summary
+ 20. Slow 1200mV 0C Model Minimum Pulse Width Summary
+ 21. Slow 1200mV 0C Model Setup: 'i_clk'
+ 22. Slow 1200mV 0C Model Hold: 'i_clk'
+ 23. Slow 1200mV 0C Model Metastability Summary
+ 24. Fast 1200mV 0C Model Setup Summary
+ 25. Fast 1200mV 0C Model Hold Summary
+ 26. Fast 1200mV 0C Model Recovery Summary
+ 27. Fast 1200mV 0C Model Removal Summary
+ 28. Fast 1200mV 0C Model Minimum Pulse Width Summary
+ 29. Fast 1200mV 0C Model Setup: 'i_clk'
+ 30. Fast 1200mV 0C Model Hold: 'i_clk'
+ 31. Fast 1200mV 0C Model Metastability Summary
+ 32. Multicorner Timing Analysis Summary
+ 33. Board Trace Model Assignments
+ 34. Input Transition Times
+ 35. Signal Integrity Metrics (Slow 1200mv 0c Model)
+ 36. Signal Integrity Metrics (Slow 1200mv 85c Model)
+ 37. Signal Integrity Metrics (Fast 1200mv 0c Model)
+ 38. Setup Transfers
+ 39. Hold Transfers
+ 40. Report TCCS
+ 41. Report RSKM
+ 42. Unconstrained Paths Summary
+ 43. Clock Status Summary
+ 44. Unconstrained Input Ports
+ 45. Unconstrained Output Ports
+ 46. Unconstrained Input Ports
+ 47. Unconstrained Output Ports
+ 48. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2017  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++-----------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                           ;
++-----------------------+-----------------------------------------------------+
+; Quartus Prime Version ; Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
+; Timing Analyzer       ; TimeQuest                                           ;
+; Revision Name         ; sha256-16round                                      ;
+; Device Family         ; Cyclone IV E                                        ;
+; Device Name           ; EP4CE10E22C6                                        ;
+; Timing Models         ; Final                                               ;
+; Delay Model           ; Combined                                            ;
+; Rise/Fall Delays      ; Enabled                                             ;
++-----------------------+-----------------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.67        ;
+; Maximum used               ; 4           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;  53.9%      ;
+;     Processor 3            ;   7.8%      ;
+;     Processor 4            ;   5.0%      ;
++----------------------------+-------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                            ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets   ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------+
+; i_clk      ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { i_clk } ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------+
+
+
++-------------------------------------------------+
+; Slow 1200mV 85C Model Fmax Summary              ;
++-----------+-----------------+------------+------+
+; Fmax      ; Restricted Fmax ; Clock Name ; Note ;
++-----------+-----------------+------------+------+
+; 19.77 MHz ; 19.77 MHz       ; i_clk      ;      ;
++-----------+-----------------+------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
+----------------------------------
+; Timing Closure Recommendations ;
+----------------------------------
+HTML report is unavailable in plain text report export.
+
+
++-------------------------------------+
+; Slow 1200mV 85C Model Setup Summary ;
++-------+---------+-------------------+
+; Clock ; Slack   ; End Point TNS     ;
++-------+---------+-------------------+
+; i_clk ; -49.588 ; -12346.831        ;
++-------+---------+-------------------+
+
+
++------------------------------------+
+; Slow 1200mV 85C Model Hold Summary ;
++-------+-------+--------------------+
+; Clock ; Slack ; End Point TNS      ;
++-------+-------+--------------------+
+; i_clk ; 0.355 ; 0.000              ;
++-------+-------+--------------------+
+
+
+------------------------------------------
+; Slow 1200mV 85C Model Recovery Summary ;
+------------------------------------------
+No paths to report.
+
+
+-----------------------------------------
+; Slow 1200mV 85C Model Removal Summary ;
+-----------------------------------------
+No paths to report.
+
+
++---------------------------------------------------+
+; Slow 1200mV 85C Model Minimum Pulse Width Summary ;
++-------+--------+----------------------------------+
+; Clock ; Slack  ; End Point TNS                    ;
++-------+--------+----------------------------------+
+; i_clk ; -3.000 ; -835.000                         ;
++-------+--------+----------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Setup: 'i_clk'                                                                                                                                          ;
++---------+-----------------------------------------------+-----------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack   ; From Node                                     ; To Node                                       ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++---------+-----------------------------------------------+-----------------------------------------------+--------------+-------------+--------------+------------+------------+
+; -49.588 ; sha256_core:sha256_core_inst|r_round[2]       ; sha256_core:sha256_core_inst|r_variables[255] ; i_clk        ; i_clk       ; 1.000        ; 0.277      ; 50.860     ;
+; -49.497 ; sha256_core:sha256_core_inst|r_variables[122] ; sha256_core:sha256_core_inst|r_variables[255] ; i_clk        ; i_clk       ; 1.000        ; 0.262      ; 50.754     ;
+; -49.385 ; sha256_core:sha256_core_inst|r_round[5]       ; sha256_core:sha256_core_inst|r_variables[255] ; i_clk        ; i_clk       ; 1.000        ; 0.272      ; 50.652     ;
+; -49.367 ; sha256_core:sha256_core_inst|r_variables[96]  ; sha256_core:sha256_core_inst|r_variables[255] ; i_clk        ; i_clk       ; 1.000        ; 0.265      ; 50.627     ;
+; -49.362 ; sha256_core:sha256_core_inst|r_variables[102] ; sha256_core:sha256_core_inst|r_variables[255] ; i_clk        ; i_clk       ; 1.000        ; 0.265      ; 50.622     ;
+; -49.346 ; sha256_core:sha256_core_inst|r_variables[32]  ; sha256_core:sha256_core_inst|r_variables[255] ; i_clk        ; i_clk       ; 1.000        ; 0.263      ; 50.604     ;
+; -49.339 ; sha256_core:sha256_core_inst|r_round[3]       ; sha256_core:sha256_core_inst|r_variables[255] ; i_clk        ; i_clk       ; 1.000        ; 0.272      ; 50.606     ;
+; -49.324 ; sha256_core:sha256_core_inst|r_round[2]       ; sha256_core:sha256_core_inst|r_variables[253] ; i_clk        ; i_clk       ; 1.000        ; 0.277      ; 50.596     ;
+; -49.321 ; sha256_core:sha256_core_inst|r_variables[126] ; sha256_core:sha256_core_inst|r_variables[255] ; i_clk        ; i_clk       ; 1.000        ; -0.071     ; 50.245     ;
+; -49.316 ; sha256_core:sha256_core_inst|r_round[2]       ; sha256_core:sha256_core_inst|r_variables[254] ; i_clk        ; i_clk       ; 1.000        ; 0.277      ; 50.588     ;
+; -49.307 ; sha256_core:sha256_core_inst|r_variables[108] ; sha256_core:sha256_core_inst|r_variables[255] ; i_clk        ; i_clk       ; 1.000        ; 0.265      ; 50.567     ;
+; -49.282 ; sha256_core:sha256_core_inst|r_round[2]       ; sha256_core:sha256_core_inst|r_variables[252] ; i_clk        ; i_clk       ; 1.000        ; 0.277      ; 50.554     ;
+; -49.233 ; sha256_core:sha256_core_inst|r_variables[122] ; sha256_core:sha256_core_inst|r_variables[253] ; i_clk        ; i_clk       ; 1.000        ; 0.262      ; 50.490     ;
+; -49.225 ; sha256_core:sha256_core_inst|r_variables[122] ; sha256_core:sha256_core_inst|r_variables[254] ; i_clk        ; i_clk       ; 1.000        ; 0.262      ; 50.482     ;
+; -49.212 ; sha256_core:sha256_core_inst|r_round[2]       ; sha256_core:sha256_core_inst|r_variables[127] ; i_clk        ; i_clk       ; 1.000        ; 0.272      ; 50.479     ;
+; -49.191 ; sha256_core:sha256_core_inst|r_variables[122] ; sha256_core:sha256_core_inst|r_variables[252] ; i_clk        ; i_clk       ; 1.000        ; 0.262      ; 50.448     ;
+; -49.190 ; sha256_core:sha256_core_inst|r_variables[103] ; sha256_core:sha256_core_inst|r_variables[255] ; i_clk        ; i_clk       ; 1.000        ; 0.265      ; 50.450     ;
+; -49.187 ; sha256_core:sha256_core_inst|r_variables[107] ; sha256_core:sha256_core_inst|r_variables[255] ; i_clk        ; i_clk       ; 1.000        ; 0.265      ; 50.447     ;
+; -49.129 ; sha256_core:sha256_core_inst|r_round[2]       ; sha256_core:sha256_core_inst|r_variables[126] ; i_clk        ; i_clk       ; 1.000        ; 0.272      ; 50.396     ;
+; -49.121 ; sha256_core:sha256_core_inst|r_round[5]       ; sha256_core:sha256_core_inst|r_variables[253] ; i_clk        ; i_clk       ; 1.000        ; 0.272      ; 50.388     ;
+; -49.121 ; sha256_core:sha256_core_inst|r_variables[122] ; sha256_core:sha256_core_inst|r_variables[127] ; i_clk        ; i_clk       ; 1.000        ; 0.257      ; 50.373     ;
+; -49.113 ; sha256_core:sha256_core_inst|r_round[5]       ; sha256_core:sha256_core_inst|r_variables[254] ; i_clk        ; i_clk       ; 1.000        ; 0.272      ; 50.380     ;
+; -49.103 ; sha256_core:sha256_core_inst|r_variables[96]  ; sha256_core:sha256_core_inst|r_variables[253] ; i_clk        ; i_clk       ; 1.000        ; 0.265      ; 50.363     ;
+; -49.098 ; sha256_core:sha256_core_inst|r_variables[102] ; sha256_core:sha256_core_inst|r_variables[253] ; i_clk        ; i_clk       ; 1.000        ; 0.265      ; 50.358     ;
+; -49.095 ; sha256_core:sha256_core_inst|r_variables[96]  ; sha256_core:sha256_core_inst|r_variables[254] ; i_clk        ; i_clk       ; 1.000        ; 0.265      ; 50.355     ;
+; -49.090 ; sha256_core:sha256_core_inst|r_variables[102] ; sha256_core:sha256_core_inst|r_variables[254] ; i_clk        ; i_clk       ; 1.000        ; 0.265      ; 50.350     ;
+; -49.084 ; sha256_core:sha256_core_inst|r_variables[121] ; sha256_core:sha256_core_inst|r_variables[255] ; i_clk        ; i_clk       ; 1.000        ; 0.262      ; 50.341     ;
+; -49.082 ; sha256_core:sha256_core_inst|r_variables[32]  ; sha256_core:sha256_core_inst|r_variables[253] ; i_clk        ; i_clk       ; 1.000        ; 0.263      ; 50.340     ;
+; -49.079 ; sha256_core:sha256_core_inst|r_round[5]       ; sha256_core:sha256_core_inst|r_variables[252] ; i_clk        ; i_clk       ; 1.000        ; 0.272      ; 50.346     ;
+; -49.075 ; sha256_core:sha256_core_inst|r_round[3]       ; sha256_core:sha256_core_inst|r_variables[253] ; i_clk        ; i_clk       ; 1.000        ; 0.272      ; 50.342     ;
+; -49.074 ; sha256_core:sha256_core_inst|r_variables[32]  ; sha256_core:sha256_core_inst|r_variables[254] ; i_clk        ; i_clk       ; 1.000        ; 0.263      ; 50.332     ;
+; -49.067 ; sha256_core:sha256_core_inst|r_round[3]       ; sha256_core:sha256_core_inst|r_variables[254] ; i_clk        ; i_clk       ; 1.000        ; 0.272      ; 50.334     ;
+; -49.061 ; sha256_core:sha256_core_inst|r_variables[96]  ; sha256_core:sha256_core_inst|r_variables[252] ; i_clk        ; i_clk       ; 1.000        ; 0.265      ; 50.321     ;
+; -49.057 ; sha256_core:sha256_core_inst|r_variables[126] ; sha256_core:sha256_core_inst|r_variables[253] ; i_clk        ; i_clk       ; 1.000        ; -0.071     ; 49.981     ;
+; -49.056 ; sha256_core:sha256_core_inst|r_variables[102] ; sha256_core:sha256_core_inst|r_variables[252] ; i_clk        ; i_clk       ; 1.000        ; 0.265      ; 50.316     ;
+; -49.055 ; sha256_core:sha256_core_inst|r_variables[65]  ; sha256_core:sha256_core_inst|r_variables[255] ; i_clk        ; i_clk       ; 1.000        ; 0.277      ; 50.327     ;
+; -49.049 ; sha256_core:sha256_core_inst|r_variables[126] ; sha256_core:sha256_core_inst|r_variables[254] ; i_clk        ; i_clk       ; 1.000        ; -0.071     ; 49.973     ;
+; -49.043 ; sha256_core:sha256_core_inst|r_variables[108] ; sha256_core:sha256_core_inst|r_variables[253] ; i_clk        ; i_clk       ; 1.000        ; 0.265      ; 50.303     ;
+; -49.040 ; sha256_core:sha256_core_inst|r_variables[32]  ; sha256_core:sha256_core_inst|r_variables[252] ; i_clk        ; i_clk       ; 1.000        ; 0.263      ; 50.298     ;
+; -49.038 ; sha256_core:sha256_core_inst|r_variables[122] ; sha256_core:sha256_core_inst|r_variables[126] ; i_clk        ; i_clk       ; 1.000        ; 0.257      ; 50.290     ;
+; -49.035 ; sha256_core:sha256_core_inst|r_variables[108] ; sha256_core:sha256_core_inst|r_variables[254] ; i_clk        ; i_clk       ; 1.000        ; 0.265      ; 50.295     ;
+; -49.033 ; sha256_core:sha256_core_inst|r_round[3]       ; sha256_core:sha256_core_inst|r_variables[252] ; i_clk        ; i_clk       ; 1.000        ; 0.272      ; 50.300     ;
+; -49.015 ; sha256_core:sha256_core_inst|r_variables[126] ; sha256_core:sha256_core_inst|r_variables[252] ; i_clk        ; i_clk       ; 1.000        ; -0.071     ; 49.939     ;
+; -49.013 ; sha256_core:sha256_core_inst|r_round[4]       ; sha256_core:sha256_core_inst|r_variables[255] ; i_clk        ; i_clk       ; 1.000        ; 0.272      ; 50.280     ;
+; -49.009 ; sha256_core:sha256_core_inst|r_round[5]       ; sha256_core:sha256_core_inst|r_variables[127] ; i_clk        ; i_clk       ; 1.000        ; 0.267      ; 50.271     ;
+; -49.001 ; sha256_core:sha256_core_inst|r_variables[108] ; sha256_core:sha256_core_inst|r_variables[252] ; i_clk        ; i_clk       ; 1.000        ; 0.265      ; 50.261     ;
+; -48.991 ; sha256_core:sha256_core_inst|r_variables[96]  ; sha256_core:sha256_core_inst|r_variables[127] ; i_clk        ; i_clk       ; 1.000        ; 0.260      ; 50.246     ;
+; -48.988 ; sha256_core:sha256_core_inst|r_variables[97]  ; sha256_core:sha256_core_inst|r_variables[255] ; i_clk        ; i_clk       ; 1.000        ; 0.265      ; 50.248     ;
+; -48.986 ; sha256_core:sha256_core_inst|r_variables[102] ; sha256_core:sha256_core_inst|r_variables[127] ; i_clk        ; i_clk       ; 1.000        ; 0.260      ; 50.241     ;
+; -48.970 ; sha256_core:sha256_core_inst|r_variables[32]  ; sha256_core:sha256_core_inst|r_variables[127] ; i_clk        ; i_clk       ; 1.000        ; 0.258      ; 50.223     ;
+; -48.963 ; sha256_core:sha256_core_inst|r_round[3]       ; sha256_core:sha256_core_inst|r_variables[127] ; i_clk        ; i_clk       ; 1.000        ; 0.267      ; 50.225     ;
+; -48.955 ; sha256_core:sha256_core_inst|r_variables[66]  ; sha256_core:sha256_core_inst|r_variables[255] ; i_clk        ; i_clk       ; 1.000        ; 0.279      ; 50.229     ;
+; -48.945 ; sha256_core:sha256_core_inst|r_variables[126] ; sha256_core:sha256_core_inst|r_variables[127] ; i_clk        ; i_clk       ; 1.000        ; -0.076     ; 49.864     ;
+; -48.942 ; sha256_core:sha256_core_inst|r_variables[68]  ; sha256_core:sha256_core_inst|r_variables[255] ; i_clk        ; i_clk       ; 1.000        ; 0.279      ; 50.216     ;
+; -48.931 ; sha256_core:sha256_core_inst|r_variables[108] ; sha256_core:sha256_core_inst|r_variables[127] ; i_clk        ; i_clk       ; 1.000        ; 0.260      ; 50.186     ;
+; -48.926 ; sha256_core:sha256_core_inst|r_variables[103] ; sha256_core:sha256_core_inst|r_variables[253] ; i_clk        ; i_clk       ; 1.000        ; 0.265      ; 50.186     ;
+; -48.926 ; sha256_core:sha256_core_inst|r_round[5]       ; sha256_core:sha256_core_inst|r_variables[126] ; i_clk        ; i_clk       ; 1.000        ; 0.267      ; 50.188     ;
+; -48.923 ; sha256_core:sha256_core_inst|r_variables[107] ; sha256_core:sha256_core_inst|r_variables[253] ; i_clk        ; i_clk       ; 1.000        ; 0.265      ; 50.183     ;
+; -48.918 ; sha256_core:sha256_core_inst|r_variables[103] ; sha256_core:sha256_core_inst|r_variables[254] ; i_clk        ; i_clk       ; 1.000        ; 0.265      ; 50.178     ;
+; -48.915 ; sha256_core:sha256_core_inst|r_variables[107] ; sha256_core:sha256_core_inst|r_variables[254] ; i_clk        ; i_clk       ; 1.000        ; 0.265      ; 50.175     ;
+; -48.908 ; sha256_core:sha256_core_inst|r_variables[96]  ; sha256_core:sha256_core_inst|r_variables[126] ; i_clk        ; i_clk       ; 1.000        ; 0.260      ; 50.163     ;
+; -48.903 ; sha256_core:sha256_core_inst|r_variables[102] ; sha256_core:sha256_core_inst|r_variables[126] ; i_clk        ; i_clk       ; 1.000        ; 0.260      ; 50.158     ;
+; -48.887 ; sha256_core:sha256_core_inst|r_variables[32]  ; sha256_core:sha256_core_inst|r_variables[126] ; i_clk        ; i_clk       ; 1.000        ; 0.258      ; 50.140     ;
+; -48.884 ; sha256_core:sha256_core_inst|r_variables[103] ; sha256_core:sha256_core_inst|r_variables[252] ; i_clk        ; i_clk       ; 1.000        ; 0.265      ; 50.144     ;
+; -48.881 ; sha256_core:sha256_core_inst|r_variables[107] ; sha256_core:sha256_core_inst|r_variables[252] ; i_clk        ; i_clk       ; 1.000        ; 0.265      ; 50.141     ;
+; -48.880 ; sha256_core:sha256_core_inst|r_round[3]       ; sha256_core:sha256_core_inst|r_variables[126] ; i_clk        ; i_clk       ; 1.000        ; 0.267      ; 50.142     ;
+; -48.864 ; sha256_core:sha256_core_inst|r_variables[106] ; sha256_core:sha256_core_inst|r_variables[255] ; i_clk        ; i_clk       ; 1.000        ; 0.265      ; 50.124     ;
+; -48.862 ; sha256_core:sha256_core_inst|r_variables[126] ; sha256_core:sha256_core_inst|r_variables[126] ; i_clk        ; i_clk       ; 1.000        ; -0.076     ; 49.781     ;
+; -48.861 ; sha256_core:sha256_core_inst|r_variables[112] ; sha256_core:sha256_core_inst|r_variables[255] ; i_clk        ; i_clk       ; 1.000        ; 0.262      ; 50.118     ;
+; -48.858 ; sha256_core:sha256_core_inst|r_round[6]       ; sha256_core:sha256_core_inst|r_variables[255] ; i_clk        ; i_clk       ; 1.000        ; 0.272      ; 50.125     ;
+; -48.848 ; sha256_core:sha256_core_inst|r_variables[108] ; sha256_core:sha256_core_inst|r_variables[126] ; i_clk        ; i_clk       ; 1.000        ; 0.260      ; 50.103     ;
+; -48.836 ; sha256_core:sha256_core_inst|r_variables[111] ; sha256_core:sha256_core_inst|r_variables[255] ; i_clk        ; i_clk       ; 1.000        ; 0.265      ; 50.096     ;
+; -48.820 ; sha256_core:sha256_core_inst|r_variables[121] ; sha256_core:sha256_core_inst|r_variables[253] ; i_clk        ; i_clk       ; 1.000        ; 0.262      ; 50.077     ;
+; -48.814 ; sha256_core:sha256_core_inst|r_variables[103] ; sha256_core:sha256_core_inst|r_variables[127] ; i_clk        ; i_clk       ; 1.000        ; 0.260      ; 50.069     ;
+; -48.812 ; sha256_core:sha256_core_inst|r_variables[121] ; sha256_core:sha256_core_inst|r_variables[254] ; i_clk        ; i_clk       ; 1.000        ; 0.262      ; 50.069     ;
+; -48.811 ; sha256_core:sha256_core_inst|r_variables[107] ; sha256_core:sha256_core_inst|r_variables[127] ; i_clk        ; i_clk       ; 1.000        ; 0.260      ; 50.066     ;
+; -48.809 ; sha256_core:sha256_core_inst|r_variables[33]  ; sha256_core:sha256_core_inst|r_variables[255] ; i_clk        ; i_clk       ; 1.000        ; 0.263      ; 50.067     ;
+; -48.791 ; sha256_core:sha256_core_inst|r_variables[65]  ; sha256_core:sha256_core_inst|r_variables[253] ; i_clk        ; i_clk       ; 1.000        ; 0.277      ; 50.063     ;
+; -48.783 ; sha256_core:sha256_core_inst|r_variables[65]  ; sha256_core:sha256_core_inst|r_variables[254] ; i_clk        ; i_clk       ; 1.000        ; 0.277      ; 50.055     ;
+; -48.778 ; sha256_core:sha256_core_inst|r_variables[121] ; sha256_core:sha256_core_inst|r_variables[252] ; i_clk        ; i_clk       ; 1.000        ; 0.262      ; 50.035     ;
+; -48.766 ; sha256_core:sha256_core_inst|r_variables[125] ; sha256_core:sha256_core_inst|r_variables[255] ; i_clk        ; i_clk       ; 1.000        ; 0.262      ; 50.023     ;
+; -48.759 ; sha256_core:sha256_core_inst|r_variables[100] ; sha256_core:sha256_core_inst|r_variables[255] ; i_clk        ; i_clk       ; 1.000        ; 0.265      ; 50.019     ;
+; -48.753 ; sha256_core:sha256_core_inst|r_variables[64]  ; sha256_core:sha256_core_inst|r_variables[255] ; i_clk        ; i_clk       ; 1.000        ; 0.284      ; 50.032     ;
+; -48.749 ; sha256_core:sha256_core_inst|r_variables[65]  ; sha256_core:sha256_core_inst|r_variables[252] ; i_clk        ; i_clk       ; 1.000        ; 0.277      ; 50.021     ;
+; -48.749 ; sha256_core:sha256_core_inst|r_round[4]       ; sha256_core:sha256_core_inst|r_variables[253] ; i_clk        ; i_clk       ; 1.000        ; 0.272      ; 50.016     ;
+; -48.741 ; sha256_core:sha256_core_inst|r_round[4]       ; sha256_core:sha256_core_inst|r_variables[254] ; i_clk        ; i_clk       ; 1.000        ; 0.272      ; 50.008     ;
+; -48.741 ; sha256_core:sha256_core_inst|r_variables[36]  ; sha256_core:sha256_core_inst|r_variables[255] ; i_clk        ; i_clk       ; 1.000        ; 0.263      ; 49.999     ;
+; -48.739 ; sha256_core:sha256_core_inst|r_variables[72]  ; sha256_core:sha256_core_inst|r_variables[255] ; i_clk        ; i_clk       ; 1.000        ; 0.279      ; 50.013     ;
+; -48.731 ; sha256_core:sha256_core_inst|r_variables[103] ; sha256_core:sha256_core_inst|r_variables[126] ; i_clk        ; i_clk       ; 1.000        ; 0.260      ; 49.986     ;
+; -48.729 ; sha256_core:sha256_core_inst|r_round[2]       ; sha256_core:sha256_core_inst|r_variables[125] ; i_clk        ; i_clk       ; 1.000        ; -0.049     ; 49.675     ;
+; -48.728 ; sha256_core:sha256_core_inst|r_variables[107] ; sha256_core:sha256_core_inst|r_variables[126] ; i_clk        ; i_clk       ; 1.000        ; 0.260      ; 49.983     ;
+; -48.725 ; sha256_core:sha256_core_inst|r_variables[110] ; sha256_core:sha256_core_inst|r_variables[255] ; i_clk        ; i_clk       ; 1.000        ; 0.265      ; 49.985     ;
+; -48.724 ; sha256_core:sha256_core_inst|r_variables[97]  ; sha256_core:sha256_core_inst|r_variables[253] ; i_clk        ; i_clk       ; 1.000        ; 0.265      ; 49.984     ;
+; -48.717 ; sha256_core:sha256_core_inst|r_round[2]       ; sha256_core:sha256_core_inst|r_variables[250] ; i_clk        ; i_clk       ; 1.000        ; -0.045     ; 49.667     ;
+; -48.716 ; sha256_core:sha256_core_inst|r_variables[97]  ; sha256_core:sha256_core_inst|r_variables[254] ; i_clk        ; i_clk       ; 1.000        ; 0.265      ; 49.976     ;
+; -48.708 ; sha256_core:sha256_core_inst|r_variables[121] ; sha256_core:sha256_core_inst|r_variables[127] ; i_clk        ; i_clk       ; 1.000        ; 0.257      ; 49.960     ;
+; -48.707 ; sha256_core:sha256_core_inst|r_round[4]       ; sha256_core:sha256_core_inst|r_variables[252] ; i_clk        ; i_clk       ; 1.000        ; 0.272      ; 49.974     ;
+; -48.696 ; sha256_core:sha256_core_inst|r_variables[104] ; sha256_core:sha256_core_inst|r_variables[255] ; i_clk        ; i_clk       ; 1.000        ; 0.265      ; 49.956     ;
+; -48.691 ; sha256_core:sha256_core_inst|r_variables[66]  ; sha256_core:sha256_core_inst|r_variables[253] ; i_clk        ; i_clk       ; 1.000        ; 0.279      ; 49.965     ;
+; -48.689 ; sha256_core:sha256_core_inst|r_variables[65]  ; sha256_core:sha256_core_inst|r_variables[127] ; i_clk        ; i_clk       ; 1.000        ; 0.262      ; 49.946     ;
++---------+-----------------------------------------------+-----------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Hold: 'i_clk'                                                                                                                                       ;
++-------+----------------------------------------------+----------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                    ; To Node                                      ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+----------------------------------------------+----------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.355 ; sha256_core:sha256_core_inst|r_words[31]     ; sha256_core:sha256_core_inst|r_words[31]     ; i_clk        ; i_clk       ; 0.000        ; 0.065      ; 0.577      ;
+; 0.355 ; sha256_core:sha256_core_inst|r_words[15]     ; sha256_core:sha256_core_inst|r_words[15]     ; i_clk        ; i_clk       ; 0.000        ; 0.065      ; 0.577      ;
+; 0.356 ; sha256_core:sha256_core_inst|r_words[63]     ; sha256_core:sha256_core_inst|r_words[63]     ; i_clk        ; i_clk       ; 0.000        ; 0.064      ; 0.577      ;
+; 0.356 ; sha256_core:sha256_core_inst|r_words[47]     ; sha256_core:sha256_core_inst|r_words[47]     ; i_clk        ; i_clk       ; 0.000        ; 0.064      ; 0.577      ;
+; 0.356 ; sha256_core:sha256_core_inst|r_words[55]     ; sha256_core:sha256_core_inst|r_words[55]     ; i_clk        ; i_clk       ; 0.000        ; 0.064      ; 0.577      ;
+; 0.356 ; sha256_core:sha256_core_inst|r_words[23]     ; sha256_core:sha256_core_inst|r_words[23]     ; i_clk        ; i_clk       ; 0.000        ; 0.064      ; 0.577      ;
+; 0.356 ; sha256_core:sha256_core_inst|r_words[95]     ; sha256_core:sha256_core_inst|r_words[95]     ; i_clk        ; i_clk       ; 0.000        ; 0.064      ; 0.577      ;
+; 0.356 ; sha256_core:sha256_core_inst|r_words[87]     ; sha256_core:sha256_core_inst|r_words[87]     ; i_clk        ; i_clk       ; 0.000        ; 0.064      ; 0.577      ;
+; 0.356 ; sha256_core:sha256_core_inst|r_words[71]     ; sha256_core:sha256_core_inst|r_words[71]     ; i_clk        ; i_clk       ; 0.000        ; 0.064      ; 0.577      ;
+; 0.356 ; sha256_core:sha256_core_inst|r_words[39]     ; sha256_core:sha256_core_inst|r_words[39]     ; i_clk        ; i_clk       ; 0.000        ; 0.064      ; 0.577      ;
+; 0.356 ; sha256_core:sha256_core_inst|r_words[111]    ; sha256_core:sha256_core_inst|r_words[111]    ; i_clk        ; i_clk       ; 0.000        ; 0.064      ; 0.577      ;
+; 0.356 ; sha256_core:sha256_core_inst|r_words[119]    ; sha256_core:sha256_core_inst|r_words[119]    ; i_clk        ; i_clk       ; 0.000        ; 0.064      ; 0.577      ;
+; 0.356 ; sha256_core:sha256_core_inst|r_words[103]    ; sha256_core:sha256_core_inst|r_words[103]    ; i_clk        ; i_clk       ; 0.000        ; 0.064      ; 0.577      ;
+; 0.356 ; sha256_core:sha256_core_inst|r_status[5]     ; sha256_core:sha256_core_inst|r_status[5]     ; i_clk        ; i_clk       ; 0.000        ; 0.064      ; 0.577      ;
+; 0.356 ; sha256_core:sha256_core_inst|r_status[4]     ; sha256_core:sha256_core_inst|r_status[4]     ; i_clk        ; i_clk       ; 0.000        ; 0.064      ; 0.577      ;
+; 0.356 ; spi_slave:spi_ints|o_data[15]                ; spi_slave:spi_ints|o_data[15]                ; i_clk        ; i_clk       ; 0.000        ; 0.064      ; 0.577      ;
+; 0.356 ; spi_slave:spi_ints|r_cnt[3]                  ; spi_slave:spi_ints|r_cnt[3]                  ; i_clk        ; i_clk       ; 0.000        ; 0.064      ; 0.577      ;
+; 0.356 ; spi_slave:spi_ints|r_cnt[2]                  ; spi_slave:spi_ints|r_cnt[2]                  ; i_clk        ; i_clk       ; 0.000        ; 0.064      ; 0.577      ;
+; 0.356 ; spi_slave:spi_ints|r_cnt[1]                  ; spi_slave:spi_ints|r_cnt[1]                  ; i_clk        ; i_clk       ; 0.000        ; 0.064      ; 0.577      ;
+; 0.357 ; sha256_core:sha256_core_inst|r_words[79]     ; sha256_core:sha256_core_inst|r_words[79]     ; i_clk        ; i_clk       ; 0.000        ; 0.063      ; 0.577      ;
+; 0.357 ; sha256_core:sha256_core_inst|r_words[127]    ; sha256_core:sha256_core_inst|r_words[127]    ; i_clk        ; i_clk       ; 0.000        ; 0.063      ; 0.577      ;
+; 0.359 ; spi_slave:spi_ints|r_cnt[0]                  ; spi_slave:spi_ints|r_cnt[0]                  ; i_clk        ; i_clk       ; 0.000        ; 0.064      ; 0.580      ;
+; 0.371 ; sha256_core:sha256_core_inst|r_words[286]    ; sha256_core:sha256_core_inst|r_words[414]    ; i_clk        ; i_clk       ; 0.000        ; 0.064      ; 0.592      ;
+; 0.371 ; sha256_core:sha256_core_inst|r_words[256]    ; sha256_core:sha256_core_inst|r_words[384]    ; i_clk        ; i_clk       ; 0.000        ; 0.065      ; 0.593      ;
+; 0.372 ; sha256_core:sha256_core_inst|r_words[327]    ; sha256_core:sha256_core_inst|r_words[455]    ; i_clk        ; i_clk       ; 0.000        ; 0.064      ; 0.593      ;
+; 0.372 ; sha256_core:sha256_core_inst|r_words[340]    ; sha256_core:sha256_core_inst|r_words[468]    ; i_clk        ; i_clk       ; 0.000        ; 0.064      ; 0.593      ;
+; 0.372 ; sha256_core:sha256_core_inst|r_words[66]     ; sha256_core:sha256_core_inst|r_words[194]    ; i_clk        ; i_clk       ; 0.000        ; 0.064      ; 0.593      ;
+; 0.372 ; sha256_core:sha256_core_inst|r_words[240]    ; sha256_core:sha256_core_inst|r_words[368]    ; i_clk        ; i_clk       ; 0.000        ; 0.063      ; 0.592      ;
+; 0.372 ; sha256_core:sha256_core_inst|r_words[351]    ; sha256_core:sha256_core_inst|r_words[479]    ; i_clk        ; i_clk       ; 0.000        ; 0.064      ; 0.593      ;
+; 0.372 ; sha256_core:sha256_core_inst|r_words[263]    ; sha256_core:sha256_core_inst|r_words[391]    ; i_clk        ; i_clk       ; 0.000        ; 0.065      ; 0.594      ;
+; 0.372 ; sha256_core:sha256_core_inst|r_words[320]    ; sha256_core:sha256_core_inst|r_words[448]    ; i_clk        ; i_clk       ; 0.000        ; 0.064      ; 0.593      ;
+; 0.372 ; sha256_core:sha256_core_inst|r_words[281]    ; sha256_core:sha256_core_inst|r_words[409]    ; i_clk        ; i_clk       ; 0.000        ; 0.064      ; 0.593      ;
+; 0.372 ; sha256_core:sha256_core_inst|r_words[282]    ; sha256_core:sha256_core_inst|r_words[410]    ; i_clk        ; i_clk       ; 0.000        ; 0.064      ; 0.593      ;
+; 0.372 ; sha256_core:sha256_core_inst|r_words[326]    ; sha256_core:sha256_core_inst|r_words[454]    ; i_clk        ; i_clk       ; 0.000        ; 0.064      ; 0.593      ;
+; 0.372 ; sha256_core:sha256_core_inst|r_words[343]    ; sha256_core:sha256_core_inst|r_words[471]    ; i_clk        ; i_clk       ; 0.000        ; 0.064      ; 0.593      ;
+; 0.372 ; sha256_core:sha256_core_inst|r_words[260]    ; sha256_core:sha256_core_inst|r_words[388]    ; i_clk        ; i_clk       ; 0.000        ; 0.065      ; 0.594      ;
+; 0.372 ; sha256_core:sha256_core_inst|r_words[338]    ; sha256_core:sha256_core_inst|r_words[466]    ; i_clk        ; i_clk       ; 0.000        ; 0.064      ; 0.593      ;
+; 0.372 ; sha256_core:sha256_core_inst|r_words[347]    ; sha256_core:sha256_core_inst|r_words[475]    ; i_clk        ; i_clk       ; 0.000        ; 0.064      ; 0.593      ;
+; 0.372 ; sha256_core:sha256_core_inst|r_words[342]    ; sha256_core:sha256_core_inst|r_words[470]    ; i_clk        ; i_clk       ; 0.000        ; 0.064      ; 0.593      ;
+; 0.373 ; sha256_core:sha256_core_inst|r_words[90]     ; sha256_core:sha256_core_inst|r_words[218]    ; i_clk        ; i_clk       ; 0.000        ; 0.064      ; 0.594      ;
+; 0.373 ; sha256_core:sha256_core_inst|r_words[339]    ; sha256_core:sha256_core_inst|r_words[467]    ; i_clk        ; i_clk       ; 0.000        ; 0.064      ; 0.594      ;
+; 0.373 ; sha256_core:sha256_core_inst|r_words[321]    ; sha256_core:sha256_core_inst|r_words[449]    ; i_clk        ; i_clk       ; 0.000        ; 0.064      ; 0.594      ;
+; 0.373 ; sha256_core:sha256_core_inst|r_words[283]    ; sha256_core:sha256_core_inst|r_words[411]    ; i_clk        ; i_clk       ; 0.000        ; 0.064      ; 0.594      ;
+; 0.373 ; sha256_core:sha256_core_inst|r_words[335]    ; sha256_core:sha256_core_inst|r_words[463]    ; i_clk        ; i_clk       ; 0.000        ; 0.063      ; 0.593      ;
+; 0.373 ; sha256_core:sha256_core_inst|r_words[79]     ; sha256_core:sha256_core_inst|r_words[207]    ; i_clk        ; i_clk       ; 0.000        ; 0.063      ; 0.593      ;
+; 0.373 ; sha256_core:sha256_core_inst|r_words[243]    ; sha256_core:sha256_core_inst|r_words[371]    ; i_clk        ; i_clk       ; 0.000        ; 0.063      ; 0.593      ;
+; 0.373 ; sha256_core:sha256_core_inst|r_words[225]    ; sha256_core:sha256_core_inst|r_words[353]    ; i_clk        ; i_clk       ; 0.000        ; 0.063      ; 0.593      ;
+; 0.373 ; sha256_core:sha256_core_inst|r_words[285]    ; sha256_core:sha256_core_inst|r_words[413]    ; i_clk        ; i_clk       ; 0.000        ; 0.064      ; 0.594      ;
+; 0.373 ; sha256_core:sha256_core_inst|r_words[82]     ; sha256_core:sha256_core_inst|r_words[210]    ; i_clk        ; i_clk       ; 0.000        ; 0.063      ; 0.593      ;
+; 0.374 ; sha256_core:sha256_core_inst|r_words[230]    ; sha256_core:sha256_core_inst|r_words[358]    ; i_clk        ; i_clk       ; 0.000        ; 0.063      ; 0.594      ;
+; 0.374 ; sha256_core:sha256_core_inst|r_words[331]    ; sha256_core:sha256_core_inst|r_words[459]    ; i_clk        ; i_clk       ; 0.000        ; 0.063      ; 0.594      ;
+; 0.374 ; sha256_core:sha256_core_inst|r_words[332]    ; sha256_core:sha256_core_inst|r_words[460]    ; i_clk        ; i_clk       ; 0.000        ; 0.063      ; 0.594      ;
+; 0.374 ; sha256_core:sha256_core_inst|r_words[227]    ; sha256_core:sha256_core_inst|r_words[355]    ; i_clk        ; i_clk       ; 0.000        ; 0.063      ; 0.594      ;
+; 0.374 ; sha256_core:sha256_core_inst|r_words[89]     ; sha256_core:sha256_core_inst|r_words[217]    ; i_clk        ; i_clk       ; 0.000        ; 0.064      ; 0.595      ;
+; 0.374 ; sha256_core:sha256_core_inst|r_words[337]    ; sha256_core:sha256_core_inst|r_words[465]    ; i_clk        ; i_clk       ; 0.000        ; 0.064      ; 0.595      ;
+; 0.374 ; sha256_core:sha256_core_inst|r_words[330]    ; sha256_core:sha256_core_inst|r_words[458]    ; i_clk        ; i_clk       ; 0.000        ; 0.063      ; 0.594      ;
+; 0.379 ; spi_slave:spi_ints|r_rx[11]                  ; spi_slave:spi_ints|r_rx[12]                  ; i_clk        ; i_clk       ; 0.000        ; 0.063      ; 0.599      ;
+; 0.379 ; spi_slave:spi_ints|r_rx[6]                   ; spi_slave:spi_ints|o_data[7]                 ; i_clk        ; i_clk       ; 0.000        ; 0.063      ; 0.599      ;
+; 0.380 ; spi_slave:spi_ints|r_rx[13]                  ; spi_slave:spi_ints|r_rx[14]                  ; i_clk        ; i_clk       ; 0.000        ; 0.063      ; 0.600      ;
+; 0.380 ; spi_slave:spi_ints|r_rx[13]                  ; spi_slave:spi_ints|o_data[14]                ; i_clk        ; i_clk       ; 0.000        ; 0.063      ; 0.600      ;
+; 0.380 ; spi_slave:spi_ints|r_rx[11]                  ; spi_slave:spi_ints|o_data[12]                ; i_clk        ; i_clk       ; 0.000        ; 0.063      ; 0.600      ;
+; 0.380 ; spi_slave:spi_ints|r_rx[4]                   ; spi_slave:spi_ints|o_data[5]                 ; i_clk        ; i_clk       ; 0.000        ; 0.063      ; 0.600      ;
+; 0.381 ; spi_slave:spi_ints|r_rx[6]                   ; spi_slave:spi_ints|r_rx[7]                   ; i_clk        ; i_clk       ; 0.000        ; 0.063      ; 0.601      ;
+; 0.381 ; spi_slave:spi_ints|r_rx[5]                   ; spi_slave:spi_ints|o_data[6]                 ; i_clk        ; i_clk       ; 0.000        ; 0.063      ; 0.601      ;
+; 0.381 ; spi_slave:spi_ints|r_rx[5]                   ; spi_slave:spi_ints|r_rx[6]                   ; i_clk        ; i_clk       ; 0.000        ; 0.063      ; 0.601      ;
+; 0.381 ; spi_slave:spi_ints|r_rx[4]                   ; spi_slave:spi_ints|r_rx[5]                   ; i_clk        ; i_clk       ; 0.000        ; 0.063      ; 0.601      ;
+; 0.381 ; spi_slave:spi_ints|r_rx[2]                   ; spi_slave:spi_ints|o_data[3]                 ; i_clk        ; i_clk       ; 0.000        ; 0.063      ; 0.601      ;
+; 0.381 ; spi_slave:spi_ints|r_rx[2]                   ; spi_slave:spi_ints|r_rx[3]                   ; i_clk        ; i_clk       ; 0.000        ; 0.063      ; 0.601      ;
+; 0.383 ; spi_slave:spi_ints|r_cnt[2]                  ; spi_slave:spi_ints|r_cnt[3]                  ; i_clk        ; i_clk       ; 0.000        ; 0.064      ; 0.604      ;
+; 0.388 ; sha256_core:sha256_core_inst|r_variables[95] ; sha256_core:sha256_core_inst|r_variables[95] ; i_clk        ; i_clk       ; 0.000        ; 0.063      ; 0.608      ;
+; 0.391 ; sha256_core:sha256_core_inst|r_words[23]     ; sha256_core:sha256_core_inst|r_words[151]    ; i_clk        ; i_clk       ; 0.000        ; 0.064      ; 0.612      ;
+; 0.391 ; sha256_core:sha256_core_inst|r_words[3]      ; sha256_core:sha256_core_inst|r_words[131]    ; i_clk        ; i_clk       ; 0.000        ; 0.064      ; 0.612      ;
+; 0.391 ; sha256_core:sha256_core_inst|r_words[2]      ; sha256_core:sha256_core_inst|r_words[130]    ; i_clk        ; i_clk       ; 0.000        ; 0.064      ; 0.612      ;
+; 0.392 ; sha256_core:sha256_core_inst|r_words[5]      ; sha256_core:sha256_core_inst|r_words[133]    ; i_clk        ; i_clk       ; 0.000        ; 0.064      ; 0.613      ;
+; 0.392 ; sha256_core:sha256_core_inst|r_words[139]    ; sha256_core:sha256_core_inst|r_words[267]    ; i_clk        ; i_clk       ; 0.000        ; 0.064      ; 0.613      ;
+; 0.392 ; spi_slave:spi_ints|r_rx[12]                  ; spi_slave:spi_ints|o_data[13]                ; i_clk        ; i_clk       ; 0.000        ; 0.063      ; 0.612      ;
+; 0.393 ; sha256_core:sha256_core_inst|r_words[206]    ; sha256_core:sha256_core_inst|r_words[334]    ; i_clk        ; i_clk       ; 0.000        ; 0.064      ; 0.614      ;
+; 0.394 ; sha256_core:sha256_core_inst|r_words[138]    ; sha256_core:sha256_core_inst|r_words[266]    ; i_clk        ; i_clk       ; 0.000        ; 0.064      ; 0.615      ;
+; 0.396 ; spi_slave:spi_ints|r_cnt[0]                  ; spi_slave:spi_ints|r_cnt[1]                  ; i_clk        ; i_clk       ; 0.000        ; 0.064      ; 0.617      ;
+; 0.409 ; sck_sync[0]                                  ; sck_sync[1]                                  ; i_clk        ; i_clk       ; 0.000        ; 0.064      ; 0.630      ;
+; 0.449 ; sha256_core:sha256_core_inst|r_status[4]     ; sha256_core:sha256_core_inst|r_status[2]     ; i_clk        ; i_clk       ; 0.000        ; 0.064      ; 0.670      ;
+; 0.452 ; spi_slave:spi_ints|o_data[15]                ; sha256_core:sha256_core_inst|r_status[0]     ; i_clk        ; i_clk       ; 0.000        ; 0.064      ; 0.673      ;
+; 0.453 ; sha256_core:sha256_core_inst|r_status[4]     ; sha256_core:sha256_core_inst|r_status[1]     ; i_clk        ; i_clk       ; 0.000        ; 0.064      ; 0.674      ;
+; 0.454 ; sha256_core:sha256_core_inst|r_status[5]     ; sha256_core:sha256_core_inst|r_status[3]     ; i_clk        ; i_clk       ; 0.000        ; 0.064      ; 0.675      ;
+; 0.475 ; sha256_core:sha256_core_inst|r_words[258]    ; sha256_core:sha256_core_inst|r_words[386]    ; i_clk        ; i_clk       ; 0.000        ; 0.065      ; 0.697      ;
+; 0.475 ; sha256_core:sha256_core_inst|r_words[259]    ; sha256_core:sha256_core_inst|r_words[387]    ; i_clk        ; i_clk       ; 0.000        ; 0.065      ; 0.697      ;
+; 0.476 ; sha256_core:sha256_core_inst|r_words[300]    ; sha256_core:sha256_core_inst|r_words[428]    ; i_clk        ; i_clk       ; 0.000        ; 0.064      ; 0.697      ;
+; 0.476 ; sha256_core:sha256_core_inst|r_words[323]    ; sha256_core:sha256_core_inst|r_words[451]    ; i_clk        ; i_clk       ; 0.000        ; 0.064      ; 0.697      ;
+; 0.476 ; sha256_core:sha256_core_inst|r_words[287]    ; sha256_core:sha256_core_inst|r_words[415]    ; i_clk        ; i_clk       ; 0.000        ; 0.064      ; 0.697      ;
+; 0.476 ; sha256_core:sha256_core_inst|r_words[252]    ; sha256_core:sha256_core_inst|r_words[380]    ; i_clk        ; i_clk       ; 0.000        ; 0.064      ; 0.697      ;
+; 0.476 ; sha256_core:sha256_core_inst|r_words[348]    ; sha256_core:sha256_core_inst|r_words[476]    ; i_clk        ; i_clk       ; 0.000        ; 0.064      ; 0.697      ;
+; 0.478 ; sha256_core:sha256_core_inst|r_words[247]    ; sha256_core:sha256_core_inst|r_words[375]    ; i_clk        ; i_clk       ; 0.000        ; 0.063      ; 0.698      ;
+; 0.478 ; sha256_core:sha256_core_inst|r_words[277]    ; sha256_core:sha256_core_inst|r_words[405]    ; i_clk        ; i_clk       ; 0.000        ; 0.064      ; 0.699      ;
+; 0.478 ; sha256_core:sha256_core_inst|r_words[279]    ; sha256_core:sha256_core_inst|r_words[407]    ; i_clk        ; i_clk       ; 0.000        ; 0.064      ; 0.699      ;
+; 0.478 ; sha256_core:sha256_core_inst|r_words[253]    ; sha256_core:sha256_core_inst|r_words[381]    ; i_clk        ; i_clk       ; 0.000        ; 0.064      ; 0.699      ;
+; 0.479 ; sha256_core:sha256_core_inst|r_words[224]    ; sha256_core:sha256_core_inst|r_words[352]    ; i_clk        ; i_clk       ; 0.000        ; 0.063      ; 0.699      ;
+; 0.479 ; sha256_core:sha256_core_inst|r_words[350]    ; sha256_core:sha256_core_inst|r_words[478]    ; i_clk        ; i_clk       ; 0.000        ; 0.064      ; 0.700      ;
+; 0.479 ; sha256_core:sha256_core_inst|r_words[345]    ; sha256_core:sha256_core_inst|r_words[473]    ; i_clk        ; i_clk       ; 0.000        ; 0.064      ; 0.700      ;
+; 0.480 ; sha256_core:sha256_core_inst|r_words[318]    ; sha256_core:sha256_core_inst|r_words[446]    ; i_clk        ; i_clk       ; 0.000        ; 0.064      ; 0.701      ;
+; 0.480 ; sha256_core:sha256_core_inst|r_words[349]    ; sha256_core:sha256_core_inst|r_words[477]    ; i_clk        ; i_clk       ; 0.000        ; 0.064      ; 0.701      ;
++-------+----------------------------------------------+----------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
+-----------------------------------------------
+; Slow 1200mV 85C Model Metastability Summary ;
+-----------------------------------------------
+No synchronizer chains to report.
+
+
++-------------------------------------------------+
+; Slow 1200mV 0C Model Fmax Summary               ;
++-----------+-----------------+------------+------+
+; Fmax      ; Restricted Fmax ; Clock Name ; Note ;
++-----------+-----------------+------------+------+
+; 21.97 MHz ; 21.97 MHz       ; i_clk      ;      ;
++-----------+-----------------+------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++------------------------------------+
+; Slow 1200mV 0C Model Setup Summary ;
++-------+---------+------------------+
+; Clock ; Slack   ; End Point TNS    ;
++-------+---------+------------------+
+; i_clk ; -44.514 ; -11032.578       ;
++-------+---------+------------------+
+
+
++-----------------------------------+
+; Slow 1200mV 0C Model Hold Summary ;
++-------+-------+-------------------+
+; Clock ; Slack ; End Point TNS     ;
++-------+-------+-------------------+
+; i_clk ; 0.309 ; 0.000             ;
++-------+-------+-------------------+
+
+
+-----------------------------------------
+; Slow 1200mV 0C Model Recovery Summary ;
+-----------------------------------------
+No paths to report.
+
+
+----------------------------------------
+; Slow 1200mV 0C Model Removal Summary ;
+----------------------------------------
+No paths to report.
+
+
++--------------------------------------------------+
+; Slow 1200mV 0C Model Minimum Pulse Width Summary ;
++-------+--------+---------------------------------+
+; Clock ; Slack  ; End Point TNS                   ;
++-------+--------+---------------------------------+
+; i_clk ; -3.000 ; -835.000                        ;
++-------+--------+---------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Setup: 'i_clk'                                                                                                                                           ;
++---------+-----------------------------------------------+-----------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack   ; From Node                                     ; To Node                                       ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++---------+-----------------------------------------------+-----------------------------------------------+--------------+-------------+--------------+------------+------------+
+; -44.514 ; sha256_core:sha256_core_inst|r_round[2]       ; sha256_core:sha256_core_inst|r_variables[255] ; i_clk        ; i_clk       ; 1.000        ; 0.255      ; 45.764     ;
+; -44.413 ; sha256_core:sha256_core_inst|r_variables[122] ; sha256_core:sha256_core_inst|r_variables[255] ; i_clk        ; i_clk       ; 1.000        ; 0.243      ; 45.651     ;
+; -44.328 ; sha256_core:sha256_core_inst|r_variables[32]  ; sha256_core:sha256_core_inst|r_variables[255] ; i_clk        ; i_clk       ; 1.000        ; 0.240      ; 45.563     ;
+; -44.306 ; sha256_core:sha256_core_inst|r_variables[96]  ; sha256_core:sha256_core_inst|r_variables[255] ; i_clk        ; i_clk       ; 1.000        ; 0.243      ; 45.544     ;
+; -44.306 ; sha256_core:sha256_core_inst|r_variables[102] ; sha256_core:sha256_core_inst|r_variables[255] ; i_clk        ; i_clk       ; 1.000        ; 0.243      ; 45.544     ;
+; -44.305 ; sha256_core:sha256_core_inst|r_variables[126] ; sha256_core:sha256_core_inst|r_variables[255] ; i_clk        ; i_clk       ; 1.000        ; -0.065     ; 45.235     ;
+; -44.299 ; sha256_core:sha256_core_inst|r_round[3]       ; sha256_core:sha256_core_inst|r_variables[255] ; i_clk        ; i_clk       ; 1.000        ; 0.249      ; 45.543     ;
+; -44.283 ; sha256_core:sha256_core_inst|r_round[5]       ; sha256_core:sha256_core_inst|r_variables[255] ; i_clk        ; i_clk       ; 1.000        ; 0.249      ; 45.527     ;
+; -44.269 ; sha256_core:sha256_core_inst|r_variables[108] ; sha256_core:sha256_core_inst|r_variables[255] ; i_clk        ; i_clk       ; 1.000        ; 0.243      ; 45.507     ;
+; -44.268 ; sha256_core:sha256_core_inst|r_round[2]       ; sha256_core:sha256_core_inst|r_variables[253] ; i_clk        ; i_clk       ; 1.000        ; 0.255      ; 45.518     ;
+; -44.263 ; sha256_core:sha256_core_inst|r_round[2]       ; sha256_core:sha256_core_inst|r_variables[254] ; i_clk        ; i_clk       ; 1.000        ; 0.255      ; 45.513     ;
+; -44.238 ; sha256_core:sha256_core_inst|r_round[2]       ; sha256_core:sha256_core_inst|r_variables[252] ; i_clk        ; i_clk       ; 1.000        ; 0.255      ; 45.488     ;
+; -44.167 ; sha256_core:sha256_core_inst|r_variables[122] ; sha256_core:sha256_core_inst|r_variables[253] ; i_clk        ; i_clk       ; 1.000        ; 0.243      ; 45.405     ;
+; -44.162 ; sha256_core:sha256_core_inst|r_variables[122] ; sha256_core:sha256_core_inst|r_variables[254] ; i_clk        ; i_clk       ; 1.000        ; 0.243      ; 45.400     ;
+; -44.161 ; sha256_core:sha256_core_inst|r_variables[107] ; sha256_core:sha256_core_inst|r_variables[255] ; i_clk        ; i_clk       ; 1.000        ; 0.243      ; 45.399     ;
+; -44.140 ; sha256_core:sha256_core_inst|r_round[2]       ; sha256_core:sha256_core_inst|r_variables[127] ; i_clk        ; i_clk       ; 1.000        ; 0.252      ; 45.387     ;
+; -44.137 ; sha256_core:sha256_core_inst|r_variables[103] ; sha256_core:sha256_core_inst|r_variables[255] ; i_clk        ; i_clk       ; 1.000        ; 0.243      ; 45.375     ;
+; -44.137 ; sha256_core:sha256_core_inst|r_variables[122] ; sha256_core:sha256_core_inst|r_variables[252] ; i_clk        ; i_clk       ; 1.000        ; 0.243      ; 45.375     ;
+; -44.082 ; sha256_core:sha256_core_inst|r_variables[32]  ; sha256_core:sha256_core_inst|r_variables[253] ; i_clk        ; i_clk       ; 1.000        ; 0.240      ; 45.317     ;
+; -44.077 ; sha256_core:sha256_core_inst|r_variables[32]  ; sha256_core:sha256_core_inst|r_variables[254] ; i_clk        ; i_clk       ; 1.000        ; 0.240      ; 45.312     ;
+; -44.060 ; sha256_core:sha256_core_inst|r_variables[96]  ; sha256_core:sha256_core_inst|r_variables[253] ; i_clk        ; i_clk       ; 1.000        ; 0.243      ; 45.298     ;
+; -44.060 ; sha256_core:sha256_core_inst|r_variables[102] ; sha256_core:sha256_core_inst|r_variables[253] ; i_clk        ; i_clk       ; 1.000        ; 0.243      ; 45.298     ;
+; -44.059 ; sha256_core:sha256_core_inst|r_variables[126] ; sha256_core:sha256_core_inst|r_variables[253] ; i_clk        ; i_clk       ; 1.000        ; -0.065     ; 44.989     ;
+; -44.055 ; sha256_core:sha256_core_inst|r_variables[96]  ; sha256_core:sha256_core_inst|r_variables[254] ; i_clk        ; i_clk       ; 1.000        ; 0.243      ; 45.293     ;
+; -44.055 ; sha256_core:sha256_core_inst|r_variables[102] ; sha256_core:sha256_core_inst|r_variables[254] ; i_clk        ; i_clk       ; 1.000        ; 0.243      ; 45.293     ;
+; -44.054 ; sha256_core:sha256_core_inst|r_variables[126] ; sha256_core:sha256_core_inst|r_variables[254] ; i_clk        ; i_clk       ; 1.000        ; -0.065     ; 44.984     ;
+; -44.053 ; sha256_core:sha256_core_inst|r_round[3]       ; sha256_core:sha256_core_inst|r_variables[253] ; i_clk        ; i_clk       ; 1.000        ; 0.249      ; 45.297     ;
+; -44.052 ; sha256_core:sha256_core_inst|r_variables[32]  ; sha256_core:sha256_core_inst|r_variables[252] ; i_clk        ; i_clk       ; 1.000        ; 0.240      ; 45.287     ;
+; -44.048 ; sha256_core:sha256_core_inst|r_round[3]       ; sha256_core:sha256_core_inst|r_variables[254] ; i_clk        ; i_clk       ; 1.000        ; 0.249      ; 45.292     ;
+; -44.040 ; sha256_core:sha256_core_inst|r_round[2]       ; sha256_core:sha256_core_inst|r_variables[126] ; i_clk        ; i_clk       ; 1.000        ; 0.252      ; 45.287     ;
+; -44.039 ; sha256_core:sha256_core_inst|r_variables[122] ; sha256_core:sha256_core_inst|r_variables[127] ; i_clk        ; i_clk       ; 1.000        ; 0.240      ; 45.274     ;
+; -44.037 ; sha256_core:sha256_core_inst|r_round[5]       ; sha256_core:sha256_core_inst|r_variables[253] ; i_clk        ; i_clk       ; 1.000        ; 0.249      ; 45.281     ;
+; -44.032 ; sha256_core:sha256_core_inst|r_round[5]       ; sha256_core:sha256_core_inst|r_variables[254] ; i_clk        ; i_clk       ; 1.000        ; 0.249      ; 45.276     ;
+; -44.030 ; sha256_core:sha256_core_inst|r_variables[96]  ; sha256_core:sha256_core_inst|r_variables[252] ; i_clk        ; i_clk       ; 1.000        ; 0.243      ; 45.268     ;
+; -44.030 ; sha256_core:sha256_core_inst|r_variables[102] ; sha256_core:sha256_core_inst|r_variables[252] ; i_clk        ; i_clk       ; 1.000        ; 0.243      ; 45.268     ;
+; -44.029 ; sha256_core:sha256_core_inst|r_variables[126] ; sha256_core:sha256_core_inst|r_variables[252] ; i_clk        ; i_clk       ; 1.000        ; -0.065     ; 44.959     ;
+; -44.028 ; sha256_core:sha256_core_inst|r_variables[121] ; sha256_core:sha256_core_inst|r_variables[255] ; i_clk        ; i_clk       ; 1.000        ; 0.243      ; 45.266     ;
+; -44.023 ; sha256_core:sha256_core_inst|r_round[3]       ; sha256_core:sha256_core_inst|r_variables[252] ; i_clk        ; i_clk       ; 1.000        ; 0.249      ; 45.267     ;
+; -44.023 ; sha256_core:sha256_core_inst|r_variables[108] ; sha256_core:sha256_core_inst|r_variables[253] ; i_clk        ; i_clk       ; 1.000        ; 0.243      ; 45.261     ;
+; -44.018 ; sha256_core:sha256_core_inst|r_variables[108] ; sha256_core:sha256_core_inst|r_variables[254] ; i_clk        ; i_clk       ; 1.000        ; 0.243      ; 45.256     ;
+; -44.007 ; sha256_core:sha256_core_inst|r_round[5]       ; sha256_core:sha256_core_inst|r_variables[252] ; i_clk        ; i_clk       ; 1.000        ; 0.249      ; 45.251     ;
+; -43.999 ; sha256_core:sha256_core_inst|r_variables[65]  ; sha256_core:sha256_core_inst|r_variables[255] ; i_clk        ; i_clk       ; 1.000        ; 0.253      ; 45.247     ;
+; -43.993 ; sha256_core:sha256_core_inst|r_variables[108] ; sha256_core:sha256_core_inst|r_variables[252] ; i_clk        ; i_clk       ; 1.000        ; 0.243      ; 45.231     ;
+; -43.963 ; sha256_core:sha256_core_inst|r_round[4]       ; sha256_core:sha256_core_inst|r_variables[255] ; i_clk        ; i_clk       ; 1.000        ; 0.249      ; 45.207     ;
+; -43.954 ; sha256_core:sha256_core_inst|r_variables[32]  ; sha256_core:sha256_core_inst|r_variables[127] ; i_clk        ; i_clk       ; 1.000        ; 0.237      ; 45.186     ;
+; -43.953 ; sha256_core:sha256_core_inst|r_variables[97]  ; sha256_core:sha256_core_inst|r_variables[255] ; i_clk        ; i_clk       ; 1.000        ; 0.243      ; 45.191     ;
+; -43.945 ; sha256_core:sha256_core_inst|r_variables[66]  ; sha256_core:sha256_core_inst|r_variables[255] ; i_clk        ; i_clk       ; 1.000        ; 0.258      ; 45.198     ;
+; -43.939 ; sha256_core:sha256_core_inst|r_variables[122] ; sha256_core:sha256_core_inst|r_variables[126] ; i_clk        ; i_clk       ; 1.000        ; 0.240      ; 45.174     ;
+; -43.932 ; sha256_core:sha256_core_inst|r_variables[96]  ; sha256_core:sha256_core_inst|r_variables[127] ; i_clk        ; i_clk       ; 1.000        ; 0.240      ; 45.167     ;
+; -43.932 ; sha256_core:sha256_core_inst|r_variables[102] ; sha256_core:sha256_core_inst|r_variables[127] ; i_clk        ; i_clk       ; 1.000        ; 0.240      ; 45.167     ;
+; -43.931 ; sha256_core:sha256_core_inst|r_variables[126] ; sha256_core:sha256_core_inst|r_variables[127] ; i_clk        ; i_clk       ; 1.000        ; -0.068     ; 44.858     ;
+; -43.925 ; sha256_core:sha256_core_inst|r_round[3]       ; sha256_core:sha256_core_inst|r_variables[127] ; i_clk        ; i_clk       ; 1.000        ; 0.246      ; 45.166     ;
+; -43.915 ; sha256_core:sha256_core_inst|r_variables[107] ; sha256_core:sha256_core_inst|r_variables[253] ; i_clk        ; i_clk       ; 1.000        ; 0.243      ; 45.153     ;
+; -43.910 ; sha256_core:sha256_core_inst|r_variables[107] ; sha256_core:sha256_core_inst|r_variables[254] ; i_clk        ; i_clk       ; 1.000        ; 0.243      ; 45.148     ;
+; -43.909 ; sha256_core:sha256_core_inst|r_round[5]       ; sha256_core:sha256_core_inst|r_variables[127] ; i_clk        ; i_clk       ; 1.000        ; 0.246      ; 45.150     ;
+; -43.900 ; sha256_core:sha256_core_inst|r_variables[112] ; sha256_core:sha256_core_inst|r_variables[255] ; i_clk        ; i_clk       ; 1.000        ; 0.243      ; 45.138     ;
+; -43.896 ; sha256_core:sha256_core_inst|r_variables[106] ; sha256_core:sha256_core_inst|r_variables[255] ; i_clk        ; i_clk       ; 1.000        ; 0.243      ; 45.134     ;
+; -43.895 ; sha256_core:sha256_core_inst|r_variables[108] ; sha256_core:sha256_core_inst|r_variables[127] ; i_clk        ; i_clk       ; 1.000        ; 0.240      ; 45.130     ;
+; -43.891 ; sha256_core:sha256_core_inst|r_variables[103] ; sha256_core:sha256_core_inst|r_variables[253] ; i_clk        ; i_clk       ; 1.000        ; 0.243      ; 45.129     ;
+; -43.886 ; sha256_core:sha256_core_inst|r_variables[103] ; sha256_core:sha256_core_inst|r_variables[254] ; i_clk        ; i_clk       ; 1.000        ; 0.243      ; 45.124     ;
+; -43.885 ; sha256_core:sha256_core_inst|r_variables[107] ; sha256_core:sha256_core_inst|r_variables[252] ; i_clk        ; i_clk       ; 1.000        ; 0.243      ; 45.123     ;
+; -43.879 ; sha256_core:sha256_core_inst|r_round[6]       ; sha256_core:sha256_core_inst|r_variables[255] ; i_clk        ; i_clk       ; 1.000        ; 0.249      ; 45.123     ;
+; -43.877 ; sha256_core:sha256_core_inst|r_variables[68]  ; sha256_core:sha256_core_inst|r_variables[255] ; i_clk        ; i_clk       ; 1.000        ; 0.258      ; 45.130     ;
+; -43.861 ; sha256_core:sha256_core_inst|r_variables[103] ; sha256_core:sha256_core_inst|r_variables[252] ; i_clk        ; i_clk       ; 1.000        ; 0.243      ; 45.099     ;
+; -43.854 ; sha256_core:sha256_core_inst|r_variables[32]  ; sha256_core:sha256_core_inst|r_variables[126] ; i_clk        ; i_clk       ; 1.000        ; 0.237      ; 45.086     ;
+; -43.853 ; sha256_core:sha256_core_inst|r_variables[111] ; sha256_core:sha256_core_inst|r_variables[255] ; i_clk        ; i_clk       ; 1.000        ; 0.243      ; 45.091     ;
+; -43.832 ; sha256_core:sha256_core_inst|r_variables[96]  ; sha256_core:sha256_core_inst|r_variables[126] ; i_clk        ; i_clk       ; 1.000        ; 0.240      ; 45.067     ;
+; -43.832 ; sha256_core:sha256_core_inst|r_variables[102] ; sha256_core:sha256_core_inst|r_variables[126] ; i_clk        ; i_clk       ; 1.000        ; 0.240      ; 45.067     ;
+; -43.831 ; sha256_core:sha256_core_inst|r_variables[126] ; sha256_core:sha256_core_inst|r_variables[126] ; i_clk        ; i_clk       ; 1.000        ; -0.068     ; 44.758     ;
+; -43.825 ; sha256_core:sha256_core_inst|r_round[3]       ; sha256_core:sha256_core_inst|r_variables[126] ; i_clk        ; i_clk       ; 1.000        ; 0.246      ; 45.066     ;
+; -43.824 ; sha256_core:sha256_core_inst|r_variables[33]  ; sha256_core:sha256_core_inst|r_variables[255] ; i_clk        ; i_clk       ; 1.000        ; 0.240      ; 45.059     ;
+; -43.809 ; sha256_core:sha256_core_inst|r_round[5]       ; sha256_core:sha256_core_inst|r_variables[126] ; i_clk        ; i_clk       ; 1.000        ; 0.246      ; 45.050     ;
+; -43.799 ; sha256_core:sha256_core_inst|r_variables[110] ; sha256_core:sha256_core_inst|r_variables[255] ; i_clk        ; i_clk       ; 1.000        ; 0.243      ; 45.037     ;
+; -43.797 ; sha256_core:sha256_core_inst|r_variables[125] ; sha256_core:sha256_core_inst|r_variables[255] ; i_clk        ; i_clk       ; 1.000        ; 0.243      ; 45.035     ;
+; -43.795 ; sha256_core:sha256_core_inst|r_variables[108] ; sha256_core:sha256_core_inst|r_variables[126] ; i_clk        ; i_clk       ; 1.000        ; 0.240      ; 45.030     ;
+; -43.787 ; sha256_core:sha256_core_inst|r_variables[107] ; sha256_core:sha256_core_inst|r_variables[127] ; i_clk        ; i_clk       ; 1.000        ; 0.240      ; 45.022     ;
+; -43.782 ; sha256_core:sha256_core_inst|r_variables[121] ; sha256_core:sha256_core_inst|r_variables[253] ; i_clk        ; i_clk       ; 1.000        ; 0.243      ; 45.020     ;
+; -43.777 ; sha256_core:sha256_core_inst|r_variables[121] ; sha256_core:sha256_core_inst|r_variables[254] ; i_clk        ; i_clk       ; 1.000        ; 0.243      ; 45.015     ;
+; -43.763 ; sha256_core:sha256_core_inst|r_variables[103] ; sha256_core:sha256_core_inst|r_variables[127] ; i_clk        ; i_clk       ; 1.000        ; 0.240      ; 44.998     ;
+; -43.757 ; sha256_core:sha256_core_inst|r_variables[104] ; sha256_core:sha256_core_inst|r_variables[255] ; i_clk        ; i_clk       ; 1.000        ; 0.243      ; 44.995     ;
+; -43.753 ; sha256_core:sha256_core_inst|r_variables[65]  ; sha256_core:sha256_core_inst|r_variables[253] ; i_clk        ; i_clk       ; 1.000        ; 0.253      ; 45.001     ;
+; -43.752 ; sha256_core:sha256_core_inst|r_variables[121] ; sha256_core:sha256_core_inst|r_variables[252] ; i_clk        ; i_clk       ; 1.000        ; 0.243      ; 44.990     ;
+; -43.748 ; sha256_core:sha256_core_inst|r_variables[65]  ; sha256_core:sha256_core_inst|r_variables[254] ; i_clk        ; i_clk       ; 1.000        ; 0.253      ; 44.996     ;
+; -43.739 ; sha256_core:sha256_core_inst|r_variables[72]  ; sha256_core:sha256_core_inst|r_variables[255] ; i_clk        ; i_clk       ; 1.000        ; 0.258      ; 44.992     ;
+; -43.734 ; sha256_core:sha256_core_inst|r_variables[64]  ; sha256_core:sha256_core_inst|r_variables[255] ; i_clk        ; i_clk       ; 1.000        ; 0.260      ; 44.989     ;
+; -43.730 ; sha256_core:sha256_core_inst|r_variables[100] ; sha256_core:sha256_core_inst|r_variables[255] ; i_clk        ; i_clk       ; 1.000        ; 0.243      ; 44.968     ;
+; -43.723 ; sha256_core:sha256_core_inst|r_variables[65]  ; sha256_core:sha256_core_inst|r_variables[252] ; i_clk        ; i_clk       ; 1.000        ; 0.253      ; 44.971     ;
+; -43.717 ; sha256_core:sha256_core_inst|r_round[4]       ; sha256_core:sha256_core_inst|r_variables[253] ; i_clk        ; i_clk       ; 1.000        ; 0.249      ; 44.961     ;
+; -43.715 ; sha256_core:sha256_core_inst|r_round[2]       ; sha256_core:sha256_core_inst|r_variables[250] ; i_clk        ; i_clk       ; 1.000        ; -0.037     ; 44.673     ;
+; -43.712 ; sha256_core:sha256_core_inst|r_round[4]       ; sha256_core:sha256_core_inst|r_variables[254] ; i_clk        ; i_clk       ; 1.000        ; 0.249      ; 44.956     ;
+; -43.707 ; sha256_core:sha256_core_inst|r_variables[97]  ; sha256_core:sha256_core_inst|r_variables[253] ; i_clk        ; i_clk       ; 1.000        ; 0.243      ; 44.945     ;
+; -43.705 ; sha256_core:sha256_core_inst|r_round[2]       ; sha256_core:sha256_core_inst|r_variables[247] ; i_clk        ; i_clk       ; 1.000        ; -0.037     ; 44.663     ;
+; -43.702 ; sha256_core:sha256_core_inst|r_variables[97]  ; sha256_core:sha256_core_inst|r_variables[254] ; i_clk        ; i_clk       ; 1.000        ; 0.243      ; 44.940     ;
+; -43.700 ; sha256_core:sha256_core_inst|r_round[2]       ; sha256_core:sha256_core_inst|r_variables[125] ; i_clk        ; i_clk       ; 1.000        ; -0.044     ; 44.651     ;
+; -43.699 ; sha256_core:sha256_core_inst|r_variables[66]  ; sha256_core:sha256_core_inst|r_variables[253] ; i_clk        ; i_clk       ; 1.000        ; 0.258      ; 44.952     ;
+; -43.694 ; sha256_core:sha256_core_inst|r_variables[66]  ; sha256_core:sha256_core_inst|r_variables[254] ; i_clk        ; i_clk       ; 1.000        ; 0.258      ; 44.947     ;
+; -43.687 ; sha256_core:sha256_core_inst|r_round[4]       ; sha256_core:sha256_core_inst|r_variables[252] ; i_clk        ; i_clk       ; 1.000        ; 0.249      ; 44.931     ;
+; -43.687 ; sha256_core:sha256_core_inst|r_variables[107] ; sha256_core:sha256_core_inst|r_variables[126] ; i_clk        ; i_clk       ; 1.000        ; 0.240      ; 44.922     ;
+; -43.685 ; sha256_core:sha256_core_inst|r_variables[36]  ; sha256_core:sha256_core_inst|r_variables[255] ; i_clk        ; i_clk       ; 1.000        ; 0.240      ; 44.920     ;
+; -43.677 ; sha256_core:sha256_core_inst|r_variables[97]  ; sha256_core:sha256_core_inst|r_variables[252] ; i_clk        ; i_clk       ; 1.000        ; 0.243      ; 44.915     ;
++---------+-----------------------------------------------+-----------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Hold: 'i_clk'                                                                                                                                        ;
++-------+----------------------------------------------+----------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                    ; To Node                                      ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+----------------------------------------------+----------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.309 ; sha256_core:sha256_core_inst|r_words[23]     ; sha256_core:sha256_core_inst|r_words[23]     ; i_clk        ; i_clk       ; 0.000        ; 0.058      ; 0.511      ;
+; 0.309 ; sha256_core:sha256_core_inst|r_words[31]     ; sha256_core:sha256_core_inst|r_words[31]     ; i_clk        ; i_clk       ; 0.000        ; 0.058      ; 0.511      ;
+; 0.309 ; sha256_core:sha256_core_inst|r_words[15]     ; sha256_core:sha256_core_inst|r_words[15]     ; i_clk        ; i_clk       ; 0.000        ; 0.058      ; 0.511      ;
+; 0.310 ; sha256_core:sha256_core_inst|r_words[63]     ; sha256_core:sha256_core_inst|r_words[63]     ; i_clk        ; i_clk       ; 0.000        ; 0.057      ; 0.511      ;
+; 0.310 ; sha256_core:sha256_core_inst|r_words[47]     ; sha256_core:sha256_core_inst|r_words[47]     ; i_clk        ; i_clk       ; 0.000        ; 0.057      ; 0.511      ;
+; 0.310 ; sha256_core:sha256_core_inst|r_words[55]     ; sha256_core:sha256_core_inst|r_words[55]     ; i_clk        ; i_clk       ; 0.000        ; 0.057      ; 0.511      ;
+; 0.310 ; sha256_core:sha256_core_inst|r_words[79]     ; sha256_core:sha256_core_inst|r_words[79]     ; i_clk        ; i_clk       ; 0.000        ; 0.057      ; 0.511      ;
+; 0.310 ; sha256_core:sha256_core_inst|r_words[87]     ; sha256_core:sha256_core_inst|r_words[87]     ; i_clk        ; i_clk       ; 0.000        ; 0.057      ; 0.511      ;
+; 0.310 ; sha256_core:sha256_core_inst|r_words[71]     ; sha256_core:sha256_core_inst|r_words[71]     ; i_clk        ; i_clk       ; 0.000        ; 0.057      ; 0.511      ;
+; 0.310 ; sha256_core:sha256_core_inst|r_words[39]     ; sha256_core:sha256_core_inst|r_words[39]     ; i_clk        ; i_clk       ; 0.000        ; 0.057      ; 0.511      ;
+; 0.310 ; sha256_core:sha256_core_inst|r_words[111]    ; sha256_core:sha256_core_inst|r_words[111]    ; i_clk        ; i_clk       ; 0.000        ; 0.057      ; 0.511      ;
+; 0.310 ; sha256_core:sha256_core_inst|r_words[119]    ; sha256_core:sha256_core_inst|r_words[119]    ; i_clk        ; i_clk       ; 0.000        ; 0.057      ; 0.511      ;
+; 0.310 ; sha256_core:sha256_core_inst|r_words[127]    ; sha256_core:sha256_core_inst|r_words[127]    ; i_clk        ; i_clk       ; 0.000        ; 0.057      ; 0.511      ;
+; 0.310 ; spi_slave:spi_ints|r_cnt[3]                  ; spi_slave:spi_ints|r_cnt[3]                  ; i_clk        ; i_clk       ; 0.000        ; 0.057      ; 0.511      ;
+; 0.310 ; spi_slave:spi_ints|r_cnt[2]                  ; spi_slave:spi_ints|r_cnt[2]                  ; i_clk        ; i_clk       ; 0.000        ; 0.057      ; 0.511      ;
+; 0.310 ; spi_slave:spi_ints|r_cnt[1]                  ; spi_slave:spi_ints|r_cnt[1]                  ; i_clk        ; i_clk       ; 0.000        ; 0.057      ; 0.511      ;
+; 0.311 ; sha256_core:sha256_core_inst|r_words[95]     ; sha256_core:sha256_core_inst|r_words[95]     ; i_clk        ; i_clk       ; 0.000        ; 0.056      ; 0.511      ;
+; 0.311 ; sha256_core:sha256_core_inst|r_words[103]    ; sha256_core:sha256_core_inst|r_words[103]    ; i_clk        ; i_clk       ; 0.000        ; 0.056      ; 0.511      ;
+; 0.311 ; sha256_core:sha256_core_inst|r_status[5]     ; sha256_core:sha256_core_inst|r_status[5]     ; i_clk        ; i_clk       ; 0.000        ; 0.056      ; 0.511      ;
+; 0.311 ; sha256_core:sha256_core_inst|r_status[4]     ; sha256_core:sha256_core_inst|r_status[4]     ; i_clk        ; i_clk       ; 0.000        ; 0.056      ; 0.511      ;
+; 0.311 ; spi_slave:spi_ints|o_data[15]                ; spi_slave:spi_ints|o_data[15]                ; i_clk        ; i_clk       ; 0.000        ; 0.056      ; 0.511      ;
+; 0.318 ; spi_slave:spi_ints|r_cnt[0]                  ; spi_slave:spi_ints|r_cnt[0]                  ; i_clk        ; i_clk       ; 0.000        ; 0.057      ; 0.519      ;
+; 0.336 ; sha256_core:sha256_core_inst|r_words[66]     ; sha256_core:sha256_core_inst|r_words[194]    ; i_clk        ; i_clk       ; 0.000        ; 0.058      ; 0.538      ;
+; 0.336 ; sha256_core:sha256_core_inst|r_words[347]    ; sha256_core:sha256_core_inst|r_words[475]    ; i_clk        ; i_clk       ; 0.000        ; 0.058      ; 0.538      ;
+; 0.337 ; sha256_core:sha256_core_inst|r_words[240]    ; sha256_core:sha256_core_inst|r_words[368]    ; i_clk        ; i_clk       ; 0.000        ; 0.057      ; 0.538      ;
+; 0.337 ; sha256_core:sha256_core_inst|r_words[351]    ; sha256_core:sha256_core_inst|r_words[479]    ; i_clk        ; i_clk       ; 0.000        ; 0.058      ; 0.539      ;
+; 0.337 ; sha256_core:sha256_core_inst|r_words[281]    ; sha256_core:sha256_core_inst|r_words[409]    ; i_clk        ; i_clk       ; 0.000        ; 0.058      ; 0.539      ;
+; 0.337 ; sha256_core:sha256_core_inst|r_words[335]    ; sha256_core:sha256_core_inst|r_words[463]    ; i_clk        ; i_clk       ; 0.000        ; 0.057      ; 0.538      ;
+; 0.337 ; sha256_core:sha256_core_inst|r_words[286]    ; sha256_core:sha256_core_inst|r_words[414]    ; i_clk        ; i_clk       ; 0.000        ; 0.057      ; 0.538      ;
+; 0.337 ; sha256_core:sha256_core_inst|r_words[243]    ; sha256_core:sha256_core_inst|r_words[371]    ; i_clk        ; i_clk       ; 0.000        ; 0.057      ; 0.538      ;
+; 0.337 ; sha256_core:sha256_core_inst|r_words[225]    ; sha256_core:sha256_core_inst|r_words[353]    ; i_clk        ; i_clk       ; 0.000        ; 0.057      ; 0.538      ;
+; 0.337 ; sha256_core:sha256_core_inst|r_words[282]    ; sha256_core:sha256_core_inst|r_words[410]    ; i_clk        ; i_clk       ; 0.000        ; 0.057      ; 0.538      ;
+; 0.337 ; sha256_core:sha256_core_inst|r_words[326]    ; sha256_core:sha256_core_inst|r_words[454]    ; i_clk        ; i_clk       ; 0.000        ; 0.057      ; 0.538      ;
+; 0.337 ; sha256_core:sha256_core_inst|r_words[285]    ; sha256_core:sha256_core_inst|r_words[413]    ; i_clk        ; i_clk       ; 0.000        ; 0.058      ; 0.539      ;
+; 0.337 ; sha256_core:sha256_core_inst|r_words[82]     ; sha256_core:sha256_core_inst|r_words[210]    ; i_clk        ; i_clk       ; 0.000        ; 0.057      ; 0.538      ;
+; 0.338 ; sha256_core:sha256_core_inst|r_words[230]    ; sha256_core:sha256_core_inst|r_words[358]    ; i_clk        ; i_clk       ; 0.000        ; 0.057      ; 0.539      ;
+; 0.338 ; sha256_core:sha256_core_inst|r_words[327]    ; sha256_core:sha256_core_inst|r_words[455]    ; i_clk        ; i_clk       ; 0.000        ; 0.057      ; 0.539      ;
+; 0.338 ; sha256_core:sha256_core_inst|r_words[90]     ; sha256_core:sha256_core_inst|r_words[218]    ; i_clk        ; i_clk       ; 0.000        ; 0.057      ; 0.539      ;
+; 0.338 ; sha256_core:sha256_core_inst|r_words[340]    ; sha256_core:sha256_core_inst|r_words[468]    ; i_clk        ; i_clk       ; 0.000        ; 0.057      ; 0.539      ;
+; 0.338 ; sha256_core:sha256_core_inst|r_words[331]    ; sha256_core:sha256_core_inst|r_words[459]    ; i_clk        ; i_clk       ; 0.000        ; 0.057      ; 0.539      ;
+; 0.338 ; sha256_core:sha256_core_inst|r_words[263]    ; sha256_core:sha256_core_inst|r_words[391]    ; i_clk        ; i_clk       ; 0.000        ; 0.057      ; 0.539      ;
+; 0.338 ; sha256_core:sha256_core_inst|r_words[339]    ; sha256_core:sha256_core_inst|r_words[467]    ; i_clk        ; i_clk       ; 0.000        ; 0.057      ; 0.539      ;
+; 0.338 ; sha256_core:sha256_core_inst|r_words[321]    ; sha256_core:sha256_core_inst|r_words[449]    ; i_clk        ; i_clk       ; 0.000        ; 0.057      ; 0.539      ;
+; 0.338 ; sha256_core:sha256_core_inst|r_words[227]    ; sha256_core:sha256_core_inst|r_words[355]    ; i_clk        ; i_clk       ; 0.000        ; 0.057      ; 0.539      ;
+; 0.338 ; sha256_core:sha256_core_inst|r_words[320]    ; sha256_core:sha256_core_inst|r_words[448]    ; i_clk        ; i_clk       ; 0.000        ; 0.057      ; 0.539      ;
+; 0.338 ; sha256_core:sha256_core_inst|r_words[283]    ; sha256_core:sha256_core_inst|r_words[411]    ; i_clk        ; i_clk       ; 0.000        ; 0.057      ; 0.539      ;
+; 0.338 ; sha256_core:sha256_core_inst|r_words[79]     ; sha256_core:sha256_core_inst|r_words[207]    ; i_clk        ; i_clk       ; 0.000        ; 0.057      ; 0.539      ;
+; 0.338 ; sha256_core:sha256_core_inst|r_words[256]    ; sha256_core:sha256_core_inst|r_words[384]    ; i_clk        ; i_clk       ; 0.000        ; 0.057      ; 0.539      ;
+; 0.338 ; sha256_core:sha256_core_inst|r_words[343]    ; sha256_core:sha256_core_inst|r_words[471]    ; i_clk        ; i_clk       ; 0.000        ; 0.057      ; 0.539      ;
+; 0.338 ; sha256_core:sha256_core_inst|r_words[260]    ; sha256_core:sha256_core_inst|r_words[388]    ; i_clk        ; i_clk       ; 0.000        ; 0.057      ; 0.539      ;
+; 0.338 ; sha256_core:sha256_core_inst|r_words[338]    ; sha256_core:sha256_core_inst|r_words[466]    ; i_clk        ; i_clk       ; 0.000        ; 0.057      ; 0.539      ;
+; 0.338 ; sha256_core:sha256_core_inst|r_words[342]    ; sha256_core:sha256_core_inst|r_words[470]    ; i_clk        ; i_clk       ; 0.000        ; 0.057      ; 0.539      ;
+; 0.338 ; spi_slave:spi_ints|r_cnt[2]                  ; spi_slave:spi_ints|r_cnt[3]                  ; i_clk        ; i_clk       ; 0.000        ; 0.057      ; 0.539      ;
+; 0.339 ; sha256_core:sha256_core_inst|r_words[332]    ; sha256_core:sha256_core_inst|r_words[460]    ; i_clk        ; i_clk       ; 0.000        ; 0.057      ; 0.540      ;
+; 0.339 ; sha256_core:sha256_core_inst|r_words[337]    ; sha256_core:sha256_core_inst|r_words[465]    ; i_clk        ; i_clk       ; 0.000        ; 0.057      ; 0.540      ;
+; 0.339 ; sha256_core:sha256_core_inst|r_words[330]    ; sha256_core:sha256_core_inst|r_words[458]    ; i_clk        ; i_clk       ; 0.000        ; 0.057      ; 0.540      ;
+; 0.340 ; sha256_core:sha256_core_inst|r_words[89]     ; sha256_core:sha256_core_inst|r_words[217]    ; i_clk        ; i_clk       ; 0.000        ; 0.057      ; 0.541      ;
+; 0.343 ; spi_slave:spi_ints|r_rx[11]                  ; spi_slave:spi_ints|r_rx[12]                  ; i_clk        ; i_clk       ; 0.000        ; 0.057      ; 0.544      ;
+; 0.343 ; spi_slave:spi_ints|r_rx[6]                   ; spi_slave:spi_ints|o_data[7]                 ; i_clk        ; i_clk       ; 0.000        ; 0.057      ; 0.544      ;
+; 0.344 ; sha256_core:sha256_core_inst|r_variables[95] ; sha256_core:sha256_core_inst|r_variables[95] ; i_clk        ; i_clk       ; 0.000        ; 0.057      ; 0.545      ;
+; 0.344 ; spi_slave:spi_ints|r_rx[13]                  ; spi_slave:spi_ints|r_rx[14]                  ; i_clk        ; i_clk       ; 0.000        ; 0.057      ; 0.545      ;
+; 0.344 ; spi_slave:spi_ints|r_rx[13]                  ; spi_slave:spi_ints|o_data[14]                ; i_clk        ; i_clk       ; 0.000        ; 0.057      ; 0.545      ;
+; 0.344 ; spi_slave:spi_ints|r_rx[11]                  ; spi_slave:spi_ints|o_data[12]                ; i_clk        ; i_clk       ; 0.000        ; 0.057      ; 0.545      ;
+; 0.344 ; spi_slave:spi_ints|r_rx[4]                   ; spi_slave:spi_ints|o_data[5]                 ; i_clk        ; i_clk       ; 0.000        ; 0.057      ; 0.545      ;
+; 0.345 ; spi_slave:spi_ints|r_rx[6]                   ; spi_slave:spi_ints|r_rx[7]                   ; i_clk        ; i_clk       ; 0.000        ; 0.057      ; 0.546      ;
+; 0.345 ; spi_slave:spi_ints|r_rx[5]                   ; spi_slave:spi_ints|o_data[6]                 ; i_clk        ; i_clk       ; 0.000        ; 0.057      ; 0.546      ;
+; 0.345 ; spi_slave:spi_ints|r_rx[5]                   ; spi_slave:spi_ints|r_rx[6]                   ; i_clk        ; i_clk       ; 0.000        ; 0.057      ; 0.546      ;
+; 0.345 ; spi_slave:spi_ints|r_rx[4]                   ; spi_slave:spi_ints|r_rx[5]                   ; i_clk        ; i_clk       ; 0.000        ; 0.057      ; 0.546      ;
+; 0.345 ; spi_slave:spi_ints|r_rx[2]                   ; spi_slave:spi_ints|o_data[3]                 ; i_clk        ; i_clk       ; 0.000        ; 0.057      ; 0.546      ;
+; 0.345 ; spi_slave:spi_ints|r_rx[2]                   ; spi_slave:spi_ints|r_rx[3]                   ; i_clk        ; i_clk       ; 0.000        ; 0.057      ; 0.546      ;
+; 0.350 ; spi_slave:spi_ints|r_cnt[0]                  ; spi_slave:spi_ints|r_cnt[1]                  ; i_clk        ; i_clk       ; 0.000        ; 0.057      ; 0.551      ;
+; 0.354 ; sha256_core:sha256_core_inst|r_words[23]     ; sha256_core:sha256_core_inst|r_words[151]    ; i_clk        ; i_clk       ; 0.000        ; 0.058      ; 0.556      ;
+; 0.354 ; sha256_core:sha256_core_inst|r_words[3]      ; sha256_core:sha256_core_inst|r_words[131]    ; i_clk        ; i_clk       ; 0.000        ; 0.057      ; 0.555      ;
+; 0.354 ; sha256_core:sha256_core_inst|r_words[2]      ; sha256_core:sha256_core_inst|r_words[130]    ; i_clk        ; i_clk       ; 0.000        ; 0.057      ; 0.555      ;
+; 0.354 ; spi_slave:spi_ints|r_rx[12]                  ; spi_slave:spi_ints|o_data[13]                ; i_clk        ; i_clk       ; 0.000        ; 0.057      ; 0.555      ;
+; 0.355 ; sha256_core:sha256_core_inst|r_words[5]      ; sha256_core:sha256_core_inst|r_words[133]    ; i_clk        ; i_clk       ; 0.000        ; 0.057      ; 0.556      ;
+; 0.355 ; sha256_core:sha256_core_inst|r_words[139]    ; sha256_core:sha256_core_inst|r_words[267]    ; i_clk        ; i_clk       ; 0.000        ; 0.058      ; 0.557      ;
+; 0.356 ; sha256_core:sha256_core_inst|r_words[138]    ; sha256_core:sha256_core_inst|r_words[266]    ; i_clk        ; i_clk       ; 0.000        ; 0.058      ; 0.558      ;
+; 0.357 ; sha256_core:sha256_core_inst|r_words[206]    ; sha256_core:sha256_core_inst|r_words[334]    ; i_clk        ; i_clk       ; 0.000        ; 0.056      ; 0.557      ;
+; 0.371 ; sck_sync[0]                                  ; sck_sync[1]                                  ; i_clk        ; i_clk       ; 0.000        ; 0.057      ; 0.572      ;
+; 0.400 ; spi_slave:spi_ints|o_data[15]                ; sha256_core:sha256_core_inst|r_status[0]     ; i_clk        ; i_clk       ; 0.000        ; 0.056      ; 0.600      ;
+; 0.404 ; sha256_core:sha256_core_inst|r_status[4]     ; sha256_core:sha256_core_inst|r_status[2]     ; i_clk        ; i_clk       ; 0.000        ; 0.056      ; 0.604      ;
+; 0.407 ; sha256_core:sha256_core_inst|r_status[4]     ; sha256_core:sha256_core_inst|r_status[1]     ; i_clk        ; i_clk       ; 0.000        ; 0.056      ; 0.607      ;
+; 0.414 ; sha256_core:sha256_core_inst|r_status[5]     ; sha256_core:sha256_core_inst|r_status[3]     ; i_clk        ; i_clk       ; 0.000        ; 0.056      ; 0.614      ;
+; 0.428 ; sha256_core:sha256_core_inst|r_words[287]    ; sha256_core:sha256_core_inst|r_words[415]    ; i_clk        ; i_clk       ; 0.000        ; 0.058      ; 0.630      ;
+; 0.429 ; sha256_core:sha256_core_inst|r_words[323]    ; sha256_core:sha256_core_inst|r_words[451]    ; i_clk        ; i_clk       ; 0.000        ; 0.057      ; 0.630      ;
+; 0.429 ; sha256_core:sha256_core_inst|r_words[259]    ; sha256_core:sha256_core_inst|r_words[387]    ; i_clk        ; i_clk       ; 0.000        ; 0.057      ; 0.630      ;
+; 0.430 ; sha256_core:sha256_core_inst|r_words[300]    ; sha256_core:sha256_core_inst|r_words[428]    ; i_clk        ; i_clk       ; 0.000        ; 0.057      ; 0.631      ;
+; 0.430 ; sha256_core:sha256_core_inst|r_words[258]    ; sha256_core:sha256_core_inst|r_words[386]    ; i_clk        ; i_clk       ; 0.000        ; 0.057      ; 0.631      ;
+; 0.430 ; sha256_core:sha256_core_inst|r_words[348]    ; sha256_core:sha256_core_inst|r_words[476]    ; i_clk        ; i_clk       ; 0.000        ; 0.057      ; 0.631      ;
+; 0.431 ; sha256_core:sha256_core_inst|r_words[247]    ; sha256_core:sha256_core_inst|r_words[375]    ; i_clk        ; i_clk       ; 0.000        ; 0.057      ; 0.632      ;
+; 0.431 ; sha256_core:sha256_core_inst|r_words[279]    ; sha256_core:sha256_core_inst|r_words[407]    ; i_clk        ; i_clk       ; 0.000        ; 0.057      ; 0.632      ;
+; 0.431 ; sha256_core:sha256_core_inst|r_words[224]    ; sha256_core:sha256_core_inst|r_words[352]    ; i_clk        ; i_clk       ; 0.000        ; 0.057      ; 0.632      ;
+; 0.431 ; sha256_core:sha256_core_inst|r_words[252]    ; sha256_core:sha256_core_inst|r_words[380]    ; i_clk        ; i_clk       ; 0.000        ; 0.056      ; 0.631      ;
+; 0.432 ; sha256_core:sha256_core_inst|r_words[277]    ; sha256_core:sha256_core_inst|r_words[405]    ; i_clk        ; i_clk       ; 0.000        ; 0.057      ; 0.633      ;
+; 0.432 ; sha256_core:sha256_core_inst|r_words[253]    ; sha256_core:sha256_core_inst|r_words[381]    ; i_clk        ; i_clk       ; 0.000        ; 0.056      ; 0.632      ;
+; 0.432 ; sha256_core:sha256_core_inst|r_words[350]    ; sha256_core:sha256_core_inst|r_words[478]    ; i_clk        ; i_clk       ; 0.000        ; 0.057      ; 0.633      ;
+; 0.432 ; sha256_core:sha256_core_inst|r_words[345]    ; sha256_core:sha256_core_inst|r_words[473]    ; i_clk        ; i_clk       ; 0.000        ; 0.057      ; 0.633      ;
+; 0.433 ; sha256_core:sha256_core_inst|r_words[318]    ; sha256_core:sha256_core_inst|r_words[446]    ; i_clk        ; i_clk       ; 0.000        ; 0.057      ; 0.634      ;
+; 0.433 ; sha256_core:sha256_core_inst|r_words[349]    ; sha256_core:sha256_core_inst|r_words[477]    ; i_clk        ; i_clk       ; 0.000        ; 0.057      ; 0.634      ;
++-------+----------------------------------------------+----------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
+----------------------------------------------
+; Slow 1200mV 0C Model Metastability Summary ;
+----------------------------------------------
+No synchronizer chains to report.
+
+
++------------------------------------+
+; Fast 1200mV 0C Model Setup Summary ;
++-------+---------+------------------+
+; Clock ; Slack   ; End Point TNS    ;
++-------+---------+------------------+
+; i_clk ; -27.985 ; -6862.512        ;
++-------+---------+------------------+
+
+
++-----------------------------------+
+; Fast 1200mV 0C Model Hold Summary ;
++-------+-------+-------------------+
+; Clock ; Slack ; End Point TNS     ;
++-------+-------+-------------------+
+; i_clk ; 0.186 ; 0.000             ;
++-------+-------+-------------------+
+
+
+-----------------------------------------
+; Fast 1200mV 0C Model Recovery Summary ;
+-----------------------------------------
+No paths to report.
+
+
+----------------------------------------
+; Fast 1200mV 0C Model Removal Summary ;
+----------------------------------------
+No paths to report.
+
+
++--------------------------------------------------+
+; Fast 1200mV 0C Model Minimum Pulse Width Summary ;
++-------+--------+---------------------------------+
+; Clock ; Slack  ; End Point TNS                   ;
++-------+--------+---------------------------------+
+; i_clk ; -3.000 ; -889.987                        ;
++-------+--------+---------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Setup: 'i_clk'                                                                                                                                           ;
++---------+-----------------------------------------------+-----------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack   ; From Node                                     ; To Node                                       ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++---------+-----------------------------------------------+-----------------------------------------------+--------------+-------------+--------------+------------+------------+
+; -27.985 ; sha256_core:sha256_core_inst|r_round[2]       ; sha256_core:sha256_core_inst|r_variables[255] ; i_clk        ; i_clk       ; 1.000        ; 0.152      ; 29.124     ;
+; -27.953 ; sha256_core:sha256_core_inst|r_variables[122] ; sha256_core:sha256_core_inst|r_variables[255] ; i_clk        ; i_clk       ; 1.000        ; 0.143      ; 29.083     ;
+; -27.888 ; sha256_core:sha256_core_inst|r_variables[102] ; sha256_core:sha256_core_inst|r_variables[255] ; i_clk        ; i_clk       ; 1.000        ; 0.143      ; 29.018     ;
+; -27.854 ; sha256_core:sha256_core_inst|r_variables[96]  ; sha256_core:sha256_core_inst|r_variables[255] ; i_clk        ; i_clk       ; 1.000        ; 0.143      ; 28.984     ;
+; -27.848 ; sha256_core:sha256_core_inst|r_round[2]       ; sha256_core:sha256_core_inst|r_variables[127] ; i_clk        ; i_clk       ; 1.000        ; 0.149      ; 28.984     ;
+; -27.847 ; sha256_core:sha256_core_inst|r_round[2]       ; sha256_core:sha256_core_inst|r_variables[253] ; i_clk        ; i_clk       ; 1.000        ; 0.152      ; 28.986     ;
+; -27.844 ; sha256_core:sha256_core_inst|r_variables[108] ; sha256_core:sha256_core_inst|r_variables[255] ; i_clk        ; i_clk       ; 1.000        ; 0.143      ; 28.974     ;
+; -27.833 ; sha256_core:sha256_core_inst|r_round[2]       ; sha256_core:sha256_core_inst|r_variables[254] ; i_clk        ; i_clk       ; 1.000        ; 0.152      ; 28.972     ;
+; -27.831 ; sha256_core:sha256_core_inst|r_round[5]       ; sha256_core:sha256_core_inst|r_variables[255] ; i_clk        ; i_clk       ; 1.000        ; 0.149      ; 28.967     ;
+; -27.826 ; sha256_core:sha256_core_inst|r_round[2]       ; sha256_core:sha256_core_inst|r_variables[252] ; i_clk        ; i_clk       ; 1.000        ; 0.152      ; 28.965     ;
+; -27.816 ; sha256_core:sha256_core_inst|r_variables[122] ; sha256_core:sha256_core_inst|r_variables[127] ; i_clk        ; i_clk       ; 1.000        ; 0.140      ; 28.943     ;
+; -27.815 ; sha256_core:sha256_core_inst|r_variables[122] ; sha256_core:sha256_core_inst|r_variables[253] ; i_clk        ; i_clk       ; 1.000        ; 0.143      ; 28.945     ;
+; -27.813 ; sha256_core:sha256_core_inst|r_round[2]       ; sha256_core:sha256_core_inst|r_variables[126] ; i_clk        ; i_clk       ; 1.000        ; 0.149      ; 28.949     ;
+; -27.810 ; sha256_core:sha256_core_inst|r_round[3]       ; sha256_core:sha256_core_inst|r_variables[255] ; i_clk        ; i_clk       ; 1.000        ; 0.149      ; 28.946     ;
+; -27.801 ; sha256_core:sha256_core_inst|r_variables[122] ; sha256_core:sha256_core_inst|r_variables[254] ; i_clk        ; i_clk       ; 1.000        ; 0.143      ; 28.931     ;
+; -27.794 ; sha256_core:sha256_core_inst|r_variables[122] ; sha256_core:sha256_core_inst|r_variables[252] ; i_clk        ; i_clk       ; 1.000        ; 0.143      ; 28.924     ;
+; -27.783 ; sha256_core:sha256_core_inst|r_variables[103] ; sha256_core:sha256_core_inst|r_variables[255] ; i_clk        ; i_clk       ; 1.000        ; 0.143      ; 28.913     ;
+; -27.781 ; sha256_core:sha256_core_inst|r_variables[122] ; sha256_core:sha256_core_inst|r_variables[126] ; i_clk        ; i_clk       ; 1.000        ; 0.140      ; 28.908     ;
+; -27.777 ; sha256_core:sha256_core_inst|r_variables[32]  ; sha256_core:sha256_core_inst|r_variables[255] ; i_clk        ; i_clk       ; 1.000        ; 0.142      ; 28.906     ;
+; -27.774 ; sha256_core:sha256_core_inst|r_variables[107] ; sha256_core:sha256_core_inst|r_variables[255] ; i_clk        ; i_clk       ; 1.000        ; 0.143      ; 28.904     ;
+; -27.761 ; sha256_core:sha256_core_inst|r_variables[126] ; sha256_core:sha256_core_inst|r_variables[255] ; i_clk        ; i_clk       ; 1.000        ; -0.040     ; 28.708     ;
+; -27.751 ; sha256_core:sha256_core_inst|r_variables[102] ; sha256_core:sha256_core_inst|r_variables[127] ; i_clk        ; i_clk       ; 1.000        ; 0.140      ; 28.878     ;
+; -27.750 ; sha256_core:sha256_core_inst|r_variables[102] ; sha256_core:sha256_core_inst|r_variables[253] ; i_clk        ; i_clk       ; 1.000        ; 0.143      ; 28.880     ;
+; -27.736 ; sha256_core:sha256_core_inst|r_variables[102] ; sha256_core:sha256_core_inst|r_variables[254] ; i_clk        ; i_clk       ; 1.000        ; 0.143      ; 28.866     ;
+; -27.729 ; sha256_core:sha256_core_inst|r_variables[102] ; sha256_core:sha256_core_inst|r_variables[252] ; i_clk        ; i_clk       ; 1.000        ; 0.143      ; 28.859     ;
+; -27.717 ; sha256_core:sha256_core_inst|r_variables[96]  ; sha256_core:sha256_core_inst|r_variables[127] ; i_clk        ; i_clk       ; 1.000        ; 0.140      ; 28.844     ;
+; -27.716 ; sha256_core:sha256_core_inst|r_variables[121] ; sha256_core:sha256_core_inst|r_variables[255] ; i_clk        ; i_clk       ; 1.000        ; 0.143      ; 28.846     ;
+; -27.716 ; sha256_core:sha256_core_inst|r_variables[96]  ; sha256_core:sha256_core_inst|r_variables[253] ; i_clk        ; i_clk       ; 1.000        ; 0.143      ; 28.846     ;
+; -27.716 ; sha256_core:sha256_core_inst|r_variables[102] ; sha256_core:sha256_core_inst|r_variables[126] ; i_clk        ; i_clk       ; 1.000        ; 0.140      ; 28.843     ;
+; -27.707 ; sha256_core:sha256_core_inst|r_variables[108] ; sha256_core:sha256_core_inst|r_variables[127] ; i_clk        ; i_clk       ; 1.000        ; 0.140      ; 28.834     ;
+; -27.706 ; sha256_core:sha256_core_inst|r_variables[108] ; sha256_core:sha256_core_inst|r_variables[253] ; i_clk        ; i_clk       ; 1.000        ; 0.143      ; 28.836     ;
+; -27.702 ; sha256_core:sha256_core_inst|r_variables[96]  ; sha256_core:sha256_core_inst|r_variables[254] ; i_clk        ; i_clk       ; 1.000        ; 0.143      ; 28.832     ;
+; -27.695 ; sha256_core:sha256_core_inst|r_variables[96]  ; sha256_core:sha256_core_inst|r_variables[252] ; i_clk        ; i_clk       ; 1.000        ; 0.143      ; 28.825     ;
+; -27.694 ; sha256_core:sha256_core_inst|r_round[5]       ; sha256_core:sha256_core_inst|r_variables[127] ; i_clk        ; i_clk       ; 1.000        ; 0.146      ; 28.827     ;
+; -27.693 ; sha256_core:sha256_core_inst|r_round[5]       ; sha256_core:sha256_core_inst|r_variables[253] ; i_clk        ; i_clk       ; 1.000        ; 0.149      ; 28.829     ;
+; -27.692 ; sha256_core:sha256_core_inst|r_variables[108] ; sha256_core:sha256_core_inst|r_variables[254] ; i_clk        ; i_clk       ; 1.000        ; 0.143      ; 28.822     ;
+; -27.685 ; sha256_core:sha256_core_inst|r_variables[108] ; sha256_core:sha256_core_inst|r_variables[252] ; i_clk        ; i_clk       ; 1.000        ; 0.143      ; 28.815     ;
+; -27.682 ; sha256_core:sha256_core_inst|r_variables[96]  ; sha256_core:sha256_core_inst|r_variables[126] ; i_clk        ; i_clk       ; 1.000        ; 0.140      ; 28.809     ;
+; -27.679 ; sha256_core:sha256_core_inst|r_round[5]       ; sha256_core:sha256_core_inst|r_variables[254] ; i_clk        ; i_clk       ; 1.000        ; 0.149      ; 28.815     ;
+; -27.673 ; sha256_core:sha256_core_inst|r_round[3]       ; sha256_core:sha256_core_inst|r_variables[127] ; i_clk        ; i_clk       ; 1.000        ; 0.146      ; 28.806     ;
+; -27.672 ; sha256_core:sha256_core_inst|r_round[3]       ; sha256_core:sha256_core_inst|r_variables[253] ; i_clk        ; i_clk       ; 1.000        ; 0.149      ; 28.808     ;
+; -27.672 ; sha256_core:sha256_core_inst|r_round[5]       ; sha256_core:sha256_core_inst|r_variables[252] ; i_clk        ; i_clk       ; 1.000        ; 0.149      ; 28.808     ;
+; -27.672 ; sha256_core:sha256_core_inst|r_variables[108] ; sha256_core:sha256_core_inst|r_variables[126] ; i_clk        ; i_clk       ; 1.000        ; 0.140      ; 28.799     ;
+; -27.659 ; sha256_core:sha256_core_inst|r_round[5]       ; sha256_core:sha256_core_inst|r_variables[126] ; i_clk        ; i_clk       ; 1.000        ; 0.146      ; 28.792     ;
+; -27.658 ; sha256_core:sha256_core_inst|r_round[3]       ; sha256_core:sha256_core_inst|r_variables[254] ; i_clk        ; i_clk       ; 1.000        ; 0.149      ; 28.794     ;
+; -27.654 ; sha256_core:sha256_core_inst|r_variables[65]  ; sha256_core:sha256_core_inst|r_variables[255] ; i_clk        ; i_clk       ; 1.000        ; 0.150      ; 28.791     ;
+; -27.651 ; sha256_core:sha256_core_inst|r_round[3]       ; sha256_core:sha256_core_inst|r_variables[252] ; i_clk        ; i_clk       ; 1.000        ; 0.149      ; 28.787     ;
+; -27.646 ; sha256_core:sha256_core_inst|r_variables[103] ; sha256_core:sha256_core_inst|r_variables[127] ; i_clk        ; i_clk       ; 1.000        ; 0.140      ; 28.773     ;
+; -27.645 ; sha256_core:sha256_core_inst|r_variables[103] ; sha256_core:sha256_core_inst|r_variables[253] ; i_clk        ; i_clk       ; 1.000        ; 0.143      ; 28.775     ;
+; -27.640 ; sha256_core:sha256_core_inst|r_variables[32]  ; sha256_core:sha256_core_inst|r_variables[127] ; i_clk        ; i_clk       ; 1.000        ; 0.139      ; 28.766     ;
+; -27.639 ; sha256_core:sha256_core_inst|r_variables[32]  ; sha256_core:sha256_core_inst|r_variables[253] ; i_clk        ; i_clk       ; 1.000        ; 0.142      ; 28.768     ;
+; -27.638 ; sha256_core:sha256_core_inst|r_round[3]       ; sha256_core:sha256_core_inst|r_variables[126] ; i_clk        ; i_clk       ; 1.000        ; 0.146      ; 28.771     ;
+; -27.637 ; sha256_core:sha256_core_inst|r_variables[107] ; sha256_core:sha256_core_inst|r_variables[127] ; i_clk        ; i_clk       ; 1.000        ; 0.140      ; 28.764     ;
+; -27.636 ; sha256_core:sha256_core_inst|r_variables[107] ; sha256_core:sha256_core_inst|r_variables[253] ; i_clk        ; i_clk       ; 1.000        ; 0.143      ; 28.766     ;
+; -27.631 ; sha256_core:sha256_core_inst|r_variables[103] ; sha256_core:sha256_core_inst|r_variables[254] ; i_clk        ; i_clk       ; 1.000        ; 0.143      ; 28.761     ;
+; -27.625 ; sha256_core:sha256_core_inst|r_variables[32]  ; sha256_core:sha256_core_inst|r_variables[254] ; i_clk        ; i_clk       ; 1.000        ; 0.142      ; 28.754     ;
+; -27.624 ; sha256_core:sha256_core_inst|r_variables[126] ; sha256_core:sha256_core_inst|r_variables[127] ; i_clk        ; i_clk       ; 1.000        ; -0.043     ; 28.568     ;
+; -27.624 ; sha256_core:sha256_core_inst|r_variables[103] ; sha256_core:sha256_core_inst|r_variables[252] ; i_clk        ; i_clk       ; 1.000        ; 0.143      ; 28.754     ;
+; -27.623 ; sha256_core:sha256_core_inst|r_variables[126] ; sha256_core:sha256_core_inst|r_variables[253] ; i_clk        ; i_clk       ; 1.000        ; -0.040     ; 28.570     ;
+; -27.622 ; sha256_core:sha256_core_inst|r_round[4]       ; sha256_core:sha256_core_inst|r_variables[255] ; i_clk        ; i_clk       ; 1.000        ; 0.149      ; 28.758     ;
+; -27.622 ; sha256_core:sha256_core_inst|r_variables[107] ; sha256_core:sha256_core_inst|r_variables[254] ; i_clk        ; i_clk       ; 1.000        ; 0.143      ; 28.752     ;
+; -27.618 ; sha256_core:sha256_core_inst|r_variables[32]  ; sha256_core:sha256_core_inst|r_variables[252] ; i_clk        ; i_clk       ; 1.000        ; 0.142      ; 28.747     ;
+; -27.615 ; sha256_core:sha256_core_inst|r_variables[107] ; sha256_core:sha256_core_inst|r_variables[252] ; i_clk        ; i_clk       ; 1.000        ; 0.143      ; 28.745     ;
+; -27.611 ; sha256_core:sha256_core_inst|r_variables[103] ; sha256_core:sha256_core_inst|r_variables[126] ; i_clk        ; i_clk       ; 1.000        ; 0.140      ; 28.738     ;
+; -27.609 ; sha256_core:sha256_core_inst|r_variables[126] ; sha256_core:sha256_core_inst|r_variables[254] ; i_clk        ; i_clk       ; 1.000        ; -0.040     ; 28.556     ;
+; -27.605 ; sha256_core:sha256_core_inst|r_variables[32]  ; sha256_core:sha256_core_inst|r_variables[126] ; i_clk        ; i_clk       ; 1.000        ; 0.139      ; 28.731     ;
+; -27.602 ; sha256_core:sha256_core_inst|r_variables[126] ; sha256_core:sha256_core_inst|r_variables[252] ; i_clk        ; i_clk       ; 1.000        ; -0.040     ; 28.549     ;
+; -27.602 ; sha256_core:sha256_core_inst|r_variables[107] ; sha256_core:sha256_core_inst|r_variables[126] ; i_clk        ; i_clk       ; 1.000        ; 0.140      ; 28.729     ;
+; -27.596 ; sha256_core:sha256_core_inst|r_variables[97]  ; sha256_core:sha256_core_inst|r_variables[255] ; i_clk        ; i_clk       ; 1.000        ; 0.143      ; 28.726     ;
+; -27.589 ; sha256_core:sha256_core_inst|r_variables[126] ; sha256_core:sha256_core_inst|r_variables[126] ; i_clk        ; i_clk       ; 1.000        ; -0.043     ; 28.533     ;
+; -27.584 ; sha256_core:sha256_core_inst|r_variables[66]  ; sha256_core:sha256_core_inst|r_variables[255] ; i_clk        ; i_clk       ; 1.000        ; 0.157      ; 28.728     ;
+; -27.579 ; sha256_core:sha256_core_inst|r_variables[121] ; sha256_core:sha256_core_inst|r_variables[127] ; i_clk        ; i_clk       ; 1.000        ; 0.140      ; 28.706     ;
+; -27.578 ; sha256_core:sha256_core_inst|r_variables[121] ; sha256_core:sha256_core_inst|r_variables[253] ; i_clk        ; i_clk       ; 1.000        ; 0.143      ; 28.708     ;
+; -27.564 ; sha256_core:sha256_core_inst|r_variables[121] ; sha256_core:sha256_core_inst|r_variables[254] ; i_clk        ; i_clk       ; 1.000        ; 0.143      ; 28.694     ;
+; -27.557 ; sha256_core:sha256_core_inst|r_variables[121] ; sha256_core:sha256_core_inst|r_variables[252] ; i_clk        ; i_clk       ; 1.000        ; 0.143      ; 28.687     ;
+; -27.555 ; sha256_core:sha256_core_inst|r_variables[68]  ; sha256_core:sha256_core_inst|r_variables[255] ; i_clk        ; i_clk       ; 1.000        ; 0.157      ; 28.699     ;
+; -27.544 ; sha256_core:sha256_core_inst|r_variables[121] ; sha256_core:sha256_core_inst|r_variables[126] ; i_clk        ; i_clk       ; 1.000        ; 0.140      ; 28.671     ;
+; -27.535 ; sha256_core:sha256_core_inst|r_round[2]       ; sha256_core:sha256_core_inst|r_variables[247] ; i_clk        ; i_clk       ; 1.000        ; -0.025     ; 28.497     ;
+; -27.530 ; sha256_core:sha256_core_inst|r_variables[106] ; sha256_core:sha256_core_inst|r_variables[255] ; i_clk        ; i_clk       ; 1.000        ; 0.143      ; 28.660     ;
+; -27.530 ; sha256_core:sha256_core_inst|r_variables[112] ; sha256_core:sha256_core_inst|r_variables[255] ; i_clk        ; i_clk       ; 1.000        ; 0.143      ; 28.660     ;
+; -27.525 ; sha256_core:sha256_core_inst|r_variables[65]  ; sha256_core:sha256_core_inst|r_variables[127] ; i_clk        ; i_clk       ; 1.000        ; 0.139      ; 28.651     ;
+; -27.516 ; sha256_core:sha256_core_inst|r_variables[65]  ; sha256_core:sha256_core_inst|r_variables[253] ; i_clk        ; i_clk       ; 1.000        ; 0.150      ; 28.653     ;
+; -27.515 ; sha256_core:sha256_core_inst|r_round[2]       ; sha256_core:sha256_core_inst|r_variables[125] ; i_clk        ; i_clk       ; 1.000        ; -0.027     ; 28.475     ;
+; -27.508 ; sha256_core:sha256_core_inst|r_variables[111] ; sha256_core:sha256_core_inst|r_variables[255] ; i_clk        ; i_clk       ; 1.000        ; 0.143      ; 28.638     ;
+; -27.503 ; sha256_core:sha256_core_inst|r_variables[122] ; sha256_core:sha256_core_inst|r_variables[247] ; i_clk        ; i_clk       ; 1.000        ; -0.034     ; 28.456     ;
+; -27.502 ; sha256_core:sha256_core_inst|r_variables[65]  ; sha256_core:sha256_core_inst|r_variables[254] ; i_clk        ; i_clk       ; 1.000        ; 0.150      ; 28.639     ;
+; -27.500 ; sha256_core:sha256_core_inst|r_variables[72]  ; sha256_core:sha256_core_inst|r_variables[255] ; i_clk        ; i_clk       ; 1.000        ; 0.157      ; 28.644     ;
+; -27.495 ; sha256_core:sha256_core_inst|r_variables[65]  ; sha256_core:sha256_core_inst|r_variables[252] ; i_clk        ; i_clk       ; 1.000        ; 0.150      ; 28.632     ;
+; -27.490 ; sha256_core:sha256_core_inst|r_variables[65]  ; sha256_core:sha256_core_inst|r_variables[126] ; i_clk        ; i_clk       ; 1.000        ; 0.139      ; 28.616     ;
+; -27.486 ; sha256_core:sha256_core_inst|r_round[6]       ; sha256_core:sha256_core_inst|r_variables[255] ; i_clk        ; i_clk       ; 1.000        ; 0.149      ; 28.622     ;
+; -27.485 ; sha256_core:sha256_core_inst|r_round[4]       ; sha256_core:sha256_core_inst|r_variables[127] ; i_clk        ; i_clk       ; 1.000        ; 0.146      ; 28.618     ;
+; -27.485 ; sha256_core:sha256_core_inst|r_variables[125] ; sha256_core:sha256_core_inst|r_variables[255] ; i_clk        ; i_clk       ; 1.000        ; 0.143      ; 28.615     ;
+; -27.484 ; sha256_core:sha256_core_inst|r_round[4]       ; sha256_core:sha256_core_inst|r_variables[253] ; i_clk        ; i_clk       ; 1.000        ; 0.149      ; 28.620     ;
+; -27.483 ; sha256_core:sha256_core_inst|r_variables[122] ; sha256_core:sha256_core_inst|r_variables[125] ; i_clk        ; i_clk       ; 1.000        ; -0.036     ; 28.434     ;
+; -27.482 ; sha256_core:sha256_core_inst|r_round[2]       ; sha256_core:sha256_core_inst|r_variables[250] ; i_clk        ; i_clk       ; 1.000        ; -0.025     ; 28.444     ;
+; -27.470 ; sha256_core:sha256_core_inst|r_round[4]       ; sha256_core:sha256_core_inst|r_variables[254] ; i_clk        ; i_clk       ; 1.000        ; 0.149      ; 28.606     ;
+; -27.464 ; sha256_core:sha256_core_inst|r_variables[104] ; sha256_core:sha256_core_inst|r_variables[255] ; i_clk        ; i_clk       ; 1.000        ; 0.143      ; 28.594     ;
+; -27.463 ; sha256_core:sha256_core_inst|r_round[4]       ; sha256_core:sha256_core_inst|r_variables[252] ; i_clk        ; i_clk       ; 1.000        ; 0.149      ; 28.599     ;
+; -27.459 ; sha256_core:sha256_core_inst|r_variables[97]  ; sha256_core:sha256_core_inst|r_variables[127] ; i_clk        ; i_clk       ; 1.000        ; 0.140      ; 28.586     ;
+; -27.458 ; sha256_core:sha256_core_inst|r_variables[97]  ; sha256_core:sha256_core_inst|r_variables[253] ; i_clk        ; i_clk       ; 1.000        ; 0.143      ; 28.588     ;
++---------+-----------------------------------------------+-----------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Hold: 'i_clk'                                                                                                                                        ;
++-------+----------------------------------------------+----------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                    ; To Node                                      ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+----------------------------------------------+----------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.186 ; sha256_core:sha256_core_inst|r_words[63]     ; sha256_core:sha256_core_inst|r_words[63]     ; i_clk        ; i_clk       ; 0.000        ; 0.037      ; 0.307      ;
+; 0.186 ; sha256_core:sha256_core_inst|r_words[47]     ; sha256_core:sha256_core_inst|r_words[47]     ; i_clk        ; i_clk       ; 0.000        ; 0.037      ; 0.307      ;
+; 0.186 ; sha256_core:sha256_core_inst|r_words[55]     ; sha256_core:sha256_core_inst|r_words[55]     ; i_clk        ; i_clk       ; 0.000        ; 0.037      ; 0.307      ;
+; 0.186 ; sha256_core:sha256_core_inst|r_words[23]     ; sha256_core:sha256_core_inst|r_words[23]     ; i_clk        ; i_clk       ; 0.000        ; 0.037      ; 0.307      ;
+; 0.186 ; sha256_core:sha256_core_inst|r_words[31]     ; sha256_core:sha256_core_inst|r_words[31]     ; i_clk        ; i_clk       ; 0.000        ; 0.037      ; 0.307      ;
+; 0.186 ; sha256_core:sha256_core_inst|r_words[15]     ; sha256_core:sha256_core_inst|r_words[15]     ; i_clk        ; i_clk       ; 0.000        ; 0.037      ; 0.307      ;
+; 0.186 ; sha256_core:sha256_core_inst|r_words[87]     ; sha256_core:sha256_core_inst|r_words[87]     ; i_clk        ; i_clk       ; 0.000        ; 0.037      ; 0.307      ;
+; 0.186 ; sha256_core:sha256_core_inst|r_words[71]     ; sha256_core:sha256_core_inst|r_words[71]     ; i_clk        ; i_clk       ; 0.000        ; 0.037      ; 0.307      ;
+; 0.186 ; sha256_core:sha256_core_inst|r_words[111]    ; sha256_core:sha256_core_inst|r_words[111]    ; i_clk        ; i_clk       ; 0.000        ; 0.037      ; 0.307      ;
+; 0.186 ; sha256_core:sha256_core_inst|r_words[119]    ; sha256_core:sha256_core_inst|r_words[119]    ; i_clk        ; i_clk       ; 0.000        ; 0.037      ; 0.307      ;
+; 0.186 ; sha256_core:sha256_core_inst|r_status[5]     ; sha256_core:sha256_core_inst|r_status[5]     ; i_clk        ; i_clk       ; 0.000        ; 0.037      ; 0.307      ;
+; 0.186 ; sha256_core:sha256_core_inst|r_status[4]     ; sha256_core:sha256_core_inst|r_status[4]     ; i_clk        ; i_clk       ; 0.000        ; 0.037      ; 0.307      ;
+; 0.186 ; spi_slave:spi_ints|o_data[15]                ; spi_slave:spi_ints|o_data[15]                ; i_clk        ; i_clk       ; 0.000        ; 0.037      ; 0.307      ;
+; 0.186 ; spi_slave:spi_ints|r_cnt[3]                  ; spi_slave:spi_ints|r_cnt[3]                  ; i_clk        ; i_clk       ; 0.000        ; 0.037      ; 0.307      ;
+; 0.186 ; spi_slave:spi_ints|r_cnt[2]                  ; spi_slave:spi_ints|r_cnt[2]                  ; i_clk        ; i_clk       ; 0.000        ; 0.037      ; 0.307      ;
+; 0.186 ; spi_slave:spi_ints|r_cnt[1]                  ; spi_slave:spi_ints|r_cnt[1]                  ; i_clk        ; i_clk       ; 0.000        ; 0.037      ; 0.307      ;
+; 0.187 ; sha256_core:sha256_core_inst|r_words[95]     ; sha256_core:sha256_core_inst|r_words[95]     ; i_clk        ; i_clk       ; 0.000        ; 0.036      ; 0.307      ;
+; 0.187 ; sha256_core:sha256_core_inst|r_words[79]     ; sha256_core:sha256_core_inst|r_words[79]     ; i_clk        ; i_clk       ; 0.000        ; 0.036      ; 0.307      ;
+; 0.187 ; sha256_core:sha256_core_inst|r_words[39]     ; sha256_core:sha256_core_inst|r_words[39]     ; i_clk        ; i_clk       ; 0.000        ; 0.036      ; 0.307      ;
+; 0.187 ; sha256_core:sha256_core_inst|r_words[127]    ; sha256_core:sha256_core_inst|r_words[127]    ; i_clk        ; i_clk       ; 0.000        ; 0.036      ; 0.307      ;
+; 0.187 ; sha256_core:sha256_core_inst|r_words[103]    ; sha256_core:sha256_core_inst|r_words[103]    ; i_clk        ; i_clk       ; 0.000        ; 0.036      ; 0.307      ;
+; 0.193 ; sha256_core:sha256_core_inst|r_words[327]    ; sha256_core:sha256_core_inst|r_words[455]    ; i_clk        ; i_clk       ; 0.000        ; 0.037      ; 0.314      ;
+; 0.193 ; sha256_core:sha256_core_inst|r_words[66]     ; sha256_core:sha256_core_inst|r_words[194]    ; i_clk        ; i_clk       ; 0.000        ; 0.037      ; 0.314      ;
+; 0.193 ; sha256_core:sha256_core_inst|r_words[351]    ; sha256_core:sha256_core_inst|r_words[479]    ; i_clk        ; i_clk       ; 0.000        ; 0.037      ; 0.314      ;
+; 0.193 ; sha256_core:sha256_core_inst|r_words[339]    ; sha256_core:sha256_core_inst|r_words[467]    ; i_clk        ; i_clk       ; 0.000        ; 0.037      ; 0.314      ;
+; 0.193 ; sha256_core:sha256_core_inst|r_words[281]    ; sha256_core:sha256_core_inst|r_words[409]    ; i_clk        ; i_clk       ; 0.000        ; 0.037      ; 0.314      ;
+; 0.193 ; sha256_core:sha256_core_inst|r_words[256]    ; sha256_core:sha256_core_inst|r_words[384]    ; i_clk        ; i_clk       ; 0.000        ; 0.037      ; 0.314      ;
+; 0.193 ; sha256_core:sha256_core_inst|r_words[225]    ; sha256_core:sha256_core_inst|r_words[353]    ; i_clk        ; i_clk       ; 0.000        ; 0.037      ; 0.314      ;
+; 0.193 ; sha256_core:sha256_core_inst|r_words[282]    ; sha256_core:sha256_core_inst|r_words[410]    ; i_clk        ; i_clk       ; 0.000        ; 0.037      ; 0.314      ;
+; 0.193 ; sha256_core:sha256_core_inst|r_words[326]    ; sha256_core:sha256_core_inst|r_words[454]    ; i_clk        ; i_clk       ; 0.000        ; 0.037      ; 0.314      ;
+; 0.193 ; sha256_core:sha256_core_inst|r_words[260]    ; sha256_core:sha256_core_inst|r_words[388]    ; i_clk        ; i_clk       ; 0.000        ; 0.037      ; 0.314      ;
+; 0.193 ; sha256_core:sha256_core_inst|r_words[338]    ; sha256_core:sha256_core_inst|r_words[466]    ; i_clk        ; i_clk       ; 0.000        ; 0.037      ; 0.314      ;
+; 0.193 ; sha256_core:sha256_core_inst|r_words[342]    ; sha256_core:sha256_core_inst|r_words[470]    ; i_clk        ; i_clk       ; 0.000        ; 0.037      ; 0.314      ;
+; 0.193 ; spi_slave:spi_ints|r_cnt[0]                  ; spi_slave:spi_ints|r_cnt[0]                  ; i_clk        ; i_clk       ; 0.000        ; 0.037      ; 0.314      ;
+; 0.194 ; sha256_core:sha256_core_inst|r_words[90]     ; sha256_core:sha256_core_inst|r_words[218]    ; i_clk        ; i_clk       ; 0.000        ; 0.037      ; 0.315      ;
+; 0.194 ; sha256_core:sha256_core_inst|r_words[240]    ; sha256_core:sha256_core_inst|r_words[368]    ; i_clk        ; i_clk       ; 0.000        ; 0.036      ; 0.314      ;
+; 0.194 ; sha256_core:sha256_core_inst|r_words[321]    ; sha256_core:sha256_core_inst|r_words[449]    ; i_clk        ; i_clk       ; 0.000        ; 0.037      ; 0.315      ;
+; 0.194 ; sha256_core:sha256_core_inst|r_words[227]    ; sha256_core:sha256_core_inst|r_words[355]    ; i_clk        ; i_clk       ; 0.000        ; 0.037      ; 0.315      ;
+; 0.194 ; sha256_core:sha256_core_inst|r_words[320]    ; sha256_core:sha256_core_inst|r_words[448]    ; i_clk        ; i_clk       ; 0.000        ; 0.037      ; 0.315      ;
+; 0.194 ; sha256_core:sha256_core_inst|r_words[283]    ; sha256_core:sha256_core_inst|r_words[411]    ; i_clk        ; i_clk       ; 0.000        ; 0.037      ; 0.315      ;
+; 0.194 ; sha256_core:sha256_core_inst|r_words[335]    ; sha256_core:sha256_core_inst|r_words[463]    ; i_clk        ; i_clk       ; 0.000        ; 0.036      ; 0.314      ;
+; 0.194 ; sha256_core:sha256_core_inst|r_words[79]     ; sha256_core:sha256_core_inst|r_words[207]    ; i_clk        ; i_clk       ; 0.000        ; 0.036      ; 0.314      ;
+; 0.194 ; sha256_core:sha256_core_inst|r_words[286]    ; sha256_core:sha256_core_inst|r_words[414]    ; i_clk        ; i_clk       ; 0.000        ; 0.037      ; 0.315      ;
+; 0.194 ; sha256_core:sha256_core_inst|r_words[243]    ; sha256_core:sha256_core_inst|r_words[371]    ; i_clk        ; i_clk       ; 0.000        ; 0.036      ; 0.314      ;
+; 0.194 ; sha256_core:sha256_core_inst|r_words[285]    ; sha256_core:sha256_core_inst|r_words[413]    ; i_clk        ; i_clk       ; 0.000        ; 0.037      ; 0.315      ;
+; 0.194 ; sha256_core:sha256_core_inst|r_words[343]    ; sha256_core:sha256_core_inst|r_words[471]    ; i_clk        ; i_clk       ; 0.000        ; 0.037      ; 0.315      ;
+; 0.194 ; sha256_core:sha256_core_inst|r_words[82]     ; sha256_core:sha256_core_inst|r_words[210]    ; i_clk        ; i_clk       ; 0.000        ; 0.036      ; 0.314      ;
+; 0.194 ; sha256_core:sha256_core_inst|r_words[347]    ; sha256_core:sha256_core_inst|r_words[475]    ; i_clk        ; i_clk       ; 0.000        ; 0.037      ; 0.315      ;
+; 0.195 ; sha256_core:sha256_core_inst|r_words[230]    ; sha256_core:sha256_core_inst|r_words[358]    ; i_clk        ; i_clk       ; 0.000        ; 0.037      ; 0.316      ;
+; 0.195 ; sha256_core:sha256_core_inst|r_words[340]    ; sha256_core:sha256_core_inst|r_words[468]    ; i_clk        ; i_clk       ; 0.000        ; 0.037      ; 0.316      ;
+; 0.195 ; sha256_core:sha256_core_inst|r_words[331]    ; sha256_core:sha256_core_inst|r_words[459]    ; i_clk        ; i_clk       ; 0.000        ; 0.036      ; 0.315      ;
+; 0.195 ; sha256_core:sha256_core_inst|r_words[263]    ; sha256_core:sha256_core_inst|r_words[391]    ; i_clk        ; i_clk       ; 0.000        ; 0.037      ; 0.316      ;
+; 0.195 ; sha256_core:sha256_core_inst|r_words[337]    ; sha256_core:sha256_core_inst|r_words[465]    ; i_clk        ; i_clk       ; 0.000        ; 0.037      ; 0.316      ;
+; 0.196 ; sha256_core:sha256_core_inst|r_words[332]    ; sha256_core:sha256_core_inst|r_words[460]    ; i_clk        ; i_clk       ; 0.000        ; 0.036      ; 0.316      ;
+; 0.196 ; sha256_core:sha256_core_inst|r_words[89]     ; sha256_core:sha256_core_inst|r_words[217]    ; i_clk        ; i_clk       ; 0.000        ; 0.037      ; 0.317      ;
+; 0.196 ; sha256_core:sha256_core_inst|r_words[330]    ; sha256_core:sha256_core_inst|r_words[458]    ; i_clk        ; i_clk       ; 0.000        ; 0.036      ; 0.316      ;
+; 0.196 ; spi_slave:spi_ints|r_rx[6]                   ; spi_slave:spi_ints|o_data[7]                 ; i_clk        ; i_clk       ; 0.000        ; 0.037      ; 0.317      ;
+; 0.197 ; spi_slave:spi_ints|r_rx[13]                  ; spi_slave:spi_ints|r_rx[14]                  ; i_clk        ; i_clk       ; 0.000        ; 0.037      ; 0.318      ;
+; 0.197 ; spi_slave:spi_ints|r_rx[13]                  ; spi_slave:spi_ints|o_data[14]                ; i_clk        ; i_clk       ; 0.000        ; 0.037      ; 0.318      ;
+; 0.197 ; spi_slave:spi_ints|r_rx[4]                   ; spi_slave:spi_ints|o_data[5]                 ; i_clk        ; i_clk       ; 0.000        ; 0.037      ; 0.318      ;
+; 0.197 ; spi_slave:spi_ints|r_rx[4]                   ; spi_slave:spi_ints|r_rx[5]                   ; i_clk        ; i_clk       ; 0.000        ; 0.037      ; 0.318      ;
+; 0.198 ; spi_slave:spi_ints|r_rx[11]                  ; spi_slave:spi_ints|o_data[12]                ; i_clk        ; i_clk       ; 0.000        ; 0.036      ; 0.318      ;
+; 0.198 ; spi_slave:spi_ints|r_rx[11]                  ; spi_slave:spi_ints|r_rx[12]                  ; i_clk        ; i_clk       ; 0.000        ; 0.036      ; 0.318      ;
+; 0.198 ; spi_slave:spi_ints|r_rx[5]                   ; spi_slave:spi_ints|r_rx[6]                   ; i_clk        ; i_clk       ; 0.000        ; 0.037      ; 0.319      ;
+; 0.199 ; spi_slave:spi_ints|r_rx[6]                   ; spi_slave:spi_ints|r_rx[7]                   ; i_clk        ; i_clk       ; 0.000        ; 0.037      ; 0.320      ;
+; 0.199 ; spi_slave:spi_ints|r_rx[5]                   ; spi_slave:spi_ints|o_data[6]                 ; i_clk        ; i_clk       ; 0.000        ; 0.037      ; 0.320      ;
+; 0.199 ; spi_slave:spi_ints|r_rx[2]                   ; spi_slave:spi_ints|r_rx[3]                   ; i_clk        ; i_clk       ; 0.000        ; 0.036      ; 0.319      ;
+; 0.200 ; spi_slave:spi_ints|r_rx[2]                   ; spi_slave:spi_ints|o_data[3]                 ; i_clk        ; i_clk       ; 0.000        ; 0.036      ; 0.320      ;
+; 0.200 ; spi_slave:spi_ints|r_cnt[2]                  ; spi_slave:spi_ints|r_cnt[3]                  ; i_clk        ; i_clk       ; 0.000        ; 0.037      ; 0.321      ;
+; 0.203 ; sha256_core:sha256_core_inst|r_variables[95] ; sha256_core:sha256_core_inst|r_variables[95] ; i_clk        ; i_clk       ; 0.000        ; 0.037      ; 0.324      ;
+; 0.204 ; sha256_core:sha256_core_inst|r_words[23]     ; sha256_core:sha256_core_inst|r_words[151]    ; i_clk        ; i_clk       ; 0.000        ; 0.037      ; 0.325      ;
+; 0.204 ; sha256_core:sha256_core_inst|r_words[3]      ; sha256_core:sha256_core_inst|r_words[131]    ; i_clk        ; i_clk       ; 0.000        ; 0.037      ; 0.325      ;
+; 0.204 ; sha256_core:sha256_core_inst|r_words[5]      ; sha256_core:sha256_core_inst|r_words[133]    ; i_clk        ; i_clk       ; 0.000        ; 0.037      ; 0.325      ;
+; 0.204 ; sha256_core:sha256_core_inst|r_words[2]      ; sha256_core:sha256_core_inst|r_words[130]    ; i_clk        ; i_clk       ; 0.000        ; 0.037      ; 0.325      ;
+; 0.205 ; sha256_core:sha256_core_inst|r_words[206]    ; sha256_core:sha256_core_inst|r_words[334]    ; i_clk        ; i_clk       ; 0.000        ; 0.037      ; 0.326      ;
+; 0.205 ; spi_slave:spi_ints|r_rx[12]                  ; spi_slave:spi_ints|o_data[13]                ; i_clk        ; i_clk       ; 0.000        ; 0.036      ; 0.325      ;
+; 0.206 ; sha256_core:sha256_core_inst|r_words[139]    ; sha256_core:sha256_core_inst|r_words[267]    ; i_clk        ; i_clk       ; 0.000        ; 0.037      ; 0.327      ;
+; 0.207 ; sha256_core:sha256_core_inst|r_words[138]    ; sha256_core:sha256_core_inst|r_words[266]    ; i_clk        ; i_clk       ; 0.000        ; 0.037      ; 0.328      ;
+; 0.208 ; spi_slave:spi_ints|r_cnt[0]                  ; spi_slave:spi_ints|r_cnt[1]                  ; i_clk        ; i_clk       ; 0.000        ; 0.037      ; 0.329      ;
+; 0.217 ; sck_sync[0]                                  ; sck_sync[1]                                  ; i_clk        ; i_clk       ; 0.000        ; 0.037      ; 0.338      ;
+; 0.239 ; spi_slave:spi_ints|o_data[15]                ; sha256_core:sha256_core_inst|r_status[0]     ; i_clk        ; i_clk       ; 0.000        ; 0.037      ; 0.360      ;
+; 0.245 ; sha256_core:sha256_core_inst|r_status[5]     ; sha256_core:sha256_core_inst|r_status[3]     ; i_clk        ; i_clk       ; 0.000        ; 0.037      ; 0.366      ;
+; 0.248 ; sha256_core:sha256_core_inst|r_status[4]     ; sha256_core:sha256_core_inst|r_status[2]     ; i_clk        ; i_clk       ; 0.000        ; 0.037      ; 0.369      ;
+; 0.249 ; sha256_core:sha256_core_inst|r_status[4]     ; sha256_core:sha256_core_inst|r_status[1]     ; i_clk        ; i_clk       ; 0.000        ; 0.037      ; 0.370      ;
+; 0.251 ; sha256_core:sha256_core_inst|r_words[348]    ; sha256_core:sha256_core_inst|r_words[476]    ; i_clk        ; i_clk       ; 0.000        ; 0.038      ; 0.373      ;
+; 0.251 ; sha256_core:sha256_core_inst|r_words[259]    ; sha256_core:sha256_core_inst|r_words[387]    ; i_clk        ; i_clk       ; 0.000        ; 0.037      ; 0.372      ;
+; 0.252 ; sha256_core:sha256_core_inst|r_words[300]    ; sha256_core:sha256_core_inst|r_words[428]    ; i_clk        ; i_clk       ; 0.000        ; 0.037      ; 0.373      ;
+; 0.252 ; sha256_core:sha256_core_inst|r_words[323]    ; sha256_core:sha256_core_inst|r_words[451]    ; i_clk        ; i_clk       ; 0.000        ; 0.037      ; 0.373      ;
+; 0.252 ; sha256_core:sha256_core_inst|r_words[258]    ; sha256_core:sha256_core_inst|r_words[386]    ; i_clk        ; i_clk       ; 0.000        ; 0.037      ; 0.373      ;
+; 0.252 ; sha256_core:sha256_core_inst|r_words[277]    ; sha256_core:sha256_core_inst|r_words[405]    ; i_clk        ; i_clk       ; 0.000        ; 0.037      ; 0.373      ;
+; 0.252 ; sha256_core:sha256_core_inst|r_words[279]    ; sha256_core:sha256_core_inst|r_words[407]    ; i_clk        ; i_clk       ; 0.000        ; 0.037      ; 0.373      ;
+; 0.252 ; sha256_core:sha256_core_inst|r_words[287]    ; sha256_core:sha256_core_inst|r_words[415]    ; i_clk        ; i_clk       ; 0.000        ; 0.037      ; 0.373      ;
+; 0.252 ; sha256_core:sha256_core_inst|r_words[349]    ; sha256_core:sha256_core_inst|r_words[477]    ; i_clk        ; i_clk       ; 0.000        ; 0.038      ; 0.374      ;
+; 0.253 ; sha256_core:sha256_core_inst|r_words[318]    ; sha256_core:sha256_core_inst|r_words[446]    ; i_clk        ; i_clk       ; 0.000        ; 0.038      ; 0.375      ;
+; 0.253 ; sha256_core:sha256_core_inst|r_words[253]    ; sha256_core:sha256_core_inst|r_words[381]    ; i_clk        ; i_clk       ; 0.000        ; 0.036      ; 0.373      ;
+; 0.253 ; sha256_core:sha256_core_inst|r_words[350]    ; sha256_core:sha256_core_inst|r_words[478]    ; i_clk        ; i_clk       ; 0.000        ; 0.038      ; 0.375      ;
+; 0.253 ; sha256_core:sha256_core_inst|r_words[252]    ; sha256_core:sha256_core_inst|r_words[380]    ; i_clk        ; i_clk       ; 0.000        ; 0.036      ; 0.373      ;
+; 0.253 ; sha256_core:sha256_core_inst|r_words[345]    ; sha256_core:sha256_core_inst|r_words[473]    ; i_clk        ; i_clk       ; 0.000        ; 0.038      ; 0.375      ;
+; 0.254 ; sha256_core:sha256_core_inst|r_words[224]    ; sha256_core:sha256_core_inst|r_words[352]    ; i_clk        ; i_clk       ; 0.000        ; 0.037      ; 0.375      ;
+; 0.255 ; sha256_core:sha256_core_inst|r_words[247]    ; sha256_core:sha256_core_inst|r_words[375]    ; i_clk        ; i_clk       ; 0.000        ; 0.036      ; 0.375      ;
++-------+----------------------------------------------+----------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
+----------------------------------------------
+; Fast 1200mV 0C Model Metastability Summary ;
+----------------------------------------------
+No synchronizer chains to report.
+
+
++----------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                              ;
++------------------+------------+-------+----------+---------+---------------------+
+; Clock            ; Setup      ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------+------------+-------+----------+---------+---------------------+
+; Worst-case Slack ; -49.588    ; 0.186 ; N/A      ; N/A     ; -3.000              ;
+;  i_clk           ; -49.588    ; 0.186 ; N/A      ; N/A     ; -3.000              ;
+; Design-wide TNS  ; -12346.831 ; 0.0   ; 0.0      ; 0.0     ; -889.987            ;
+;  i_clk           ; -12346.831 ; 0.000 ; N/A      ; N/A     ; -889.987            ;
++------------------+------------+-------+----------+---------+---------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Board Trace Model Assignments                                                                                                                                                                                                                                                                                                                                                                                    ;
++---------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+; Pin           ; I/O Standard ; Near Tline Length ; Near Tline L per Length ; Near Tline C per Length ; Near Series R ; Near Differential R ; Near Pull-up R ; Near Pull-down R ; Near C ; Far Tline Length ; Far Tline L per Length ; Far Tline C per Length ; Far Series R ; Far Pull-up R ; Far Pull-down R ; Far C ; Termination Voltage ; Far Differential R ; EBD File Name ; EBD Signal Name ; EBD Far-end ;
++---------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+; o_spi_miso    ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; o_irq_done    ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; ~ALTERA_DCLK~ ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; ~ALTERA_nCEO~ ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
++---------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+
+
++----------------------------------------------------------------------------+
+; Input Transition Times                                                     ;
++-------------------------+--------------+-----------------+-----------------+
+; Pin                     ; I/O Standard ; 10-90 Rise Time ; 90-10 Fall Time ;
++-------------------------+--------------+-----------------+-----------------+
+; i_ss_n                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; i_clk                   ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; i_rst_n                 ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; i_sck                   ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; i_spi_mosi              ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_ASDO_DATA1~     ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_FLASH_nCE_nCSO~ ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_DATA0~          ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
++-------------------------+--------------+-----------------+-----------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Slow 1200mv 0c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin           ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; o_spi_miso    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 5.95e-09 V                   ; 2.38 V              ; -0.016 V            ; 0.22 V                               ; 0.025 V                              ; 3.06e-10 s                  ; 3.3e-10 s                   ; Yes                        ; Yes                        ; 2.32 V                      ; 5.95e-09 V                  ; 2.38 V             ; -0.016 V           ; 0.22 V                              ; 0.025 V                             ; 3.06e-10 s                 ; 3.3e-10 s                  ; Yes                       ; Yes                       ;
+; o_irq_done    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 5.95e-09 V                   ; 2.38 V              ; -0.016 V            ; 0.22 V                               ; 0.025 V                              ; 3.06e-10 s                  ; 3.3e-10 s                   ; Yes                        ; Yes                        ; 2.32 V                      ; 5.95e-09 V                  ; 2.38 V             ; -0.016 V           ; 0.22 V                              ; 0.025 V                             ; 3.06e-10 s                 ; 3.3e-10 s                  ; Yes                       ; Yes                       ;
+; ~ALTERA_DCLK~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.45e-09 V                   ; 2.38 V              ; -0.0609 V           ; 0.148 V                              ; 0.095 V                              ; 2.82e-10 s                  ; 2.59e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 3.45e-09 V                  ; 2.38 V             ; -0.0609 V          ; 0.148 V                             ; 0.095 V                             ; 2.82e-10 s                 ; 2.59e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_nCEO~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 5.61e-09 V                   ; 2.38 V              ; -0.00274 V          ; 0.141 V                              ; 0.006 V                              ; 4.7e-10 s                   ; 6.02e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 5.61e-09 V                  ; 2.38 V             ; -0.00274 V         ; 0.141 V                             ; 0.006 V                             ; 4.7e-10 s                  ; 6.02e-10 s                 ; Yes                       ; Yes                       ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Slow 1200mv 85c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin           ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; o_spi_miso    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.06e-06 V                   ; 2.36 V              ; -0.00724 V          ; 0.107 V                              ; 0.02 V                               ; 4.5e-10 s                   ; 4.25e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 1.06e-06 V                  ; 2.36 V             ; -0.00724 V         ; 0.107 V                             ; 0.02 V                              ; 4.5e-10 s                  ; 4.25e-10 s                 ; Yes                       ; Yes                       ;
+; o_irq_done    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.06e-06 V                   ; 2.36 V              ; -0.00724 V          ; 0.107 V                              ; 0.02 V                               ; 4.5e-10 s                   ; 4.25e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 1.06e-06 V                  ; 2.36 V             ; -0.00724 V         ; 0.107 V                             ; 0.02 V                              ; 4.5e-10 s                  ; 4.25e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_DCLK~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 5.74e-07 V                   ; 2.36 V              ; -0.0201 V           ; 0.072 V                              ; 0.033 V                              ; 4.04e-10 s                  ; 3.29e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 5.74e-07 V                  ; 2.36 V             ; -0.0201 V          ; 0.072 V                             ; 0.033 V                             ; 4.04e-10 s                 ; 3.29e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_nCEO~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 9.45e-07 V                   ; 2.35 V              ; -0.00643 V          ; 0.081 V                              ; 0.031 V                              ; 5.31e-10 s                  ; 7.59e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 9.45e-07 V                  ; 2.35 V             ; -0.00643 V         ; 0.081 V                             ; 0.031 V                             ; 5.31e-10 s                 ; 7.59e-10 s                 ; Yes                       ; Yes                       ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Fast 1200mv 0c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin           ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; o_spi_miso    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.05e-08 V                   ; 2.72 V              ; -0.0349 V           ; 0.173 V                              ; 0.1 V                                ; 2.72e-10 s                  ; 2.69e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 4.05e-08 V                  ; 2.72 V             ; -0.0349 V          ; 0.173 V                             ; 0.1 V                               ; 2.72e-10 s                 ; 2.69e-10 s                 ; Yes                       ; Yes                       ;
+; o_irq_done    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.05e-08 V                   ; 2.72 V              ; -0.0349 V           ; 0.173 V                              ; 0.1 V                                ; 2.72e-10 s                  ; 2.69e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 4.05e-08 V                  ; 2.72 V             ; -0.0349 V          ; 0.173 V                             ; 0.1 V                               ; 2.72e-10 s                 ; 2.69e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_DCLK~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.22e-08 V                   ; 2.74 V              ; -0.06 V             ; 0.158 V                              ; 0.08 V                               ; 2.68e-10 s                  ; 2.19e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 2.22e-08 V                  ; 2.74 V             ; -0.06 V            ; 0.158 V                             ; 0.08 V                              ; 2.68e-10 s                 ; 2.19e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_nCEO~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 3.54e-08 V                   ; 2.7 V               ; -0.00943 V          ; 0.276 V                              ; 0.035 V                              ; 3.19e-10 s                  ; 4.99e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 3.54e-08 V                  ; 2.7 V              ; -0.00943 V         ; 0.276 V                             ; 0.035 V                             ; 3.19e-10 s                 ; 4.99e-10 s                 ; No                        ; Yes                       ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Transfers                                                       ;
++------------+----------+--------------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths     ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+--------------+----------+----------+----------+
+; i_clk      ; i_clk    ; > 2147483647 ; 0        ; 0        ; 0        ;
++------------+----------+--------------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-----------------------------------------------------------------------+
+; Hold Transfers                                                        ;
++------------+----------+--------------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths     ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+--------------+----------+----------+----------+
+; i_clk      ; i_clk    ; > 2147483647 ; 0        ; 0        ; 0        ;
++------------+----------+--------------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No non-DPA dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths Summary                    ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 4     ; 4    ;
+; Unconstrained Input Port Paths  ; 887   ; 887  ;
+; Unconstrained Output Ports      ; 2     ; 2    ;
+; Unconstrained Output Port Paths ; 4     ; 4    ;
++---------------------------------+-------+------+
+
+
++-------------------------------------+
+; Clock Status Summary                ;
++--------+-------+------+-------------+
+; Target ; Clock ; Type ; Status      ;
++--------+-------+------+-------------+
+; i_clk  ; i_clk ; Base ; Constrained ;
++--------+-------+------+-------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                         ;
++------------+--------------------------------------------------------------------------------------+
+; Input Port ; Comment                                                                              ;
++------------+--------------------------------------------------------------------------------------+
+; i_rst_n    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; i_sck      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; i_spi_mosi ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; i_ss_n     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++------------+--------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                          ;
++-------------+---------------------------------------------------------------------------------------+
+; Output Port ; Comment                                                                               ;
++-------------+---------------------------------------------------------------------------------------+
+; o_irq_done  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; o_spi_miso  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++-------------+---------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                         ;
++------------+--------------------------------------------------------------------------------------+
+; Input Port ; Comment                                                                              ;
++------------+--------------------------------------------------------------------------------------+
+; i_rst_n    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; i_sck      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; i_spi_mosi ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; i_ss_n     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++------------+--------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                          ;
++-------------+---------------------------------------------------------------------------------------+
+; Output Port ; Comment                                                                               ;
++-------------+---------------------------------------------------------------------------------------+
+; o_irq_done  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; o_spi_miso  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++-------------+---------------------------------------------------------------------------------------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime TimeQuest Timing Analyzer
+    Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
+    Info: Processing started: Sun Apr 01 14:28:07 2018
+Info: Command: quartus_sta sha256-16round -c sha256-16round
+Info: qsta_default_script.tcl version: #3
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'sha256-16round.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name i_clk i_clk
+Info (332143): No user constrained clock uncertainty found in the design. Calling "derive_clock_uncertainty"
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow 1200mV 85C Model
+Critical Warning (332148): Timing requirements not met
+    Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
+Info (332146): Worst-case setup slack is -49.588
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):   -49.588          -12346.831 i_clk 
+Info (332146): Worst-case hold slack is 0.355
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.355               0.000 i_clk 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -3.000
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -3.000            -835.000 i_clk 
+Info: Analyzing Slow 1200mV 0C Model
+Info (334003): Started post-fitting delay annotation
+Info (334004): Delay annotation completed successfully
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
+Critical Warning (332148): Timing requirements not met
+    Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
+Info (332146): Worst-case setup slack is -44.514
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):   -44.514          -11032.578 i_clk 
+Info (332146): Worst-case hold slack is 0.309
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.309               0.000 i_clk 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -3.000
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -3.000            -835.000 i_clk 
+Info: Analyzing Fast 1200mV 0C Model
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
+Critical Warning (332148): Timing requirements not met
+    Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
+Info (332146): Worst-case setup slack is -27.985
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):   -27.985           -6862.512 i_clk 
+Info (332146): Worst-case hold slack is 0.186
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.186               0.000 i_clk 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -3.000
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -3.000            -889.987 i_clk 
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus Prime TimeQuest Timing Analyzer was successful. 0 errors, 5 warnings
+    Info: Peak virtual memory: 833 megabytes
+    Info: Processing ended: Sun Apr 01 14:28:20 2018
+    Info: Elapsed time: 00:00:13
+    Info: Total CPU time (on all processors): 00:00:14
+
+

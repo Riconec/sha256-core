@@ -1,0 +1,198 @@
+vsim work.top_tb
+# vsim work.top_tb 
+# Start time: 21:10:07 on Mar 26,2018
+# Loading work.top_tb
+# Loading work.sha256_spi
+# Loading work.sha256_core
+# Loading work.sha256_digester_comb
+# Loading work.par_add_6
+# Loading work.par_add_7
+# Loading work.par_add_4
+# Loading work.sum0
+# Loading work.sum1
+# Loading work.sigm0
+# Loading work.sigm1
+# Loading work.ch
+# Loading work.maj
+# Loading work.sha256_coefs_clk
+# Loading work.spi_slave
+do C:/workspace/sha256-core/projects/modelsim/8in1/wave.do
+run -all
+# write[          0] = 18
+# write[          1] = 00
+# write[          2] = 00
+# write[          3] = 00
+# write[          4] = 00
+# write[          5] = 00
+# write[          6] = 00
+# write[          7] = 00
+# write[          8] = 00
+# write[          9] = 00
+# write[         10] = 00
+# write[         11] = 00
+# write[         12] = 00
+# write[         13] = 00
+# write[         14] = 00
+# write[         15] = 00
+# write[         16] = 00
+# write[         17] = 00
+# write[         18] = 00
+# write[         19] = 00
+# write[         20] = 00
+# write[         21] = 00
+# write[         22] = 00
+# write[         23] = 00
+# write[         24] = 00
+# write[         25] = 00
+# write[         26] = 00
+# write[         27] = 00
+# write[         28] = 00
+# write[         29] = 00
+# write[         30] = 00
+# write[         31] = 00
+# write[         32] = 00
+# write[         33] = 00
+# write[         34] = 00
+# write[         35] = 00
+# write[         36] = 00
+# write[         37] = 00
+# write[         38] = 00
+# write[         39] = 00
+# write[         40] = 00
+# write[         41] = 00
+# write[         42] = 00
+# write[         43] = 00
+# write[         44] = 00
+# write[         45] = 00
+# write[         46] = 00
+# write[         47] = 00
+# write[         48] = 00
+# write[         49] = 00
+# write[         50] = 00
+# write[         51] = 00
+# write[         52] = 00
+# write[         53] = 00
+# write[         54] = 00
+# write[         55] = 00
+# write[         56] = 00
+# write[         57] = 00
+# write[         58] = 00
+# write[         59] = 00
+# write[         60] = 80
+# write[         61] = 63
+# write[         62] = 62
+# write[         63] = 61
+vcom -93 -work /build/swbuild/SJ/nightly/17.1std/590/l64/work/modelsim/libs/altera/vhdl/altera_mf -path {$MODEL_TECH/../altera/vhdl/src/altera_mf/altera_mf.vhd} F:/shteudFPGA/modelsim_ase/altera/vhdl/src/altera_mf/altera_mf.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:21:32 on Mar 26,2018
+# vcom -reportprogress 300 -93 -work /build/swbuild/SJ/nightly/17.1std/590/l64/work/modelsim/libs/altera/vhdl/altera_mf -path $MODEL_TECH/../altera/vhdl/src/altera_mf/altera_mf.vhd F:/shteudFPGA/modelsim_ase/altera/vhdl/src/altera_mf/altera_mf.vhd 
+# ** Error: (vcom-66) Execution of vlib.exe failed. Please check the error log for more details.
+# End time: 21:21:32 on Mar 26,2018, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# F:/shteudFPGA/modelsim_ase/win32aloem/vcom failed.
+# Compile of adders.v was successful.
+# Compile of sha256_coefs_clk.v was successful.
+# Compile of sha256_core_clk.v was successful.
+# Compile of sha256_math.v was successful.
+# Compile of sha256_spi.v was successful.
+# Compile of top_tb.v was successful.
+# Compile of spi_slave.v was successful.
+# Compile of spi_slave_tb.v was successful.
+# Compile of par_add_bb.v was successful.
+# Compile of adder_lpm_add.v was successful.
+# Compile of adder_lpm_add_bb.v was successful.
+# Compile of par_add_4.v was successful.
+# Compile of par_add_4_bb.v was successful.
+# Compile of par_add_6.v was successful.
+# Compile of par_add_6_bb.v was successful.
+# Compile of par_add_7.v was successful.
+# Compile of par_add_7_bb.v was successful.
+# 17 compiles, 0 failed with no errors.
+vsim work.top_tb
+# End time: 21:22:55 on Mar 26,2018, Elapsed time: 0:12:48
+# Errors: 2, Warnings: 0
+# vsim work.top_tb 
+# Start time: 21:22:56 on Mar 26,2018
+# Loading work.top_tb
+# Loading work.sha256_spi
+# Loading work.sha256_core
+# Loading work.sha256_digester_comb
+# Loading work.par_add_6
+# Loading work.par_add_7
+# Loading work.par_add_4
+# Loading work.sum0
+# Loading work.sum1
+# Loading work.sigm0
+# Loading work.sigm1
+# Loading work.ch
+# Loading work.maj
+# Loading work.sha256_coefs_clk
+# Loading work.spi_slave
+do C:/workspace/sha256-core/projects/modelsim/8in1/wave.do
+run -all
+# write[          0] = 18
+# write[          1] = 00
+# write[          2] = 00
+# write[          3] = 00
+# write[          4] = 00
+# write[          5] = 00
+# write[          6] = 00
+# write[          7] = 00
+# write[          8] = 00
+# write[          9] = 00
+# write[         10] = 00
+# write[         11] = 00
+# write[         12] = 00
+# write[         13] = 00
+# write[         14] = 00
+# write[         15] = 00
+# write[         16] = 00
+# write[         17] = 00
+# write[         18] = 00
+# write[         19] = 00
+# write[         20] = 00
+# write[         21] = 00
+# write[         22] = 00
+# write[         23] = 00
+# write[         24] = 00
+# write[         25] = 00
+# write[         26] = 00
+# write[         27] = 00
+# write[         28] = 00
+# write[         29] = 00
+# write[         30] = 00
+# write[         31] = 00
+# write[         32] = 00
+# write[         33] = 00
+# write[         34] = 00
+# write[         35] = 00
+# write[         36] = 00
+# write[         37] = 00
+# write[         38] = 00
+# write[         39] = 00
+# write[         40] = 00
+# write[         41] = 00
+# write[         42] = 00
+# write[         43] = 00
+# write[         44] = 00
+# write[         45] = 00
+# write[         46] = 00
+# write[         47] = 00
+# write[         48] = 00
+# write[         49] = 00
+# write[         50] = 00
+# write[         51] = 00
+# write[         52] = 00
+# write[         53] = 00
+# write[         54] = 00
+# write[         55] = 00
+# write[         56] = 00
+# write[         57] = 00
+# write[         58] = 00
+# write[         59] = 00
+# write[         60] = 80
+# write[         61] = 63
+# write[         62] = 62
+# write[         63] = 61
+# End time: 21:24:16 on Mar 26,2018, Elapsed time: 0:01:20
+# Errors: 0, Warnings: 0

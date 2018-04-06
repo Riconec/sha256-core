@@ -1,2 +1,0 @@
-@E: CS164 :"C:\workspace\sha256-core\src\sha\sha256_coefs.v":12:9:12:27|Expecting wire for output connection, found o_coef_value
-

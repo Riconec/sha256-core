@@ -1,1 +1,0 @@
-@W: MT529 :"c:\workspace\sha256-core\src\sha\sha256_coefs.v":42:13:42:28|Found inferred clock sha256_spi|i_clk which controls 839 sequential elements including sha256_core_inst.inst_coef.ram256x16_hipart. This clock has no specified timing constraint which may prevent conversion of gated or generated clocks and may adversely impact design performance. 

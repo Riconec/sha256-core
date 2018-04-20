@@ -1,3 +1,4 @@
+`include <../top/defines_top.vh>
 module sha_adder(i_kt, i_ch, i_sum1, i_sum0, i_sigm1, i_sigm0, i_maj, i_d, i_h, i_words, o_d, o_a, o_word);
     input [31:0] i_kt;
     input [31:0] i_ch;
@@ -15,7 +16,7 @@ module sha_adder(i_kt, i_ch, i_sum1, i_sum0, i_sigm1, i_sigm0, i_maj, i_d, i_h, 
 
     `ifdef SIMPLE_ADD
 
-        wire carryo1, carryo2, carryo3, carryo4, carryo5, carryo6, carryo7, carryo8, carryo9, carryo10, carryo11, carryo12;
+        wire carryo1, carryo2, carryo3, carryo4, carryo5, carryo6, carryo8, carryo9, carryo10, carryo11, carryo12;
         wire [31:0] adder_wire_kt_ch, adder_wire_sum_wt, adder_wire_d_h, adder_wire_sum_wt_kt_ch, adder_wire_word_1, adder_wire_word_2, addw_sum_wt_kt_ch_h, addw_maj_sum0;
 
         adder_32b_param st1_kt_ch (i_kt, i_ch, 1'b0, carryo1, adder_wire_kt_ch);
@@ -36,16 +37,31 @@ module sha_adder(i_kt, i_ch, i_sum1, i_sum0, i_sigm1, i_sigm0, i_maj, i_d, i_h, 
 
     `endif
 
+    `ifdef RTL_ADD
+        assign o_a = i_h + i_sum1 + i_ch + i_kt + i_words[`IDX32(15)] + i_sum0 + i_maj;
+        assign o_d = i_h + i_sum1 + i_ch + i_kt + i_words[`IDX32(15)] + i_d;
+        assign o_word = i_sigm1+ i_words[`IDX32(6)]+ i_sigm0+ i_words[`IDX32(15)];
+    `endif
+
     `ifdef CSATREE_ADD
         wire [31:0] o_cn1, o_cn2, o_cn3, o_sn1, o_sn2, o_sn3;
+        `ifdef MIXED_CSA
+        
+            reduce5to2_nbit #(32) inst1(i_h, i_sum1, i_ch, i_kt, i_words[`IDX32(15)], o_cn1, o_sn1);
+            reduce4to2_nbit #(32) inst3(i_sigm1, i_words[`IDX32(6)], i_sigm0, i_words[`IDX32(15)], o_cn3, o_sn3);
+            assign o_a = o_cn1 + o_sn1 + i_sum0 + i_maj;
+            assign o_d = o_cn1 + o_sn1 + i_d;
+            assign o_word = o_cn3 + o_sn3;
 
-        reduce7to2_nbit #(32) inst1(i_h, i_sum1, i_ch, i_kt, i_words[`IDX32(15)], i_d, 32'd0, o_cn2, o_sn2);
-        reduce7to2_nbit #(32) inst2(i_h, i_sum1, i_ch, i_kt, i_words[`IDX32(15)], i_sum0, i_maj, o_cn1, o_sn1);
-        reduce7to2_nbit #(32) inst3(i_sigm1, i_words[`IDX32(6)], i_sigm0, i_words[`IDX32(15)], 32'd0, 32'd0, 32'd0, o_cn3, o_sn3);
+        `else
+            reduce7to2_nbit #(32) inst1(i_h, i_sum1, i_ch, i_kt, i_words[`IDX32(15)], i_d, 32'd0, o_cn2, o_sn2);
+            reduce7to2_nbit #(32) inst2(i_h, i_sum1, i_ch, i_kt, i_words[`IDX32(15)], i_sum0, i_maj, o_cn1, o_sn1);
+            reduce7to2_nbit #(32) inst3(i_sigm1, i_words[`IDX32(6)], i_sigm0, i_words[`IDX32(15)], 32'd0, 32'd0, 32'd0, o_cn3, o_sn3);
 
-        assign o_a = o_cn1 + o_sn1;
-        assign o_d = o_cn2 + o_sn2;
-        assign o_word = o_cn3 + o_sn3;
+            assign o_a = o_cn2 + o_sn2;
+            assign o_d = o_cn1 + o_sn1;
+            assign o_word = o_cn3 + o_sn3;
+        `endif
     `endif
 
     `ifdef ALTERA_PAR_MF

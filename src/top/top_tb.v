@@ -17,8 +17,6 @@ module top_tb();
 
   reg [255:0] golden_hash = 256'hba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad;
 
-  wire win = (golden_hash == digest);
-  
    sha256_spi spi_hash(
                     .i_clk(clk),
                     .i_sck(sck),
@@ -28,7 +26,9 @@ module top_tb();
                     .o_spi_miso(miso),
                     .o_irq_done(done)
   );
-  
+
+  wire win = (golden_hash == spi_hash.sha256_core_inst.r_variables);
+
   initial begin
     clk = 0;
     forever #(PERIOD/2) clk = ~clk;
@@ -63,17 +63,17 @@ module top_tb();
     join
     #(PERIOD_SPI*2);
 
-    for (k=0; k<32; k=k+1) begin
-      fork
-      gen_sck;
-      //tmp = M[k*8 +: 8];
-      //write_byte(1,k[6:0],tmp);
-      read_byte(k+70);
-      //$display("read[%d] = %h", k, tmp);
-      join
-      #(PERIOD_SPI*2);
-    end
-    #(PERIOD_SPI*2);
+    // for (k=0; k<32; k=k+1) begin
+    //   fork
+    //   gen_sck;
+    //   //tmp = M[k*8 +: 8];
+    //   //write_byte(1,k[6:0],tmp);
+    //   read_byte(k+70);
+    //   //$display("read[%d] = %h", k, tmp);
+    //   join
+    //   #(PERIOD_SPI*2);
+    // end
+    // #(PERIOD_SPI*2);
 
     #5000 $stop;
   end
@@ -87,7 +87,7 @@ task read_byte;
       write_byte(1'b0, read_addr, 8'd0);
       #500;
       ss = 0;
-      gen_sck;
+      //gen_sck;
       for (i = 0; i<16; i=i+1) begin
         @(posedge sck);
         shift_rx = {shift_rx[14:0], miso};

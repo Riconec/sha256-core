@@ -56,9 +56,9 @@ module CSLA_CLA4(i_a, i_b, i_cin, o_cout, o_sum);
     output o_cout;
     wire [3:0] s0,s1;
     wire c0,c1;
-
-    four_bit_CLA cla1(i_a, i_b, 1'b0, c0, s0);
-    four_bit_CLA cla2(i_a, i_b, 1'b1, c1, s1);  
+    //module CLA_nbit(i_a, i_b, i_carry, o_carry, o_summ);
+    CLA_nbit #(4) cla1(i_a, i_b, 1'b0, c0, s0);
+    CLA_nbit #(4) cla2(i_a, i_b, 1'b1, c1, s1);  
     assign o_cout = i_cin ? c1 : c0;
     assign o_sum = i_cin ? s1 : s0;
 endmodule

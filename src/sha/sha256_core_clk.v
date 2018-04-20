@@ -1,3 +1,4 @@
+`include <../top/defines_top.vh>
 module sha256_core(
 	input i_clk,    // Clock
 	input i_rst_n,  // Asynchronous reset active low
@@ -6,7 +7,9 @@ module sha256_core(
 	input i_we,
 	output o_irq,
 	output reg [7:0] o_data_mux
+	
 );
+	
 	localparam START_W_MEM_ADDR = 0;
 	localparam END_W_MEM_ADDR = 63;
 	localparam WHO_AM_I = 7'd64;
@@ -44,7 +47,7 @@ module sha256_core(
 	reg [7:0] r_status;
 	reg completed, run_signal, do_math;
 
-	wire [7:0] o_data_w, o_data_h;
+	wire [7:0] o_data_h;
 	
 	assign o_irq = completed;
 	assign o_data_h = r_variables[(i_w_addr-DIGEST_START_ADDR) * 8 +: 8];
@@ -107,7 +110,7 @@ module sha256_core(
                         end
                 	end
                 	ROUND: begin
-                		r_round <= r_round + ROUND_INC_DEF;
+                		r_round <= r_round + `ROUND_INC;
 						if(r_round == ROUND_END_DEF) begin
                     		r_status[5:4] <= MATH;
                     		r_round <= 7'd0;
@@ -138,18 +141,22 @@ module sha256_core(
     	endcase
     end
 
-    wire [255:0] variables_net [ROUND_INC-1:0];
-    wire [511:0] words_net [ROUND_INC-1:0];
-    wire [511:0] variables_out_end;
+    wire [255:0] variables_net [`ROUND_INC-1:0];
+    wire [511:0] words_net [`ROUND_INC-1:0];
+    wire [255:0] variables_out_end;
     wire [511:0] words_out_end;
 
     generate
     genvar i;
 
-    for (i = 0; i < ROUND_INC; i = i + 1) begin
+    for (i = 0; i < `ROUND_INC; i = i + 1) begin : rounder
         if (i == 0) begin
-            sha256_digester_comb inst_sha (i_clk, (r_round + i[6:0]), r_variables, variables_net[i], r_words, words_net[i]);
-        end else if (i != ROUND_INC) begin
+			`ifdef ROUND1BYPASS
+            	sha256_digester_comb inst_sha (i_clk, (r_round + i[6:0]), r_variables, variables_out_end, r_words, words_out_end);
+			`else
+				sha256_digester_comb inst_sha (i_clk, (r_round + i[6:0]), r_variables, variables_net[i], r_words, words_net[i]);
+			`endif
+        end else if (i != (`ROUND_INC-1)) begin
             sha256_digester_comb inst_sha (i_clk, (r_round + i[6:0]), variables_net[i-1], variables_net[i], words_net[i-1], words_net[i]);
         end else begin
             sha256_digester_comb inst_sha (i_clk, (r_round + i[6:0]), variables_net[i-1], variables_out_end, words_net[i-1], words_out_end);

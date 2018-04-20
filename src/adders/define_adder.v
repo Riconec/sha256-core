@@ -1,3 +1,4 @@
+`include <../top/defines_top.vh>
 module adder_32b_param(i_a, i_b, i_carry, o_carry, o_summ);
     parameter WIDTH = 32;
     input [WIDTH-1:0] i_a, i_b;
@@ -18,7 +19,7 @@ module adder_32b_param(i_a, i_b, i_carry, o_carry, o_summ);
     `endif
 
     `ifdef CLA
-        CLA_32bit inst_cla(i_a, i_b, i_carry, o_carry, o_summ);
+        CLA_nbit inst_cla(i_a, i_b, i_carry, o_carry, o_summ);
     `endif
 
     `ifdef KSA

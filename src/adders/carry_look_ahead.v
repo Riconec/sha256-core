@@ -7,13 +7,13 @@ module CLA_nbit(i_a, i_b, i_carry, o_carry, o_summ);
   
   wire [WIDTH-2:0] carry;
   wire [WIDTH:0]     w_C;
-  wire [WIDTH-1:0]   w_G, w_P, w_SUM;
+  wire [WIDTH-1:0]   w_G, w_P, w_SUM, ok;
 
   genvar             ii;
   generate
     for (ii=0; ii<WIDTH; ii=ii+1)
       begin  :gen1
-        full_adder full_adder_inst(i_a[ii],i_b[ii], w_C[ii], w_SUM[ii]);
+        full_adder full_adder_inst(i_a[ii],i_b[ii], w_C[ii], w_SUM[ii],ok[ii]);
       end
   endgenerate
  

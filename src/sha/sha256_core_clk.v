@@ -15,11 +15,11 @@ module sha256_core(
 	localparam DAY = 7'd67;
 	localparam MONTH = 7'd68;
 	localparam YEAR = 7'd69;
-	localparam WHO_AM_I_DATA = 7'd7;
-	localparam REVISION_DATA = 8'd51;
-	localparam DAY_DATA = 8'd19;
-	localparam MONTH_DATA = 8'd03;
-	localparam YEAR_DATA = 8'd19;
+	localparam WHO_AM_I_DATA = `ROUND_INC;
+	localparam REVISION_DATA = 8'd52;
+	localparam DAY_DATA = 8'd20;
+	localparam MONTH_DATA = 8'd04;
+	localparam YEAR_DATA = 8'd18;
 	localparam DIGEST_START_ADDR = 70;
 	localparam DIGEST_END_ADDR = 101;
     localparam MEM_END = 127;
@@ -52,7 +52,7 @@ module sha256_core(
 	always @* begin
 		o_data_mux = 8'd0;
 		if((i_w_addr >= 0) & (i_w_addr <= END_W_MEM_ADDR)) begin
-			//o_data_mux = 8'd0;
+			//o_data_mux = 8'd0; //reading disabled
 		end else if (i_w_addr == WHO_AM_I) begin
 			o_data_mux = WHO_AM_I_DATA;
 		end else if (i_w_addr == STATUS_REG) begin
@@ -138,85 +138,25 @@ module sha256_core(
     	endcase
     end
 
-    wire [255:0] variables_net [ROUNDS-1:0];
-    wire [511:0] words_net [ROUNDS-1:0];
+    wire [255:0] variables_net [ROUND_INC-1:0];
+    wire [511:0] words_net [ROUND_INC-1:0];
     wire [511:0] variables_out_end;
     wire [511:0] words_out_end;
 
     generate
     genvar i;
 
-    for (i = 0; i < ROUNDS; i = i + 1) begin
+    for (i = 0; i < ROUND_INC; i = i + 1) begin
         if (i == 0) begin
             sha256_digester_comb inst_sha (i_clk, (r_round + i[6:0]), r_variables, variables_net[i], r_words, words_net[i]);
-        end else if (i != ROUNDS) begin
+        end else if (i != ROUND_INC) begin
             sha256_digester_comb inst_sha (i_clk, (r_round + i[6:0]), variables_net[i-1], variables_net[i], words_net[i-1], words_net[i]);
         end else begin
             sha256_digester_comb inst_sha (i_clk, (r_round + i[6:0]), variables_net[i-1], variables_out_end, words_net[i-1], words_out_end);
         end
     end
 
-    /* TODO genvar */
-	// Wires for round data transfer
-	wire [255:0] variables_out1, variables_out2, variables_out3, variables_out4, variables_out5, variables_out6, variables_out7, variables_out8;
-	wire [511:0] words_out1, words_out2, words_out3, words_out4, words_out5, words_out6, words_out7, words_out8;
-	wire [255:0] variables_out9, variables_out10, variables_out11, variables_out12, variables_out13, variables_out14, variables_out15, variables_out16,variables_out_end;
-	wire [511:0] words_out9, words_out10, words_out11, words_out12, words_out13, words_out14, words_out15, words_out16, words_out_end;
-
-/* 	//Combinational cores
-	`ifdef ROUNDS1
-	sha256_digester_comb inst_sh1 (i_clk, r_round, 			 r_variables, variables_out1,    r_words, words_out1);
-	`endif 
-
-	`ifdef ROUNDS2
-	sha256_digester_comb inst_sh2 (i_clk, r_round + 7'd1, variables_out1, variables_out2, words_out1, words_out2);
-	`endif
-
-	`ifdef ROUNDS4
-	sha256_digester_comb inst_sh3 (i_clk, r_round + 7'd2, variables_out2, variables_out3, words_out2, words_out3);
-	sha256_digester_comb inst_sh4 (i_clk, r_round + 7'd3, variables_out3, variables_out4, words_out3, words_out4);
-	`endif
-
-	`ifdef ROUNDS8
-	sha256_digester_comb inst_sh5 (i_clk, r_round + 7'd4, variables_out4, variables_out5, words_out4, words_out5);
-	sha256_digester_comb inst_sh6 (i_clk, r_round + 7'd5, variables_out5, variables_out6, words_out5, words_out6);
-	sha256_digester_comb inst_sh7 (i_clk, r_round + 7'd6, variables_out6, variables_out7, words_out6, words_out7);
-	sha256_digester_comb inst_sh8 (i_clk, r_round + 7'd7, variables_out7, variables_out8, words_out7, words_out8);
-	`endif
-
-	`ifdef ROUNDS16
-	sha256_digester_comb inst_sh9 (i_clk, r_round + 7'd8, variables_out8, variables_out9, words_out8, words_out9);
-	sha256_digester_comb inst_sh10 (i_clk, r_round + 7'd9, variables_out9, variables_out10, words_out9, words_out10);
-	sha256_digester_comb inst_sh11 (i_clk, r_round + 7'd10, variables_out10, variables_out11, words_out10, words_out11);
-	sha256_digester_comb inst_sh12 (i_clk, r_round + 7'd11, variables_out11, variables_out12, words_out11, words_out12);
-	sha256_digester_comb inst_sh13 (i_clk, r_round + 7'd12, variables_out12, variables_out13, words_out12, words_out13);
-	sha256_digester_comb inst_sh14 (i_clk, r_round + 7'd13, variables_out13, variables_out14, words_out13, words_out14);
-	sha256_digester_comb inst_sh15 (i_clk, r_round + 7'd14, variables_out14, variables_out15, words_out14, words_out15);
-	sha256_digester_comb inst_sh16 (i_clk, r_round + 7'd15, variables_out15, variables_out16, words_out15, words_out16);
-	`endif
-
-`ifdef ROUNDO16
-	assign variables_out_end = variables_out16;
-	assign words_out_end = words_out16;
-`else 
-	`ifdef ROUNDO8
-		assign variables_out_end = variables_out8;
-		assign words_out_end = words_out8;
-	`else
-		`ifdef ROUNDO4
-			assign variables_out_end = variables_out4;
-			assign words_out_end = words_out4;
-		`else
-			`ifdef ROUNDO2
-				assign variables_out_end = variables_out2;
-				assign words_out_end = words_out2;
-			`else 
-				assign variables_out_end = variables_out1;
-				assign words_out_end = words_out1;
-			`endif
-		`endif
-	`endif
-`endif */
+    endgenerate
 
 	always @(posedge i_clk or negedge i_rst_n) begin : hash_math
 		if(!i_rst_n) begin
@@ -227,6 +167,11 @@ module sha256_core(
 				if ((i_w_addr >= START_W_MEM_ADDR) & (i_w_addr < (END_W_MEM_ADDR + 1))) begin
 					r_words[(i_w_addr - START_W_MEM_ADDR) * 8 +: 8] <= i_data8;
 				end
+                `ifdef USER_MEMORY
+                    else if ((i_w_addr > DIGEST_END_ADDR) & (i_w_addr < (MEM_END + 1))) begin 
+                        usr_mem[i_w_addr[3:0]] <= i_data8; /* write user data, why not ? */
+                    end
+                `endif
 			end else if(run_signal & !i_we) begin : hash_computing
 				r_words <= words_out_end;
 				r_variables <= variables_out_end;
@@ -254,7 +199,7 @@ module sha256_digester_comb(i_clk, r_coef, i_variables, o_variables, i_words, o_
 
 	wire [31:0] sum0_out, sum1_out, sigm0_out, sigm1_out, ch_out, maj_out, Kt_out, new_word;
 	wire [31:0] o_var_a, o_var_b, o_var_c, o_var_d, o_var_e, o_var_f, o_var_g, o_var_h, o_d, o_a;
-    
+
 	wire [31:0] var_a = i_variables[`IDX32(7)];
 	wire [31:0] var_b = i_variables[`IDX32(6)];
 	wire [31:0] var_c = i_variables[`IDX32(5)];

@@ -6,59 +6,15 @@
     //`define KSA
     //`define CSLA_CLA
     // `define CSLA_RCA
-    // `define RTL_ADD
+    `define RTL_ADD
     // `define ALTERA_PAR
     // `define ALTERA_SNGL
 
-    //`define ROUNDS16
-    // `define ROUNDS8
-    // `define ROUNDS4
-    // `define ROUNDS2
-    `define ROUNDS1
+    `define ROUND_INC 1
+    `define ROUND_END 64-ROUND_INC
 
 /*--------------------------------------------------*/    
     `define IDX32(x) (((x)+1)*(32)-1):((x)*(32))
-
-    `ifdef ROUNDS1
-        `define ROUNDO1
-        `define ROUND_INC 7'd1
-        `define ROUND_END 7'd63
-    `else
-        `ifdef ROUNDS2
-            `define ROUNDS1
-            `define ROUNDO2
-            `define ROUND_INC 7'd2
-            `define ROUND_END 7'd62
-        `else
-            `ifdef ROUNDS4
-                `define ROUNDS2
-                `define ROUNDS1
-                `define ROUNDO4
-                `define ROUND_INC 7'd4
-                `define ROUND_END 7'd60
-            `else
-                `ifdef ROUNDS8
-                    `define ROUNDS4
-                    `define ROUNDS2
-                    `define ROUNDS1
-                    `define ROUNDO8
-                    `define ROUND_INC 7'd8
-                    `define ROUND_END 7'd56
-                `else 
-                    `ifdef ROUNDS16
-                        `define ROUNDS8
-                        `define ROUNDS4
-                        `define ROUNDS2
-                        `define ROUNDS1
-                        `define ROUNDO16
-                        `define ROUND_INC 7'd16
-                        `define ROUND_END 7'd48
-                    `endif
-                `endif
-            `endif
-        `endif
-    `endif
-
 /*--------------------------------------------------*/
     `define DEFINES_TOP
 

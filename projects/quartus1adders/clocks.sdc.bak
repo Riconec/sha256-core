@@ -1,1 +1,0 @@
-create_clock -name i_clk -period 100MHz

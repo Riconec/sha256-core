@@ -1,7 +1,0 @@
-
-State Machine - |sha256_spi|sha256_core:sha256_core_inst|r_state
-Name r_state.OUT r_state.MATH r_state.ROUND r_state.INIT 
-r_state.INIT 0 0 0 0 
-r_state.ROUND 0 0 1 1 
-r_state.MATH 0 1 0 1 
-r_state.OUT 1 0 0 1 

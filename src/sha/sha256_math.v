@@ -2,73 +2,73 @@
 
 `ifdef XOR_REPLACED_BY_OR
 	`define OR_XOR 7
-module ch (x, y, z, o);
+module ch (i_x, i_y, i_z, o_res);
 
-	input [31:0] x, y, z;
-	output [31:0] o;
+	input [31:0] i_x, i_y, i_z;
+	output [31:0] o_res;
 
-	assign o = z | (x & (y | z));
+	assign o_res = i_z | (i_x & (i_y | i_z));
 
 endmodule
 
 `else
 
-module ch (x, y, z, o);
+module ch (i_x, i_y, i_z, o_res);
 
-	input [31:0] x, y, z;
-	output [31:0] o;
+	input [31:0] i_x, i_y, i_z;
+	output [31:0] o_res;
 
-	assign o = z ^ (x & (y ^ z));
+	assign o_res = i_z ^ (i_x & (i_y ^ i_z));
 
 endmodule
 
 `endif
 
-module maj (x, y, z, o);
+module maj (i_x, i_y, i_z, o_res);
 
-	input [31:0] x, y, z;
-	output [31:0] o;
+	input [31:0] i_x, i_y, i_z;
+	output [31:0] o_res;
 
-	assign o = (x & y) | (z & (x | y));
-
-endmodule
-
-module sum0 (x, y);
-
-	input [31:0] x;
-	output [31:0] y;
-
-	assign y = {x[1:0],x[31:2]} ^ {x[12:0],x[31:13]} ^ {x[21:0],x[31:22]};
+	assign o_res = (i_x & i_y) | (i_z & (i_x | i_y));
 
 endmodule
 
+module sum0 (i_x, o_res);
 
-module sum1 (x, y);
+	input [31:0] i_x;
+	output [31:0] o_res;
 
-	input [31:0] x;
-	output [31:0] y;
-
-	assign y = {x[5:0],x[31:6]} ^ {x[10:0],x[31:11]} ^ {x[24:0],x[31:25]};
-
-endmodule
-
-module sigm0 (x, y);
-
-	input [31:0] x;
-	output [31:0] y;
-
-	assign y[31:29] = x[6:4] ^ x[17:15];
-	assign y[28:0] = {x[3:0], x[31:7]} ^ {x[14:0],x[31:18]} ^ x[31:3];
+	assign o_res = {i_x[1:0],i_x[31:2]} ^ {i_x[12:0],i_x[31:13]} ^ {i_x[21:0],i_x[31:22]};
 
 endmodule
 
-module sigm1 (x, y);
 
-	input [31:0] x;
-	output [31:0] y;
+module sum1 (i_x, o_res);
 
-	assign y[31:22] = x[16:7] ^ x[18:9];
-	assign y[21:0] = {x[6:0],x[31:17]} ^ {x[8:0],x[31:19]} ^ x[31:10];
+	input [31:0] i_x;
+	output [31:0] o_res;
+
+	assign o_res = {i_x[5:0],i_x[31:6]} ^ {i_x[10:0],i_x[31:11]} ^ {i_x[24:0],i_x[31:25]};
+
+endmodule
+
+module sigm0 (i_x, o_res);
+
+	input [31:0] i_x;
+	output [31:0] o_res;
+
+	assign o_res[31:29] = i_x[6:4] ^ i_x[17:15];
+	assign o_res[28:0] = {i_x[3:0], i_x[31:7]} ^ {i_x[14:0],i_x[31:18]} ^ i_x[31:3];
+
+endmodule
+
+module sigm1 (i_x, o_res);
+
+	input [31:0] i_x;
+	output [31:0] o_res;
+
+	assign o_res[31:22] = i_x[16:7] ^ i_x[18:9];
+	assign o_res[21:0] = {i_x[6:0],i_x[31:17]} ^ {i_x[8:0],i_x[31:19]} ^ i_x[31:10];
 
 endmodule
 

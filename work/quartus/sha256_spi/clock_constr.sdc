@@ -1,0 +1,1 @@
+create_clock -name {i_clk} -period 300MHz [get_ports {i_clk}]

@@ -27,7 +27,7 @@ module sha256_core(
 	localparam DIGEST_END_ADDR = 101;
     localparam MEM_END = 127;
 
-	//16 addresses left empty
+	//26 addresses left empty
 	localparam HASH_INIT = 256'h6a09e667_bb67ae85_3c6ef372_a54ff53a_510e527f_9b05688c_1f83d9ab_5be0cd19;
 	parameter ROUND_INC_DEF = `ROUND_INC;
 	parameter ROUND_END_DEF = `ROUND_END;
@@ -41,7 +41,7 @@ module sha256_core(
         reg [7:0] usr_mem [MEM_END-DIGEST_END_ADDR-1:0]
     `endif
 
-	reg [255:0] r_variables, r_variables_in; //a, b, c, d, e, f, g, h 
+	reg [255:0] r_variables, r_variables_in; //a, b, c, d, e, f, g, h
 	reg [511:0] r_words; //W0, W1, W2 ... W15 in terms of FIPS
 	reg [6:0] r_round;
 	reg [7:0] r_status;
@@ -72,12 +72,25 @@ module sha256_core(
 			o_data_mux = o_data_h;
 		end else if(i_w_addr > DIGEST_END_ADDR) begin
             `ifdef USER_MEMORY
-                o_data_mux = usr_mem[i_w_addr[3:0]];
+				if (i_w_addr > MEM_END) begin
+					o_data_mux = 8'haa; //safe for no reason
+				end else begin
+				    o_data_mux = usr_mem[i_w_addr[3:0]];
+				end
             `else
 			    o_data_mux = 8'haa;
             `endif
 		end
 	end
+
+	`ifdef REORDER
+		reg [31:0] r_t3_precalculated;
+		reg [6:0] r_round_prec;
+		wire [31:0] Kt_out_prec;
+		sha256_coefs inst_coef_clk(.i_coef_num(r_round_prec), .o_coef_value(Kt_out_prec));
+		reg [31:0] temp_h;
+		reg [31:0] temp_wt;
+	`endif
 
     /* Help assignments
     r_status[7:5] - reserved
@@ -91,6 +104,10 @@ module sha256_core(
     always @ (posedge i_clk or negedge i_rst_n) begin : hash_control_reg
         if(!i_rst_n) begin
             r_round <= 7'd0;
+			`ifdef REORDER
+				r_round_prec <= 7'd0;
+				r_t3_precalculated <= 32'd0;
+			`endif
             r_status <= 8'd0;
 			r_variables_in <= HASH_INIT;
         end else begin
@@ -102,6 +119,10 @@ module sha256_core(
 				case(r_status[5:4])
                 	INIT: begin
                     	if(r_status[0]) begin // if START
+							`ifdef REORDER
+								r_round_prec <= r_round_prec + 1'b1;
+								r_t3_precalculated <= r_variables[`IDX32(0)] + Kt_out_prec + r_words[`IDX32(15)];
+							`endif
                         	r_status[5:4] <= ROUND;
                         	r_status[3:0] <= 4'b0100; //set running
 							r_variables_in <= HASH_INIT;
@@ -110,6 +131,10 @@ module sha256_core(
                         end
                 	end
                 	ROUND: begin
+						`ifdef REORDER
+							r_round_prec <= r_round_prec + 1'b1;
+							r_t3_precalculated <= r_variables[`IDX32(1)] + Kt_out_prec + r_words[`IDX32(14)];
+						`endif
                 		r_round <= r_round + `ROUND_INC;
 						if(r_round == ROUND_END_DEF) begin
                     		r_status[5:4] <= MATH;
@@ -146,7 +171,10 @@ module sha256_core(
     wire [255:0] variables_out_end;
     wire [511:0] words_out_end;
 
-    generate
+	`ifdef REORDER
+		sha256_digester_comb inst_sha (i_clk, r_round, r_variables, r_t3_precalculated, variables_out_end, r_words, words_out_end);
+    `else
+	generate
     genvar i;
 
     for (i = 0; i < `ROUND_INC; i = i + 1) begin : rounder
@@ -164,6 +192,7 @@ module sha256_core(
     end
 
     endgenerate
+	`endif
 
 	always @(posedge i_clk or negedge i_rst_n) begin : hash_math
 		if(!i_rst_n) begin
@@ -196,7 +225,12 @@ module sha256_core(
 	end
 endmodule
 
-module sha256_digester_comb(i_clk, r_coef, i_variables, o_variables, i_words, o_words);
+`ifdef REORDER
+	module sha256_digester_comb(i_clk, r_coef, i_variables, i_t3, o_variables, i_words, o_words);
+	input [31:0] i_t3;
+`else
+	module sha256_digester_comb(i_clk, r_coef, i_variables, o_variables, i_words, o_words);
+`endif
 	input i_clk;
 	input [6:0] r_coef;
 	input [511:0] i_words;
@@ -223,7 +257,24 @@ module sha256_digester_comb(i_clk, r_coef, i_variables, o_variables, i_words, o_
 	ch inst_ch(var_e, var_f, var_g, ch_out);
 	maj inst_maj(var_a, var_b, var_c, maj_out);
 	sha256_coefs inst_coef_clk(.i_coef_num(r_coef), .o_coef_value(Kt_out));
-	
+
+`ifdef REORDER
+	sha_adder  sh_add_inst(.i_kt(Kt_out),
+						   .i_ch(ch_out),
+						   .i_sum1(sum1_out),
+						   .i_sum0(sum0_out),
+						   .i_sigm1(sigm1_out),
+						   .i_sigm0(sigm0_out),
+						   .i_maj(maj_out),
+						   .i_d(var_d),
+						   .i_h(var_h),
+						   .i_words(i_words),
+						   .i_t3(i_t3),
+						   .o_d(o_d),
+						   .o_a(o_a),
+						   .o_word(new_word)
+						   );		
+`else
 	sha_adder  sh_add_inst(.i_kt(Kt_out),
 						   .i_ch(ch_out),
 						   .i_sum1(sum1_out),
@@ -237,7 +288,8 @@ module sha256_digester_comb(i_clk, r_coef, i_variables, o_variables, i_words, o_
 						   .o_d(o_d),
 						   .o_a(o_a),
 						   .o_word(new_word)
-						   );		
+						   );
+`endif
 
 	assign o_var_a = o_a;
 	assign o_var_b = var_a;

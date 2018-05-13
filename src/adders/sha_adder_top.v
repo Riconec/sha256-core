@@ -1,5 +1,10 @@
 `include <../top/defines_top.vh>
+`ifdef REORDER
+module sha_adder(i_kt, i_ch, i_sum1, i_sum0, i_sigm1, i_sigm0, i_maj, i_d, i_h, i_words, i_t3, o_d, o_a, o_word);
+    input [31:0] i_t3;
+`else    
 module sha_adder(i_kt, i_ch, i_sum1, i_sum0, i_sigm1, i_sigm0, i_maj, i_d, i_h, i_words, o_d, o_a, o_word);
+`endif
     input [31:0] i_kt;
     input [31:0] i_ch;
     input [31:0] i_sum1;
@@ -13,6 +18,24 @@ module sha_adder(i_kt, i_ch, i_sum1, i_sum0, i_sigm1, i_sigm0, i_maj, i_d, i_h, 
     output [31:0] o_d;
     output [31:0] o_a;
     output [31:0] o_word;
+
+    `ifdef REORDER
+    /* use precalculation for T3 */
+
+        `ifdef RTL_ADD
+            /* t3 is precalculated */
+
+            assign o_d = i_d + i_sum1 + i_ch + i_t3;
+            assign o_a = i_sum0 + i_maj + i_sum1 + i_ch + i_t3;
+
+            assign o_word = i_sigm1+ i_words[`IDX32(6)]+ i_sigm0 + i_words[`IDX32(15)];
+        `endif
+
+    `else
+
+
+    /* straight forward solution */
+
 
     `ifdef SIMPLE_ADD
 
@@ -94,5 +117,8 @@ module sha_adder(i_kt, i_ch, i_sum1, i_sum0, i_sigm1, i_sigm0, i_maj, i_d, i_h, 
                                     .result (o_word)
                                     );
     `endif
+    `endif
+
+    
 
 endmodule

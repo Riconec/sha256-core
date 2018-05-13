@@ -3,16 +3,16 @@
 `else
     `define DEFINES_TOP
 /*--------------------------------------------------*/
-    `define CSATREE
-    `define MIXED_CSA
+    //`define CSATREE
+    //`define MIXED_CSA
     //`define KSA
     // `define CSLA_CLA
     // `define CSLA_RCA
-    //`define RTL_ADD
+    `define RTL_ADD
     //`define ALTERA_PAR
     //`define ALTERA_SNGL
     //`define CLA
-
+    `define REORDER
     `define ROUND_INC 1
     `define ROUND1BYPASS
     //`define USER_MEMORY

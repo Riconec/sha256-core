@@ -2,9 +2,6 @@
 		CHANGE DATA (o_miso) @NEGEDGE i_sck
 		read data (i_mosi) @posedge i_sck
 */
-
-/* o_done somehow combinational instead of sequential */ 
-
 module spi_slave (
   	input i_clk, i_rst_n, i_ss, i_sck_r, i_sck_f, i_mosi, i_msb,
   	input [15:0] i_data,
@@ -26,10 +23,8 @@ always @(posedge i_clk or negedge i_rst_n)
     if (!i_rst_n) begin	
     	r_rx <= 16'd0;  
     	o_data <= 16'd0;
-    	r_cnt <= 0;    	
-    	//o_done = 0; 
+    	r_cnt <= 0;
     end else begin
-    	//o_done = 0;
     	if (!i_ss & i_sck_r) begin 
 			if(!i_msb) begin //LSB first, in@msb -> right shift
 				r_rx <= {i_mosi, r_rx[15:1]}; 
@@ -39,8 +34,7 @@ always @(posedge i_clk or negedge i_rst_n)
 			r_cnt <= r_cnt + 1'b1;
 			if (r_cnt == 4'd15) begin
 				r_cnt <= 0;
-				o_data <= {r_rx[14:0], i_mosi}; //r_rx was here
-				//o_done = 1'b1;
+				o_data <= {r_rx[14:0], i_mosi};
 			end
 		end else if (o_data[15]) begin
 			o_data[15] <= 1'b0;

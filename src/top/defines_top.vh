@@ -5,12 +5,12 @@
 /*--------------------------------------------------*/
     `define CSATREE
     `define MIXED_CSA
-    // `define KSA
+    //`define KSA
     // `define CSLA_CLA
     // `define CSLA_RCA
     //`define RTL_ADD
-    // `define ALTERA_PAR
-    // `define ALTERA_SNGL
+    //`define ALTERA_PAR
+    //`define ALTERA_SNGL
     //`define CLA
 
     `define ROUND_INC 1
@@ -21,14 +21,6 @@
     `define ROUND_END 64-`ROUND_INC
 /*--------------------------------------------------*/
     
-    `ifdef ALTERA_PAR
-        `ifdef ALTERA_ADD
-            `error multiple defs
-        `else
-            `define ALTERA_ADD
-        `endif
-    `endif
-
     `ifdef KSA
         `ifdef SIMPLE_ADD
             `error multiple defs

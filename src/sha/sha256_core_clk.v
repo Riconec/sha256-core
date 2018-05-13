@@ -216,12 +216,12 @@ module sha256_digester_comb(i_clk, r_coef, i_variables, o_variables, i_words, o_
 	wire [31:0] var_g = i_variables[`IDX32(1)];
 	wire [31:0] var_h = i_variables[`IDX32(0)];
 
-	sum0 inst_sum0(.x(var_a), .y(sum0_out));
-	sum1 inst_sum1(.x(var_e), .y(sum1_out));
-	sigm0 inst_sigm0(.x(i_words[`IDX32(14)]), .y(sigm0_out));
-	sigm1 inst_sigm1(.x(i_words[`IDX32(1)]), .y(sigm1_out));
-	ch inst_ch(.x(var_e), .y(var_f), .z(var_g), .o(ch_out));
-	maj inst_maj(.x(var_a), .y(var_b), .z(var_c), .o(maj_out));
+	sum0 inst_sum0(var_a, sum0_out);
+	sum1 inst_sum1(var_e, sum1_out);
+	sigm0 inst_sigm0(i_words[`IDX32(14)], sigm0_out);
+	sigm1 inst_sigm1(i_words[`IDX32(1)], sigm1_out);
+	ch inst_ch(var_e, var_f, var_g, ch_out);
+	maj inst_maj(var_a, var_b, var_c, maj_out);
 	sha256_coefs inst_coef_clk(.i_coef_num(r_coef), .o_coef_value(Kt_out));
 	
 	sha_adder  sh_add_inst(.i_kt(Kt_out),

@@ -206,14 +206,10 @@ module sha256_core(
 	end
 endmodule
 
-`ifdef REORDER
 	module sha256_digester_comb(i_clk, i_rst_n, r_coef, i_variables, i_status, o_variables, i_words, o_words);
+	input i_clk;	
 	input i_rst_n;
 	input [7:0] i_status;
-`else
-	module sha256_digester_comb(i_clk, r_coef, i_variables, o_variables, i_words, o_words);
-`endif
-	input i_clk;
 	input [6:0] r_coef;
 	input [511:0] i_words;
 	input [255:0] i_variables;
@@ -250,6 +246,7 @@ endmodule
 	reg [31:0] r_t3_precalculated;
 	reg [6:0] r_round_prec;
 	wire [31:0] Kt_out_prec;
+	/* Reorder uses additional LUT table */
 	sha256_coefs inst_coef_clk_prec(.i_coef_num((i_status[5:4] == INIT) ? r_coef : r_round_prec), .o_coef_value(Kt_out_prec));
 
 	always @(posedge i_clk, negedge i_rst_n) begin
@@ -271,6 +268,7 @@ endmodule
 			endcase
 		end
 	end
+`endif
 
 	sha_adder  sh_add_inst(.i_kt(Kt_out),
 						   .i_ch(ch_out),
@@ -286,23 +284,7 @@ endmodule
 						   .o_d(o_d),
 						   .o_a(o_a),
 						   .o_word(new_word)
-						   );		
-`else
-	sha_adder  sh_add_inst(.i_kt(Kt_out),
-						   .i_ch(ch_out),
-						   .i_sum1(sum1_out),
-						   .i_sum0(sum0_out),
-						   .i_sigm1(sigm1_out),
-						   .i_sigm0(sigm0_out),
-						   .i_maj(maj_out),
-						   .i_d(var_d),
-						   .i_h(var_h),
-						   .i_words(i_words),
-						   .o_d(o_d),
-						   .o_a(o_a),
-						   .o_word(new_word)
 						   );
-`endif
 
 	assign o_var_a = o_a;
 	assign o_var_b = var_a;

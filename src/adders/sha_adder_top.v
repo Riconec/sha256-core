@@ -1,10 +1,7 @@
 `include <../top/defines_top.vh>
-`ifdef REORDER
+
 module sha_adder(i_kt, i_ch, i_sum1, i_sum0, i_sigm1, i_sigm0, i_maj, i_d, i_h, i_words, i_t3, o_d, o_a, o_word);
     input [31:0] i_t3;
-`else    
-module sha_adder(i_kt, i_ch, i_sum1, i_sum0, i_sigm1, i_sigm0, i_maj, i_d, i_h, i_words, o_d, o_a, o_word);
-`endif
     input [31:0] i_kt;
     input [31:0] i_ch;
     input [31:0] i_sum1;

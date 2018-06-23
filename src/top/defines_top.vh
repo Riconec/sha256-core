@@ -12,15 +12,16 @@
     //`define ALTERA_PAR
     //`define ALTERA_SNGL
     //`define CLA
-    `define REORDER
+    //`define REORDER
     `define ROUND_INC 1
+    //`define MULTI_REORDER
     `define ROUND1BYPASS
     //`define USER_MEMORY
 /*--------------------------------------------------*/    
     `define IDX32(x) (((x)+1)*(32)-1):((x)*(32))
     `define ROUND_END 64-`ROUND_INC
 /*--------------------------------------------------*/
-    
+
     `ifdef KSA
         `ifdef SIMPLE_ADD
             `error multiple defs

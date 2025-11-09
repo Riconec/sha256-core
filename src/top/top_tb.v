@@ -4,11 +4,9 @@ module top_tb();
   parameter PERIOD = 50;
     parameter PERIOD_SPI = 500;
     parameter SIM_DURATION_TIME = 1000000;  // Total simulation time
-  reg clk, rst_n, ss, mem_we, sck;
-  wire done, miso;
-  wire [15:0] data_o;
-  wire [255:0] digest;
-  reg [7:0] tmp, byte_out;
+  reg clk, rst_n, ss, sck; 
+  wire miso, done;
+  reg [7:0] tmp;
   reg [15:0] shift, shift_in;
 
   reg  mosi;
@@ -17,20 +15,6 @@ module top_tb();
   reg[511:0] M = {24'h616263,1'b1,423'd0,64'd24};
 
   reg [255:0] golden_hash = 256'hba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad;
-
-	localparam START_W_MEM_ADDR = 0;
-	localparam END_W_MEM_ADDR = 79;  // Support 80 bytes (0-79 for Bitcoin block header)
-	localparam WHO_AM_I = 7'd80;     // Moved to after message memory
-	localparam STATUS_REG = 7'd81;
-	localparam REVISION = 7'd82;
-	localparam DAY = 7'd83;
-	localparam MONTH = 7'd84;
-	localparam YEAR = 7'd85;
-	localparam DIGEST_START_ADDR = 86;  // Start digest after status registers
-	localparam DIGEST_END_ADDR = 117;   // 32 bytes digest (86-117)
-  localparam MEM_END = 127;            // Remaining for user memory if needed
-
-
 
    sha256_spi spi_hash(
                     .i_clk(clk),
@@ -52,7 +36,9 @@ module top_tb();
   end
 
   always begin
+  // verilator lint_off BLKSEQ
     #(PERIOD/2) clk = ~clk;
+  // verilator lint_on BLKSEQ
   end
 
   initial begin

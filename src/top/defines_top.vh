@@ -22,6 +22,33 @@
     `define ROUND_END 64-`ROUND_INC
 /*--------------------------------------------------*/
 
+    parameter   [2:0] INIT = 3'b000,
+                ROUND = 3'b001,
+                MATH = 3'b010,
+                OUT = 3'b011;
+
+	parameter START_W_MEM_ADDR = 0;
+	parameter END_W_MEM_ADDR = 79;  // Support 80 bytes (0-79 for Bitcoin block header)
+	parameter WHO_AM_I = 7'd80;     // Moved to after message memory
+	parameter STATUS_REG = 7'd81;
+	parameter REVISION = 7'd82;
+	parameter DAY = 7'd83;
+	parameter MONTH = 7'd84;
+	parameter YEAR = 7'd85;
+	parameter WHO_AM_I_DATA = 8'h33;
+	parameter REVISION_DATA = 8'd33;
+	parameter DAY_DATA = 8'd10;
+	parameter MONTH_DATA = 8'd11;
+	parameter YEAR_DATA = 8'd25;
+	parameter DIGEST_START_ADDR = 86;  // Start digest after status registers
+	parameter DIGEST_END_ADDR = 117;   // 32 bytes digest (86-117)
+    parameter MEM_END = 127;            // Remaining for user memory if needed
+
+	//10 addresses left empty between digest and WHO_AM_I
+	parameter HASH_INIT = 256'h6a09e667_bb67ae85_3c6ef372_a54ff53a_510e527f_9b05688c_1f83d9ab_5be0cd19;
+	parameter ROUND_INC_DEF = `ROUND_INC;
+	parameter ROUND_END_DEF = `ROUND_END;
+
     `ifdef KSA
         `ifdef SIMPLE_ADD
             `error "multiple defs"

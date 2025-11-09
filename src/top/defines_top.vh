@@ -24,7 +24,7 @@
 
     `ifdef KSA
         `ifdef SIMPLE_ADD
-            `error multiple defs
+            `error "multiple defs"
         `else
             `define SIMPLE_ADD
         `endif
@@ -32,7 +32,7 @@
 
     `ifdef CSLA_CLA
         `ifdef SIMPLE_ADD
-            `error multiple defs
+            `error "multiple defs"
         `else
             `define SIMPLE_ADD
         `endif
@@ -40,7 +40,7 @@
 
     `ifdef CSLA_RCA
         `ifdef SIMPLE_ADD
-            `error multiple defs
+            `error "multiple defs"
         `else
             `define SIMPLE_ADD
         `endif
@@ -48,7 +48,7 @@
 
     `ifdef CLA
         `ifdef SIMPLE_ADD
-            `error multiple defs
+            `error "multiple defs"
         `else
             `define SIMPLE_ADD
         `endif
@@ -56,7 +56,7 @@
 
     `ifdef ALTERA_PAR
         `ifdef ALTERA_ADD
-            `error multiple defs
+            `error "multiple defs"
         `else
             `define ALTERA_ADD
         `endif
@@ -64,7 +64,7 @@
 
     `ifdef ALTERA_SNGL
         `ifdef ALTERA_ADD
-            `error multiple defs
+            `error "multiple defs"
         `else
             `define SIMPLE_ADD
             `define ALTERA_SNGL_MF
@@ -73,17 +73,16 @@
 
     `ifdef RTL_ADD
         `ifdef SIMPLE_ADD
-            `error multiple defs
+            `error "multiple defs"
         `else
         `endif
     `endif
 
     `ifdef CSATREE
         `ifdef SIMPLE_ADD
-            `error multiple defs
         `else
         	`ifdef ALTERA_ADD
-            		`error multiple defs
+           		`error "multiple defs"
         	`else
 			`define CSATREE_ADD
 		`endif            
@@ -92,7 +91,7 @@
 
     `ifdef ALTERA_ADD
         `ifdef SIMPLE_ADD
-            `error multiple defs
+            `error "multiple defs"
         `else
             `ifdef MODEL_TECH //we are in sim
             
@@ -115,7 +114,7 @@
                 `ifdef RTL_ADD
                 `else
                 //undefined both
-                `error no def
+                `error "no def"
                 `endif
             
             `endif

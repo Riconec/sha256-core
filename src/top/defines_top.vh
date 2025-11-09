@@ -25,7 +25,9 @@
     parameter   [2:0] INIT = 3'b000,
                 ROUND = 3'b001,
                 MATH = 3'b010,
-                OUT = 3'b011;
+                BTC_1 = 3'b011,
+                BTC_2 = 3'b100,
+                OUT = 3'b101;
 
 	parameter START_W_MEM_ADDR = 0;
 	parameter END_W_MEM_ADDR = 79;  // Support 80 bytes (0-79 for Bitcoin block header)
@@ -48,6 +50,15 @@
 	parameter HASH_INIT = 256'h6a09e667_bb67ae85_3c6ef372_a54ff53a_510e527f_9b05688c_1f83d9ab_5be0cd19;
 	parameter ROUND_INC_DEF = `ROUND_INC;
 	parameter ROUND_END_DEF = `ROUND_END;
+
+    parameter STATUS_INIT_VALUE = 8'b1000_0000;
+    parameter STATUS_START = 0;
+    parameter STATUS_BITCOIN_MODE = 1;
+    parameter STATUS_NONCE_SWEEP = 2;
+    parameter STATUS_STATE_LO = 3;  // Lower bit of state field in r_status
+    parameter STATUS_STATE_HI = 5;  // Upper bit of state field in r_status
+    parameter STATUS_SECOND_ROUND = 6;
+    parameter STATUS_COMPLETED = 7;
 
     `ifdef KSA
         `ifdef SIMPLE_ADD

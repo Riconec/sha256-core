@@ -10,11 +10,11 @@ module reduce7to2_nbit(i_a, i_b, i_c, i_d, i_e, i_f, i_g, o_c, o_s);
     genvar i;
     generate
         for (i = 0; i < WIDTH; i = i + 1'b1) begin : gener
-            if (i == 0) begin
+            if (i == 0) begin : gen_reduce
                 reduce7to2_1bit inst(i_a[i], i_b[i], i_c[i], i_d[i], i_e[i], i_f[i], i_g[i], 5'd0, o_c[i], carry_int[i], o_s[i]);
-            end else if (i != WIDTH-1) begin
+            end else if (i != WIDTH-1) begin : gen_reduce
                 reduce7to2_1bit inst(i_a[i], i_b[i], i_c[i], i_d[i], i_e[i], i_f[i], i_g[i], carry_int[i-1], o_c[i], carry_int[i], o_s[i]);
-            end else begin
+            end else begin : gen_reduce
                 reduce7to2_1bit inst(i_a[i], i_b[i], i_c[i], i_d[i], i_e[i], i_f[i], i_g[i], carry_int[i-1], o_c[i], carry_int[i], o_s[i]);
             end
         end
@@ -34,11 +34,11 @@ module reduce5to2_nbit(i_a, i_b, i_c, i_d, i_e, o_c, o_s);
     genvar i;
     generate
         for (i = 0; i < WIDTH; i = i + 1'b1) begin : gener
-            if (i == 0) begin
+            if (i == 0) begin : gen_reduce
                 reduce5to2_1bit inst(i_a[i], i_b[i], i_c[i], i_d[i], i_e[i], 3'd0, o_c[i], carry_int[i], o_s[i]);
-            end else if (i != WIDTH-1) begin
+            end else if (i != WIDTH-1) begin : gen_reduce
                 reduce5to2_1bit inst(i_a[i], i_b[i], i_c[i], i_d[i], i_e[i], carry_int[i-1], o_c[i], carry_int[i], o_s[i]);
-            end else begin
+            end else begin : gen_reduce
                 reduce5to2_1bit inst(i_a[i], i_b[i], i_c[i], i_d[i], i_e[i], carry_int[i-1], o_c[i], carry_int[i], o_s[i]);
             end
         end
@@ -60,9 +60,9 @@ module reduce4to2_nbit(i_a, i_b, i_c, i_d, o_c, o_s);
         for (i = 0; i < WIDTH; i = i + 1'b1) begin : gener
             if (i == 0) begin
                 reduce4to2_1bit inst(i_a[i], i_b[i], i_c[i], i_d[i], 2'd0, o_c[i], carry_int[i], o_s[i]);
-            end else if (i != WIDTH-1) begin
+            end else if (i != WIDTH-1) begin : gen_reduce
                 reduce4to2_1bit inst(i_a[i], i_b[i], i_c[i], i_d[i], carry_int[i-1], o_c[i], carry_int[i], o_s[i]);
-            end else begin
+            end else begin : gen_reduce
                 reduce4to2_1bit inst(i_a[i], i_b[i], i_c[i], i_d[i], carry_int[i-1], o_c[i], carry_int[i], o_s[i]);
             end
         end

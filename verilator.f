@@ -40,7 +40,12 @@ src/adders/carry_save_tree.v
 src/adders/carry_select.v
 src/adders/ripple_carry.v
 
---binary
+# Verilator configuration
+--lint-only
 --timing
 --top-module top_tb
---trace
+-Wall
+-Wno-DECLFILENAME
+-Wno-GENUNNAMED
+-Wno-UNUSEDPARAM
+-Wno-UNUSEDSIGNAL

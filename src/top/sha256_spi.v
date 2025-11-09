@@ -15,7 +15,7 @@ module sha256_spi(
 wire [6:0] mosi_addr_7b;
 wire [7:0] mem_out, mosi_data_8b;
 wire [15:0] rx_frame, tx_frame;
-wire we_edge, n_read_write, spi_rx_complete, ss_edge, sck_edge_f, sck_edge_r;
+wire n_read_write, spi_rx_complete, ss_edge, sck_edge_f, sck_edge_r;
 
 reg [2:0] mosi_sync, sck_sync, ss_sync;
 

@@ -3,6 +3,7 @@ module top_tb();
       // memory adresses
   parameter PERIOD = 50;
     parameter PERIOD_SPI = 500;
+    parameter SIM_DURATION_TIME = 1000000;  // Total simulation time
   reg clk, rst_n, ss, mem_we, sck;
   wire done, miso;
   wire [15:0] data_o;
@@ -44,14 +45,19 @@ module top_tb();
   wire win = (golden_hash == spi_hash.sha256_core_inst.r_variables);
 
   initial begin
-    $dumpfile("dump.vcd");
-    $dumpvars();
     clk = 0;
-    forever #(PERIOD/2) clk = ~clk;
-    #5000 $finish(1);
+    #SIM_DURATION_TIME;
+    $display("Simulation time reached, stopping...");
+    $finish;
+  end
+
+  always begin
+    #(PERIOD/2) clk = ~clk;
   end
 
   initial begin
+    $dumpfile("dump.vcd");
+    $dumpvars();
     rst_n = 0;
     ss = 1;
     sck = 1;
@@ -85,7 +91,8 @@ module top_tb();
      end
      #(PERIOD_SPI*2);
 
-    #5000 $finish(1);
+    $display("Test completed successfully. Win: %b", win);
+    // Don't put another $finish here since the first process handles it
   end
 
 task read_byte;

@@ -11,23 +11,23 @@ module sha256_core(
 );
 	
 	localparam START_W_MEM_ADDR = 0;
-	localparam END_W_MEM_ADDR = 63;
-	localparam WHO_AM_I = 7'd64;
-	localparam STATUS_REG = 7'd65;
-	localparam REVISION = 7'd66;
-	localparam DAY = 7'd67;
-	localparam MONTH = 7'd68;
-	localparam YEAR = 7'd69;
-	localparam WHO_AM_I_DATA = `ROUND_INC;
-	localparam REVISION_DATA = 8'd52;
-	localparam DAY_DATA = 8'd20;
-	localparam MONTH_DATA = 8'd04;
-	localparam YEAR_DATA = 8'd18;
-	localparam DIGEST_START_ADDR = 70;
-	localparam DIGEST_END_ADDR = 101;
-    localparam MEM_END = 127;
+	localparam END_W_MEM_ADDR = 79;  // Support 80 bytes (0-79 for Bitcoin block header)
+	localparam WHO_AM_I = 7'd80;     // Moved to after message memory
+	localparam STATUS_REG = 7'd81;
+	localparam REVISION = 7'd82;
+	localparam DAY = 7'd83;
+	localparam MONTH = 7'd84;
+	localparam YEAR = 7'd85;
+	localparam WHO_AM_I_DATA = 8'h33;
+	localparam REVISION_DATA = 8'd33;
+	localparam DAY_DATA = 8'd10;
+	localparam MONTH_DATA = 8'd11;
+	localparam YEAR_DATA = 8'd25;
+	localparam DIGEST_START_ADDR = 86;  // Start digest after status registers
+	localparam DIGEST_END_ADDR = 117;   // 32 bytes digest (86-117)
+    localparam MEM_END = 127;            // Remaining for user memory if needed
 
-	//26 addresses left empty
+	//10 addresses left empty between digest and WHO_AM_I
 	localparam HASH_INIT = 256'h6a09e667_bb67ae85_3c6ef372_a54ff53a_510e527f_9b05688c_1f83d9ab_5be0cd19;
 	parameter ROUND_INC_DEF = `ROUND_INC;
 	parameter ROUND_END_DEF = `ROUND_END;
@@ -46,7 +46,7 @@ module sha256_core(
     `endif
 
 	reg [255:0] r_variables, r_variables_in; //a, b, c, d, e, f, g, h
-	reg [511:0] r_words; //W0, W1, W2 ... W15 in terms of FIPS
+	reg [639:0] r_words; // Expanded to 640 bits to store 80-byte input (512 bits for W0-W15, 128 bits for padding)
 	reg [6:0] r_round;
 	reg [7:0] r_status;
 	reg completed, run_signal, do_math;
@@ -58,7 +58,7 @@ module sha256_core(
 
 	always @* begin
 		o_data_mux = 8'd0;
-		if((i_w_addr >= 0) & (i_w_addr <= END_W_MEM_ADDR)) begin
+		if(i_w_addr <= END_W_MEM_ADDR) begin
 			//o_data_mux = 8'd0; //reading disabled
 		end else if (i_w_addr == WHO_AM_I) begin
 			o_data_mux = WHO_AM_I_DATA;
@@ -117,7 +117,7 @@ module sha256_core(
         end else begin
         	if(i_we) begin
         		if(i_w_addr == STATUS_REG) begin
-        			r_status <= i_data8[0];	
+        			r_status[0] <= i_data8[0];	
         		end
 			end else begin
 				case(r_status[5:4])
@@ -198,12 +198,12 @@ module sha256_core(
 
 	always @(posedge i_clk or negedge i_rst_n) begin : hash_math
 		if(!i_rst_n) begin
-			r_words <= 512'd0; // debug words 512'h5348412D32353620636F72652062792059657668656E696920506F707261766B6120323031383A29800000000000000000000000000000000000000000000028;
+			r_words <= 640'd0; // Initialize 80-byte message storage (640 bits)
 			r_variables <= HASH_INIT;
 		end else begin
 			if (i_we & !run_signal) begin
-				if ((i_w_addr >= START_W_MEM_ADDR) & (i_w_addr < (END_W_MEM_ADDR + 1))) begin
-					r_words[(i_w_addr - START_W_MEM_ADDR) * 8 +: 8] <= i_data8;
+				if (i_w_addr < (END_W_MEM_ADDR + 1)) begin
+					r_words[(i_w_addr - START_W_MEM_ADDR) * 8 +: 8] <= i_data8;  // Store to 640-bit message register
 				end
                 `ifdef USER_MEMORY
                     else if ((i_w_addr > DIGEST_END_ADDR) & (i_w_addr < (MEM_END + 1))) begin 
@@ -211,7 +211,7 @@ module sha256_core(
                     end
                 `endif
 			end else if(run_signal & !i_we) begin : hash_computing
-				r_words <= words_out_end;
+				r_words[511:0] <= words_out_end;  // Update only the 512-bit message schedule part
 				r_variables <= variables_out_end;
 			end else if(do_math) begin
 				r_variables[`IDX32(7)] <= r_variables[`IDX32(7)] + r_variables_in[`IDX32(7)];

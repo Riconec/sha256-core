@@ -183,9 +183,17 @@ module sha256_core(
     for (i = 0; i < `ROUND_INC; i = i + 1) begin : rounder
         if (i == 0) begin
 			`ifdef ROUND1BYPASS
-            	sha256_digester_comb #(ROUND_LOAD[i*5+:5]) inst_sha (i_clk, i_rst_n, (r_round + i[6:0]), r_variables, r_status, variables_out_end, r_words, r_t3_precalculated, words_out_end);
+`ifdef MULTI_REORDER
+            	sha256_digester_comb #(ROUND_LOAD[i*5+:5]) inst_sha (i_clk, i_rst_n, (r_round + i[6:0]), r_variables, r_status, variables_out_end, r_words[511:0], r_t3_precalculated, words_out_end);
+`else
+            	sha256_digester_comb #(ROUND_LOAD[i*5+:5]) inst_sha (i_clk, i_rst_n, (r_round + i[6:0]), r_variables, r_status, variables_out_end, r_words[511:0], 32'd0, words_out_end);
+`endif
 			`else
-				sha256_digester_comb #(ROUND_LOAD[i*5+:5]) inst_sha (i_clk, i_rst_n, (r_round + i[6:0]), r_variables, r_status, variables_net[i], r_words, r_t3_precalculated, words_net[i]);
+`ifdef MULTI_REORDER
+				sha256_digester_comb #(ROUND_LOAD[i*5+:5]) inst_sha (i_clk, i_rst_n, (r_round + i[6:0]), r_variables, r_status, variables_net[i], r_words[511:0], r_t3_precalculated, words_net[i]);
+`else
+				sha256_digester_comb #(ROUND_LOAD[i*5+:5]) inst_sha (i_clk, i_rst_n, (r_round + i[6:0]), r_variables, r_status, variables_net[i], r_words[511:0], 32'd0, words_net[i]);
+`endif
 			`endif
         end else if (i != (`ROUND_INC-1)) begin
             sha256_digester_comb #(ROUND_LOAD[i*5+:5]) inst_sha (i_clk, i_rst_n, (r_round + i[6:0]), variables_net[i-1], r_status, variables_net[i], words_net[i-1], 32'd0, words_net[i]);

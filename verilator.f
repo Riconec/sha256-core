@@ -40,9 +40,6 @@ src/adders/carry_save_tree.v
 src/adders/carry_select.v
 src/adders/ripple_carry.v
 
-# Adder testbench (contains definitions used by other modules)
-src/adders/csa_tb.v
-
 --binary
 --timing
 --top-module top_tb

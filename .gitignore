@@ -7,3 +7,4 @@ work/modelsim/sha256_spi/work/
 work/modelsim/sha256_spi/sha256_spi.cr.mti
 work/quartus/sha256_spi/sha256_spi_nativelink_simulation.rpt
 work/lattice/sha256_spi/sha256_spi_Implmnt/
+obj_dir/*

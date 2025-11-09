@@ -41,8 +41,9 @@ src/adders/carry_select.v
 src/adders/ripple_carry.v
 
 # Verilator configuration
---lint-only
+--binary
 --timing
+--trace
 --top-module top_tb
 -Wall
 -Wno-DECLFILENAME

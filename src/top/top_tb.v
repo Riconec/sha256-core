@@ -3,7 +3,7 @@ module top_tb();
       // memory adresses
   parameter PERIOD = 50;
     parameter PERIOD_SPI = 500;
-    parameter SIM_DURATION_TIME = 1000000;  // Total simulation time
+    parameter SIM_DURATION_TIME = 3000000;  // Total simulation time
   reg clk, rst_n, ss, sck; 
   wire miso, done;
   reg [7:0] tmp;
@@ -27,9 +27,12 @@ module top_tb();
   );
 
   wire win = (golden_hash == spi_hash.sha256_core_inst.r_variables);
+  wire winbtc = (BTC_TEST_RESULT == spi_hash.sha256_core_inst.r_variables);
 
   initial begin
     clk = 0;
+    $dumpfile("dump.vcd");
+    $dumpvars();
     #SIM_DURATION_TIME;
     $display("Simulation time reached, stopping...");
     $finish;
@@ -42,8 +45,6 @@ module top_tb();
   end
 
   initial begin
-    $dumpfile("dump.vcd");
-    $dumpvars();
     rst_n = 0;
     ss = 1;
     sck = 1;
@@ -66,17 +67,31 @@ module top_tb();
     join
     #(PERIOD_SPI*2);
 
-     for (k=0; k<32; k=k+1) begin
-       fork
-       gen_sck;
-       // verilator lint_off WIDTHTRUNC
-       read_byte(k+DIGEST_START_ADDR);
-       // verilator lint_on WIDTHTRUNC
-       join
-       #(PERIOD_SPI*2);
-     end
-     #(PERIOD_SPI*2);
 
+    
+    #(SIM_DURATION_TIME/2);
+    rst_n = 0;
+    ss = 1;
+    sck = 1;
+    #250 rst_n = 1;
+    #(PERIOD*2);
+    M = BTC_TEST[511:0];
+
+    for (k=0; k<64; k=k+1) begin
+      fork
+      gen_sck;
+      tmp = M[k*8 +: 8];
+      write_byte(1,k[6:0],tmp);
+      join
+      #(PERIOD_SPI*2);
+    end
+    #(PERIOD_SPI*2);
+
+    fork
+    gen_sck;
+    write_byte(1,STATUS_REG,3);
+    join
+    #(PERIOD_SPI*2);
     $display("Test completed successfully. Win: %b", win);
     // Don't put another $finish here since the first process handles it
   end

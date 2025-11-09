@@ -24,11 +24,11 @@ module sha256_core(
 	reg [639:0] r_words; // Expanded to 640 bits to store 80-byte input (512 bits for W0-W15, 128 bits for padding)
 	reg [6:0] r_round;
 	reg [7:0] r_status;
-	reg completed, run_signal, do_math;
+	reg run_signal, do_math;
 
 	wire [7:0] o_data_h;
 	
-	assign o_irq = completed;
+	assign o_irq = r_status[STATUS_COMPLETED];
 	assign o_data_h = r_variables[(i_w_addr-DIGEST_START_ADDR) * 8 +: 8];
 
 	always @* begin
@@ -100,7 +100,6 @@ module sha256_core(
 							`endif
                         	r_status[STATUS_STATE_HI:STATUS_STATE_LO] <= ROUND;
                         	r_status[STATUS_COMPLETED] <= 1'b0; // clear completed (bit 7)
-                        	r_status[STATUS_SECOND_ROUND] <= 1'b0; // clear second_round (bit 6) when starting new operation  
                         end else begin
                         	r_status[STATUS_COMPLETED] <= 1'b1; // set completed (ready state when not active)
                         end
@@ -115,6 +114,7 @@ module sha256_core(
                     		r_status[STATUS_STATE_HI:STATUS_STATE_LO] <= MATH;
                     		r_round <= 7'd0;
                     	end
+						//$display("R=%02d, r_round
                 	end
                 	MATH: begin
 						// In MATH state, perform final addition A-H + initial/intermediate values
@@ -124,8 +124,12 @@ module sha256_core(
 						end else if (r_status[STATUS_BITCOIN_MODE] && r_status[STATUS_SECOND_ROUND]) begin // Second round in Bitcoin mode
 							r_status[STATUS_STATE_HI:STATUS_STATE_LO] <= BTC_2; // 
 							r_status[STATUS_SECOND_ROUND] <= 1'b0;
+						end else if (!r_status[STATUS_BITCOIN_MODE] && r_status[STATUS_SECOND_ROUND]) begin
+							r_status[STATUS_STATE_HI:STATUS_STATE_LO] <= INIT; // Go to completion
+							r_status[STATUS_START] <= 1'b0;
 						end else begin // Legacy mode
 							r_status[STATUS_STATE_HI:STATUS_STATE_LO] <= INIT; // Go to completion
+							r_status[STATUS_START] <= 1'b0;
 						end
                 	end
 					BTC_1: begin
@@ -141,13 +145,15 @@ module sha256_core(
 						r_status[STATUS_STATE_HI:STATUS_STATE_LO] <= INIT; // 
 					end
 					BTC_2: begin
-						r_words[511:0] <= {r_words[511:256], SHA256_PAD};
+						r_words[511:0] <= {r_variables, SHA256_PAD};
 						r_variables_in <= HASH_INIT;
 						`ifdef MULTI_REORDER
 						r_round_prec <= 0;
 						r_t3_precalculated <= 32'd0;
 						`endif
-						r_status[STATUS_STATE_HI:STATUS_STATE_LO] <= INIT; // 
+						r_status[STATUS_STATE_HI:STATUS_STATE_LO] <= INIT; //
+						r_status[STATUS_BITCOIN_MODE] <= 1'b0;
+						r_status[STATUS_SECOND_ROUND] <= 1'b1;
 					end
                 	default: begin end
             	endcase
@@ -157,7 +163,6 @@ module sha256_core(
 
     always @(*) begin : hash_control_comb
     	run_signal = 1'b0;
-    	completed = 1'b0;
     	do_math = 1'b0;
     	case (r_status[STATUS_STATE_HI:STATUS_STATE_LO])
     		INIT: begin	end

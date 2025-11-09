@@ -43,4 +43,4 @@ src/adders/ripple_carry.v
 --binary
 --timing
 --top-module top_tb
---trace-vcd
+--trace

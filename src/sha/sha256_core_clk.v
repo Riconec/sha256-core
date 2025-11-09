@@ -25,7 +25,6 @@ module sha256_core(
 	reg [6:0] r_round;
 	reg [7:0] r_status;
 	reg completed, run_signal, do_math;
-	reg [255:0] temp_hash_store; // Store first hash result for second round in Bitcoin mode
 
 	wire [7:0] o_data_h;
 	
@@ -118,25 +117,38 @@ module sha256_core(
                     	end
                 	end
                 	MATH: begin
-						// Check if Bitcoin mode is enabled 
-                        if(r_status[STATUS_BITCOIN_MODE] && !r_status[STATUS_SECOND_ROUND]) begin // Bitcoin mode and first round (second_round flag not set)
-							r_words[511:0] <= {r_variables, 256'h8000000000000000000000000000000000000000000000000000000000000000}; // First hash (256 bits) + padding
-							r_variables_in <= r_variables; // Use first hash as "initial" for math stage
-							r_status[STATUS_SECOND_ROUND] <= 1'b1; // Set second_round flag
-							r_status[STATUS_STATE_HI:STATUS_STATE_LO] <= BTC_1;
-						end else if (r_status[STATUS_BITCOIN_MODE] && r_status[STATUS_SECOND_ROUND]) begin //bitcoin mode, second round
-                			r_status[STATUS_STATE_HI:STATUS_STATE_LO] <= BTC_2;
-						end else begin //if no bitcoin mode enabled 
-							r_status[STATUS_STATE_HI:STATUS_STATE_LO] <= INIT;
+						// In MATH state, perform final addition A-H + initial/intermediate values
+                        if(r_status[STATUS_BITCOIN_MODE] && !r_status[STATUS_SECOND_ROUND]) begin // First round in Bitcoin mode
+							r_status[STATUS_STATE_HI:STATUS_STATE_LO] <= BTC_1; // 
+							r_status[STATUS_SECOND_ROUND] <= 1'b1;
+						end else if (r_status[STATUS_BITCOIN_MODE] && r_status[STATUS_SECOND_ROUND]) begin // Second round in Bitcoin mode
+							r_status[STATUS_STATE_HI:STATUS_STATE_LO] <= BTC_2; // 
+							r_status[STATUS_SECOND_ROUND] <= 1'b0;
+						else begin // Legacy mode
+							r_status[STATUS_STATE_HI:STATUS_STATE_LO] <= INIT; // Go to completion
 						end
                 	end
-                	BTC_1: begin
-                		r_status[STATUS_STATE_HI:STATUS_STATE_LO] <= BTC_2; // After BTC calculations, go to BTC_2
-                	end
-                	BTC_2: begin
-                        // Second round of Bitcoin double SHA-256 completed
-                        r_status[STATUS_STATE_HI:STATUS_STATE_LO] <= INIT;
-                	end
+					BTC_1: begin
+						// First SHA-256 addition done, prepare for second round
+						// imitate reset state here, r_variables_in kept saved, r_words need to load second frame padded
+						// words updated with extra padded frame
+						r_words[511:0] <= {r_words[639:512], PADDED_BLOCK};
+						r_variables_in <= r_variables; // Use first hash as "initial" for second round
+						`ifdef MULTI_REORDER
+						r_round_prec <= 0;
+						r_t3_precalculated <= 32'd0;
+						`endif
+						r_status[STATUS_STATE_HI:STATUS_STATE_LO] <= INIT; // 
+					end
+					BTC_2: begin
+						r_words[511:0] <= {r_words[511:256], SHA256_PAD};
+						r_variables_in <= HASH_INIT;
+						`ifdef MULTI_REORDER
+						r_round_prec <= 0;
+						r_t3_precalculated <= 32'd0;
+						`endif
+						r_status[STATUS_STATE_HI:STATUS_STATE_LO] <= INIT; // 
+					end
                 	default: begin end
             	endcase
 			end             
@@ -151,8 +163,6 @@ module sha256_core(
     		INIT: begin	end
     		ROUND: run_signal = 1'b1;
     		MATH: do_math = 1'b1;
-			BTC_1: do_math = 1'b1;  // BTC_1 performs calculations like MATH
-			BTC_2: completed = 1'b1;  // BTC_2 is completion state
     		default : /* default */;
     	endcase
     end
@@ -207,21 +217,14 @@ module sha256_core(
 				r_words[511:0] <= words_out_end;  // Update only the 512-bit message schedule part
 				r_variables <= variables_out_end;
 			end else if(do_math) begin
-				// In Bitcoin mode, we don't add the initial values for the second round
-				if(r_status[STATUS_BITCOIN_MODE] && r_status[STATUS_SECOND_ROUND]) begin // Bitcoin mode, second SHA-256 round (bit 6 set)
-					// For the second SHA-256 in double SHA-256, don't add initial values again
-					// The result should just be the computed variables from the hash
-					r_variables <= r_variables;
-				end else begin // Legacy mode or first round - add initial values as normal
-					r_variables[`IDX32(7)] <= r_variables[`IDX32(7)] + r_variables_in[`IDX32(7)];
-					r_variables[`IDX32(6)] <= r_variables[`IDX32(6)] + r_variables_in[`IDX32(6)];
-					r_variables[`IDX32(5)] <= r_variables[`IDX32(5)] + r_variables_in[`IDX32(5)];
-					r_variables[`IDX32(4)] <= r_variables[`IDX32(4)] + r_variables_in[`IDX32(4)];
-					r_variables[`IDX32(3)] <= r_variables[`IDX32(3)] + r_variables_in[`IDX32(3)];
-					r_variables[`IDX32(2)] <= r_variables[`IDX32(2)] + r_variables_in[`IDX32(2)];
-					r_variables[`IDX32(1)] <= r_variables[`IDX32(1)] + r_variables_in[`IDX32(1)];
-					r_variables[`IDX32(0)] <= r_variables[`IDX32(0)] + r_variables_in[`IDX32(0)];
-				end
+				r_variables[`IDX32(7)] <= r_variables[`IDX32(7)] + r_variables_in[`IDX32(7)];
+				r_variables[`IDX32(6)] <= r_variables[`IDX32(6)] + r_variables_in[`IDX32(6)];
+				r_variables[`IDX32(5)] <= r_variables[`IDX32(5)] + r_variables_in[`IDX32(5)];
+				r_variables[`IDX32(4)] <= r_variables[`IDX32(4)] + r_variables_in[`IDX32(4)];
+				r_variables[`IDX32(3)] <= r_variables[`IDX32(3)] + r_variables_in[`IDX32(3)];
+				r_variables[`IDX32(2)] <= r_variables[`IDX32(2)] + r_variables_in[`IDX32(2)];
+				r_variables[`IDX32(1)] <= r_variables[`IDX32(1)] + r_variables_in[`IDX32(1)];
+				r_variables[`IDX32(0)] <= r_variables[`IDX32(0)] + r_variables_in[`IDX32(0)];
 			end
 		end
 	end

@@ -10,34 +10,9 @@ module sha256_core(
 	
 );
 	
-	localparam START_W_MEM_ADDR = 0;
-	localparam END_W_MEM_ADDR = 79;  // Support 80 bytes (0-79 for Bitcoin block header)
-	localparam WHO_AM_I = 7'd80;     // Moved to after message memory
-	localparam STATUS_REG = 7'd81;
-	localparam REVISION = 7'd82;
-	localparam DAY = 7'd83;
-	localparam MONTH = 7'd84;
-	localparam YEAR = 7'd85;
-	localparam WHO_AM_I_DATA = 8'h33;
-	localparam REVISION_DATA = 8'd33;
-	localparam DAY_DATA = 8'd10;
-	localparam MONTH_DATA = 8'd11;
-	localparam YEAR_DATA = 8'd25;
-	localparam DIGEST_START_ADDR = 86;  // Start digest after status registers
-	localparam DIGEST_END_ADDR = 117;   // 32 bytes digest (86-117)
-    localparam MEM_END = 127;            // Remaining for user memory if needed
-
-	//10 addresses left empty between digest and WHO_AM_I
-	localparam HASH_INIT = 256'h6a09e667_bb67ae85_3c6ef372_a54ff53a_510e527f_9b05688c_1f83d9ab_5be0cd19;
-	parameter ROUND_INC_DEF = `ROUND_INC;
-	parameter ROUND_END_DEF = `ROUND_END;
-	// FSM states
-    parameter   INIT = 2'd0,
-                ROUND = 2'd1,
-                MATH = 2'd2,
-                OUT = 2'd3;
-
 	parameter N = 16;
+	// FSM states - 3-bit encoding for expanded state support
+
     // assuming width can fit in 4 bits
     parameter [(N*5)-1:0] ROUND_LOAD = {5'd15, 5'd14, 5'd13, 5'd12, 5'd11,  5'd10, 5'd9,  5'd8, 5'd7, 5'd6, 5'd5, 5'd4, 5'd3, 5'd2,  5'd1,5'd0};
 
@@ -50,6 +25,7 @@ module sha256_core(
 	reg [6:0] r_round;
 	reg [7:0] r_status;
 	reg completed, run_signal, do_math;
+	reg [255:0] temp_hash_store; // Store first hash result for second round in Bitcoin mode
 
 	wire [7:0] o_data_h;
 	
@@ -87,29 +63,20 @@ module sha256_core(
 		end
 	end
 
-	
-
-    /* Help assignments
-    r_status[7:5] - reserved
-    r_status[5:4] - state
-    r_status[3] - completed
-    r_status[2] - running
-    r_status[1] - ready
-    r_status[0] - start 
-    */
 	`ifdef MULTI_REORDER
 		reg [31:0] r_t3_precalculated;
 		reg [6:0] r_round_prec;
 		wire [31:0] Kt_out_prec;
 		/* Reorder uses additional LUT table */
-		sha256_coefs inst_coef_clk_prec(.i_coef_num((r_status[5:4] == INIT) ? r_round : r_round_prec), .o_coef_value(Kt_out_prec));
+		sha256_coefs inst_coef_clk_prec(.i_coef_num((r_status[STATUS_STATE_HI:STATUS_STATE_LO] == 3'b000) ? r_round : r_round_prec), .o_coef_value(Kt_out_prec));
 	`endif
 
     always @ (posedge i_clk or negedge i_rst_n) begin : hash_control_reg
         if(!i_rst_n) begin
             r_round <= 7'd0;
-            r_status <= 8'd0;
+            r_status <= STATUS_INIT_VALUE;  // Reset all status bits, including completed=0
 			r_variables_in <= HASH_INIT;
+			temp_hash_store <= 256'd0;
 			`ifdef MULTI_REORDER
 			r_round_prec <= 0;
 			r_t3_precalculated <= 32'd0;
@@ -117,23 +84,27 @@ module sha256_core(
         end else begin
         	if(i_we) begin
         		if(i_w_addr == STATUS_REG) begin
-        			r_status[0] <= i_data8[0];	
+        			// Update bit 0 (start), bit 1 (bitcoin mode), bit 2 (nonce_sweep_enable), and preserve other bits
+        			r_status[STATUS_START] <= i_data8[STATUS_START];      // Start bit
+        			r_status[STATUS_BITCOIN_MODE] <= i_data8[STATUS_BITCOIN_MODE];      // Bitcoin mode bit
+        			r_status[STATUS_NONCE_SWEEP] <= i_data8[STATUS_NONCE_SWEEP];      // Nonce sweep enable (reserved)
+        			// Other bits remain unchanged
         		end
 			end else begin
-				case(r_status[5:4])
+				case(r_status[STATUS_STATE_HI:STATUS_STATE_LO])
                 	INIT: begin
 					`ifdef MULTI_REORDER
 						r_t3_precalculated <= r_variables[`IDX32(0)] + Kt_out_prec + r_words[`IDX32(15)];
 						`endif
-                    	if(r_status[0]) begin // if START
+                    	if(r_status[STATUS_START]) begin // if START
 						`ifdef MULTI_REORDER
 							r_round_prec <= r_round + 1'b1;
 							`endif
-                        	r_status[5:4] <= ROUND;
-                        	r_status[3:0] <= 4'b0100; //set running
-							r_variables_in <= HASH_INIT;
+                        	r_status[STATUS_STATE_HI:STATUS_STATE_LO] <= ROUND;
+                        	r_status[STATUS_COMPLETED] <= 1'b0; // clear completed (bit 7)
+                        	r_status[STATUS_SECOND_ROUND] <= 1'b0; // clear second_round (bit 6) when starting new operation  
                         end else begin
-                        	r_status[3:0] <= 4'b0010; // set ready
+                        	r_status[STATUS_COMPLETED] <= 1'b1; // set completed (ready state when not active)
                         end
                 	end
                 	ROUND: begin
@@ -143,15 +114,39 @@ module sha256_core(
 						r_t3_precalculated <= r_variables[`IDX32(1)] + Kt_out_prec + r_words[`IDX32(14)];
 						`endif
 						if(r_round == ROUND_END_DEF) begin
-                    		r_status[5:4] <= MATH;
+                    		r_status[STATUS_STATE_HI:STATUS_STATE_LO] <= MATH;
                     		r_round <= 7'd0;
                     	end
                 	end
                 	MATH: begin
-                		r_status[5:4] <= OUT;
+                		r_status[STATUS_STATE_HI:STATUS_STATE_LO] <= OUT;
+                	end
+                	BTC_1: begin
+                		r_status[STATUS_STATE_HI:STATUS_STATE_LO] <= BTC_2; // After BTC calculations, go to BTC_2
+                	end
+                	BTC_2: begin
+                        // Second round of Bitcoin double SHA-256 completed
+                        r_status[STATUS_STATE_HI:STATUS_STATE_LO] <= INIT;
+                        r_status[STATUS_SECOND_ROUND] <= 1'b0; // Clear second_round flag
+                        r_status[STATUS_COMPLETED] <= 1'b1; // set completed (bit 7)
                 	end
                 	OUT: begin
-                        r_status[5:4] <= INIT;
+                        // Check if Bitcoin mode is enabled 
+                        if(r_status[STATUS_BITCOIN_MODE] && !r_status[STATUS_SECOND_ROUND]) begin // Bitcoin mode and first round (second_round flag not set)
+                            // This was the first SHA-256 in double SHA-256
+                            // Store first hash result for use in second round
+                            temp_hash_store <= r_variables;
+                            // Prepare for second SHA-256: use first hash output as input with padding
+                            r_words[511:0] <= {temp_hash_store, 256'h8000000000000000000000000000000000000000000000000000000000000000}; // First hash (256 bits) + padding
+                            r_variables_in <= temp_hash_store; // Use first hash as "initial" for math stage
+                            r_variables <= HASH_INIT; // Reset variables to initial values for second round
+                            r_status[STATUS_SECOND_ROUND] <= 1'b1; // Set second_round flag
+                            r_status[STATUS_STATE_HI:STATUS_STATE_LO] <= BTC_1; // Go to BTC_1 state for second round
+                        end else begin // Legacy mode or second round completed
+                            r_status[STATUS_STATE_HI:STATUS_STATE_LO] <= INIT;
+                            r_status[STATUS_SECOND_ROUND] <= 1'b0; // Clear second_round flag
+                            r_status[STATUS_COMPLETED] <= 1'b1; // set completed (bit 7)
+                        end
                 	end
                 	default: begin end
             	endcase
@@ -163,10 +158,12 @@ module sha256_core(
     	run_signal = 1'b0;
     	completed = 1'b0;
     	do_math = 1'b0;
-    	case (r_status[5:4])
+    	case (r_status[STATUS_STATE_HI:STATUS_STATE_LO])
     		INIT: begin	end
     		ROUND: run_signal = 1'b1;
     		MATH: do_math = 1'b1;
+			BTC_1: do_math = 1'b1;  // BTC_1 performs calculations like MATH
+			BTC_2: completed = 1'b1;  // BTC_2 is completion state
     		OUT: completed = 1'b1;
     		default : /* default */;
     	endcase
@@ -181,7 +178,7 @@ module sha256_core(
     genvar i;
 
     for (i = 0; i < `ROUND_INC; i = i + 1) begin : rounder
-        if (i == 0) begin
+        if (i == 0) begin : gen_rounds
 			`ifdef ROUND1BYPASS
 `ifdef MULTI_REORDER
             	sha256_digester_comb #(ROUND_LOAD[i*5+:5]) inst_sha (i_clk, i_rst_n, (r_round + i[6:0]), r_variables, r_status, variables_out_end, r_words[511:0], r_t3_precalculated, words_out_end);
@@ -222,14 +219,21 @@ module sha256_core(
 				r_words[511:0] <= words_out_end;  // Update only the 512-bit message schedule part
 				r_variables <= variables_out_end;
 			end else if(do_math) begin
-				r_variables[`IDX32(7)] <= r_variables[`IDX32(7)] + r_variables_in[`IDX32(7)];
-				r_variables[`IDX32(6)] <= r_variables[`IDX32(6)] + r_variables_in[`IDX32(6)];
-				r_variables[`IDX32(5)] <= r_variables[`IDX32(5)] + r_variables_in[`IDX32(5)];
-				r_variables[`IDX32(4)] <= r_variables[`IDX32(4)] + r_variables_in[`IDX32(4)];
-				r_variables[`IDX32(3)] <= r_variables[`IDX32(3)] + r_variables_in[`IDX32(3)];
-				r_variables[`IDX32(2)] <= r_variables[`IDX32(2)] + r_variables_in[`IDX32(2)];
-				r_variables[`IDX32(1)] <= r_variables[`IDX32(1)] + r_variables_in[`IDX32(1)];
-				r_variables[`IDX32(0)] <= r_variables[`IDX32(0)] + r_variables_in[`IDX32(0)];
+				// In Bitcoin mode, we don't add the initial values for the second round
+				if(r_status[STATUS_BITCOIN_MODE] && r_status[STATUS_SECOND_ROUND]) begin // Bitcoin mode, second SHA-256 round (bit 6 set)
+					// For the second SHA-256 in double SHA-256, don't add initial values again
+					// The result should just be the computed variables from the hash
+					r_variables <= r_variables;
+				end else begin // Legacy mode or first round - add initial values as normal
+					r_variables[`IDX32(7)] <= r_variables[`IDX32(7)] + r_variables_in[`IDX32(7)];
+					r_variables[`IDX32(6)] <= r_variables[`IDX32(6)] + r_variables_in[`IDX32(6)];
+					r_variables[`IDX32(5)] <= r_variables[`IDX32(5)] + r_variables_in[`IDX32(5)];
+					r_variables[`IDX32(4)] <= r_variables[`IDX32(4)] + r_variables_in[`IDX32(4)];
+					r_variables[`IDX32(3)] <= r_variables[`IDX32(3)] + r_variables_in[`IDX32(3)];
+					r_variables[`IDX32(2)] <= r_variables[`IDX32(2)] + r_variables_in[`IDX32(2)];
+					r_variables[`IDX32(1)] <= r_variables[`IDX32(1)] + r_variables_in[`IDX32(1)];
+					r_variables[`IDX32(0)] <= r_variables[`IDX32(0)] + r_variables_in[`IDX32(0)];
+				end
 			end
 		end
 	end
@@ -258,11 +262,6 @@ module sha256_digester_comb(i_clk, i_rst_n, r_coef, i_variables, i_status, o_var
 	wire [31:0] var_g = i_variables[`IDX32(1)];
 	wire [31:0] var_h = i_variables[`IDX32(0)];
 
-	parameter   INIT = 2'd0,
-                ROUND = 2'd1,
-                MATH = 2'd2,
-                OUT = 2'd3;
-
 	sum0 inst_sum0(var_a, sum0_out);
 	sum1 inst_sum1(var_e, sum1_out);
 	sigm0 inst_sigm0(i_words[`IDX32(14)], sigm0_out);
@@ -276,17 +275,17 @@ module sha256_digester_comb(i_clk, i_rst_n, r_coef, i_variables, i_status, o_var
 		reg [6:0] r_round_prec;
 		wire [31:0] Kt_out_prec;
 		/* Reorder uses additional LUT table */
-		sha256_coefs inst_coef_clk_prec(.i_coef_num((i_status[5:4] == INIT) ? r_coef : r_round_prec), .o_coef_value(Kt_out_prec));
+		sha256_coefs inst_coef_clk_prec(.i_coef_num((i_status[STATUS_STATE_HI:STATUS_STATE_LO] == 3'b000) ? r_coef : r_round_prec), .o_coef_value(Kt_out_prec));
 
 			always @(posedge i_clk, negedge i_rst_n) begin
 				if(!i_rst_n) begin
 					r_round_prec <= RESET_ROUND;
 					r_t3_precalculated <= 32'd0;
 				end else begin
-					case(i_status[5:4])
+					case(i_status[STATUS_STATE_HI:STATUS_STATE_LO])
 						INIT: begin
 							r_t3_precalculated <= i_variables[`IDX32(0)] + Kt_out_prec + i_words[`IDX32(15)];
-							if(i_status[0]) begin
+							if(i_status[STATUS_START]) begin
 								r_round_prec <= r_coef + 1'b1;
 							end else begin 
 								r_round_prec <= RESET_ROUND;
@@ -296,6 +295,7 @@ module sha256_digester_comb(i_clk, i_rst_n, r_coef, i_variables, i_status, o_var
 								r_round_prec <= r_round_prec + 1'b1;
 								r_t3_precalculated <= i_variables[`IDX32(1)] + Kt_out_prec + i_words[`IDX32(14)];
 						end
+						default: begin end
 					endcase
 				end
 			end

@@ -26,8 +26,7 @@
                 ROUND = 3'b001,
                 MATH = 3'b010,
                 BTC_1 = 3'b011,
-                BTC_2 = 3'b100,
-                OUT = 3'b101;
+                BTC_2 = 3'b100;
 
 	parameter START_W_MEM_ADDR = 0;
 	parameter END_W_MEM_ADDR = 79;  // Support 80 bytes (0-79 for Bitcoin block header)

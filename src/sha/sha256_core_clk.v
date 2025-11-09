@@ -124,7 +124,7 @@ module sha256_core(
 						end else if (r_status[STATUS_BITCOIN_MODE] && r_status[STATUS_SECOND_ROUND]) begin // Second round in Bitcoin mode
 							r_status[STATUS_STATE_HI:STATUS_STATE_LO] <= BTC_2; // 
 							r_status[STATUS_SECOND_ROUND] <= 1'b0;
-						else begin // Legacy mode
+						end else begin // Legacy mode
 							r_status[STATUS_STATE_HI:STATUS_STATE_LO] <= INIT; // Go to completion
 						end
                 	end

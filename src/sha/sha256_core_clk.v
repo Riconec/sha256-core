@@ -27,9 +27,21 @@ module sha256_core(
 	reg run_signal, do_math;
 
 	wire [7:0] o_data_h;
+	wire [511:0] curr_words;
 	
+	assign curr_words = r_words[511:0];
+
 	assign o_irq = r_status[STATUS_COMPLETED];
 	assign o_data_h = r_variables[(i_w_addr-DIGEST_START_ADDR) * 8 +: 8];
+
+	wire [255:0] r_variables_le;
+
+	genvar le;
+	generate
+    	for (le = 0; le < 32; le = le + 1) begin : BYTE_REVERSE
+        	assign r_variables_le[le*8 +: 8] = r_variables[(31-le)*8 +: 8];
+    	end
+	endgenerate
 
 	always @* begin
 		o_data_mux = 8'd0;
@@ -98,9 +110,11 @@ module sha256_core(
 						`ifdef MULTI_REORDER
 							r_round_prec <= r_round + 1'b1;
 							`endif
+							$display("start calculate hash of %h, btc=%01b, round=%01b",curr_words,r_status[STATUS_BITCOIN_MODE], r_status[STATUS_SECOND_ROUND]);
                         	r_status[STATUS_STATE_HI:STATUS_STATE_LO] <= ROUND;
                         	r_status[STATUS_COMPLETED] <= 1'b0; // clear completed (bit 7)
                         end else begin
+							r_variables_in <= HASH_INIT;
                         	r_status[STATUS_COMPLETED] <= 1'b1; // set completed (ready state when not active)
                         end
                 	end

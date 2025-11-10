@@ -13,6 +13,7 @@ module top_tb();
 
   integer i,j,k;
   reg[511:0] M = {24'h616263,1'b1,423'd0,64'd24};
+  reg[639:0] MBTC = BTC_TEST;
 
   reg [255:0] golden_hash = 256'hba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad;
 
@@ -75,12 +76,21 @@ module top_tb();
     sck = 1;
     #250 rst_n = 1;
     #(PERIOD*2);
-    M = BTC_TEST[511:0];
 
     for (k=0; k<64; k=k+1) begin
       fork
       gen_sck;
-      tmp = M[k*8 +: 8];
+      tmp = MBTC[k*8+128 +: 8];
+      write_byte(1,k[6:0],tmp);
+      join
+      #(PERIOD_SPI*2);
+    end
+    #(PERIOD_SPI*2);
+
+    for (k=64; k<80; k=k+1) begin
+      fork
+      gen_sck;
+      tmp = MBTC[k*8-512 +: 8];
       write_byte(1,k[6:0],tmp);
       join
       #(PERIOD_SPI*2);

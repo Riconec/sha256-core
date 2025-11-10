@@ -12,8 +12,7 @@ module top_tb();
   reg  mosi;
 
   integer i,j,k;
-  reg[511:0] M = //{24'h616263,1'b1,423'd0,64'd24};
-  512'hdeadbeefdeadbeefdeadbeefdeadbeef_9f2a1c4b7de03e9a8c1fd0b6247ae9d33cb44e6a11d3f582c7b9e04fd9a182b47d61b3ef50ac7d9a13c4f0e692a14be0;
+  reg[511:0] M = {24'h616263,1'b1,423'd0,64'd24};
   reg[639:0] MBTC = BTC_TEST;
 
   reg [255:0] golden_hash = 256'hba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad;

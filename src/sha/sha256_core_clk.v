@@ -105,16 +105,24 @@ module sha256_core(
                 	INIT: begin
 					`ifdef MULTI_REORDER
 						r_t3_precalculated <= r_variables[`IDX32(0)] + Kt_out_prec + r_words[`IDX32(15)];
-						`endif
+					`endif
                     	if(r_status[STATUS_START]) begin // if START
 						`ifdef MULTI_REORDER
 							r_round_prec <= r_round + 1'b1;
-							`endif
-							$display("start calculate hash of %h, btc=%01b, round=%01b",curr_words,r_status[STATUS_BITCOIN_MODE], r_status[STATUS_SECOND_ROUND]);
+						`endif
+							//$display("start calculate hash of %h",curr_words);
                         	r_status[STATUS_STATE_HI:STATUS_STATE_LO] <= ROUND;
                         	r_status[STATUS_COMPLETED] <= 1'b0; // clear completed (bit 7)
+
+							if (r_status[STATUS_SECOND_ROUND] & r_status[STATUS_BITCOIN_MODE]) begin
+								/* bitcoin mode, on second calculation do not clear r_variables_in */
+								//r_variables <= HASH_INIT;
+
+							end else begin
+								r_variables <= HASH_INIT;
+							    r_variables_in <= HASH_INIT;
+							end
                         end else begin
-							r_variables_in <= HASH_INIT;
                         	r_status[STATUS_COMPLETED] <= 1'b1; // set completed (ready state when not active)
                         end
                 	end
@@ -137,18 +145,15 @@ module sha256_core(
 							r_status[STATUS_SECOND_ROUND] <= 1'b1;
 						end else if (r_status[STATUS_BITCOIN_MODE] && r_status[STATUS_SECOND_ROUND]) begin // Second round in Bitcoin mode
 							r_status[STATUS_STATE_HI:STATUS_STATE_LO] <= BTC_2; // 
-							r_status[STATUS_SECOND_ROUND] <= 1'b0;
-						end else if (!r_status[STATUS_BITCOIN_MODE] && r_status[STATUS_SECOND_ROUND]) begin
-							r_status[STATUS_STATE_HI:STATUS_STATE_LO] <= INIT; // Go to completion
-							r_status[STATUS_START] <= 1'b0;
 						end else begin // Legacy mode
+							//$display("math on legacy %h", r_variables);
 							r_status[STATUS_STATE_HI:STATUS_STATE_LO] <= INIT; // Go to completion
 							r_status[STATUS_START] <= 1'b0;
 						end
                 	end
 					BTC_1: begin
 						// First SHA-256 addition done, prepare for second round
-						// imitate reset state here, r_variables_in kept saved, r_words need to load second frame padded
+						// imitate reset state here, r_variables kept saved, r_words need to load second frame padded
 						// words updated with extra padded frame
 						r_words[511:0] <= {r_words[639:512], PADDED_BLOCK};
 						r_variables_in <= r_variables; // Use first hash as "initial" for second round
@@ -157,17 +162,19 @@ module sha256_core(
 						r_t3_precalculated <= 32'd0;
 						`endif
 						r_status[STATUS_STATE_HI:STATUS_STATE_LO] <= INIT; // 
+						r_status[STATUS_SECOND_ROUND] <= 1'b1;
+						r_status[STATUS_BITCOIN_MODE] <= 1'b1;
 					end
 					BTC_2: begin
+						// double hash, init r_variables_in, use padded result r_variable as r_words
 						r_words[511:0] <= {r_variables, SHA256_PAD};
-						r_variables_in <= HASH_INIT;
 						`ifdef MULTI_REORDER
 						r_round_prec <= 0;
 						r_t3_precalculated <= 32'd0;
 						`endif
 						r_status[STATUS_STATE_HI:STATUS_STATE_LO] <= INIT; //
 						r_status[STATUS_BITCOIN_MODE] <= 1'b0;
-						r_status[STATUS_SECOND_ROUND] <= 1'b1;
+						r_status[STATUS_SECOND_ROUND] <= 1'b0;
 					end
                 	default: begin end
             	endcase

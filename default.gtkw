@@ -1,0 +1,42 @@
+[*]
+[*] GTKWave Analyzer v3.3.100 (w)1999-2019 BSI
+[*] Mon Nov 10 15:49:30 2025
+[*]
+[dumpfile] "C:\Users\Rico\projects\sha256-core\dump.vcd"
+[dumpfile_mtime] "Mon Nov 10 15:29:01 2025"
+[dumpfile_size] 3553766
+[savefile] "C:\Users\Rico\projects\sha256-core\default.gtkw"
+[timestart] 2850873000
+[size] 1920 1017
+[pos] -144 -139
+*-19.000000 2852575000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] top_tb.
+[treeopen] top_tb.spi_hash.
+[sst_width] 197
+[signals_width] 325
+[sst_expanded] 1
+[sst_vpaned_height] 300
+@22
+top_tb.spi_hash.sha256_core_inst.r_round[6:0]
+@800022
+top_tb.spi_hash.sha256_core_inst.r_status[7:0]
+@28
+(0)top_tb.spi_hash.sha256_core_inst.r_status[7:0]
+@29
+top_tb.spi_hash.sha256_core_inst.do_math
+@28
+(1)top_tb.spi_hash.sha256_core_inst.r_status[7:0]
+(2)top_tb.spi_hash.sha256_core_inst.r_status[7:0]
+(3)top_tb.spi_hash.sha256_core_inst.r_status[7:0]
+(4)top_tb.spi_hash.sha256_core_inst.r_status[7:0]
+(5)top_tb.spi_hash.sha256_core_inst.r_status[7:0]
+(6)top_tb.spi_hash.sha256_core_inst.r_status[7:0]
+(7)top_tb.spi_hash.sha256_core_inst.r_status[7:0]
+@1001200
+-group_end
+@22
+top_tb.spi_hash.sha256_core_inst.r_words[639:0]
+top_tb.spi_hash.sha256_core_inst.curr_words[511:0]
+top_tb.spi_hash.sha256_core_inst.r_variables[255:0]
+[pattern_trace] 1
+[pattern_trace] 0

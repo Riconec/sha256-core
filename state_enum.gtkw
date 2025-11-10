@@ -1,0 +1,12 @@
+# GTKWave Enum Filter for SHA-256 State Machine
+# Maps state register values to enum names for r_status[5:3] field
+
+# State mapping for 3-bit state field (values in binary)
+000 INIT
+001 ROUND
+010 MATH
+011 BTC_1
+100 BTC_2
+101 INVALID
+110 INVALID
+111 INVALID
